@@ -1,9 +1,5 @@
 @use "sass:math";
 
-@function getSize($size) {
-    @return ceil(math.div($size, $deviceRatio));
-}
-
 @function str-replace($string, $search, $replace: '') {
     $index: str-index($string, $search);
 
@@ -13,8 +9,6 @@
 
     @return $string;
 }
-
-$deviceRatio: 2;
 
 @mixin clearfix {
     &::after {
@@ -49,13 +43,12 @@ $deviceRatio: 2;
 }
 
 $media-queries-breakpoints: (
-        ssm: 375px,
-        sm: 576px,
-        md: 768px,
-        lg: 992px,
-        xl: 1260px,
-        xxl: 1400px,
-        xxxl: 1710px
+    xs: 0,
+    sm: 576px,
+    md: 768px,
+    lg: 992px,
+    xl: 1200px,
+    xxl: 1400px
 ) !default;
 
 @mixin media-queries($args...) {

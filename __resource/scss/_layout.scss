@@ -1,11 +1,7 @@
-*,
-*::before,
-*::after {
-    box-sizing: border-box;
-}
+@use "sass:math";
 
 body {
-    font-family: "Pretendard", sans-serif;
+    font-family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
 }
 
 .skipnav {
@@ -13,11 +9,15 @@ body {
 }
 
 .quick-visitkorea {
+    @include media-queries($to: xl) {
+        display: none;
+    }
+
     div {
-        max-width: 1920px;
+        max-width: 1750px;
         height: 70px;
         margin: 0 auto;
-        padding: 15px 0 0 103px;
+        padding: 15px 0 0 25px;
     }
 
     a {
@@ -27,6 +27,7 @@ body {
         padding-right: 12px;
         border-radius: 3px;
         border: 1px solid #d7d8db;
+        background: url("/assets/images/common/icon_quick_visitkorea.png") no-repeat right 14px center/7px auto;
         color: #000;
         font-size: 20px;
         line-height: 38px;
@@ -36,29 +37,296 @@ body {
 }
 
 .site-header {
-    position: static;
+    position: sticky;
     top: 0;
     left: 0;
+    z-index: 200;
+    background: #fff;
+    box-shadow: 0 1px 0 0 #d3d3d3;
 
-    div {
+    > div {
         display: flex;
-        justify-content: space-between;
-        max-width: 1920px;
-        height: 80px;
+        justify-content: center;
+        max-width: 1750px;
         margin: 0 auto;
-        padding: 0 86px 0 120px;
+
+        @include media-queries($from: xl) {
+            justify-content: space-between;
+            padding: 0 0 0 40px;
+        }
     }
 
     h1 {
-        height: 100%;
-
         a {
             display: block;
-            width: 150px;
+            width: var(--logo-travelmonth-width);
+            height: var(--logo-travelmonth-height);
+            background: url("/assets/images/common/logo_travelmonth.png") no-repeat center/contain;
+        }
+
+        span {
+            @include visually-hidden;
+        }
+    }
+
+    h1 + p {
+        position: absolute;
+        top: 0;
+        right: 0;
+        z-index: 100;
+        height: 100%;
+
+        button {
+            display: block;
+            width: (21px + (14 * 2));
             height: 100%;
-            background: {
-                repeat: no-repeat;
-            };
+            border-radius: 0;
+            border: 0;
+            background: url("/assets/images/common/icon_global_nav_button.png") no-repeat center/21px auto;
+            appearance: none;
+        }
+
+        span {
+            @include visually-hidden;
+        }
+
+        @include media-queries($from: xl) {
+            display: none;
+        }
+    }
+
+    nav {
+        @include media-queries($to: xl) {
+            display: none;
+            overflow: hidden;
+            overflow-y: auto;
+            position: fixed;
+            top: var(--logo-travelmonth-height);
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            box-shadow: 0 -1px 0 0 #d3d3d3;
+        }
+
+        &::before {
+            position: fixed;
+            top: var(--logo-travelmonth-height);
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background: #fff;
+            content: "";
+
+            @include media-queries($from: xl) {
+                position: absolute;
+                top: 100%;
+                height: 0;
+            }
+        }
+
+        &:hover {
+            @include media-queries($from: xl) {
+                &::before {
+                    height: 100px;
+                }
+            }
+
+            li div {
+                display: block;
+            }
+        }
+
+        li {
+            position: relative;
+        }
+
+        div {
+
+            @include media-queries($from: xl) {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+            }
+        }
+
+        a {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #424242;
+            white-space: nowrap;
+            transition: .15s;
+        }
+
+        li {
+            &:hover {
+                > a {
+                    color: #37bf8a;
+                }
+            }
+
+            div li {
+                &:hover {
+                    > a {
+                        color: #424242;
+                        font-weight: $font-weight-semiBold;
+                    }
+                }
+            }
+        }
+
+        > ul {
+            @include media-queries($to: 'xl') {
+                padding: 16px 0;
+            }
+
+            @include media-queries($from: 'xl') {
+                display: flex;
+            }
+
+            > li {
+                > a {
+                    position: relative;
+                    height: var(--site-header-height);
+                    font-weight: $font-weight-semiBold;
+                    font-size: 20px;
+
+                    @include media-queries($from: 'xl') {
+                        padding: 0 35px 0 36px;
+                    }
+                }
+
+                &:not(:first-child) {
+                    > a {
+
+                        @include media-queries($from: 'xl') {
+                            padding-left: 35px;
+                        }
+                    }
+                }
+
+                @include media-queries($from: 'xl') {
+                    &:not(:first-child) {
+                        > a {
+                            &::before {
+                                position: absolute;
+                                top: calc(50% - 9px);
+                                left: 0;
+                                width: 1px;
+                                height: 18px;
+                                background: #b2b2b2;
+                                content: "";
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        div {
+            @include media-queries($to: 'xl') {
+                margin-top: -8px;
+                padding-bottom: 16px;
+            }
+
+            a {
+                padding: 4px 0;
+                font-weight: $font-weight-light;
+                font-size: 16px;
+                line-height: math.div(20, 16);
+            }
+        }
+    }
+
+    &__nav {
+        &--current-main {
+            color: #37bf8a !important;
+        }
+
+        &--current-sub {
+            color: #424242 !important;
+            font-weight: $font-weight-semiBold !important;
+        }
+    }
+}
+
+.site-footer {
+    border-top: 1px solid #dadada;
+    background: #f5f5f5;
+
+    > div {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        max-width: calc(1440px + var(--site-footer-padding-horizon) * 2);
+        margin: 0 auto;
+        padding: var(--site-footer-padding-vertical) var(--site-footer-padding-horizon);
+    }
+
+    div div div {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+    }
+
+    p {
+        padding-right: 4px;
+        color: #7d7d7d;
+        font-size: 14px;
+        line-height: 1.5;
+
+        + p {
+            &::before {
+                padding-right: 4px;
+                content: "/";
+            }
+        }
+    }
+
+    div div div + p {
+        padding-top: var(--site-footer-copyright-margin);
+        font-size: 12px;
+    }
+
+    ul {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+
+        @include media-queries($to: md) {
+            width: 100%;
+            padding-top: 12px;
+        }
+    }
+
+    li {
+        height: var(--site-footer-logo-height);
+        background: {
+            repeat: no-repeat;
+            position: center;
+            size: 100% auto;
+        };
+
+        &:not(:first-child) {
+            margin-left: var(--site-footer-logo-margin);
+        }
+
+        &:nth-child(1) {
+            width: var(--site-footer-logo-mcst-width);
+            background-image: url("/assets/images/common/logo_mcst.png");
+        }
+
+        &:nth-child(2) {
+            width: var(--site-footer-logo-visitkorea-width);
+            background-image: url("/assets/images/common/logo_visitkorea.png");
+        }
+
+        &:nth-child(3) {
+            width: var(--site-footer-logo-1330-width);
+            background-image: url("/assets/images/common/logo_1330.png");
         }
 
         span {
