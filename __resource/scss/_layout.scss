@@ -1,0 +1,68 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Pretendard", sans-serif;
+}
+
+.skipnav {
+    display: none;
+}
+
+.quick-visitkorea {
+    div {
+        max-width: 1920px;
+        height: 70px;
+        margin: 0 auto;
+        padding: 15px 0 0 103px;
+    }
+
+    a {
+        display: block;
+        width: 248px;
+        height: 40px;
+        padding-right: 12px;
+        border-radius: 3px;
+        border: 1px solid #d7d8db;
+        color: #000;
+        font-size: 20px;
+        line-height: 38px;
+        text-align: center;
+        text-decoration: none;
+    }
+}
+
+.site-header {
+    position: static;
+    top: 0;
+    left: 0;
+
+    div {
+        display: flex;
+        justify-content: space-between;
+        max-width: 1920px;
+        height: 80px;
+        margin: 0 auto;
+        padding: 0 86px 0 120px;
+    }
+
+    h1 {
+        height: 100%;
+
+        a {
+            display: block;
+            width: 150px;
+            height: 100%;
+            background: {
+                repeat: no-repeat;
+            };
+        }
+
+        span {
+            @include visually-hidden;
+        }
+    }
+}
