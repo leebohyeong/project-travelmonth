@@ -4,4 +4,12 @@ append variables
     - const bodyId = 'main';
 
 block body
-    p
+    // button.btn.btn-primary(type="button" data-bs-toggle="modal" data-bs-target="#staticBackdrop") Launch demo modal
+    // #staticBackdrop.modal.fade(data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true")
+        .modal-dialog
+            .modal-content
+                .modal-header
+                    h5.modal-title Modal title
+                    button.btn-close(type="button" data-bs-dismiss="modal" aria-label="Close")
+                .modal-body
+                    p Modal body text goes here.

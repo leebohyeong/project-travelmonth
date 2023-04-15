@@ -1,0 +1,185 @@
+@use "sass:math";
+
+.benefits {
+    &__container {
+        display: flex;
+        max-width: 1920px;
+        margin: 0 auto;
+    }
+
+    &__menus {
+        width: min(ceil(percentage(math.div(520, 1920))), 520px);
+        background: #383a4c;
+    }
+
+    &__content {
+        flex-grow: 1;
+    }
+}
+
+.benefits-menus {
+    > div {
+        position: sticky;
+        top: 80px;
+        padding-bottom: 30px;
+    }
+
+    h2 {
+        padding-top: 60px;
+        color: #fff;
+        font-family: "GmarketSans", sans-serif;
+        text-align: center;
+        letter-spacing: -0.02em;
+
+        span {
+            display: block;
+            font-weight: 300;
+            font-size: 24px;
+            line-height: math.div(40, 24);
+        }
+
+        strong {
+            font-weight: 700;
+            font-size: 32px;
+            line-height: math.div(40, 32);
+        }
+    }
+
+    nav {
+        padding-top: 40px;
+        text-align: center;
+
+        ul {
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            border-radius: 23px;
+            background: #565a77;
+        }
+
+        li {
+            width: 100%;
+        }
+
+        a,
+        strong {
+            display: block;
+            height: 46px;
+            border-radius: 23px;
+            color: #a3a7c1;
+            font-size: 22px;
+            line-height: 46px;
+            text-align: center;
+            letter-spacing: -0.04em;
+        }
+
+        li {
+            &:nth-child(1) {
+                a,
+                strong {
+                    width: 90px;
+                }
+            }
+
+            &:nth-child(2) {
+                a,
+                strong {
+                    width: 150px;
+                }
+            }
+        }
+
+        strong {
+            background: #fff;
+            color: #37bf8a !important;
+            font-weight: $font-weight-black;
+        }
+    }
+
+    > div > ul {
+        position: relative;
+        width: min(calc(100% - 40px), 400px);
+        margin: 40px auto 0;
+        //border: 1px solid #fff;
+        aspect-ratio: 400 / 539;
+
+        a {
+            display: block;
+            position: relative;
+            //width: 40px;
+            //height: 40px;
+            width: 18px;
+            height: 22px;
+
+            &::before,
+            &::after {
+                position: absolute;
+                content: "";
+                opacity: 1;
+            }
+
+            &::before {
+                width: 400px;
+                height: 540px;
+                pointer-events: none;
+            }
+
+            &::after {
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: url("/assets/images/benefits/icon_local.png") no-repeat center bottom/18px auto;
+                transition: .15s;
+            }
+        }
+
+        span {
+            position: absolute;
+            bottom: 8px;
+            left: 50%;
+            padding: 0 18px 0 36px;
+            border-radius: 20px;
+            border: 1px solid #6b6b6b;
+            background: #fff url("/assets/images/benefits/icon_local_active.png") no-repeat 12px center/20px auto;
+            color: #000;
+            font-weight: $font-weight-bold;
+            font-size: 20px;
+            line-height: 2;
+            letter-spacing: -0.04em;
+            pointer-events: none;
+            transform: translateX(-50%);
+            opacity: 0;
+            transition: .15s;
+
+            &::before {
+                position: absolute;
+                top: calc(100% - 5px);
+                left: calc(50% - 5px);
+                width: 10px;
+                height: 10px;
+                background: #fff;
+                transform: rotate(45deg);
+                content: "";
+                box-shadow: 1px 1px 0 0 #6b6b6b;
+            }
+        }
+
+        a {
+            &:hover {
+                &::after {
+                    opacity: 0;
+                }
+
+                span {
+                    opacity: 1;
+                }
+            }
+        }
+    }
+
+    p {
+
+    }
+}

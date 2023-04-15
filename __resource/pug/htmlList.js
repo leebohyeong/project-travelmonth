@@ -1,3 +1,4 @@
 module.exports = [
-    {name: 'index'}
+    {name: 'index'},
+    {name: 'benefits-local'},
 ];

@@ -36,13 +36,12 @@ html(lang="ko")
                     }, 13);
                 }
 
-            link(rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.6/dist/web/static/pretendard.css")
             link(rel="stylesheet" href="/assets/css/vendors.css")
             link(rel="stylesheet" href="/assets/css/app.css")
 
             script(src="/assets/js/vendors.js")
             script(src="/assets/js/app.js")
-    body
+    body(id=`travelmonth${bodyId ? '-' + bodyId : ''}`)
         include header
 
         block body

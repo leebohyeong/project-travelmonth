@@ -24,6 +24,7 @@
         "webpack-dev-server": "^4.13.2"
     },
     "dependencies": {
+        "bootstrap": "^5.2.3",
         "hwaly-app": "^1.0.1",
         "normalize.css": "^8.0.1"
     }
