@@ -11,6 +11,19 @@
     --site-footer-logo-mcst-width: 90px;
     --site-footer-logo-1330-width: 84px;
     --site-footer-logo-height: 38px;
+    --benefits-local-header-padding: 36px 0 24px;
+    --benefits-local-header-title-size: 30px;
+    --benefits-local-header-content-size: 12px;
+    --benefits-local-header-line: 1px;
+    --benefits-list-column-size: 2;
+    --benefits-list-column-gap: 8px;
+    --benefits-list-row-gap: 30px;
+
+    @include media-queries($from: lg) {
+        --benefits-list-column-size: 3;
+        --benefits-list-column-gap: 20px;
+        --benefits-list-row-gap: 50px;
+    }
 
     @include media-queries($from: xl) {
         --site-header-height: 80px;
@@ -24,5 +37,9 @@
         --site-footer-logo-mcst-width: 120px;
         --site-footer-logo-1330-width: 112px;
         --site-footer-logo-height: 50px;
+        --benefits-local-header-padding: 90px 0 36px;
+        --benefits-local-header-title-size: 60px;
+        --benefits-local-header-content-size: 20px;
+        --benefits-local-header-line: 2px;
     }
 }

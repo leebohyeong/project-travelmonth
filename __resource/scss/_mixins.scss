@@ -39,16 +39,18 @@
 }
 
 @function is-px($value) {
+    @error type-of($value) == 'number';
+    @error (str-index(inspect($value), px) != null);
     @return (type-of($value) == 'number') and (str-index(inspect($value), px) != null);
 }
 
 $media-queries-breakpoints: (
-    xs: 0,
-    sm: 576px,
-    md: 768px,
-    lg: 992px,
-    xl: 1200px,
-    xxl: 1400px
+        xs: 0,
+        sm: 576px,
+        md: 768px,
+        lg: 992px,
+        xl: 1200px,
+        xxl: 1400px
 ) !default;
 
 @mixin media-queries($args...) {
@@ -95,15 +97,11 @@ $media-queries-breakpoints: (
     $queries: $media-type;
 
     @if $from {
-        @if $has-from and $has-to and is-px($from) {
-            $from: $from + 1;
-        }
-
         $queries: append($queries, "and (min-width: #{$from})", space);
     }
 
     @if $to {
-        $queries: append($queries, "and (max-width: #{$to})", space);
+        $queries: append($queries, "and (max-width: #{$to - 1})", space);
     }
 
     @if $expression {

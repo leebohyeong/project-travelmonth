@@ -132,6 +132,7 @@ body {
             @include media-queries($from: xl) {
                 &::before {
                     height: 100px;
+                    box-shadow: inset 0 -1px 0 #d3d3d3;
                 }
             }
 

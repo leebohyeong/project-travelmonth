@@ -1,0 +1,53 @@
+extends components/layout
+
+append variables
+    - const bodyId = 'benefits-local';
+
+block body
+    .benefits
+        .benefits__container
+            .benefits__menu.benefits__menu--program
+                div
+                    h2
+                        span 여행가는 달의 다양한
+                        strong 여행정보와 여행혜택을<br>확인해 보세요!
+                    nav
+                        ul
+                            li
+                                a(href="#") 지역별
+                            li
+                                strong 프로그램별
+                    div
+                        select
+                            option(value="") 교통혜택
+                        ul
+                            -
+                                const benefitsMenusProgram = [
+                                    {
+                                        type: 'traffic',
+                                        menu: '교통혜택'
+                                    },
+                                    {
+                                        type: 'stay',
+                                        menu: '숙박혜택'
+                                    },
+                                    {
+                                        type: 'play',
+                                        menu: '놀거리혜택'
+                                    },
+                                    {
+                                        type: 'trend',
+                                        menu: '여행트랜드관'
+                                    },
+                                    {
+                                        type: 'event',
+                                        menu: '여행상품 특별 기획전'
+                                    }
+                                ];
+                            each item in benefitsMenusProgram
+                                li
+                                    a(class=`benefits__menu-link benefits__menu-link--${item.type}` href="#")
+                                        span!= item.menu
+            .benefits__content
+
+
