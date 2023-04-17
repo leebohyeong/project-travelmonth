@@ -1,0 +1,62 @@
+- const isBenefitsLocal = bodyId.includes('benefits-local');
+
+div(class=`benefits__menu benefits__menu--${isBenefitsLocal ? 'local' : 'program'}`)
+    div
+        h2
+            span 여행가는 달의 다양한
+            strong 여행정보와 여행혜택을<br>확인해 보세요!
+        nav
+            ul
+                li
+                    if (isBenefitsLocal)
+                        strong 지역별
+                    else
+                        a(href="/html/benefits/local.html") 지역별
+                li
+                    if (!isBenefitsLocal)
+                        strong 프로그램별
+                    else
+                        a(href="/html/benefits/traffic.html") 프로그램별
+        div
+            if (isBenefitsLocal)
+                select
+                    option(value="") 강원
+                ul
+                    li
+                        a(href="#")
+                            span 강원
+            else
+                select
+                    option(value="") 교통혜택
+                ul
+                    -
+                        const benefitsMenusProgram = [
+                            {
+                                type: 'traffic',
+                                menu: '교통혜택'
+                            },
+                            {
+                                type: 'stay',
+                                menu: '숙박혜택'
+                            },
+                            {
+                                type: 'play',
+                                menu: '놀거리혜택'
+                            },
+                            {
+                                type: 'trend',
+                                menu: '여행트랜드관'
+                            },
+                            {
+                                type: 'special',
+                                menu: '여행상품 특별 기획전'
+                            }
+                        ];
+                    each item in benefitsMenusProgram
+                        li
+                            if (bodyId.includes(item.type))
+                                strong(class=`benefits__menu-link benefits__menu-link--${item.type}`)
+                                    span!= item.menu
+                            else
+                                a(class=`benefits__menu-link benefits__menu-link--${item.type}` href=`/html/benefits/${item.type}.html`)
+                                    span!= item.menu

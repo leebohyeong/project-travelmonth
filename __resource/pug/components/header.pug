@@ -7,34 +7,74 @@ nav.quick-visitkorea
 header.site-header
     div
         h1
-            a(href="/")
+            a(href="/html/")
                 span 여행가는 달
         p
             button(type="button")
                 span 메뉴
         nav
-            ul
-                li
-                    a.site-header__nav--current-main(href="#") 여행가는 달이란?
-                    div
-                        ul
-                            li
-                                a(href="#") 여행가는 달 소개
-                            li
-                                a.site-header__nav--current-sub(href="#") 여행가는 달 참여기관
-                li
-                    a(href="#") 여행혜택
-                    div
-                        ul
-                            li
-                                a(href="#") 교통혜택
-                            li
-                                a(href="#") 숙박혜택
-                            li
-                                a(href="#") 놀거리혜택
-                li
-                    a(href="#") 여행트렌드관
-                li
-                    a(href="#") 여행상품 특별 기획전
-                li
-                    a(href="#") 이벤트
+            -
+                const globalNav = [
+                    {
+                        url: '/html/travelmonth/intro.html',
+                        menu: '여행가는 달이란?',
+                        active: 'main',
+                        sub: [
+                            {
+                                url: '/html/travelmonth/intro.html',
+                                menu: '여행가는 달 소개',
+                            },
+                            {
+                                url: '/html/travelmonth/organization.html',
+                                menu: '여행가는 달 참여기관',
+                            }
+                        ]
+                    },
+                    {
+                        url: '/html/benefits/local.html',
+                        menu: '여행혜택',
+                        active: 'main',
+                        sub: [
+                            {
+                                url: '/html/benefits/traffic.html',
+                                menu: '교통혜택',
+                            },
+                            {
+                                url: '/html/benefits/stay.html',
+                                menu: '숙박혜택',
+                            },
+                            {
+                                url: '/html/benefits/play.html',
+                                menu: '놀거리혜택',
+                            }
+                        ]
+                    },
+                    {
+                        url: '/html/benefits/trend.html',
+                        menu: '여행트렌드관',
+                        active: 'sub',
+                    },
+                    {
+                        url: '/html/benefits/special.html',
+                        menu: '여행상품 특별 기획전',
+                        active: 'sub',
+                    },
+                    {
+                        url: '/html/event/list.html',
+                        menu: '이벤트',
+                        active: 'main',
+                    }
+                ];
+                const urlBodyId = bodyId.split('-');
+                const urlBodyIdMain = urlBodyId[0];
+                const urlBodyIdSub = urlBodyId.join('/');
+            ul(data-id=urlBodyIdMain)
+                each item in globalNav
+                    li
+                        a(href=item.url class=`${item.url.includes(item.active === 'main' && !(['trend', 'special'].includes(urlBodyId[1])) ? urlBodyIdMain : urlBodyIdSub) ? 'site-header__nav--current-main' : ''}`)= item.menu
+                        if item.sub
+                            div
+                                ul
+                                    each subItem in item.sub
+                                        li
+                                            a(href=subItem.url class=`${subItem.url.includes(urlBodyIdSub) ? 'site-header__nav--current-sub' : ''}`)= subItem.menu

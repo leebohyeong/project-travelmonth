@@ -155,7 +155,8 @@
                 }
             }
 
-            a {
+            a,
+            strong {
                 display: block;
                 position: relative;
             }
@@ -251,7 +252,8 @@
                     box-shadow: inset 0 1px 0 rgba(#969ab4, .5);
                 }
 
-                a {
+                a,
+                strong {
                     height: 84px;
                     padding-left: 100px;
                     background: {
@@ -264,25 +266,28 @@
                     line-height: 84px;
                     box-shadow: inset 0 -1px 0 rgba(#969ab4, .5);
                     transition: background-color .15s;
+                }
 
-                    &:hover {
-                        background-color: #37bf8a;
-                    }
+                strong,
+                a:hover {
+                    background-color: #37bf8a;
                 }
             }
         }
     }
 
-    &__menu--program &__menu-link {
-        @each $type, $width in (traffic, 36px), (stay, 40px), (play, 39px), (trend, 44px), (event, 31px) {
-            &--#{$type} {
-                background-image: url("/assets/images/benefits/icon_program_#{$type}.png");
-                background-size: $width auto;
+    @each $type, $width in (traffic, 36px), (stay, 40px), (play, 39px), (trend, 44px), (special, 31px) {
+        &__menu--program &__menu-link--#{$type} {
+            background-image: url("/assets/images/benefits/icon_program_#{$type}.png");
+            background-size: $width auto;
 
-                &:hover {
-                    background-image: url("/assets/images/benefits/icon_program_#{$type}_on.png");
-                }
+            &:hover {
+                background-image: url("/assets/images/benefits/icon_program_#{$type}_on.png");
             }
+        }
+
+        &__menu--program strong#{&}__menu-link--#{$type} {
+            background-image: url("/assets/images/benefits/icon_program_#{$type}_on.png");
         }
     }
 
@@ -407,8 +412,6 @@
                     }
                 }
             }
-
-
 
 
         }

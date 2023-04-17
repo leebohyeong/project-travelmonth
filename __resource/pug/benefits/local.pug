@@ -1,4 +1,4 @@
-extends components/layout
+extends ../components/layout
 
 append variables
     - const bodyId = 'benefits-local';
@@ -6,24 +6,7 @@ append variables
 block body
     .benefits
         .benefits__container
-            .benefits__menu.benefits__menu--local
-                div
-                    h2
-                        span 여행가는 달의 다양한
-                        strong 여행정보와 여행혜택을<br>확인해 보세요!
-                    nav
-                        ul
-                            li
-                                strong 지역별
-                            li
-                                a(href="#") 프로그램별
-                    div
-                        select
-                            option(value="") 강원
-                        ul
-                            li
-                                a(href="#")
-                                    span 강원
+            include menu
             .benefits__content
                 article
                     header
