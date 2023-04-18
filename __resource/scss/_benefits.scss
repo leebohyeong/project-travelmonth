@@ -165,80 +165,125 @@
         &--local {
             nav + div {
                 ul {
+                    position: relative;
                     max-width: 400px;
+                    background: url("/assets/images/benefits/map_bg.png") no-repeat right top/auto 100%;
                     aspect-ratio: 400 / 539;
                 }
 
-                a {
-                    //width: 40px;
-                    //height: 40px;
-                    width: 18px;
-                    height: 22px;
+                li {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    pointer-events: none;
+                }
 
-                    &::before,
-                    &::after {
-                        position: absolute;
-                        content: "";
-                        opacity: 1;
-                    }
+                strong + span,
+                a + span {
+                    display: block;
+                    width: 100%;
+                    height: 100%;
+                    background: {
+                        repeat: no-repeat;
+                        position: right top;
+                        size: auto 100%;
+                    };
+                    content: "";
+                    opacity: 0;
+                }
 
-                    &::before {
-                        width: 400px;
-                        height: 540px;
-                        pointer-events: none;
-                    }
+                li {
+                    @each $code, $left, $top in ('01', 98, 116, '서울'), ('02', 278, 384, '부산'), ('03', 238, 320, '대구'), ('04', 72, 132, '인천'), ('05', 80, 390, '광주'),
+                            ('06', 132, 256, '대전'), ('07', 298, 348, '울산'), ('08', 110, 222, '세종'), ('09', 140, 158, '경기'), ('10', 220, 90, '강원'),
+                            ('11', 164, 234, '충북'), ('12', 80, 244, '충남'), ('13', 118, 336, '전북'), ('14', 124, 406, '전남'), ('15', 264, 268, '경북'),
+                            ('16', 190, 362, '경남'), ('17', 82, 528, '제주') {
+                        &[data-sido="#{$code}"] {
+                            a,
+                            strong {
+                                top: percentage(math.div($top - 40, 539));
+                                left: percentage(math.div($left + 10, 400));
+                            }
 
-                    &::after {
-                        top: 0;
-                        left: 0;
-                        width: 100%;
-                        height: 100%;
-                        background: url("/assets/images/benefits/icon_local.png") no-repeat center bottom/18px auto;
-                        transition: .15s;
+                            > span {
+                                background-image: url("/assets/images/benefits/map_#{$code}.png");
+                            }
+                        }
                     }
                 }
 
-                span {
+                strong + span,
+                a:hover + span {
+                    opacity: 1 !important;
+                }
+
+                a,
+                strong {
                     position: absolute;
-                    bottom: 8px;
-                    left: 50%;
-                    padding: 0 18px 0 36px;
-                    border-radius: 20px;
-                    border: 1px solid #6b6b6b;
-                    background: #fff url("/assets/images/benefits/icon_local_on.png") no-repeat 12px center/20px auto;
-                    color: #000;
-                    font-weight: $font-weight-bold;
-                    font-size: 20px;
-                    line-height: 2;
-                    letter-spacing: -0.04em;
-                    white-space: nowrap;
-                    pointer-events: none;
-                    transform: translateX(-50%);
-                    opacity: 0;
-                    transition: .15s;
+                    width: 40px;
+                    height: 40px;
+                    pointer-events: auto;
 
                     &::before {
                         position: absolute;
-                        top: calc(100% - 5px);
-                        left: calc(50% - 5px);
-                        width: 10px;
-                        height: 10px;
-                        background: #fff;
-                        transform: rotate(45deg);
+                        top: 0;
+                        left: 0;
+                        z-index: 10;
+                        width: 100%;
+                        height: 100%;
+                        background: url("/assets/images/benefits/icon_local.png") no-repeat center bottom/18px auto;
                         content: "";
-                        box-shadow: 1px 1px 0 0 #6b6b6b;
+                        opacity: 1;
+                        //transition: .15s;
+                    }
+
+                    span {
+                        position: absolute;
+                        bottom: 8px;
+                        left: 50%;
+                        z-index: 10;
+                        padding: 0 18px 0 36px;
+                        border-radius: 20px;
+                        border: 1px solid #6b6b6b;
+                        background: #fff url("/assets/images/benefits/icon_local_on.png") no-repeat 12px center/20px auto;
+                        color: #000;
+                        font-weight: $font-weight-bold;
+                        font-size: 20px;
+                        line-height: 2;
+                        letter-spacing: -0.04em;
+                        white-space: nowrap;
+                        pointer-events: none;
+                        transform: translateX(-50%);
+                        opacity: 0;
+                        //transition: .15s;
+
+                        &::before {
+                            position: absolute;
+                            top: calc(100% - 5px);
+                            left: calc(50% - 5px);
+                            width: 10px;
+                            height: 10px;
+                            background: #fff;
+                            transform: rotate(45deg);
+                            content: "";
+                            box-shadow: 1px 1px 0 0 #6b6b6b;
+                        }
                     }
                 }
 
                 a {
                     &:hover {
-                        &::after {
-                            opacity: 0;
-                        }
-
                         span {
+                            z-index: 20;
                             opacity: 1;
                         }
+                    }
+                }
+
+                strong {
+                    span {
+                        opacity: 1;
                     }
                 }
             }
@@ -293,7 +338,7 @@
 
     &__content {
         flex-grow: 1;
-        padding: 0 var(--site-content-padding);
+        padding: var(--site-content-padding);
 
         article {
             max-width: (374px * 3 + 20 * 2);

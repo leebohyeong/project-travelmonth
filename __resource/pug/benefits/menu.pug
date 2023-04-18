@@ -19,12 +19,21 @@ div(class=`benefits__menu benefits__menu--${isBenefitsLocal ? 'local' : 'program
                         a(href="/html/benefits/traffic.html") 프로그램별
         div
             if (isBenefitsLocal)
+                -
+                    const sidoList = ['전국', '서울', '부산', '대구', '인천', '광주', '대전', '울산', '세종', '경기', '강원', '충북', '충남', '전북', '전남', '경북', '경남', '제주'];
                 select
-                    option(value="") 강원
+                    each name, index in sidoList.slice(1)
+                        option(value=`${(index + 1 + '').padStart(2, '0')}`)= name
                 ul
-                    li
-                        a(href="#")
-                            span 강원
+                    li(data-sido="01")
+                        strong
+                            span 서울
+                        span
+                    each name, index in sidoList.slice(1)
+                        li(data-sido=`${(index + 1 + '').padStart(2, '0')}`)
+                            a(href="#")
+                                span= name
+                            span
             else
                 select
                     option(value="") 교통혜택

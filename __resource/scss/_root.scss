@@ -2,7 +2,7 @@
     --site-header-height: 56px;
     --logo-travelmonth-width: 96px;
     --logo-travelmonth-height: var(--site-header-height);
-    --site-content-padding: 14px;
+    --site-content-padding: 0 14px 60px;
     --site-footer-padding-vertical: 20px;
     --site-footer-padding-horizon:  14px;
     --site-footer-copyright-margin: 20px;
@@ -28,7 +28,7 @@
     @include media-queries($from: xl) {
         --site-header-height: 80px;
         --logo-travelmonth-width: 148px;
-        --site-content-padding: 30px;
+        --site-content-padding: 0 30px 240px;
         --site-footer-padding-vertical: 40px;
         --site-footer-padding-horizon:  30px;
         --site-footer-copyright-margin: 40px;

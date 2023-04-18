@@ -43,7 +43,6 @@ html(lang="ko")
             script(src="/assets/js/app.js")
     body(id=`travelmonth${bodyId ? '-' + bodyId : ''}`)
         include header
-
-        block body
-
+        #container
+            block body
         include footer
