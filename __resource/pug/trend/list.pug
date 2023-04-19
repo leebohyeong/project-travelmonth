@@ -48,9 +48,69 @@ block body
             p
                 button(type="button") MORE
 
-        #modal-trend-content-1.modal.fade(tabindex="-1" data-bs-backdrop="static" aria-hidden="true")
+        #modal-trend-content-1.modal.fade.modal-trend-content(data-theme="a" tabindex="-1" data-bs-backdrop="static" aria-hidden="true")
             .modal-dialog
                 .modal-content
+                    article
+                        h3.modal-trend-content__title 댕댕이와 사람이 함께<br>행복한 강아지 숲 5스팟
+                        ul.modal-trend-content__tab
+                            li
+                                a.modal-trend-content__tab-item(href="#") 추천1
+                            li
+                                a.modal-trend-content__tab-item(href="#") 추천2
+                            li
+                                a.modal-trend-content__tab-item(href="#") 추천3
+                        .modal-trend-content__thumbnail
+                            div(style="background-image: url('https://cdn.visitkorea.or.kr/img/call?cmd=VIEW&id=3f8fbd92-6b7e-46ba-9161-21bfd76e8e1b&mode=progress')")
+                        .modal-trend-content__panel
+                            h4.modal-trend-content__panel-title 1. 휘바핀란드(강원도 홍천)
+                            .modal-trend-content__panel-contents
+                                p 이색 동물들과 함께하는 방목 체험형 동물원이라고 생각하시면 될 것 같아요! 울타리가 없는 방목형 양떼목장이라서 강아지 여행 하며 사람 아이도 함께하는 여행이라면 함께 가보기에 좋은 장소입니다.
+                                p
+                                    img(src="https://cdn.visitkorea.or.kr/img/call?cmd=VIEW&id=f6c2cdb3-7c48-4ec1-b326-33e19002b0f1&mode=progress" alt="붉은 다리")
+                                p 무엇보다 애견동반 여행 중에 확 트인 초원을 볼 수 있어 좋은 곳이었는데요. 아이가 양떼 목장에서 먹이 주는 것만 재미있어 해서 못 가봤지만...
+                            dl.modal-trend-content__panel-info
+                                div
+                                    dt 주소
+                                    dd
+                                        div 경기 안성시 공도읍 대신두길 28
+                                div
+                                    dt 테스트
+                                    dd
+                                        div 테스트 내용1
+                                        div 테스트 내용2
+                        .modal-trend-content__panel
+                            h4.modal-trend-content__panel-title 2
+                        .modal-trend-content__panel
+                            h4.modal-trend-content__panel-title 3
                     button.modal-close(type="button" data-bs-dismiss="modal" aria-label="Close")
 
+        #modal-trend-content-2.modal.fade.modal-trend-content(data-theme="a" tabindex="-1" data-bs-backdrop="static" aria-hidden="true")
+            .modal-dialog
+                .modal-content
+                    article
+                        h3.modal-trend-content__title 댕댕이와 사람이 함께<br>행복한 강아지 숲 5스팟
+                        .modal-trend-content__thumbnail
+                            div(style="background-image: url('https://cdn.visitkorea.or.kr/img/call?cmd=VIEW&id=3f8fbd92-6b7e-46ba-9161-21bfd76e8e1b&mode=progress')")
+                        .modal-trend-content__panel.modal-trend-content__panel--active
+                            h4.modal-trend-content__panel-title 1. 휘바핀란드(강원도 홍천)
+                            .modal-trend-content__panel-contents
+                                p 이색 동물들과 함께하는 방목 체험형 동물원이라고 생각하시면 될 것 같아요! 울타리가 없는 방목형 양떼목장이라서 강아지 여행 하며 사람 아이도 함께하는 여행이라면 함께 가보기에 좋은 장소입니다.
+                                p
+                                    img(src="https://cdn.visitkorea.or.kr/img/call?cmd=VIEW&id=f6c2cdb3-7c48-4ec1-b326-33e19002b0f1&mode=progress" alt="붉은 다리")
+                                p 무엇보다 애견동반 여행 중에 확 트인 초원을 볼 수 있어 좋은 곳이었는데요. 아이가 양떼 목장에서 먹이 주는 것만 재미있어 해서 못 가봤지만...
+                            dl.modal-trend-content__panel-info
+                                div
+                                    dt 주소
+                                    dd
+                                        div 경기 안성시 공도읍 대신두길 28
+                                div
+                                    dt 테스트
+                                    dd
+                                        div 테스트 내용1
+                                        div 테스트 내용2
+                    button.modal-close(type="button" data-bs-dismiss="modal" aria-label="Close")
+
+        script.
+            // document.querySelector('[data-bs-target="#modal-trend-content-1"]').click();
 

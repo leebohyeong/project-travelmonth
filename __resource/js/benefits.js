@@ -1,4 +1,4 @@
-import {findOne, find} from './helper';
+import {findOne, find, on} from './helper';
 
 const benefitsLocal = () => {
     const menu = findOne('.benefits__menu--local nav + div');
@@ -8,8 +8,8 @@ const benefitsLocal = () => {
     const showLocal = () => currentItem.classList.remove(activeLocalClassName);
     const removeLocal = () => currentItem.classList.add(activeLocalClassName);
     const togglEvent = (item) => {
-        item.addEventListener('mouseenter', removeLocal);
-        item.addEventListener('mouseleave', showLocal);
+        on(item, 'mouseenter', removeLocal);
+        on(item, 'mouseleave', showLocal);
     };
 
     // localItems.forEach(item => togglEvent(item));

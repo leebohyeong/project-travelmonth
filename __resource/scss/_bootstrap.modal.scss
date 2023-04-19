@@ -39,11 +39,11 @@
 }
 
 .modal-content {
+    overflow: hidden;
     position: relative;
     width: 100%;
-    padding: 22px;
     border-radius: 6px;
-    border: 1px solid rgba(0 0 0 / 17.5%);
+    border: 1px solid rgba(0 0 0 / 0.5%);
     background-color: #fff;
     background-clip: padding-box;
     pointer-events: auto;

@@ -1,0 +1,129 @@
+@use "sass:math";
+
+.modal-trend-content {
+    &__title {
+        padding: 44px 20px 24px;
+        background: #37bf8a;
+        color: #fff;
+        font-weight: $font-weight-extraBold;
+        font-size: 30px;
+        line-height: math.div(36, 30);
+        text-align: center;
+        letter-spacing: -0.05em;
+    }
+
+    &__tab {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        padding: 0 8px 24px;
+        background: #37bf8a;
+
+        li {
+            padding: 2px;
+        }
+    }
+
+    &__tab-item {
+        display: block;
+        padding: 0 20px;
+        border-radius: 16px;
+        color: #fff;
+        font-weight: $font-weight-medium;
+        line-height: 32px;
+        white-space: nowrap;
+        opacity: .8;
+        box-shadow: inset 0 0 0 1px #fff;
+
+        &--active {
+            background: #fff;
+            color: #37bf8a;
+            opacity: 1;
+        }
+    }
+
+    &__thumbnail {
+        padding: 0 20px;
+        background: linear-gradient(to bottom, #37bf8a 0%, #37bf8a 56%, #fff 56%, #fff 100%);
+
+        div {
+            border-radius: 32px;
+            background: {
+                repeat: no-repeat;
+                position: center;
+                size: cover;
+            };
+            aspect-ratio: 374/255;
+            box-shadow: inset 0 0 0 5px #37bf8a;
+        }
+    }
+
+    &__panel {
+        display: none;
+        padding: 36px 20px;
+
+        &--active {
+            display: block;
+        }
+    }
+
+    &__panel-title {
+        color: #3d3d3d;
+        font-weight: $font-weight-semiBold;
+        font-size: 20px;
+        line-height: math.div(28, 20);
+        letter-spacing: -0.05em;
+    }
+
+    &__panel-contents {
+        color: #303030;
+        font-weight: $font-weight-light;
+        font-size: 16px;
+        line-height: math.div(28, 16);
+
+        p {
+            padding-top: 16px;
+        }
+
+        img {
+            width: 100%;
+        }
+    }
+
+    &__panel-info {
+        margin-top: 16px;
+        padding: 16px;
+        border-radius: 12px;
+        background: #eee;
+        font-weight: $font-weight-medium;
+
+        > div {
+            display: flex;
+            align-items: flex-start;
+
+            &:not(:first-child) {
+                margin-top: 8px;
+            }
+        }
+
+        dt {
+            display: flex;
+            align-items: center;
+            color: #37bf8a;
+
+            &::after {
+                padding: 0 4px;
+                color: #303030;
+                font-weight: $font-weight-light;
+                content: ":";
+                opacity: .8;
+            }
+        }
+
+        dd {
+            flex-grow: 1;
+            color: #303030;
+        }
+    }
+}
