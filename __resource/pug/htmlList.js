@@ -6,7 +6,7 @@ module.exports = [
     {name: 'benefits/traffic'},
     {name: 'benefits/stay'},
     {name: 'benefits/play'},
-    {name: 'benefits/trend'},
-    {name: 'benefits/special'},
+    {name: 'trend/list'},
+    {name: 'special/list'},
     {name: 'event/list'},
 ];

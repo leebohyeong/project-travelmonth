@@ -192,6 +192,7 @@
                     };
                     content: "";
                     opacity: 0;
+                    transition: .15s;
                 }
 
                 li {
@@ -215,7 +216,7 @@
 
                 strong + span,
                 a:hover + span {
-                    opacity: 1 !important;
+                    opacity: 1;
                 }
 
                 a,
@@ -224,6 +225,7 @@
                     width: 40px;
                     height: 40px;
                     pointer-events: auto;
+                    cursor: pointer;
 
                     &::before {
                         position: absolute;
@@ -235,6 +237,7 @@
                         background: url("/assets/images/benefits/icon_local.png") no-repeat center bottom/18px auto;
                         content: "";
                         opacity: 1;
+                        cursor: pointer;
                         //transition: .15s;
                     }
 
@@ -256,6 +259,7 @@
                         pointer-events: none;
                         transform: translateX(-50%);
                         opacity: 0;
+                        cursor: pointer;
                         //transition: .15s;
 
                         &::before {
@@ -321,6 +325,12 @@
         }
     }
 
+    &__menu-item--local-hide {
+        strong + span {
+            opacity: 0 !important;
+        }
+    }
+
     @each $type, $width in (traffic, 36px), (stay, 40px), (play, 39px), (trend, 44px), (special, 31px) {
         &__menu--program &__menu-link--#{$type} {
             background-image: url("/assets/images/benefits/icon_program_#{$type}.png");
@@ -370,92 +380,7 @@
             }
 
             > div {
-                padding-top: 90px;
 
-                h3 {
-                    position: relative;
-                    padding-left: 12px;
-                    font-weight: $font-weight-medium;
-                    font-size: 35px;
-                    line-height: 46px;
-                    letter-spacing: -0.02em;
-
-                    &::before {
-                        position: absolute;
-                        top: 0;
-                        left: 0;
-                        width: 10px;
-                        height: 10px;
-                        border-radius: 50%;
-                        background: #27d491;
-                        content: "";
-                    }
-                }
-
-                ul {
-                    display: grid;
-                    grid-template-columns: repeat(var(--benefits-list-column-size), 1fr);
-                    grid-column-gap: var(--benefits-list-column-gap);
-                    grid-row-gap: var(--benefits-list-row-gap);
-                    margin-top: 18px;
-                }
-
-                li {
-                    span {
-                        display: block;
-                        overflow: hidden;
-                        border-radius: 14px;
-                        background: {
-                            repeat: no-repeat;
-                            position: center;
-                            size: cover;
-                        };
-                        aspect-ratio: 374 / 255;
-
-                        @include media-queries($from: lg) {
-                            border-radius: 28px;
-                        }
-                    }
-
-                    p {
-                        &:nth-of-type(1) {
-                            width: 70px;
-                            margin-top: 24px;
-                            border-radius: 13px;
-                            color: #fff;
-                            font-size: 13px;
-                            line-height: 26px;
-                            text-align: center;
-                            white-space: nowrap;
-                        }
-
-                        &:nth-of-type(2) {
-                            margin-top: 12px;
-                            color: #000;
-                            font-weight: $font-weight-medium;
-                            font-size: 20px;
-                            line-height: math.div(24, 20);
-                            letter-spacing: -0.03em;
-                        }
-                    }
-                }
-
-                > p {
-                    padding-top: 60px;
-                    text-align: center;
-
-                    button {
-                        width: 180px;
-                        border-radius: 26px;
-                        border: 2px solid #8c8c8c;
-                        background: #fff;
-                        color: #8c8c8c;
-                        font-weight: $font-weight-bold;
-                        font-size: 20px;
-                        line-height: 48px;
-                        appearance: none;
-                    }
-                }
             }
 
 

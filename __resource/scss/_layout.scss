@@ -16,24 +16,49 @@ body {
 
     div {
         max-width: 1750px;
-        height: 70px;
+        height: var(--logo-travelmonth-height);
         margin: 0 auto;
-        padding: 15px 0 0 25px;
+        padding: calc((var(--logo-travelmonth-height) - 24px) / 2) 0 0 var(--site-padding-horizon);
+
+        @include media-queries($from: xl) {
+            height: 70px;
+            padding: 15px 0 0 25px;
+
+            @at-root #travelmonth-main & {
+                max-width: 1200px;
+                padding-left: 0;
+            }
+        }
     }
 
     a {
-        display: block;
-        width: 248px;
-        height: 40px;
-        padding-right: 12px;
+        display: inline-block;
+        height: 24px;
+        padding: 0 16px 0 10px;
         border-radius: 3px;
         border: 1px solid #d7d8db;
-        background: url("/assets/images/common/icon_quick_visitkorea.png") no-repeat right 14px center/7px auto;
+        background: url("/assets/images/common/icon_quick_visitkorea.png") no-repeat right 9px center/4px auto;
         color: #000;
-        font-size: 20px;
-        line-height: 38px;
+        font-size: 12px;
+        line-height: 22px;
         text-align: center;
+        vertical-align: top;
         text-decoration: none;
+
+        @include media-queries($from: xl) {
+            height: 40px;
+            padding: 0 28px 0 15px;
+            font-size: 20px;
+            line-height: 38px;
+            background-position: right 14px center;
+            background-size: 7px auto;
+
+            @at-root #travelmonth-main & {
+                padding-left: 0;
+                border: 0;
+                line-height: 40px;
+            }
+        }
     }
 }
 
@@ -54,6 +79,11 @@ body {
         @include media-queries($from: xl) {
             justify-content: space-between;
             padding: 0 0 0 40px;
+
+            @at-root #travelmonth-main & {
+                max-width: 1200px;
+                border-radius: 8px;
+            }
         }
     }
 
@@ -106,7 +136,7 @@ body {
             bottom: 0;
             left: 0;
             width: 100%;
-            text-align: center;
+            padding: 0 var(--site-padding-horizon);
         }
 
         &::before {
@@ -164,12 +194,14 @@ body {
             display: inline-flex;
             justify-content: center;
             align-items: center;
+            padding-left: 36px;
             color: #424242;
             white-space: nowrap;
             transition: .15s;
 
             @include media-queries($from: xl) {
                 display: flex;
+                padding-left: 0;
             }
         }
 
@@ -200,6 +232,12 @@ body {
             }
 
             > li {
+                @include media-queries($to: 'xl') {
+                    &:not(:first-child) {
+                        border-top: 1px solid #e5e5e5;
+                    }
+                }
+
                 > a {
                     position: relative;
                     height: var(--site-header-height);
@@ -245,10 +283,14 @@ body {
             }
 
             a {
-                padding: 4px 0;
+                padding: 4px 36px;
                 font-weight: $font-weight-light;
                 font-size: 16px;
                 line-height: math.div(20, 16);
+
+                @include media-queries($from: 'xl') {
+                    padding: 4px 0;
+                }
             }
         }
     }
@@ -269,7 +311,24 @@ body {
     .open-global-nav {
         overflow: hidden;
 
+        .quick-visitkorea {
+            display: block;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 210;
+        }
+
         .site-header {
+            h1 {
+                opacity: 0;
+                pointer-events: none;
+            }
+
+            h1 + p button {
+                background-image: url("/assets/images/common/icon_global_nav_close.png");
+            }
+
             nav {
                 display: block;
             }
@@ -356,6 +415,127 @@ body {
 
         span {
             @include visually-hidden;
+        }
+    }
+}
+
+.list-thumbnail {
+    padding-top: 90px;
+
+    h3 {
+        position: relative;
+        padding-left: 12px;
+        font-weight: $font-weight-medium;
+        font-size: 35px;
+        line-height: 46px;
+        letter-spacing: -0.02em;
+
+        &::before {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: #27d491;
+            content: "";
+        }
+    }
+
+    ul {
+        display: grid;
+        grid-template-columns: repeat(var(--benefits-list-column-size), 1fr);
+        grid-column-gap: var(--benefits-list-column-gap);
+        grid-row-gap: var(--benefits-list-row-gap);
+        margin-top: 18px;
+    }
+
+    li {
+        span {
+            display: block;
+            overflow: hidden;
+            border-radius: 14px;
+            background: {
+                repeat: no-repeat;
+                position: center;
+                size: cover;
+            };
+            aspect-ratio: 374 / 255;
+
+            @include media-queries($from: lg) {
+                border-radius: 28px;
+            }
+        }
+    }
+
+    a {
+        p {
+            &:last-child {
+                margin-top: 12px;
+                color: #000;
+                font-weight: $font-weight-medium;
+                font-size: 20px;
+                line-height: math.div(24, 20);
+                letter-spacing: -0.03em;
+            }
+        }
+    }
+
+    > p {
+        padding-top: 60px;
+        text-align: center;
+
+        button {
+            width: 180px;
+            border-radius: 26px;
+            border: 2px solid #8c8c8c;
+            background: #fff;
+            color: #8c8c8c;
+            font-weight: $font-weight-bold;
+            font-size: 20px;
+            line-height: 48px;
+            appearance: none;
+        }
+    }
+
+    &--benefits {
+        li {
+            p {
+                &:nth-of-type(1) {
+                    width: 70px;
+                    margin-top: 24px;
+                    border-radius: 13px;
+                    color: #fff;
+                    font-size: 13px;
+                    line-height: 26px;
+                    text-align: center;
+                    white-space: nowrap;
+                }
+            }
+
+            & [data-type="d"] {
+                background: #8979ff;
+            }
+
+            & [data-type="t"] {
+                background: #3ab3ee;
+            }
+
+            & [data-type="e"] {
+                background: #f69b30;
+            }
+        }
+    }
+
+    &--goods {
+        li {
+            p {
+                &:nth-of-type(1) {
+                    margin-top: 24px;
+                    color: #000;
+                    font-size: 16px;
+                }
+            }
         }
     }
 }
