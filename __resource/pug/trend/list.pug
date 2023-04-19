@@ -4,5 +4,53 @@ append variables
     - const bodyId = 'trend-list';
 
 block body
+    article
+        header
+            h2 서울 여행
+            p 지역별 다양한 여행혜택과 여행상품을 보다 빠르고 쉽게 만나보세요!
+
+        section.list-thumbnail.list-thumbnail--benefits
+            h3 여행혜택
+            ul
+                li
+                    a(href="#" data-bs-toggle="modal" data-bs-target="#modal-benefits-1")
+                        span(style="background-image: url('https://cdn.visitkorea.or.kr/img/call?cmd=VIEW&id=3f8fbd92-6b7e-46ba-9161-21bfd76e8e1b&mode=progress')")
+                        p(data-type="d") 할인혜택
+                        p 산속등대 어뮤즈월드<br>이용요금 반값 할인
+                li
+                    a(href="#" data-bs-toggle="modal" data-bs-target="#modal-benefits-2")
+                        span(style="background-image: url('https://cdn.visitkorea.or.kr/img/call?cmd=VIEW&id=de35655e-97a2-4a2d-8da0-812767f53fef&mode=progress')")
+                        p(data-type="t") 여행정보
+                        p 고래바다여행선 타고, 호캉스 가자
+                li
+                    a(href="#")
+                        span(style="background-image: url('https://cdn.visitkorea.or.kr/img/call?cmd=VIEW&id=f6c2cdb3-7c48-4ec1-b326-33e19002b0f1&mode=progress')")
+                        p(data-type="e") 이벤트
+                        p 경북으로 떠나는 친환경 기차여행 이벤트
+            p
+                button(type="button") MORE
+
+        section.list-thumbnail.list-thumbnail--contents
+            h3 여행상품
+            ul
+                li
+                    a(href="#" data-bs-toggle="modal" data-bs-target="#modal-trend-content-1")
+                        span(style="background-image: url('https://cdn.visitkorea.or.kr/img/call?cmd=VIEW&id=3f8fbd92-6b7e-46ba-9161-21bfd76e8e1b&mode=progress')")
+                        p 산속등대 어뮤즈월드<br>이용요금 반값 할인
+                li
+                    a(href="#" data-bs-toggle="modal" data-bs-target="#modal-trend-content-2")
+                        span(style="background-image: url('https://cdn.visitkorea.or.kr/img/call?cmd=VIEW&id=de35655e-97a2-4a2d-8da0-812767f53fef&mode=progress')")
+                        p 고래바다여행선 타고, 호캉스 가자
+                li
+                    a(href="#" data-bs-toggle="modal" data-bs-target="#modal-trend-content-3")
+                        span(style="background-image: url('https://cdn.visitkorea.or.kr/img/call?cmd=VIEW&id=f6c2cdb3-7c48-4ec1-b326-33e19002b0f1&mode=progress')")
+                        p 경북으로 떠나는 친환경 기차여행 이벤트
+            p
+                button(type="button") MORE
+
+        #modal-trend-content-1.modal.fade(tabindex="-1" data-bs-backdrop="static" aria-hidden="true")
+            .modal-dialog
+                .modal-content
+                    button.modal-close(type="button" data-bs-dismiss="modal" aria-label="Close")
 
 

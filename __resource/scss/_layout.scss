@@ -470,8 +470,9 @@ body {
 
     a {
         p {
+            margin-top: 24px;
+
             &:last-child {
-                margin-top: 12px;
                 color: #000;
                 font-weight: $font-weight-medium;
                 font-size: 20px;
@@ -503,13 +504,16 @@ body {
             p {
                 &:nth-of-type(1) {
                     width: 70px;
-                    margin-top: 24px;
                     border-radius: 13px;
                     color: #fff;
                     font-size: 13px;
                     line-height: 26px;
                     text-align: center;
                     white-space: nowrap;
+                }
+
+                &:last-child {
+                    margin-top: 12px;
                 }
             }
 
@@ -531,9 +535,146 @@ body {
         li {
             p {
                 &:nth-of-type(1) {
-                    margin-top: 24px;
                     color: #000;
                     font-size: 16px;
+                }
+            }
+        }
+    }
+
+    &--contents {
+        li {
+            p {
+                &:last-child {
+                }
+            }
+        }
+    }
+}
+
+
+.modal-benefits {
+    &[data-type="d"] {
+        --modal-benefits-color: #8979ff;
+    }
+
+    &[data-type="t"] {
+        --modal-benefits-color: #3ab3ee;
+    }
+
+    &[data-type="e"] {
+        --modal-benefits-color: #f69b30;
+    }
+
+    article {
+        > div {
+            &:nth-of-type(1) {
+                border-radius: 32px;
+                background: {
+                    repeat: no-repeat;
+                    position: center;
+                    size: cover;
+                };
+                aspect-ratio: 374/255;
+                box-shadow: inset 0 0 0 5px var(--modal-benefits-color);
+            }
+
+            &:nth-of-type(2) {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                padding: 24px 24px 0;
+            }
+        }
+
+        div p {
+            letter-spacing: -0.05em;
+
+            &:nth-of-type(1) {
+                width: 84px;
+                height: 30px;
+                border: 1px solid var(--modal-benefits-color);
+                color: var(--modal-benefits-color);
+                font-size: 16px;
+                line-height: 28px;
+                text-align: center;
+            }
+
+            &:nth-of-type(2) {
+                width: calc(100% - 94px);
+                color: #3d3d3d;
+                font-weight: 500;
+                font-size: 20px;
+                font-family: 'GmarketSans', sans-serif;
+            }
+        }
+
+        h3 {
+            padding: 10px 24px 0;
+            color: #000;
+            font-weight: 500;
+            font-size: 30px;
+            line-height: math.div(36, 30);
+            font-family: 'GmarketSans', sans-serif;
+        }
+
+        dl {
+            padding: 30px 24px 0;
+            color: #303030;
+            font-weight: $font-weight-light;
+            font-size: 16px;
+            line-height: 1.5;
+
+            > div {
+                display: flex;
+                align-items: flex-start;
+
+                &:not(:first-child) {
+                    margin-top: 8px;
+                }
+            }
+
+            dt {
+                display: flex;
+                align-items: center;
+
+                &::before {
+                    width: 4px;
+                    height: 4px;
+                    margin-right: 6px;
+                    background: #cecece;
+                    content: "";
+                }
+
+                &::after {
+                    padding: 0 4px;
+                    content: ":";
+                }
+            }
+
+            dd {
+                flex-grow: 1;
+            }
+        }
+
+        > p {
+            &:last-child {
+                padding: 50px 0 30px;
+
+                a {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    width: 220px;
+                    height: 56px;
+                    margin: 0 auto;
+                    border-radius: 28px;
+                    border: 0;
+                    background: var(--modal-benefits-color);
+                    color: #fff;
+                    font-size: 20px;
+                    letter-spacing: -0.025em;
+                    appearance: none;
                 }
             }
         }
