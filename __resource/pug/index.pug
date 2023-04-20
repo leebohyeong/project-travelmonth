@@ -132,10 +132,10 @@ block body
                     제주바다
 
     section.main__event
-        header
+        header.main__header
             h2 이벤트
             p 여행가는 달에서 준비한 다양한 이벤트를 만나보세요!
-            button(type="button") 이벤트 바로가기
+            a(href="#") 이벤트 바로가기
         div.swiper
             div.swiper-wrapper
                 div.swiper-slide.
@@ -148,19 +148,29 @@ block body
                     #[p 부모님과 여.행.기 <br> SNS 댓글 이벤트]
 
     section.main__organization
-        h2 여행가는 달 참여기관
+        header.main__header
+            h2 여행가는 달 참여기관
         div.swiper
             div.swiper-wrapper
-                div.swiper-slide(style="background-image:url(/assets/images)")
-                div.swiper-slide(style="background-image:url(/assets/images)")
-                div.swiper-slide(style="background-image:url(/assets/images)")
-                div.swiper-slide(style="background-image:url(/assets/images)")
+                div.swiper-slide
+                    img(src="/assets/images/main/img_organization_1.png")
+                div.swiper-slide
+                    img(src="/assets/images/main/img_organization_2.png")
+                div.swiper-slide
+                    img(src="/assets/images/main/img_organization_3.png")
+                div.swiper-slide
+                    img(src="/assets/images/main/img_organization_4.png")
+                div.swiper-slide
+                    img(src="/assets/images/main/img_organization_5.png")
+                div.swiper-slide
+                    img(src="/assets/images/main/img_organization_6.png")
+
 
     section.main__travel
         header
             h2 대한민국은 절찬여행중
             p.
-                6월, 꿈꿔왔던 여행의 주인공이 되어보세요!
+                6월, 꿈꿔왔던 여행의 주인공이 되어보세요! <br>
                 #[strong 여행가는 달] #[strong 2023.6.1 - 6.30]
             a(href="#") 여행가는 달 자세히보기
 
@@ -169,7 +179,7 @@ block body
             span.screen_out 여행으로[웃음을]재생하기
 
     section.main__instagram
-        header
+        header.main__header
             h2 INSTAGRAM
             a(href="#") 여행가는 달 인스타그램 방문하기
         ul
