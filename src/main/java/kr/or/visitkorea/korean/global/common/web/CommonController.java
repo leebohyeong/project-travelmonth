@@ -1,6 +1,7 @@
 package kr.or.visitkorea.korean.global.common.web;
 
 import kr.or.visitkorea.korean.event.service.EventService;
+import kr.or.visitkorea.korean.instagram.service.InstagramService;
 import kr.or.visitkorea.korean.showcase.service.ShowcaseService;
 import lombok.RequiredArgsConstructor;
 import org.slf4j.Logger;
@@ -16,6 +17,7 @@ public class CommonController<T> {
 
 	private final EventService EVENT_SERVICE;
 	private final ShowcaseService SHOWCASE_SERVICE;
+	private final InstagramService INSTAGRAM_SERVICE;
 	private static final Logger LOGGER = LoggerFactory.getLogger(CommonController.class);
 
 	/**
@@ -29,6 +31,7 @@ public class CommonController<T> {
 		try {
 			model.addAttribute("event", EVENT_SERVICE.getMainList());
 			model.addAttribute("showcase", SHOWCASE_SERVICE.getList());
+			model.addAttribute("instagram", INSTAGRAM_SERVICE.getList());
 		} catch (Exception exception) {
 			LOGGER.error("Main Page Exception : ", exception);
 		}
