@@ -41,6 +41,16 @@
             max-width: 1440px;
             margin: 0 auto;
         }
+
+        .swiper {
+            &-slide {
+                width: auto;
+
+                a {
+                    display: block;
+                }
+            }
+        }
     }
 
     &__organization {
@@ -57,17 +67,21 @@
             padding-top: 28px;
         }
 
-        .swiper-wrapper {
-            align-items: center;
-        }
+        .swiper {
+            &_wrapper {
+                align-items: center;
+            }
 
-        .swiper-slide {
-            a {
-                display: block;
-                background-position: center;
-                background-repeat: no-repeat;
-                background-size: contain;
-                text-align: center;
+            &-slide {
+                width: auto;
+
+                a {
+                    display: block;
+                    background-position: center;
+                    background-repeat: no-repeat;
+                    background-size: contain;
+                    text-align: center;
+                }
             }
         }
     }
