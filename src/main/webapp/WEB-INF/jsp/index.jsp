@@ -153,17 +153,17 @@
 				<div class="swiper">
 					<div class="swiper-wrapper">
 						<div class="swiper-slide"><a href="#" target="_blank"><img
-								src="/assets/images/main/img_organization_1.png"></a></div>
+								src="${pageContext.request.contextPath}/assets/images/main/img_organization_1.png"></a></div>
 						<div class="swiper-slide"><a href="#" target="_blank"><img
-								src="/assets/images/main/img_organization_2.png"></a></div>
+								src="${pageContext.request.contextPath}/assets/images/main/img_organization_2.png"></a></div>
 						<div class="swiper-slide"><a href="#" target="_blank"><img
-								src="/assets/images/main/img_organization_3.png"></a></div>
+								src="${pageContext.request.contextPath}/assets/images/main/img_organization_3.png"></a></div>
 						<div class="swiper-slide"><a href="#" target="_blank"><img
-								src="/assets/images/main/img_organization_4.png"></a></div>
+								src="${pageContext.request.contextPath}/assets/images/main/img_organization_4.png"></a></div>
 						<div class="swiper-slide"><a href="#" target="_blank"><img
-								src="/assets/images/main/img_organization_5.png"></a></div>
+								src="${pageContext.request.contextPath}/assets/images/main/img_organization_5.png"></a></div>
 						<div class="swiper-slide"><a href="#" target="_blank"><img
-								src="/assets/images/main/img_organization_6.png"></a></div>
+								src="${pageContext.request.contextPath}/assets/images/main/img_organization_6.png"></a></div>
 					</div>
 				</div>
 			</div>
