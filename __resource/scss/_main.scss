@@ -43,30 +43,178 @@
         }
     }
 
-    //&__benefits {
-    //    padding: 0 14px;
-    //
-    //    dl {
-    //        display: grid;
-    //        grid-template-columns: repeat(2, 1fr);
-    //        grid-gap: 20px;
-    //
-    //        @include media-queries($from: xl) {
-    //            grid-template-columns: repeat(3, 1fr);
-    //        }
-    //    }
-    //
-    //    dl > div {
-    //        position: relative;
-    //        padding-top: percentage(math.div(251, 322));
-    //
-    //        @include media-queries($from: xl) {
-    //            &:last-of-type {
-    //                display: none;
-    //            }
-    //        }
-    //    }
-    //}
+    &__trend {
+        max-width: 1920px;
+        margin: 0 auto;
+
+        h2 {
+            font: {
+                family: "GmarketSans", sans-serif;
+                weight: $font-weight-bold;
+            }
+            text-align: center;
+        }
+
+        @include media-queries($from: xl) {
+            h2 {
+                font-size: 42px;
+            }
+        }
+
+        .trend-swiper {
+            max-width: 1630px;
+            margin: 50px auto 0;
+            padding: 0 14px;
+            box-sizing: border-box;
+
+            .swiper {
+                &-slide {
+                    width: auto;
+
+
+                    @for $i from 1 through 10 {
+                        &:nth-child(#{$i}) {
+                            a:hover {
+                                span::after {
+                                    opacity: 1;
+                                    content:url(/assets/images/main/img_trend_on_#{$i}.png);
+                                }
+                            }
+                        }
+                    }
+
+                    a {
+                        display: block;
+                    }
+
+                    span {
+                        display: block;
+                        position: relative;
+
+                        &::after {
+                            opacity: 0;
+                            position: absolute;
+                            top: 0;
+                            left: 0;
+                            width: 100%;
+                            height: 100%;
+                            transition: opacity .15s;
+                        }
+                    }
+
+                    p {
+                        padding-top: 16px;
+                        color: #000;
+                        font: {
+                            weight: $font-weight-light;
+                            size: 18px;
+                        }
+                        line-height: math.div(22, 18);
+                        text-align: center;
+                    }
+                }
+
+                .swiper-scrollbar {
+                    @include media-queries($to: 1640px) {
+                        width: 100%;
+                        height: 3px;
+                        background: #dfdfdf;
+                    }
+                }
+
+                .swiper-scrollbar-drag {
+                    position: relative;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    background: #4bc595;
+                    border-radius: 10px;
+                }
+            }
+        }
+    }
+
+    &__benefits {
+        max-width: 1440px;
+        margin: 0 auto;
+        padding: 120px 14px 120px;
+
+        ul {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-gap: 20px;
+
+            @include media-queries($from: xl) {
+                grid-template-columns: repeat(3, 1fr);
+            }
+
+            li {
+
+                @include media-queries($from: xl) {
+                    &:last-of-type {
+                        display: none;
+                    }
+                }
+
+                @for $i from 1 through 4 {
+                    &:nth-child(#{$i}) {
+                        a {
+                            background: {
+                                image: url('/assets/images/main/img_benefits_#{$i}.png');
+                                position: center;
+                                repeat: no-repeat;
+                                size: cover;
+                            };
+                        }
+                    }
+                }
+            }
+
+            a {
+                display: flex;
+                align-items: flex-start;
+                justify-content: center;
+                position: relative;
+                aspect-ratio: 322/251;
+                border-radius: 30px;
+                color: #fff;
+                text-align: center;
+
+                div {
+                    padding-top: 25px;
+
+                    @include media-queries($from: xl) {
+                        padding-top: 50px;
+                    }
+
+                    p {
+                        &:first-of-type {
+                            font: {
+                                family: "GmarketSans", sans-serif;
+                                weight: $font-weight-bold;
+                                size: 25px;
+                            }
+
+                            @include media-queries($from: xl) {
+                                font-size: 34px;
+                            }
+                        }
+
+                        &:last-of-type {
+                            padding-top: 20px;
+
+                            @include media-queries($from: xl) {
+                                font-size: 22px;
+                                line-height: math.div(30, 22);
+                            }
+                        }
+                    }
+                }
+            }
+
+        }
+    }
 
     &__special {
         display: none;
@@ -117,7 +265,7 @@
                     width: 245px;
                     height: 215px;
                     background: url(/assets/images/main/img_june_people.png) no-repeat center;
-                    content:'';
+                    content: '';
                 }
             }
         }
@@ -189,7 +337,7 @@
                     align-items: flex-start;
                     grid-column-gap: 75px;
                     margin-top: 16px;
-                    padding: 50px 0 40px 47px;
+                    padding: 50px 14px 40px 47px;
                     border-radius: 32px;
                     background-color: #fff;
 
@@ -233,7 +381,7 @@
                                 weight: $font-weight-light;
                                 size: 18px;
                             }
-                            line-height: math.div(32,18);
+                            line-height: math.div(32, 18);
 
                             @include media-queries($from: xxl) {
                                 margin-top: 5px;
@@ -257,6 +405,7 @@
                             align-items: flex-start;
                             color: #000;
                             font-weight: $font-weight-medium;
+                            @include line-clamp(16px * 1.2, 1);
 
                             &:hover {
                                 color: #58b490;
@@ -353,7 +502,6 @@
             max-width: 1920px;
             margin: 80px auto 0;
             padding: 0 14px;
-
 
             .swiper {
                 &-wrapper {
@@ -509,14 +657,14 @@
             &::before {
                 display: block;
                 padding-top: percentage(math.div(540, 960));
-                content:'';
+                content: '';
             }
 
             @include media-queries($to: xl) {
                 &::before {
                     display: block;
                     padding-top: percentage(math.div(404, 719));
-                    content:'';
+                    content: '';
                 }
             }
 

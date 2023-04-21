@@ -4,6 +4,33 @@ import Swiper, {Autoplay, EffectFade, Pagination, Navigation, Scrollbar} from "s
 const main = () => {
 
 
+    //트렌드
+    (() => {
+        const trend = findOne('.main__trend');
+        const trendCarousel = new Swiper(findOne('.swiper', trend),{
+            loop: false,
+            speed: 500,
+            spaceBetween: 18,
+            slidesPerView: "auto",
+            slideToClickedSlide: true,
+
+            scrollbar: {
+                el: '.swiper-scrollbar',
+            },
+
+            breakpoints: {
+                //브라우저가 1200보다 클 때
+                1200: {
+                    // loop: true,
+                    slidesPerView: "auto",
+                    spaceBetween: 20,
+                    // allowTouchMove: false,
+                },
+            },
+
+            modules: [Navigation, Scrollbar],
+        });
+    })();
 
     //이벤트
     (() => {
