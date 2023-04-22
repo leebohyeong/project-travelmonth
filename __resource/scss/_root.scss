@@ -18,7 +18,7 @@
     --benefits-local-header-line: 1px;
     --benefits-list-column-size: 2;
     --benefits-list-column-gap: 8px;
-    --benefits-list-row-gap: 30px;
+    --benefits-list-row-gap: 20px;
     --modal-margin-top: calc(var(--site-header-height) + 10px);
 
     @include media-queries($from: lg) {

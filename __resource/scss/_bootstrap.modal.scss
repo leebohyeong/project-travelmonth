@@ -13,8 +13,7 @@
 
 .modal-dialog {
     position: relative;
-    width: auto;
-    max-width: 500px;
+    width: min(calc(100% - 26px), 500px);
     margin: var(--modal-margin-top) auto 30px;
     pointer-events: none;
 

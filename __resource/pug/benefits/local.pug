@@ -4,37 +4,43 @@ append variables
     - const bodyId = 'benefits-local';
 
 block body
-    article
+    article(data-local="10")
         header
             h2 서울 여행
             p 지역별 다양한 여행혜택과 여행상품을 보다 빠르고 쉽게 만나보세요!
 
         section.list-thumbnail.list-thumbnail--benefits
-            h3 여행혜택
+            h3 매력있는 #[strong 강원도] 여행혜택 알아보기
             ul
                 li
-                    a(href="#" data-bs-toggle="modal" data-bs-target="#modal-benefits-1")
+                    a(href="#" data-type="d" data-bs-toggle="modal" data-bs-target="#modal-benefits-1")
                         span(style="background-image: url('https://cdn.visitkorea.or.kr/img/call?cmd=VIEW&id=3f8fbd92-6b7e-46ba-9161-21bfd76e8e1b&mode=progress')")
-                        p(data-type="d") 할인혜택
+                        div
+                            p 할인혜택
+                            p 어뮤즈월드
                         p 산속등대 어뮤즈월드<br>이용요금 반값 할인
                 li
-                    a(href="#" data-bs-toggle="modal" data-bs-target="#modal-benefits-2")
+                    a(href="#" data-type="t" data-bs-toggle="modal" data-bs-target="#modal-benefits-2")
                         span(style="background-image: url('https://cdn.visitkorea.or.kr/img/call?cmd=VIEW&id=de35655e-97a2-4a2d-8da0-812767f53fef&mode=progress')")
-                        p(data-type="t") 여행정보
+                        div
+                            p 여행정보
+                            p 어뮤즈월드
                         p 고래바다여행선 타고, 호캉스 가자
                 li
-                    a(href="#" data-bs-toggle="modal" data-bs-target="#modal-benefits-3")
+                    a(href="#" data-type="e" data-bs-toggle="modal" data-bs-target="#modal-benefits-3")
                         span(style="background-image: url('https://cdn.visitkorea.or.kr/img/call?cmd=VIEW&id=f6c2cdb3-7c48-4ec1-b326-33e19002b0f1&mode=progress')")
-                        p(data-type="e") 이벤트
+                        div
+                            p 이벤트
+                            p 어뮤즈월드
                         p 경북으로 떠나는 친환경 기차여행 이벤트
             p
                 button(type="button") MORE
 
         section.list-thumbnail.list-thumbnail--goods
-            h3 여행상품
+            h3 트렌디한 #[strong 강원도] 여행상품 알아보기
             ul
                 li
-                    a(href="#")
+                    a(href="#" data-type="d" data-bs-toggle="modal" data-bs-target="#modal-goods-1")
                         span(style="background-image: url('https://cdn.visitkorea.or.kr/img/call?cmd=VIEW&id=3f8fbd92-6b7e-46ba-9161-21bfd76e8e1b&mode=progress')")
                         p 예약신청기간 : 5/24~6/20
                         p 산속등대 어뮤즈월드<br>이용요금 반값 할인
@@ -50,6 +56,7 @@ block body
                         p 경북으로 떠나는 친환경 기차여행 이벤트
             p
                 button(type="button") MORE
+
 
 
         #modal-benefits-1.modal.fade.modal-benefits(data-type="d" tabindex="-1" data-bs-backdrop="static" aria-hidden="true")
@@ -126,6 +133,39 @@ block body
                         div
                             p 할인혜택
                             p 어뮤즈월드
+                        h3 산속등대 어뮤즈월드 이용요금 반값 할인
+                        dl
+                            div
+                                dt 예약신청기간
+                                dd 2023-05-10 ~ 2023-06-01
+                            div
+                                dt 할인적용기간
+                                dd 2023-06-01 ~ 2023-06-30
+                            div
+                                dt 혜택상세
+                                dd 어뮤즈월드 이용요금 50% 할인 어뮤즈월드 이용요금 50% 할인 어뮤즈월드 이용요금 50% 할인
+                            div
+                                dt 혜택제공조건
+                                dd 어린이만 이용가능(8세 이상~19세 미만)
+                            div
+                                dt 참고사항
+                                dd 동반하는 어른은 정가
+                            div
+                                dt 문의처
+                                dd 063-245-2456
+                        p
+                            a(href="#")
+                                span 자세히 보기
+                    button.modal-close(type="button" data-bs-dismiss="modal" aria-label="Close")
+
+        #modal-goods-1.modal.fade.modal-goods(tabindex="-1" data-bs-backdrop="static" aria-hidden="true")
+            .modal-dialog
+                .modal-content
+                    article
+                        div(style="background-image: url('https://cdn.visitkorea.or.kr/img/call?cmd=VIEW&id=3f8fbd92-6b7e-46ba-9161-21bfd76e8e1b&mode=progress')")
+                        div
+                            p 여행상품
+                            p 숙박•당일
                         h3 산속등대 어뮤즈월드 이용요금 반값 할인
                         dl
                             div

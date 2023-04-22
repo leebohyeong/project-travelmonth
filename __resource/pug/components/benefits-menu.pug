@@ -19,9 +19,11 @@ div(class=`benefits__menu benefits__menu--${isBenefitsLocal ? 'local' : 'program
                         a(href="/html/benefits/traffic.html") 프로그램별
         div
             if (isBenefitsLocal)
-                select
-                    each item in sidoList.slice(1)
-                        option(value=item.code)= item.name
+                p
+                    span 지역의 여행상품과 여행혜택을 확인하세요.
+                    select
+                        each item in sidoList.slice(1)
+                            option(value=item.code)= item.name
                 ul
                     each item in sidoList.slice(1)
                         li(data-sido=item.code)

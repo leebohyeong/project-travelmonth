@@ -128,21 +128,36 @@
         }
 
         nav + div {
+            > p {
+                padding-top: 12px;
+                color: #fff;
+                font-size: 12px;
+                line-height: math.div(36, 24);
+                text-align: center;
+            }
+
+            > p,
+            > select {
+                @include media-queries($from: xl) {
+                    display: none;
+                }
+            }
+
             select {
                 display: block;
                 width: min(calc(100% - 28px), 435px);
                 height: 36px;
-                margin: 24px auto 0;
+                margin: 4px auto 0;
                 padding: 0 15px;
                 border-radius: 4px;
                 border: 0;
                 color: #000;
                 font-size: 16px;
                 appearance: none;
+            }
 
-                @include media-queries($from: xl) {
-                    display: none;
-                }
+            > select {
+                margin-top: 24px;
             }
 
             ul {
@@ -364,6 +379,14 @@
                 };
                 letter-spacing: -0.02em;
 
+                @include media-queries($to: xl) {
+                    padding-right: 120px;
+                }
+
+                @include media-queries($from: xl) {
+                    background-position: right 40px bottom;
+                }
+
                 h2 {
                     font-weight: 500;
                     font-size: var(--benefits-local-header-title-size);
@@ -380,11 +403,14 @@
                 }
             }
 
-            > div {
+            &[data-local="10"] header {
+                background-image: url("/assets/images/benefits/bg_local_10.png");
+                background-size: 78px auto;
 
+                @include media-queries($from: xl) {
+                    background-size: 123px auto;
+                }
             }
-
-
         }
     }
 }
