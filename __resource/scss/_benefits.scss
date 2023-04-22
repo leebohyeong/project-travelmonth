@@ -136,13 +136,6 @@
                 text-align: center;
             }
 
-            > p,
-            > select {
-                @include media-queries($from: xl) {
-                    display: none;
-                }
-            }
-
             select {
                 display: block;
                 width: min(calc(100% - 28px), 435px);
@@ -158,6 +151,13 @@
 
             > select {
                 margin-top: 24px;
+            }
+
+            > p,
+            > select {
+                @include media-queries($from: xl) {
+                    display: none;
+                }
             }
 
             ul {
@@ -363,54 +363,59 @@
     }
 
     &__content {
+        overflow: hidden;
         flex-grow: 1;
         padding: var(--site-content-padding);
+    }
+}
 
-        article {
-            max-width: (374px * 3 + 20 * 2);
-            margin: 0 auto;
+.benefits-local {
+    max-width: (374px * 3 + 20 * 2);
+    margin: 0 auto;
 
-            header {
-                padding: var(--benefits-local-header-padding);
-                border-bottom: var(--benefits-local-header-line) solid #000;
-                background: {
-                    repeat: no-repeat;
-                    position: right bottom;
-                };
-                letter-spacing: -0.02em;
+    header {
+        padding: var(--benefits-local-header-padding);
+        border-bottom: var(--benefits-local-header-line) solid #000;
+        background: {
+            repeat: no-repeat;
+            position: right bottom;
+        };
+        letter-spacing: -0.02em;
 
-                @include media-queries($to: xl) {
-                    padding-right: 120px;
-                }
+        @include media-queries($to: xl) {
+            padding-right: 120px;
+        }
 
-                @include media-queries($from: xl) {
-                    background-position: right 40px bottom;
-                }
+        @include media-queries($from: xl) {
+            background-position: right 40px bottom;
+        }
 
-                h2 {
-                    font-weight: 500;
-                    font-size: var(--benefits-local-header-title-size);
-                    line-height: 1;
-                    font-family: GmarketSans, sans-serif;
-                }
+        h2 {
+            font-weight: 500;
+            font-size: var(--benefits-local-header-title-size);
+            line-height: 1;
+            font-family: GmarketSans, sans-serif;
 
-                p {
-                    margin-top: 8px;
-                    color: #393939;
-                    font-weight: $font-weight-semiBold;
-                    font-size: var(--benefits-local-header-content-size);
-                    line-height: math.div(24, 20);
-                }
+            span {
+
             }
+        }
 
-            &[data-local="10"] header {
-                background-image: url("/assets/images/benefits/bg_local_10.png");
-                background-size: 78px auto;
+        p {
+            margin-top: 8px;
+            color: #393939;
+            font-weight: $font-weight-semiBold;
+            font-size: var(--benefits-local-header-content-size);
+            line-height: math.div(24, 20);
+        }
+    }
 
-                @include media-queries($from: xl) {
-                    background-size: 123px auto;
-                }
-            }
+    &[data-local="10"] header {
+        background-image: url("/assets/images/benefits/bg_local_10.png");
+        background-size: 78px auto;
+
+        @include media-queries($from: xl) {
+            background-size: 123px auto;
         }
     }
 }

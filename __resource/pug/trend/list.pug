@@ -4,31 +4,44 @@ append variables
     - const bodyId = 'trend-list';
 
 block body
-    article
-        header
-            h2 서울 여행
-            p 지역별 다양한 여행혜택과 여행상품을 보다 빠르고 쉽게 만나보세요!
+    article.trend-list(data-theme="a")
+        div
+            header
+                div
+                    h2
+                        span 여행트렌드 1
+                        strong 농어촌/섬관광
+                    p 코로나19 이후 번잡하고 답답한 도시를 벗어나 휴식과 함께 새로운 경험,<br>잊지 못할 추억을 만드는 농어촌/섬 관광입니다.
+            nav
+                .swiper
+                    .swiper-wrapper
+                        each item, index in themeList
+                            .swiper-slide
+                                if (index)
+                                    a(href="#" data-theme=item.code.toLowerCase())!= item.tag
+                                else
+                                    strong(data-theme=item.code.toLowerCase())!= item.tag
 
         section.list-thumbnail.list-thumbnail--benefits
-            h3 여행혜택
-            ul
-                li
-                    a(href="#" data-bs-toggle="modal" data-bs-target="#modal-benefits-1")
-                        span(style="background-image: url('https://cdn.visitkorea.or.kr/img/call?cmd=VIEW&id=3f8fbd92-6b7e-46ba-9161-21bfd76e8e1b&mode=progress')")
-                        p(data-type="d") 할인혜택
-                        p 산속등대 어뮤즈월드<br>이용요금 반값 할인
-                li
-                    a(href="#" data-bs-toggle="modal" data-bs-target="#modal-benefits-2")
-                        span(style="background-image: url('https://cdn.visitkorea.or.kr/img/call?cmd=VIEW&id=de35655e-97a2-4a2d-8da0-812767f53fef&mode=progress')")
-                        p(data-type="t") 여행정보
-                        p 고래바다여행선 타고, 호캉스 가자
-                li
-                    a(href="#")
-                        span(style="background-image: url('https://cdn.visitkorea.or.kr/img/call?cmd=VIEW&id=f6c2cdb3-7c48-4ec1-b326-33e19002b0f1&mode=progress')")
-                        p(data-type="e") 이벤트
-                        p 경북으로 떠나는 친환경 기차여행 이벤트
-            p
-                button(type="button") MORE
+                    h3 여행혜택
+                    ul
+                        li
+                            a(href="#" data-bs-toggle="modal" data-bs-target="#modal-benefits-1")
+                                span(style="background-image: url('https://cdn.visitkorea.or.kr/img/call?cmd=VIEW&id=3f8fbd92-6b7e-46ba-9161-21bfd76e8e1b&mode=progress')")
+                                p(data-type="d") 할인혜택
+                                p 산속등대 어뮤즈월드<br>이용요금 반값 할인
+                        li
+                            a(href="#" data-bs-toggle="modal" data-bs-target="#modal-benefits-2")
+                                span(style="background-image: url('https://cdn.visitkorea.or.kr/img/call?cmd=VIEW&id=de35655e-97a2-4a2d-8da0-812767f53fef&mode=progress')")
+                                p(data-type="t") 여행정보
+                                p 고래바다여행선 타고, 호캉스 가자
+                        li
+                            a(href="#")
+                                span(style="background-image: url('https://cdn.visitkorea.or.kr/img/call?cmd=VIEW&id=f6c2cdb3-7c48-4ec1-b326-33e19002b0f1&mode=progress')")
+                                p(data-type="e") 이벤트
+                                p 경북으로 떠나는 친환경 기차여행 이벤트
+                    p
+                        button(type="button") MORE
 
         section.list-thumbnail.list-thumbnail--contents
             h3 여행상품
@@ -110,7 +123,3 @@ block body
                                         div 테스트 내용1
                                         div 테스트 내용2
                     button.modal-close(type="button" data-bs-dismiss="modal" aria-label="Close")
-
-        script.
-            // document.querySelector('[data-bs-target="#modal-trend-content-1"]').click();
-

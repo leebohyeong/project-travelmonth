@@ -1,5 +1,226 @@
 @use "sass:math";
 
+.trend-list {
+    --trend-list-header-inner-padding: 90px 50px;
+
+    @include media-queries($from: xl) {
+        --trend-list-header-inner-padding: 90px 50px;
+    }
+
+    @include media-queries($to: xl) {
+        > div:first-child {
+            display: flex;
+            flex-direction: column-reverse;
+        }
+    }
+
+    header {
+        margin: 0 calc(-1 * var(--site-padding-horizon));
+        padding: 0 var(--site-padding-horizon);
+        background: {
+            repeat: no-repeat;
+            position: center;
+            size: cover;
+        };
+
+        > div {
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            max-width: 1160px;
+            height: 200px;
+            margin: 0 auto;
+            color: #fff;
+            letter-spacing: -0.02em;
+
+            @include media-queries($to: xl) {
+                align-items: center;
+                text-align: center;
+            }
+
+            @include media-queries($from: xl) {
+                height: 372px;
+                padding: 0 48px;
+            }
+        }
+
+        h2 {
+            font-weight: 500;
+            font-family: GmarketSans, sans-serif;
+            line-height: 1;
+
+            span {
+                font-size: 12px;
+
+                @include media-queries($from: xl) {
+                    font-size: 22px;
+                }
+            }
+
+            strong {
+                display: block;
+                padding-top: 8px;
+                font-weight: 500;
+                font-size: 30px;
+
+                @include media-queries($from: xl) {
+                    font-size: 84px;
+                }
+            }
+        }
+
+        p {
+            padding-top: 12px;
+            font-size: 11px;
+
+            @include media-queries($from: xl) {
+                padding: 0 0 20px;
+                font-size: 20px;
+            }
+        }
+    }
+
+    &[data-theme="a"] header {
+        background-image: url("/assets/images/trend/bg_theme_a.jpg");
+    }
+
+    header + nav {
+        margin: 0 calc(-1 * var(--site-padding-horizon));
+        background: #fff;
+
+        @include media-queries($from: xl) {
+            background: #f6f6f6;
+        }
+
+        .swiper {
+            width: 100%;
+            max-width: 1160px;
+            margin: 0 auto;
+        }
+
+        .swiper-slide {
+            flex-shrink: 1;
+            text-align: center;
+            font-size: 18px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        strong,
+        a {
+            display: block;
+            position: relative;
+            width: 100%;
+            height: 116px;
+            padding: 0 20px;
+            color: #323232;
+            font-weight: $font-weight-medium;
+            font-size: 12px;
+            text-align: center;
+            letter-spacing: 0.01em;
+            white-space: nowrap;
+            transition: .15s;
+
+            @include media-queries($from: xl) {
+                padding: 0;
+                font-size: 16px;
+            }
+
+            &::before {
+                display: block;
+                width: 23px;
+                height: 56px;
+                margin: 0 auto 8px;
+                background: {
+                    image: url("/assets/images/trend/icon_theme.png");
+                    repeat: no-repeat;
+                    position: center bottom;
+                    size: 23px auto;
+                };
+                content: "";
+
+                @include media-queries($from: xl) {
+                    height: 48px;
+                    margin-bottom: 12px;
+                }
+            }
+
+            span {
+                font-size: #{math.div(14, 16)}em;
+            }
+        }
+
+        a {
+            @media (hover: hover) {
+                &:hover {
+                    color: #37bf8a;
+
+                    &::before {
+                        background-image: url("/assets/images/trend/icon_theme_on.png");
+                    }
+                }
+            }
+        }
+
+        strong {
+            background-color: #fff;
+            color: #37bf8a;
+            font-weight: $font-weight-bold;
+
+            &::before {
+                background-image: url("/assets/images/trend/icon_theme_on.png");
+            }
+
+            @include media-queries($from: xl) {
+                &::after {
+                    position: absolute;
+                    left: calc(50% - 6px);
+                    bottom: 10px;
+                    width: 0;
+                    height: 0;
+                    border: {
+                        width: 0 6px 6px;
+                        style: solid;
+                        color: #37bf8a transparent;
+                    };
+                    content: "";
+                }
+            }
+        }
+
+        @each $code, $width in ('a', 30, 28), ('b', 22, 26), ('c', 29, 26), ('d', 29, 24), ('e', 27, 26), ('f', 19, 27), ('g', 20, 26), ('h', 30, 28), ('i', 32, 26), ('j', 25, 22) {
+            [data-theme="#{$code}"]::before {
+                width: #{$width}px;
+                background-image: url("/assets/images/trend/icon_theme_#{$code}.png");
+                background-size: #{$width}px auto;
+            }
+
+            strong[data-theme="#{$code}"]::before {
+                background-image: url("/assets/images/trend/icon_theme_#{$code}_on.png");
+            }
+
+            @media (hover: hover) {
+                [data-theme="#{$code}"]:hover::before {
+                    background-image: url("/assets/images/trend/icon_theme_#{$code}_on.png");
+                }
+            }
+        }
+
+        @include media-queries($to: xl) {
+            :is(.swiper-slide:not(:first-child)) :is(strong, a)::after {
+                position: absolute;
+                top: percentage(math.div(60, 240));
+                bottom: percentage(math.div(76, 240));
+                left: 0;
+                width: 1px;
+                background: #ebebeb;
+                content: "";
+            }
+        }
+    }
+}
+
 .modal-trend-content {
     &__title {
         padding: 44px 20px 24px;
