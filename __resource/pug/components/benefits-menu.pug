@@ -65,7 +65,7 @@ div(class=`benefits__menu benefits__menu--${isBenefitsLocal ? 'local' : 'program
                     ];
                 select
                     each item in benefitsProgramMenu
-                        option(value=item.type)!= item.menu
+                        option(value=item.type selected=bodyId.includes(item.type))!= item.menu
                 ul
                     each item in benefitsProgramMenu
                         li

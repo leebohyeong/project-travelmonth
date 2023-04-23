@@ -219,9 +219,160 @@
             }
         }
     }
+
+    aside {
+        margin: 0 calc(-1 * var(--site-padding-horizon));
+        padding-top: 40px;
+
+        @include media-queries($from: xl) {
+            padding-top: 90px;
+        }
+
+        > div {
+            position: relative;
+            max-width: 1160px + 120;
+            margin: 0 auto;
+
+            @include media-queries($from: xl) {
+                padding: 0 60px;
+            }
+        }
+
+        .swiper {
+            @include media-queries($to: xl) {
+                padding: 0 var(--site-padding-horizon);
+            }
+
+            @include media-queries($from: xl) {
+                max-width: 1160px;
+            }
+        }
+
+        .swiper-slide {
+            width: min(calc(50% - 4px), 216px);
+            height: auto;
+
+            @include media-queries($from: xl) {
+                width: 25%;
+            }
+        }
+
+        .swiper-button-next,
+        .swiper-button-prev {
+            width: 30px;
+            height: 30px;
+            margin-top: -15px;
+            background: {
+                repeat: no-repeat;
+                position: center;
+                size: contain;
+            };
+
+            &::after {
+                display: none;
+            }
+
+            @include media-queries($to: xl) {
+                display: none;
+            }
+        }
+
+        .swiper-button-next {
+            background-image: url("/assets/images/trend/icon_carousel_next.png");
+        }
+
+        .swiper-button-prev {
+            background-image: url("/assets/images/trend/icon_carousel_prev.png");
+        }
+
+        dl {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            height: 100%;
+            padding: 16px 12px 20px;
+            border: 1px solid #e6e6e6;
+            text-align: center;
+            letter-spacing: -0.03em;
+
+            @include media-queries($from: xl) {
+                padding: 24px 20px 36px;
+            }
+        }
+
+        dt {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+
+            span {
+                padding: 0 6px;
+                background: #f6f6f6;
+                font-weight: $font-weight-light;
+                font-size: 10px;
+                line-height: 18px;
+
+                @include media-queries($from: xl) {
+                    padding: 0 10px;
+                    font-size: 14px;
+                    line-height: 24px;
+                }
+            }
+
+            strong {
+                padding-top: 8px;
+                color: #37bf8a;
+                font-weight: $font-weight-semiBold;
+                font-size: 16px;
+
+                @include media-queries($from: xl) {
+                    padding-top: 12px;
+                    font-size: 20px;
+                }
+            }
+        }
+
+        dd {
+            padding-top: 12px;
+            color: #303030;
+            font-weight: $font-weight-light;
+            font-size: 12px;
+            line-height: math.div(20, 14);
+            text-align: center;
+            letter-spacing: -0.03em;
+
+            @include media-queries($from: xl) {
+                padding-top: 20px;
+                font-size: 14px;
+            }
+        }
+
+        dt + dd {
+            flex-grow: 1;
+        }
+
+        a {
+            display: inline-block;
+            padding: 6px 18px 6px 8px;
+            border-radius: 15px;
+            border: 1px solid #d5d5d5;
+            background: url("/assets/images/trend/icon_arrow.png") no-repeat right 8px center/6px auto;
+            color: #8c8c8c;
+            line-height: 14px;
+            vertical-align: top;
+
+            @include media-queries($from: xl) {
+                padding: 6px 32px 6px 12px;
+                background-position: right 12px center;
+                background-size: 11px auto;
+                line-height: 16px;
+            }
+        }
+    }
 }
 
-.modal-trend-content {
+.modal-trend-contents {
     &__title {
         padding: 44px 20px 24px;
         background: #37bf8a;

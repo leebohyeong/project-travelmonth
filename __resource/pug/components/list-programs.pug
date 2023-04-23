@@ -1,0 +1,30 @@
+-
+    const listPrograms = [
+        {
+            title: '교통혜택',
+            content: '국내여행 준비중이라면<br>교통혜택을 챙겨가세요!',
+            url: '',
+        },
+        {
+            title: '숙박혜택',
+            content: '여행의 완성은 잠자리!<br>역대급 숙박혜택을 확인하세요',
+            url: '',
+        },
+        {
+            title: '놀거리혜택',
+            content: '놀거리혜택으로<br>풍성한 여행을 만들어가세요!',
+            url: '',
+        },
+        {
+            title: '여행상품 특별 기획전',
+            content: '여행가는 달 기간동안 여행업계가 선보이는 각종 혜택들을 만나보세요. 기획전 바로가기',
+            url: '',
+        }
+    ];
+aside.list-programs
+    ul
+        each item in listPrograms
+            li
+                a(href=item.url)
+                    h2!= item.title
+                    p!= item.content
