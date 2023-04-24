@@ -51,8 +51,7 @@ webpack.config.js
 !board.html
 !login.html
 
-assets/css/
-assets/js/
+.DS_Store
 node_modules/
 
 src/main/webapp/assets/css/*.css
