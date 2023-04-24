@@ -1,20 +1,19 @@
 package kr.or.visitkorea.korean.global.util;
 
-import kr.or.visitkorea.korean.area.service.AreaService;
+import kr.or.visitkorea.korean.global.common.service.CommonService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
 
 import javax.annotation.PostConstruct;
-import java.util.List;
 
 @Slf4j
 @Component
-public class Area {
+public class Sido {
 
-	private final AreaService SERVICE;
-	private static AreaService STATIC_SERVICE;
+	private final CommonService SERVICE;
+	private static CommonService STATIC_SERVICE;
 
-	public Area(AreaService SERVICE) { this.SERVICE = SERVICE; }
+	public Sido(CommonService SERVICE) { this.SERVICE = SERVICE; }
 
 	@PostConstruct
 	private void init() { STATIC_SERVICE = SERVICE; }
@@ -24,7 +23,7 @@ public class Area {
 	 * @return
 	 */
 	public static Object getList() {
-		return STATIC_SERVICE.getAreaList();
+		return STATIC_SERVICE.getSidoList();
 	}
 
 }

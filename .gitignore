@@ -55,13 +55,8 @@ assets/css/
 assets/js/
 node_modules/
 
-src/main/resources/static/assets/css/*.css
-src/main/resources/static/assets/js/*.js
-
-src/main/resources/static/m/assets/css/*.css
-src/main/resources/static/m/assets/js/*.js
-
-src/main/java/kr/co/uamco/global/configurer/MvcConfiguration.java
+src/main/webapp/assets/css/*.css
+src/main/webapp/assets/js/*.js
 
 !src/main/resources/templates/**/*.html
 

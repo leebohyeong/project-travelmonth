@@ -2,6 +2,7 @@ package kr.or.visitkorea.korean.area.service.impl;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import kr.or.visitkorea.korean.area.service.AreaService;
+import kr.or.visitkorea.korean.global.common.service.impl.CommonServiceImplWrapper;
 import kr.or.visitkorea.korean.global.dto.CommonResponse;
 import kr.or.visitkorea.korean.global.util.RequestUrl;
 import lombok.RequiredArgsConstructor;
@@ -12,31 +13,31 @@ import org.springframework.stereotype.Service;
 
 @Service
 @RequiredArgsConstructor
-public class AreaServiceImpl implements AreaService {
+public class AreaServiceImpl  extends CommonServiceImplWrapper implements AreaService {
 
 	private final ObjectMapper MAPPER;
-	private static final Logger LOGGER = LoggerFactory.getLogger(AreaServiceImpl.class);
 
 	/**
-	 * GET AREA LIST
+	 * GET LIST
+	 * @param area
 	 * @return
 	 */
 	@Override
-	public Object getAreaList() {
+	public Object getList(String area) {
 		try {
-			JSONObject jsonObject = RequestUrl.get("http://localhost/area/list");
+			JSONObject jsonObject = RequestUrl.get(TRAVEL_MONTH_SITE_URL + "/area/list");
 			if (jsonObject != null) {
-				boolean result = (boolean) jsonObject.get("result");
-				if (!result) {
+				boolean result = (boolean) jsonObject.get("result");if (!result) {
 					String message = String.valueOf(jsonObject.get("message"));
 					throw new RuntimeException(message);
 				}
 				return MAPPER.convertValue(jsonObject, CommonResponse.List.class);
 			}
-		} catch (Exception exception) {
-			LOGGER.error("Area List Exception");
-			LOGGER.error("{} ", exception.getMessage(), exception);
+		}
+		catch (Exception exception) {
+			LOGGER.error("Area List Exception : {}", exception.getMessage(), exception);
 		}
 		return null;
 	}
+
 }

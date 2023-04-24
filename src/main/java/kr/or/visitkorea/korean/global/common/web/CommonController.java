@@ -15,10 +15,11 @@ import org.springframework.web.bind.annotation.RequestMethod;
 @RequiredArgsConstructor
 public class CommonController<T> {
 
+	private static final Logger LOGGER = LoggerFactory.getLogger(CommonController.class);
+
 	private final EventService EVENT_SERVICE;
 	private final ShowcaseService SHOWCASE_SERVICE;
-	private final InstagramService INSTAGRAM_SERVICE;
-	private static final Logger LOGGER = LoggerFactory.getLogger(CommonController.class);
+	private final InstagramService<T> INSTAGRAM_SERVICE;
 
 	/**
 	 * 메인 페이지
@@ -32,8 +33,9 @@ public class CommonController<T> {
 			model.addAttribute("event", EVENT_SERVICE.getMainList());
 			model.addAttribute("showcase", SHOWCASE_SERVICE.getList());
 			model.addAttribute("instagram", INSTAGRAM_SERVICE.getList());
-		} catch (Exception exception) {
-			LOGGER.error("Main Page Exception : ", exception);
+		}
+		catch (Exception exception) {
+			LOGGER.error("Main Page Exception : {}", exception.getMessage(), exception);
 		}
 		return "/index";
 	}

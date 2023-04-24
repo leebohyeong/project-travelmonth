@@ -31,7 +31,7 @@
             display: inline-block;
             margin-top: 3px;
             padding-right: 30px;
-            background: url(/assets/images/main/icon_link_arrow_gray.png) no-repeat right center/auto 22px;
+            background: url(/travelmonth/assets/images/main/icon_link_arrow_gray.png) no-repeat right center/auto 22px;
             font-weight: $font-weight-light;
             font-size: 24px;
             line-height: math.div(32, 24);
@@ -39,6 +39,64 @@
             @include media-queries($from: xl) {
                 font-size: 18px;
                 line-height: math.div(32, 18);
+            }
+        }
+    }
+
+    &__category {
+
+        .category-tab {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+
+            li {
+
+            }
+
+            &__item {
+                display: block;
+                padding: 10px 0;
+                background-color: #58b490;
+                color: rgba(#369d75, .5);
+
+                &--active {
+                    background-color: #fff;
+                    color: #369d75;
+                }
+            }
+
+            p {
+                font: {
+                    weight: $font-weight-light;
+                    size: 18px;
+                }
+                line-height: math.div(36, 24);
+                text-align: center;
+
+                strong {
+                    display: block;
+                    font: {
+                        weight: $font-weight-extraBold;
+                        size: 20px
+                    }
+                }
+
+
+                @include media-queries($from: xl) {
+                    font-size: 24px;
+
+                    strong {
+                        font-size: 32px;
+                    }
+                }
+            }
+        }
+
+        .category-panel {
+            display: none;
+
+            &--active {
+                display: block;
             }
         }
     }
@@ -77,7 +135,7 @@
                             a:hover {
                                 span::after {
                                     opacity: 1;
-                                    content:url(/assets/images/main/img_trend_on_#{$i}.png);
+                                    content: url(/travelmonth/assets/images/main/img_trend_on_#{$i}.png);
                                 }
                             }
                         }
@@ -161,7 +219,7 @@
                     &:nth-child(#{$i}) {
                         a {
                             background: {
-                                image: url('/assets/images/main/img_benefits_#{$i}.png');
+                                image: url('/travelmonth/assets/images/main/img_benefits_#{$i}.png');
                                 position: center;
                                 repeat: no-repeat;
                                 size: cover;
@@ -221,7 +279,7 @@
 
         @include media-queries($from: xl) {
             display: block;
-            background: #fff5b3 url(/assets/images/main/img_special_banner.jpg) no-repeat center;
+            background: #fff5b3 url(/travelmonth/assets/images/main/img_special_banner.jpg) no-repeat center;
 
             div {
                 display: flex;
@@ -264,7 +322,7 @@
                     left: -178px;
                     width: 245px;
                     height: 215px;
-                    background: url(/assets/images/main/img_june_people.png) no-repeat center;
+                    background: url(/travelmonth/assets/images/main/img_june_people.png) no-repeat center;
                     content: '';
                 }
             }
@@ -299,7 +357,7 @@
                 left: calc(50% - 12px);
                 width: 89px;
                 height: 46px;
-                background: url(/assets/images/main/img_june.png) no-repeat center;
+                background: url(/travelmonth/assets/images/main/img_june.png) no-repeat center;
 
                 @include media-queries($to: xl) {
 
@@ -375,7 +433,7 @@
                         a {
                             display: inline-block;
                             padding-right: 30px;
-                            background: url(/assets/images/main/icon_link_arrow_gray.png) no-repeat right center/auto 22px;
+                            background: url(/travelmonth/assets/images/main/icon_link_arrow_gray.png) no-repeat right center/auto 22px;
                             color: #000;
                             font: {
                                 weight: $font-weight-light;
@@ -455,7 +513,7 @@
                     padding-top: percentage(math.div(279, 327));
                     @for $i from 1 through 4 {
                         &:nth-child(#{$i}) {
-                            background: url('/assets/images/main/img_june_tourist_#{$i}.png');
+                            //background: url('/travelmonth/assets/images/main/img_june_tourist_#{$i}.png');
                             background-repeat: no-repeat;
                             background-position: center top;
                             background-size: 100% auto;
@@ -594,12 +652,12 @@
 
                 &-prev {
                     left: 10vw;
-                    background-image: url(/assets/images/main/icon_button_prev.png);
+                    background-image: url(/travelmonth/assets/images/main/icon_button_prev.png);
                 }
 
                 &-next {
                     right: 10vw;
-                    background-image: url(/assets/images/main/icon_button_next.png);
+                    background-image: url(/travelmonth/assets/images/main/icon_button_next.png);
                 }
             }
 
@@ -745,7 +803,7 @@
                 display: inline-block;
                 margin: 25px auto 0;
                 padding-right: 30px;
-                background: url(/assets/images/main/icon_link_arrow_white.png) no-repeat right center/auto 22px;
+                background: url(/travelmonth/assets/images/main/icon_link_arrow_white.png) no-repeat right center/auto 22px;
                 color: #fff;
                 font: {
                     weight: $font-weight-light;
