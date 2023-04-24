@@ -8,6 +8,13 @@
 <body id="travelmonth-main">
 	<%@ include file="include/include-header.jspf" %>
 	<div id="container">
+		<!-- button.btn.btn-primary(type="button" data-bs-toggle="modal" data-bs-target="#staticBackdrop") Launch demo modal--><!-- #staticBackdrop.modal.fade(data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true").modal-dialog
+    .modal-content
+        .modal-header
+            h5.modal-title Modal title
+            button.btn-close(type="button" data-bs-dismiss="modal" aria-label="Close")
+        .modal-body
+            p Modal body text goes here.-->
 		<section class="main__intro"><h2>여행이 활짝! 일상이 반짝! <br>
 			대한민국은 <br>
 			절찬여행중
@@ -175,18 +182,37 @@
 				<div class="event-swiper">
 					<div class="swiper">
 						<div class="swiper-wrapper">
-							<c:if test="${not empty event}">
-								<c:if test="${event.result}">
-									<c:set var="list" value="${event.data.list}"/>
-									<c:forEach var="row" items="${list}" varStatus="loop">
-										<div class="swiper-slide">
-											<a href="${row.link}" target="${row.link_target}" style="background-image:url(${row.thumbnail})">
-												<p>${row.title}</p>
-											</a>
-										</div>
-									</c:forEach>
-								</c:if>
-							</c:if>
+							<div class="swiper-slide"><a href="#" target="_blank"
+							                             style="background-image:url(${pageContext.request.contextPath}/assets/images/main/img_event_1.png)">
+								<p>부모님과 여.행.기 <br> SNS 인증샷 이벤트</p></a></div>
+							<div class="swiper-slide"><a href="#" target="_blank"
+							                             style="background-image:url(${pageContext.request.contextPath}/assets/images/main/img_event_2.png)">
+								<p>스팟트라이트 SNS 댓글 이벤트</p></a></div>
+							<div class="swiper-slide"><a href="#" target="_blank"
+							                             style="background-image:url(${pageContext.request.contextPath}/assets/images/main/img_event_3.png)">
+								<p>투(TWO)어게인 <br> SNS 여행 인증샷 이벤트</p></a></div>
+							<div class="swiper-slide"><a href="#" target="_blank"
+							                             style="background-image:url(${pageContext.request.contextPath}/assets/images/main/img_event_4.png)">
+								<p>부모님과 여.행.기 <br> SNS 댓글 이벤트</p></a></div>
+							<div class="swiper-slide"><a href="#" target="_blank"
+							                             style="background-image:url(${pageContext.request.contextPath}/assets/images/main/img_event_1.png)">
+								<p>부모님과 여.행.기 <br> SNS 인증샷 이벤트</p></a></div>
+							<div class="swiper-slide"><a href="#" target="_blank"
+							                             style="background-image:url(${pageContext.request.contextPath}/assets/images/main/img_event_1.png)">
+								<p>부모님과 여.행.기 <br> SNS 인증샷 이벤트</p></a></div>
+							<div class="swiper-slide"><a href="#" target="_blank"
+							                             style="background-image:url(${pageContext.request.contextPath}/assets/images/main/img_event_2.png)">
+								<p>스팟트라이트 SNS 댓글 이벤트</p></a></div>
+							<div class="swiper-slide"><a href="#" target="_blank"
+							                             style="background-image:url(${pageContext.request.contextPath}/assets/images/main/img_event_3.png)">
+								<p>투(TWO)어게인 <br> SNS 여행 인증샷 이벤트</p></a></div>
+							<div class="swiper-slide"><a href="#" target="_blank"
+							                             style="background-image:url(${pageContext.request.contextPath}/assets/images/main/img_event_4.png)">
+								<p>부모님과 여.행.기 <br> SNS 댓글 이벤트</p></a></div>
+							<div class="swiper-slide"><a href="#" target="_blank"
+							                             style="background-image:url(${pageContext.request.contextPath}/assets/images/main/img_event_1.png)">
+								<p>부모님과 여.행.기 <br> SNS 인증샷 이벤트</p>
+							</a></div>
 						</div>
 						<div class="event-swiper__paging">
 							<div class="event-swiper__paging-prev"></div>

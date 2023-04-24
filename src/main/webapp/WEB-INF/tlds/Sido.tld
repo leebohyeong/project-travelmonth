@@ -4,11 +4,11 @@
 		xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-jsptaglibrary_2_1.xsd"
 		version="2.1">
 	<tlib-version>1.0</tlib-version>
-	<short-name>Area</short-name>
+	<short-name>Sido</short-name>
 	<function>
 		<description>getList</description>
 		<name>getList</name>
-		<function-class>kr.or.visitkorea.korean.global.util.Area</function-class>
+		<function-class>kr.or.visitkorea.korean.global.util.Sido</function-class>
 		<function-signature>java.lang.Object getList()</function-signature>
 	</function>
 </taglib>

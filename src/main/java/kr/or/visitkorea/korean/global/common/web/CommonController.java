@@ -17,7 +17,7 @@ public class CommonController<T> {
 
 	private final EventService EVENT_SERVICE;
 	private final ShowcaseService SHOWCASE_SERVICE;
-	private final InstagramService INSTAGRAM_SERVICE;
+	private final InstagramService<T> INSTAGRAM_SERVICE;
 	private static final Logger LOGGER = LoggerFactory.getLogger(CommonController.class);
 
 	/**

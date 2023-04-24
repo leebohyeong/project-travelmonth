@@ -1,8 +1,7 @@
 package kr.or.visitkorea.korean.instagram.service.impl;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
 import egovframework.com.cmm.service.EgovProperties;
-import kr.or.visitkorea.korean.area.service.impl.AreaServiceImpl;
+import kr.or.visitkorea.korean.global.common.service.impl.CommonServiceImplWrapper;
 import kr.or.visitkorea.korean.global.dto.CommonResponse;
 import kr.or.visitkorea.korean.global.util.RequestUrl;
 import kr.or.visitkorea.korean.instagram.service.InstagramService;
@@ -11,17 +10,13 @@ import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
-
-import java.util.List;
 
 @Service
 @RequiredArgsConstructor
 public class InstagramServiceImpl<T> implements InstagramService<T> {
 
-	private final ObjectMapper MAPPER;
-	private static final Logger LOGGER = LoggerFactory.getLogger(AreaServiceImpl.class);
+	private static final Logger LOGGER = LoggerFactory.getLogger(InstagramServiceImpl.class);
 
 	/**
 	 * GET LIST
