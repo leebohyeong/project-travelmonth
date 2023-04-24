@@ -9,28 +9,30 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 
 @Controller
 @RequiredArgsConstructor
 @RequestMapping("/area")
 public class AreaController {
 
+	private final Logger LOGGER = LoggerFactory.getLogger(this.getClass());
+
 	private final AreaService AREA_SERVICE;
-	private static final Logger LOGGER = LoggerFactory.getLogger(AreaController.class);
 
 	/**
-	 *
+	 * 지역별 목록 페이지
 	 * @param area
 	 * @param model
 	 * @return
 	 */
-	@GetMapping("/{area}")
+	@RequestMapping(value = "/{area}.do", method = RequestMethod.GET)
 	public String list(@PathVariable("area") String area, Model model) {
 		try {
 			model.addAttribute(AREA_SERVICE.getList(area));
 		}
 		catch (Exception exception) {
-			LOGGER.error("Area(" + area + ") Page Exception : {}", exception.getMessage(), exception);
+			LOGGER.error(area.toUpperCase() + " Page Exception : {}", exception.getMessage(), exception);
 		}
 		return "/area/list";
 	}
