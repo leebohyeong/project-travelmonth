@@ -98,7 +98,7 @@ const config = (env, options) => {
                     directory: path.resolve(__dirname, '../'),
                 },
                 {
-                    directory: path.resolve(__dirname, '../src/main/resources/static/'),
+                    directory: path.resolve(__dirname, '../src/main/webapp/'),
                 }
             ],
             historyApiFallback: true,
