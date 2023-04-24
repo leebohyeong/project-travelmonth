@@ -1,7 +1,10 @@
 import {find,findOne} from "./helper";
+
 import Swiper, {Autoplay, EffectFade, Pagination, Navigation, Scrollbar} from "swiper";
 
 const main = () => {
+
+    //tab
 
 
     //트렌드
@@ -10,7 +13,7 @@ const main = () => {
         const trendCarousel = new Swiper(findOne('.swiper', trend),{
             loop: false,
             speed: 500,
-            spaceBetween: 18,
+            spaceBetween: 10,
             slidesPerView: "auto",
             slideToClickedSlide: true,
 
@@ -93,7 +96,6 @@ const main = () => {
             modules: [Autoplay],
         });
     })();
-
 
     //인스타그램
     (() => {
