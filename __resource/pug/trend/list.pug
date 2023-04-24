@@ -1,5 +1,7 @@
 extends ../components/layout
 
+include ../components/list-thumbnail
+
 append variables
     - const bodyId = 'trend-list';
 
@@ -39,27 +41,12 @@ block body
 
 
         section.list-thumbnail.list-thumbnail--goods
-            h3 여행상품
-            ul
-                li
-                    a(href="#" data-type="d" data-bs-toggle="modal" data-bs-target="#modal-goods-1")
-                        span(style="background-image: url('https://cdn.visitkorea.or.kr/img/call?cmd=VIEW&id=3f8fbd92-6b7e-46ba-9161-21bfd76e8e1b&mode=progress')")
-                        p 예약신청기간 : 5/24~6/20
-                        p 산속등대 어뮤즈월드<br>이용요금 반값 할인
-                li
-                    a(href="#")
-                        span(style="background-image: url('https://cdn.visitkorea.or.kr/img/call?cmd=VIEW&id=de35655e-97a2-4a2d-8da0-812767f53fef&mode=progress')")
-                        p 예약신청기간 : 5/24~6/20
-                        p 고래바다여행선 타고, 호캉스 가자
-                li
-                    a(href="#")
-                        span(style="background-image: url('https://cdn.visitkorea.or.kr/img/call?cmd=VIEW&id=f6c2cdb3-7c48-4ec1-b326-33e19002b0f1&mode=progress')")
-                        p 예약신청기간 : 5/24~6/20
-                        p 경북으로 떠나는 친환경 기차여행 이벤트
+            h3 해보고 싶은 여행 떠나보기
+            h3 농어촌/섬관광 여행 떠나보기
+            - const listThumbnailGoods = JSON.parse('[' + JSON.stringify(listThumbnail.goods).replace(/^\[/, '').replace(/]$/, ',').repeat(4).replace(/,$/, '') + ']').sort(() => Math.random() - 0.5);
+            +list-thumbnail-goods(listThumbnailGoods)
             p
                 button(type="button") MORE
-
-
 
         #modal-goods-1.modal.fade.modal-goods(tabindex="-1" data-bs-backdrop="static" aria-hidden="true")
             .modal-dialog
@@ -95,20 +82,10 @@ block body
                     button.modal-close(type="button" data-bs-dismiss="modal" aria-label="Close")
 
         section.list-thumbnail.list-thumbnail--contents
-            h3 여행콘텐츠
-            ul
-                li
-                    a(href="#" data-bs-toggle="modal" data-bs-target="#modal-trend-content-1")
-                        span(style="background-image: url('https://cdn.visitkorea.or.kr/img/call?cmd=VIEW&id=3f8fbd92-6b7e-46ba-9161-21bfd76e8e1b&mode=progress')")
-                        p 산속등대 어뮤즈월드<br>이용요금 반값 할인
-                li
-                    a(href="#" data-bs-toggle="modal" data-bs-target="#modal-trend-content-2")
-                        span(style="background-image: url('https://cdn.visitkorea.or.kr/img/call?cmd=VIEW&id=de35655e-97a2-4a2d-8da0-812767f53fef&mode=progress')")
-                        p 고래바다여행선 타고, 호캉스 가자
-                li
-                    a(href="#" data-bs-toggle="modal" data-bs-target="#modal-trend-content-3")
-                        span(style="background-image: url('https://cdn.visitkorea.or.kr/img/call?cmd=VIEW&id=f6c2cdb3-7c48-4ec1-b326-33e19002b0f1&mode=progress')")
-                        p 경북으로 떠나는 친환경 기차여행 이벤트
+            h3 2023 여행 트렌드 알아보기
+            h3 농어촌/섬관광 트렌드 알아보기
+            - const listThumbnailContents = JSON.parse('[' + JSON.stringify(listThumbnail.contents).replace(/^\[/, '').replace(/]$/, ',').repeat(4).replace(/,$/, '') + ']').sort(() => Math.random() - 0.5);
+                +list-thumbnail-contents(listThumbnailContents)
             p
                 button(type="button") MORE
 

@@ -34,6 +34,53 @@ block variables
             {code: 'I', name: '미식여행', menuTag: '미식<br>여행', content: '지역의 숨겨진 맛을 찾아 떠나는 오감만족 식도락 미식여행입니다.',},
             {code: 'J', name: '반려동물동반여행', menuTag: '반려동물<br>동반여행', content: '반려동물과 함께 행복한 추억을 쌓을 수 있는 추천여행지를 소개합니다.',},
         ];
+
+        const benefitsAddList = [
+            {code: 'traffic', name: '교통혜택', content: '국내여행 준비중이라면<br>교통혜택을 챙겨가세요!', url: '/html/benefits/traffic.html'},
+            {code: 'stay', name: '숙박혜택', content: '여행의 완성은 잠자리!<br>역대급 숙박혜택을 확인하세요', url: '/html/benefits/stay.html'},
+            {code: 'play', name: '놀거리혜택', content: '놀거리혜택으로<br>풍성한 여행을 만들어가세요!', url: '/html/benefits/play.html'},
+            {code: 'special', name: '여행상품<br>특별 기획전', content: '여행가는 달 기간동안<br>여행업계가 선보이는<br>각종 혜택들을 만나보세요.', url: '/html/special/list.html'},
+        ];
+
+        const listThumbnail = {
+            goods: [
+                {
+                    thumbnail: 'thumbnail_1.png',
+                    title: '[양양] 바다낚시 체험과 해변 플로깅 투어',
+                    period: '5/24~6/20',
+                    price: '40,000원~',
+                    type: '당일',
+                },
+                {
+                    thumbnail: 'thumbnail_2.png',
+                    title: '섬 속의 섬 접도어촌체험마을',
+                    period: '5/24~6/20',
+                    price: '40,000원~',
+                    type: '당일',
+                },
+                {
+                    thumbnail: 'thumbnail_3.png',
+                    title: '자연경관이 아름다운 가경주마을체험',
+                    period: '5/24~6/20',
+                    price: '40,000원~',
+                    type: '숙박',
+                }
+            ],
+            contents: [
+                {
+                    thumbnail: 'thumbnail_4.png',
+                    title: '서대문형무소! 독립의 그날로 시간여행,<br>별을 따라 걷다'
+                },
+                {
+                    thumbnail: 'thumbnail_5.png',
+                    title: '국난을 슬기롭게 극복한 옥주,<br>슬기로운 옥주생활 1박2일 '
+                },
+                {
+                    thumbnail: 'thumbnail_6.png',
+                    title: '산류천석! 그래 석오처럼 산류천석!<br>나를 깨우다 '
+                }
+            ]
+        };
 doctype html
 html(lang="ko")
     head

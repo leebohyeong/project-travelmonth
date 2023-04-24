@@ -1,0 +1,19 @@
+mixin list-thumbnail-goods(list)
+    ul
+        each item, index in list
+            li(class=`${index > 5 ? 'list-thumbnail__item--hide' : ''}`)
+                a(href=`#modal-goods-${index + 1}` data-bs-toggle="modal" data-bs-target=`#modal-goods-${index + 1}`)
+                    span(style=`background-image: url('/assets/images/@temp/${item.thumbnail}')`)
+                    p 예약신청기간 : #{item.period}
+                    p!= item.title
+                    div
+                        p!= item.price
+                        p!= item.type
+
+mixin list-thumbnail-contents(list)
+    ul
+        each item, index in list
+            li(class=`${index > 5 ? 'list-thumbnail__item--hide' : ''}`)
+                a(href=`#modal-trend-content-${index + 1}` data-bs-toggle="modal" data-bs-target=`#modal-trend-content-${index + 1}`)
+                    span(style=`background-image: url('/assets/images/@temp/${item.thumbnail}')`)
+                    p!= item.title
