@@ -14,9 +14,7 @@ import org.springframework.stereotype.Service;
 
 @Service
 @RequiredArgsConstructor
-public class InstagramServiceImpl<T> implements InstagramService<T> {
-
-	private static final Logger LOGGER = LoggerFactory.getLogger(InstagramServiceImpl.class);
+public class InstagramServiceImpl<T> extends CommonServiceImplWrapper implements InstagramService<T> {
 
 	/**
 	 * GET LIST
@@ -38,9 +36,9 @@ public class InstagramServiceImpl<T> implements InstagramService<T> {
 					}
 				}
 			}
-		} catch (Exception exception) {
-			LOGGER.error("Instagram List Exception");
-			LOGGER.error("{} ", exception.getMessage(), exception);
+		}
+		catch (Exception exception) {
+			LOGGER.error("Instagram List Exception : {}", exception.getMessage(), exception);
 		}
 		return null;
 	}

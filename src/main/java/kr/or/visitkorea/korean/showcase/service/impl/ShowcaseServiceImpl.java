@@ -1,6 +1,7 @@
 package kr.or.visitkorea.korean.showcase.service.impl;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import kr.or.visitkorea.korean.global.common.service.impl.CommonServiceImplWrapper;
 import kr.or.visitkorea.korean.global.dto.CommonResponse;
 import kr.or.visitkorea.korean.global.util.RequestUrl;
 import kr.or.visitkorea.korean.showcase.service.ShowcaseService;
@@ -12,10 +13,9 @@ import org.springframework.stereotype.Service;
 
 @Service
 @RequiredArgsConstructor
-public class ShowcaseServiceImpl implements ShowcaseService {
+public class ShowcaseServiceImpl extends CommonServiceImplWrapper implements ShowcaseService {
 
 	private final ObjectMapper MAPPER;
-	private static final Logger LOGGER = LoggerFactory.getLogger(ShowcaseServiceImpl.class);
 
 	/**
 	 * GET LIST
@@ -24,7 +24,7 @@ public class ShowcaseServiceImpl implements ShowcaseService {
 	@Override
 	public Object getList() {
 		try {
-			JSONObject jsonObject = RequestUrl.get("http://localhost/showcase/list");
+			JSONObject jsonObject = RequestUrl.get(TRAVEL_MONTH_SITE_URL + "/showcase/list");
 			if (jsonObject != null) {
 				boolean result = (boolean) jsonObject.get("result");
 				if (!result) {
@@ -33,9 +33,9 @@ public class ShowcaseServiceImpl implements ShowcaseService {
 				}
 				return MAPPER.convertValue(jsonObject, CommonResponse.List.class);
 			}
-		} catch (Exception exception) {
-			LOGGER.error("Showcase List Exception");
-			LOGGER.error("{} ", exception.getMessage(), exception);
+		}
+		catch (Exception exception) {
+			LOGGER.error("Showcase List Exception : {}", exception.getMessage(), exception);
 		}
 		return null;
 	}

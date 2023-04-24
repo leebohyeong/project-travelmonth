@@ -15,7 +15,6 @@ import org.springframework.stereotype.Service;
 public class CommonServiceImpl extends CommonServiceImplWrapper implements CommonService {
 
 	private final ObjectMapper MAPPER;
-	private static final Logger LOGGER = LoggerFactory.getLogger(CommonServiceImpl.class);
 
 	/**
 	 * GET AREA LIST
@@ -24,7 +23,7 @@ public class CommonServiceImpl extends CommonServiceImplWrapper implements Commo
 	@Override
 	public Object getSidoList() {
 		try {
-			JSONObject jsonObject = RequestUrl.get(TRAVEL_MONTH_REQUEST_URL + "/area/list");
+			JSONObject jsonObject = RequestUrl.get(TRAVEL_MONTH_SITE_URL + "/area/list");
 			if (jsonObject != null) {
 				boolean result = (boolean) jsonObject.get("result");
 				if (!result) {
@@ -33,9 +32,9 @@ public class CommonServiceImpl extends CommonServiceImplWrapper implements Commo
 				}
 				return MAPPER.convertValue(jsonObject, CommonResponse.List.class);
 			}
-		} catch (Exception exception) {
-			LOGGER.error("Area List Exception");
-			LOGGER.error("{} ", exception.getMessage(), exception);
+		}
+		catch (Exception exception) {
+			LOGGER.error("Area List Exception : {}", exception.getMessage(), exception);
 		}
 		return null;
 	}

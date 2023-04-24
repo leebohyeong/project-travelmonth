@@ -1,6 +1,7 @@
 package kr.or.visitkorea.korean.event.service.impl;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import kr.or.visitkorea.korean.global.common.service.impl.CommonServiceImplWrapper;
 import kr.or.visitkorea.korean.global.util.RequestUrl;
 import kr.or.visitkorea.korean.event.service.EventService;
 import kr.or.visitkorea.korean.global.dto.CommonResponse;
@@ -12,20 +13,20 @@ import org.springframework.stereotype.Service;
 
 @Service
 @RequiredArgsConstructor
-public class EventServiceImpl implements EventService {
+public class EventServiceImpl extends CommonServiceImplWrapper implements EventService {
 
 	private final ObjectMapper MAPPER;
-	private static final Logger LOGGER = LoggerFactory.getLogger(EventServiceImpl.class);
 
 	/**
 	 * GET MAIN LIST
 	 * @return
 	 */
 	@Override
+	@SuppressWarnings("unchecked")
 	public Object getMainList() {
 		try {
 			JSONObject parameters = new JSONObject(){{ put("search_main_st", "Y"); }};
-			JSONObject jsonObject = RequestUrl.get("http://localhost/event/list", parameters);
+			JSONObject jsonObject = RequestUrl.get(TRAVEL_MONTH_SITE_URL + "/event/list", parameters);
 			if (jsonObject != null) {
 				boolean result = (boolean) jsonObject.get("result");
 				if (!result) {
@@ -34,9 +35,9 @@ public class EventServiceImpl implements EventService {
 				}
 				return MAPPER.convertValue(jsonObject, CommonResponse.List.class);
 			}
-		} catch (Exception exception) {
-			LOGGER.error("Event Main List Exception");
-			LOGGER.error("{} ", exception.getMessage(), exception);
+		}
+		catch (Exception exception) {
+			LOGGER.error("Event Main List Exception : {}", exception.getMessage(), exception);
 		}
 		return null;
 	}
