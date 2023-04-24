@@ -488,95 +488,17 @@
     }
 
     section {
-        display: grid;
-
-        @include media-queries($from: lg) {
-            grid-template-columns: math.ceil(percentage(math.div(550, 890))) (100% - math.ceil(percentage(math.div(550, 890))));
-        }
-
         > div {
             position: relative;
 
             &:nth-child(1) {
-                border-radius: 14px 14px 0 0;
+                padding: 28px 32px 52px;
                 background: #f5f5f5;
-
-                @include media-queries($from: lg) {
-                    padding: 28px 32px 52px;
-                    border-radius: 28px 0 0 28px;
-                }
             }
 
             &:nth-child(2) {
+                padding: 20px 50px 52px;
                 background: #63a9ea;
-
-                &::before,
-                &::after {
-                    position: absolute;
-                    z-index: 10;
-                    background: #fff;
-                    content: "";
-                    pointer-events: none;
-                }
-
-                @include media-queries($to: lg) {
-                    border-top: 1px dashed #fff;
-                    grid-row-start: 3;
-
-                    &::before,
-                    &::after {
-                        top: -7px;
-                        width: 7px;
-                        height: 14px;
-                    }
-
-                    &::before {
-                        left: 0;
-                        border-radius: 0 7px 7px 0;
-                    }
-
-                    &::after {
-                        right: 0;
-                        border-radius: 7px 0 0 7px;
-                    }
-                }
-
-                @include media-queries($from: lg) {
-                    padding: 20px 50px 52px;
-                    border-radius: 0 28px 28px 0;
-                    border-left: 1px dashed #fff;
-
-                    &::before,
-                    &::after {
-                        left: -14px;
-                        width: 28px;
-                        height: 14px;
-                    }
-
-                    &::before {
-                        top: 0;
-                        border-radius: 0 0 14px 14px;
-                    }
-
-                    &::after {
-                        bottom: 0;
-                        border-radius: 14px 14px 0 0;
-                    }
-                }
-            }
-
-            &:nth-child(3) {
-                @include media-queries($to: lg) {
-                    background: #f5f5f5;
-                    grid-row-start: 2;
-                }
-            }
-
-            &:nth-child(4) {
-                @include media-queries($to: lg) {
-                    border-radius: 0 0 14px 14px;
-                    background: #63a9ea;
-                }
             }
         }
     }
