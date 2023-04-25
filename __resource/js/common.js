@@ -47,7 +47,23 @@ const ListThumbnail = class {
     }
 };
 
+const googleTag = () => {
+    const triggers = find('[data-gtag-action]');
+    const fireEvent = (trigger) => {
+        const {gtagAction, gtagCategory, gtagLabel} = trigger.dataset;
+        const options = {}
+
+        if (gtagCategory) options['event_category'] = gtagCategory;
+        if (gtagLabel) options['event_label'] = gtagLabel;
+
+        // gtag('event', gtagAction, options);
+    };
+
+    triggers.forEach(trigger => on(trigger, 'click', () => fireEvent(trigger)));
+};
+
 export {
     globalNav,
+    googleTag,
     ListThumbnail,
 }

@@ -487,44 +487,342 @@
         }
     }
 
-    &__item {
+    header + section {
+        margin-top: 90px;
+    }
 
-        &--info {
-            h3 {
-                font-size: 40px;
+    section {
+        display: grid;
+        max-width: 890px;
+        margin: 60px auto 0;
 
-                span {
-                    display: block;
-                    color: #838383;
+        @include media-queries($from: lg) {
+            grid-template-columns: math.ceil(percentage(math.div(550, 890))) (100% - math.ceil(percentage(math.div(550, 890))));
+        }
+
+        > div {
+            position: relative;
+
+            &:nth-child(1) {
+                border-radius: 14px 14px 0 0;
+                background: #f5f5f5;
+
+                @include media-queries($from: lg) {
+                    padding: 28px 32px 52px;
+                    border-radius: 28px 0 0 28px;
+                }
+
+                h3 {
+                    font-weight: 500;
+                    font-size: 42px;
+                    font-family: "GmarketSans", sans-serif;
+                    line-height: 1.1;
+                    letter-spacing: -0.04em;
+
+                    &::before {
+                        display: block;
+                        width: 48px;
+                        height: 48px;
+                        margin-bottom: 20px;
+                        background: {
+                            repeat: no-repeat;
+                            position: center;
+                            size: contain;
+                        };
+                        content: "";
+                    }
+
+                    span {
+                        display: block;
+                        padding-bottom: 4px;
+                        color: #838383;
+                        font-size: 24px;
+                        letter-spacing: -0.02em;
+                    }
+                }
+
+                > div {
+                    margin-top: 20px;
+                }
+
+                h4 {
+                    font-weight: 500;
                     font-size: 24px;
+                    font-family: "GmarketSans", sans-serif;
+                    letter-spacing: -0.02em;
+                }
+
+                h4 + :is(p, ul) {
+                    margin-top: 12px;
+                }
+
+                p,
+                li {
+                    color: #838383;
+                    font-size: 18px;
+                    line-height: math.div(26, 18);
+                    letter-spacing: -0.03em;
+                }
+
+                li {
+                    padding-left: 10px;
+                    font-size: 16px;
+
+                    &::before {
+                        float: left;
+                        margin-left: -10px;
+                        content: "*";
+                    }
                 }
             }
 
-            ul {
-                h4 {
-                    font-size: 24px;
+            &:nth-child(2) {
+                position: relative;
+                background: var(--benefits-program-ticket-color-1);
+
+                &::before,
+                &::after {
+                    position: absolute;
+                    z-index: 10;
+                    background: #fff;
+                    content: "";
+                    pointer-events: none;
                 }
 
-                p {
-                    color: #838383;
-                    font-size: 18px;
+                @include media-queries($to: lg) {
+                    border-top: 1px dashed #fff;
+                    grid-row-start: 3;
+
+                    &::before,
+                    &::after {
+                        top: -7px;
+                        width: 7px;
+                        height: 14px;
+                    }
+
+                    &::before {
+                        left: 0;
+                        border-radius: 0 7px 7px 0;
+                    }
+
+                    &::after {
+                        right: 0;
+                        border-radius: 7px 0 0 7px;
+                    }
+                }
+
+                @include media-queries($from: lg) {
+                    padding: 70px math.ceil(percentage(math.div(50, 330))) 52px;
+                    border-radius: 0 28px 28px 0;
+                    border-left: 1px dashed #fff;
+
+                    &::before,
+                    &::after {
+                        left: -14px;
+                        width: 28px;
+                        height: 14px;
+                    }
+
+                    &::before {
+                        top: 0;
+                        border-radius: 0 0 14px 14px;
+                    }
+
+                    &::after {
+                        bottom: 0;
+                        border-radius: 14px 14px 0 0;
+                    }
+                }
+
+                h4 {
+                    position: absolute;
+                    top: 20px;
+                    right: 20px;
+                }
+
+                div + div {
+                    margin-top: 48px;
+                }
+
+                h5 {
+                    color: #fff;
+                    font-weight: 700;
+                    font-size: 26px;
+                    line-height: math.div(28, 26);
+                    font-family: "GmarketSans", sans-serif;
+                    text-align: center;
+
+                    span {
+                        display: block;
+                        padding-bottom: 4px;
+                        font-weight: 500;
+                        font-size: 16px;
+                    }
+                }
+
+                dl {
+                    position: relative;
+                    margin-top: 12px;
+                    padding: 20px 10px 12px;
+                    border-radius: 10px;
+                    background: var(--benefits-program-ticket-color-2);
+                    color: #fff;
+                    font-family: "GmarketSans", sans-serif;
+                    text-align: center;
+
+                    &::before,
+                    &::after {
+                        position: absolute;
+                        top: calc(50% - 4px);
+                        width: 4px;
+                        height: 8px;
+                        background: var(--benefits-program-ticket-color-1);
+                        content: "";
+                    }
+
+                    &::before {
+                        left: 0;
+                        border-radius: 0 4px 4px 0;
+                    }
+
+                    &::after {
+                        right: 0;
+                        border-radius: 4px 0 0 4px;
+                    }
+                }
+
+                dt {
+                    font-weight: 500;
+                    font-size: 16px;
+                    line-height: math.div(22, 16);
+                    letter-spacing: -0.035em;
+                }
+
+                dd {
+                    padding-top: 4px;
+                    font-weight: 700;
+                    font-size: 20px;
+                    letter-spacing: -0.04em;
+
+                    strong {
+                        color: #fff25f;
+                        font-weight: 700;
+                        font-size: 40px;
+                    }
+
+                    span {
+                        font-size: 20px;
+                        letter-spacing: -0.04em;
+                    }
+                }
+
+                div + p {
+                    margin-top: 16px;
+                    text-align: center;
+
+                    a {
+                        display: inline-block;
+                        padding: 8px 36px 8px 16px;
+                        border-radius: 18px;
+                        background: #fff url("/travelmonth/assets/images/benefits/icon_benefits_view.png") no-repeat right 16px center/12px auto;
+                        color: #000;
+                        font-weight: $font-weight-light;
+                        font-size: 16px;
+                        line-height: 20px;
+                    }
+                }
+
+                div + div + p {
+                    margin-top: 40px;
+                }
+            }
+
+            &:nth-child(3) {
+                padding: 10px 30px 0;
+
+                @include media-queries($to: lg) {
+                    background: #f5f5f5;
+                    grid-row-start: 2;
+                }
+
+                div {
+                    display: flex;
+                    align-items: flex-start;
+                    padding-top: 8px;
+                    color: #303030;
+                    font-weight: $font-weight-light;
+                    font-size: 16px;
+                    line-height: math.div(20, 16);
+                    letter-spacing: -0.03em;
+                }
+
+                dt {
+                    padding-left: 8px;
+                    white-space: nowrap;
+
+                    &::before {
+                        float: left;
+                        margin-left: -8px;
+                        content: "\b7";
+                    }
+
+                    &::after {
+                        padding: 0 4px;
+                        content: ":";
+                    }
+                }
+            }
+
+            &:nth-child(4) {
+                @include media-queries($to: lg) {
+                    border-radius: 0 0 14px 14px;
+                    background: var(--benefits-program-ticket-color-1);
+                }
+
+                ul {
+                    padding: 10px math.ceil(percentage(math.div(30, 330))) 0;
+                }
+
+                li {
+                    padding: 8px 0 0 8px;
+                    color: #303030;
+                    font-weight: $font-weight-light;
+                    font-size: 16px;
+                    line-height: math.div(20, 16);
+                    letter-spacing: -0.03em;
+                    white-space: nowrap;
+
+                    &::before {
+                        float: left;
+                        margin-left: -8px;
+                        content: "\b7";
+                    }
                 }
             }
         }
-
-    }
-
-    &__content {
-
-    }
-
-    &__coupons {
-
     }
 }
 
 .benefits-program--traffic {
+    --benefits-program-ticket-color-1: #63a9ea;
+    --benefits-program-ticket-color-2: #4681b9;
+
     > header {
-        background-image: url(/travelmonth/assets/images/benefits/traffic/bg_benefits_traffic.png);
+        background-image: url(/travelmonth/assets/images/benefits/traffic/bg_header.png);
+    }
+
+    @each $theme in 'train', 'airplane', 'bus' {
+        [data-theme="#{$theme}"] > div:nth-child(1) h3::before {
+            background-image: url("/travelmonth/assets/images/benefits/traffic/icon_#{$theme}.png");
+        }
+    }
+}
+
+.benefits-program--stay {
+    --benefits-program-ticket-color-1: #f6a14d;
+    --benefits-program-ticket-color-2: #cf7720;
+
+    > header {
+        background-image: url(/travelmonth/assets/images/benefits/stay/bg_header.jpg);
     }
 }
