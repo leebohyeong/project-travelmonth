@@ -44,20 +44,29 @@
     }
 
     &__category {
+        max-width: 1440px;
+        margin: 0 auto;
+        padding: 50px 0 70px 0;
+
+        @include media-queries($from: xl) {
+            display: flex;
+            align-items: center;
+        }
 
         .category-tab {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
 
-            li {
-
+            @include media-queries($from: xl) {
+                display: flex;
+                flex-direction: column;
             }
 
             &__item {
                 display: block;
                 padding: 10px 0;
                 background-color: #58b490;
-                color: rgba(#369d75, .5);
+                color: rgba(#fff, .5);
 
                 &--active {
                     background-color: #fff;
@@ -95,8 +104,104 @@
         .category-panel {
             display: none;
 
+            @include media-queries($to: xl) {
+                margin-top: 58px;
+            }
+
+
             &--active {
                 display: block;
+            }
+
+            a {
+                display: block;
+                position: relative;
+                padding: 0 20px;
+                color: #000;
+                font: {
+                    weight: $font-weight-light;
+                    size: 21px;
+                }
+                text-align: center;
+
+                @include media-queries($from: xl) {
+                    padding: 0 40px;
+                    font-size: 24px;
+                }
+
+                &::before {
+                    display: block;
+                    width: 23px;
+                    margin: 0 auto 8px;
+                    background: {
+                        repeat: no-repeat;
+                        position: center bottom;
+                        size: 23px auto;
+                    };
+                    content:'';
+                }
+
+                &::after {
+                    position: absolute;
+                    top: 25%;
+                    bottom: 31.6666666667%;
+                    left: 0;
+                    width: 1px;
+                    background: #ebebeb;
+                    content: "";
+                }
+            }
+
+            .swiper {
+                @include media-queries($from: xl) {
+                    &-wrapper {
+                        flex-wrap: wrap;
+                    }
+                }
+
+                &-slide {
+                    width: auto;
+                    flex-shrink: 1;
+                    text-align: center;
+                    font-size: 18px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                }
+            }
+        }
+
+        .category-tab-contents__location {
+            @each $code, $width in ('a', 17, 35), ('b', 32, 27), ('c', 22, 30), ('d', 34, 29), ('e', 21, 33), ('f', 36, 27), ('g', 45, 19), ('h', 36, 25), ('i', 29, 29), ('j', 44, 23), ('k', 33, 35), ('l', 28, 24), ('m', 23, 33), ('n', 25, 34), ('o', 22, 36), ('p', 48, 25), ('q', 18, 33), {
+                [data-theme="#{$code}"]::before {
+                    width: #{$width}px;
+                    height: 56px;
+                    background-image: url("/travelmonth/assets/images/main/icon_category_location_#{$code}.png");
+                    background-size: #{$width}px auto;
+                }
+
+                @media (hover: hover) {
+                    [data-theme="#{$code}"]:hover::before {
+                        background-image: url("/travelmonth/assets/images/main/icon_category_location_#{$code}_on.png");
+                    }
+                }
+            }
+        }
+
+        .category-tab-contents__program {
+            @each $code, $width in ('a', 63, 73), ('b', 60, 71), ('c', 60, 72), ('d', 71, 70), ('e', 60, 73), {
+                [data-theme="#{$code}"]::before {
+                    width: #{$width}px;
+                    height: 74px;
+                    background-image: url("/travelmonth/assets/images/main/icon_category_program_#{$code}.png");
+                    background-size: #{$width}px auto;
+                }
+
+                @media (hover: hover) {
+                    [data-theme="#{$code}"]:hover::before {
+                        background-image: url("/travelmonth/assets/images/main/icon_category_program_#{$code}_on.png");
+                    }
+                }
             }
         }
     }
