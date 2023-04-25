@@ -61,5 +61,3 @@ src/main/webapp/assets/js/*.js
 
 application.yml
 target/
-
-/src/main/resources/static/assets/
