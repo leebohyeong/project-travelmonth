@@ -150,7 +150,7 @@
 					</div>
 					<div class="june-contents__tourist">
 						<div class="june-contents__tourist-banner"
-						     style="background-image:url(/assets/images/main/img_june_banner.png)"><p class="screen_out">
+						     style="background-image:url(/travelmonth/assets/images/main/img_june_banner.png)"><p class="screen_out">
 							여행가는 달 광고 영상에서
 							<strong>본 관광지는 어디일까요?</strong>
 						</p></div>

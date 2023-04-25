@@ -183,7 +183,7 @@
                 ul {
                     position: relative;
                     max-width: 400px;
-                    background: url("/assets/images/benefits/map_bg.png") no-repeat right top/auto 100%;
+                    background: url("/travelmonth/assets/images/benefits/map_bg.png") no-repeat right top/auto 100%;
                     aspect-ratio: 400 / 539;
                 }
 
@@ -224,7 +224,7 @@
                             }
 
                             > span {
-                                background-image: url("/assets/images/benefits/map_#{$code}.png");
+                                background-image: url("/travelmonth/assets/images/benefits/map_#{$code}.png");
                             }
                         }
                     }
@@ -250,7 +250,7 @@
                         z-index: 10;
                         width: 100%;
                         height: 100%;
-                        background: url("/assets/images/benefits/icon_local.png") no-repeat center bottom/18px auto;
+                        background: url("/travelmonth/assets/images/benefits/icon_local.png") no-repeat center bottom/18px auto;
                         content: "";
                         opacity: 1;
                         cursor: pointer;
@@ -265,7 +265,7 @@
                         padding: 0 18px 0 36px;
                         border-radius: 20px;
                         border: 1px solid #6b6b6b;
-                        background: #fff url("/assets/images/benefits/icon_local_on.png") no-repeat 12px center/20px auto;
+                        background: #fff url("/travelmonth/assets/images/benefits/icon_local_on.png") no-repeat 12px center/20px auto;
                         color: #000;
                         font-weight: $font-weight-bold;
                         font-size: 20px;
@@ -349,16 +349,16 @@
 
     @each $type, $width in (traffic, 36px), (stay, 40px), (play, 39px), (trend, 44px), (special, 31px) {
         &__menu--program &__menu-link--#{$type} {
-            background-image: url("/assets/images/benefits/icon_program_#{$type}.png");
+            background-image: url("/travelmonth/assets/images/benefits/icon_program_#{$type}.png");
             background-size: $width auto;
 
             &:hover {
-                background-image: url("/assets/images/benefits/icon_program_#{$type}_on.png");
+                background-image: url("/travelmonth/assets/images/benefits/icon_program_#{$type}_on.png");
             }
         }
 
         &__menu--program strong#{&}__menu-link--#{$type} {
-            background-image: url("/assets/images/benefits/icon_program_#{$type}_on.png");
+            background-image: url("/travelmonth/assets/images/benefits/icon_program_#{$type}_on.png");
         }
     }
 
@@ -411,7 +411,7 @@
     }
 
     &[data-local="10"] header {
-        background-image: url("/assets/images/benefits/bg_local_10.png");
+        background-image: url("/travelmonth/assets/images/benefits/bg_local_10.png");
         background-size: 78px auto;
 
         @include media-queries($from: xl) {

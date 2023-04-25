@@ -81,7 +81,7 @@
     }
 
     &[data-theme="a"] header {
-        background-image: url("/assets/images/trend/bg_theme_a.jpg");
+        background-image: url("/travelmonth/assets/images/trend/bg_theme_a.jpg");
     }
 
     header + nav {
@@ -133,7 +133,7 @@
                 height: 56px;
                 margin: 0 auto 8px;
                 background: {
-                    image: url("/assets/images/trend/icon_theme.png");
+                    image: url("/travelmonth/assets/images/trend/icon_theme.png");
                     repeat: no-repeat;
                     position: center bottom;
                     size: 23px auto;
@@ -157,7 +157,7 @@
                     color: #37bf8a;
 
                     &::before {
-                        background-image: url("/assets/images/trend/icon_theme_on.png");
+                        background-image: url("/travelmonth/assets/images/trend/icon_theme_on.png");
                     }
                 }
             }
@@ -169,7 +169,7 @@
             font-weight: $font-weight-bold;
 
             &::before {
-                background-image: url("/assets/images/trend/icon_theme_on.png");
+                background-image: url("/travelmonth/assets/images/trend/icon_theme_on.png");
             }
 
             @include media-queries($from: xl) {
@@ -192,17 +192,17 @@
         @each $code, $width in ('a', 30, 28), ('b', 22, 26), ('c', 29, 26), ('d', 29, 24), ('e', 27, 26), ('f', 19, 27), ('g', 20, 26), ('h', 30, 28), ('i', 32, 26), ('j', 25, 22) {
             [data-theme="#{$code}"]::before {
                 width: #{$width}px;
-                background-image: url("/assets/images/trend/icon_theme_#{$code}.png");
+                background-image: url("/travelmonth/assets/images/trend/icon_theme_#{$code}.png");
                 background-size: #{$width}px auto;
             }
 
             strong[data-theme="#{$code}"]::before {
-                background-image: url("/assets/images/trend/icon_theme_#{$code}_on.png");
+                background-image: url("/travelmonth/assets/images/trend/icon_theme_#{$code}_on.png");
             }
 
             @media (hover: hover) {
                 [data-theme="#{$code}"]:hover::before {
-                    background-image: url("/assets/images/trend/icon_theme_#{$code}_on.png");
+                    background-image: url("/travelmonth/assets/images/trend/icon_theme_#{$code}_on.png");
                 }
             }
         }
@@ -278,11 +278,11 @@
         }
 
         .swiper-button-next {
-            background-image: url("/assets/images/trend/icon_carousel_next.png");
+            background-image: url("/travelmonth/assets/images/trend/icon_carousel_next.png");
         }
 
         .swiper-button-prev {
-            background-image: url("/assets/images/trend/icon_carousel_prev.png");
+            background-image: url("/travelmonth/assets/images/trend/icon_carousel_prev.png");
         }
 
         dl {
@@ -357,7 +357,7 @@
             padding: 6px 18px 6px 8px;
             border-radius: 15px;
             border: 1px solid #d5d5d5;
-            background: url("/assets/images/trend/icon_arrow.png") no-repeat right 8px center/6px auto;
+            background: url("/travelmonth/assets/images/trend/icon_arrow.png") no-repeat right 8px center/6px auto;
             color: #8c8c8c;
             line-height: 14px;
             vertical-align: top;
