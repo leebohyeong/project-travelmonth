@@ -1,5 +1,9 @@
 @use "sass:math";
 
+#container {
+    margin-top: -150px;
+}
+
 .main {
 
     &__header {
@@ -40,6 +44,13 @@
                 font-size: 18px;
                 line-height: math.div(32, 18);
             }
+        }
+    }
+
+    &__intro {
+        .intro-swiper {
+            height: 100vh;
+            background-color: blue;
         }
     }
 

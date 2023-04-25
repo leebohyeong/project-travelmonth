@@ -67,14 +67,15 @@ body {
     top: 0;
     left: 0;
     z-index: 200;
-    background: #fff;
-    box-shadow: 0 1px 0 0 #d3d3d3;
+    //background: #fff;
+    //box-shadow: 0 1px 0 0 #d3d3d3;
 
     > div {
         display: flex;
         justify-content: center;
         max-width: 1750px;
         margin: 0 auto;
+        background-color: #fff;
 
         @include media-queries($from: xl) {
             justify-content: space-between;
