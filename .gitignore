@@ -56,10 +56,9 @@ node_modules/
 
 src/main/webapp/assets/css/*.css
 src/main/webapp/assets/js/*.js
+src/main/webapp/html/*.html
 
-!src/main/resources/templates/**/*.html
+src/main/resources/templates/**/*.html
 
 application.yml
 target/
-
-/src/main/resources/static/assets/

@@ -31,7 +31,7 @@ const config = (env, options) => {
             ],
         },
         output: {
-            path: isServer ? path.resolve(__dirname, '../') : path.resolve(__dirname, '../src/main/webapp/travelmonth/'),
+            path: isServer ? path.resolve(__dirname, '../') : path.resolve(__dirname, '../src/main/webapp/'),
             filename: `assets/js/[name].js`
         },
         module: {
@@ -96,9 +96,11 @@ const config = (env, options) => {
             static: [
                 {
                     directory: path.resolve(__dirname, '../'),
+                    publicPath: '/travelmonth',
                 },
                 {
-                    directory: path.resolve(__dirname, '../src/main/webapp/travelmonth/'),
+                    directory: path.resolve(__dirname, '../src/main/webapp/'),
+                    publicPath: '/travelmonth',
                 }
             ],
             historyApiFallback: true,
