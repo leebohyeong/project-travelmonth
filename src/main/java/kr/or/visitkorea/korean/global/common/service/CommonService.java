@@ -8,4 +8,11 @@ public interface CommonService {
 	 */
 	Object getSidoList();
 
+	/**
+	 * GET SIDO
+	 * @param nameEn
+	 * @return
+	 */
+	Object getSidoByNameEn(String nameEn);
+
 }

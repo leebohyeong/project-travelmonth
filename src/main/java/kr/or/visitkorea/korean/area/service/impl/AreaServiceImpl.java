@@ -19,15 +19,18 @@ public class AreaServiceImpl  extends CommonServiceImplWrapper implements AreaSe
 
 	/**
 	 * GET LIST
-	 * @param area
+	 * @param request
 	 * @return
 	 */
 	@Override
-	public Object getList(String area) {
+	@SuppressWarnings("unchecked")
+	public Object getList(final JSONObject request) {
 		try {
-			JSONObject jsonObject = RequestUrl.get(TRAVEL_MONTH_SITE_URL + "/area/list");
+			JSONObject parameter = new JSONObject(){{ put("search_area", request.get("code")); }};
+			JSONObject jsonObject = RequestUrl.get(TRAVEL_MONTH_SITE_URL + "/program/travel-list", parameter);
 			if (jsonObject != null) {
-				boolean result = (boolean) jsonObject.get("result");if (!result) {
+				boolean result = (boolean) jsonObject.get("result");
+				if (!result) {
 					String message = String.valueOf(jsonObject.get("message"));
 					throw new RuntimeException(message);
 				}

@@ -15,6 +15,7 @@ public class CommonResponse<T> {
 		private String message;
 
 		public List() { }
+
 		public List(Data<T> data) {
 			this.code = 200;
 			this.data = data;

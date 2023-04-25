@@ -10,6 +10,8 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 
+import java.util.HashMap;
+
 @Service
 @RequiredArgsConstructor
 public class CommonServiceImpl extends CommonServiceImplWrapper implements CommonService {
@@ -38,4 +40,29 @@ public class CommonServiceImpl extends CommonServiceImplWrapper implements Commo
 		}
 		return null;
 	}
+
+	/**
+	 * GET SIDO
+	 * @param nameEn
+	 * @return
+	 */
+	@Override
+	public Object getSidoByNameEn(String nameEn) {
+		try {
+			JSONObject jsonObject = RequestUrl.get(TRAVEL_MONTH_SITE_URL + "/area/en/" + nameEn);
+			if (jsonObject != null) {
+				boolean result = (boolean) jsonObject.get("result");
+				if (!result) {
+					String message = String.valueOf(jsonObject.get("message"));
+					throw new RuntimeException(message);
+				}
+				return jsonObject;
+			}
+		}
+		catch (Exception exception) {
+			LOGGER.error("Area Exception : {}", exception.getMessage(), exception);
+		}
+		return null;
+	}
+
 }
