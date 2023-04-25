@@ -421,7 +421,7 @@
 }
 
 .benefits-program {
-    header {
+    > header {
         margin: 0 calc(-1 * var(--site-padding-horizon));
         padding: 0 var(--site-padding-horizon);
         background: {
@@ -487,19 +487,44 @@
         }
     }
 
-    section {
-        > div {
-            position: relative;
+    &__item {
 
-            &:nth-child(1) {
-                padding: 28px 32px 52px;
-                background: #f5f5f5;
+        &--info {
+            h3 {
+                font-size: 40px;
+
+                span {
+                    display: block;
+                    color: #838383;
+                    font-size: 24px;
+                }
             }
 
-            &:nth-child(2) {
-                padding: 20px 50px 52px;
-                background: #63a9ea;
+            ul {
+                h4 {
+                    font-size: 24px;
+                }
+
+                p {
+                    color: #838383;
+                    font-size: 18px;
+                }
             }
         }
+
+    }
+
+    &__content {
+
+    }
+
+    &__coupons {
+
+    }
+}
+
+.benefits-program--traffic {
+    > header {
+        background-image: url(/travelmonth/assets/images/benefits/traffic/bg_benefits_traffic.png);
     }
 }
