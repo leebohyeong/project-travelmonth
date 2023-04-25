@@ -12,7 +12,7 @@ const main = () => {
             slidesPerView: "auto",
 
             Autoplay: {
-                delay: 2500,
+                delay: 1000,
                 disableOnInteraction: false,
             },
 
@@ -25,7 +25,7 @@ const main = () => {
                 nextEl: ".swiper-navigation-next",
             },
 
-            modules: [Navigation, Pagination],
+            modules: [Autoplay, Navigation, Pagination],
         });
 
 
@@ -62,11 +62,27 @@ const main = () => {
             })
         );
 
-        const categoryCarousel = new Swiper(findOne('.swiper', category),{
+        const categoryLoactionCarousel = new Swiper(findOne('.swiper', loaction),{
             slidesPerView: 'auto',
             freeMode: {
                 enabled: true,
             },
+            modules: [FreeMode],
+        });
+
+        const categoryProgramCarousel = new Swiper(findOne('.swiper', program),{
+            slidesPerView: 5,
+            freeMode: {
+                enabled: true,
+            },
+
+            breakpoints: {
+                //브라우저가 1200보다 클 때
+                1200: {
+                    slidesPerView: 'auto',
+                },
+            },
+
             modules: [FreeMode],
         });
 
@@ -76,11 +92,12 @@ const main = () => {
     (() => {
         const trend = findOne('.main__trend');
         const trendCarousel = new Swiper(findOne('.swiper', trend),{
-            loop: false,
-            speed: 500,
             spaceBetween: 10,
-            slidesPerView: "auto",
-            slideToClickedSlide: true,
+            slidesPerView: 4.5,
+
+            freeMode: {
+                enabled: true,
+            },
 
             scrollbar: {
                 el: '.swiper-scrollbar',
@@ -89,13 +106,13 @@ const main = () => {
             breakpoints: {
                 //브라우저가 1200보다 클 때
                 1200: {
-                    slidesPerView: "auto",
+                    slidesPerView: 10,
                     spaceBetween: 20,
                     // allowTouchMove: false,
                 },
             },
 
-            modules: [Navigation, Scrollbar],
+            modules: [FreeMode, Navigation, Scrollbar],
         });
     })();
 
