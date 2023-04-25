@@ -1,7 +1,9 @@
 @use "sass:math";
 
 #container {
-    margin-top: -150px;
+    @include media-queries($from: xl) {
+        margin-top: -150px;
+    }
 }
 
 .main {
@@ -49,8 +51,8 @@
 
     &__intro {
         .intro-swiper {
-            height: 100vh;
-            background-color: blue;
+            max-width: 1920px;
+            margin: 0 auto;
         }
     }
 
