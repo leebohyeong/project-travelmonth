@@ -1,6 +1,6 @@
 import {find, findOne, on} from "./helper";
 
-import Swiper, {Autoplay, EffectFade, Pagination, Navigation, Scrollbar} from "swiper";
+import Swiper, {Autoplay, EffectFade, Pagination, Navigation, Scrollbar, FreeMode} from "swiper";
 
 const main = () => {
 
@@ -35,7 +35,13 @@ const main = () => {
             })
         );
 
-        loaction
+        const categoryCarousel = new Swiper(findOne('.swiper', category),{
+            slidesPerView: 'auto',
+            freeMode: {
+                enabled: true,
+            },
+            modules: [FreeMode],
+        });
 
     })();
 
@@ -88,7 +94,6 @@ const main = () => {
             },
 
             breakpoints: {
-                //브라우저가 1200보다 클 때
                 1200: {
                     // loop: true,
                     spaceBetween: 20,
