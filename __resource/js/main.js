@@ -1,8 +1,35 @@
 import {find, findOne, on} from "./helper";
 
-import Swiper, {Autoplay, EffectFade, Pagination, Navigation, Scrollbar, FreeMode} from "swiper";
+import Swiper, {Autoplay, Pagination, Navigation, Scrollbar, FreeMode} from "swiper";
 
 const main = () => {
+
+    //intro
+    (() => {
+        const intro = findOne('.main__intro');
+        const introCarousel = new Swiper(findOne('.swiper', intro),{
+            loop: true,
+            slidesPerView: "auto",
+
+            Autoplay: {
+                delay: 2500,
+                disableOnInteraction: false,
+            },
+
+            pagination: {
+                el: ".swiper-pagination",
+            },
+
+            navigation: {
+                prevEl: ".swiper-navigation-prev",
+                nextEl: ".swiper-navigation-next",
+            },
+
+            modules: [Navigation, Pagination],
+        });
+
+
+    })();
 
     //tab
     (() => {
@@ -62,7 +89,6 @@ const main = () => {
             breakpoints: {
                 //브라우저가 1200보다 클 때
                 1200: {
-                    // loop: true,
                     slidesPerView: "auto",
                     spaceBetween: 20,
                     // allowTouchMove: false,
@@ -95,7 +121,6 @@ const main = () => {
 
             breakpoints: {
                 1200: {
-                    // loop: true,
                     spaceBetween: 20,
                     slidesPerView: 'auto',
                     centeredSlides: true,
@@ -112,7 +137,7 @@ const main = () => {
     (() => {
         const organization = findOne('.main__organization');
         const organizationCarousel = new Swiper(findOne('.swiper', organization),{
-            loop: true,
+            loop: false,
             slidesPerView: "auto",
             // centeredSlides: true,
             spaceBetween: 40,
@@ -140,7 +165,7 @@ const main = () => {
         const removeClass = findOne('.swiper');
 
         const instagramCarousel = new Swiper(findOne('.swiper', instagram),{
-            loop: true,
+            loop: false,
             centeredSlides: true,
             slidesPerView: "auto",
             spaceBetween: 13,
@@ -151,7 +176,6 @@ const main = () => {
             breakpoints: {
                 //브라우저가 1200보다 클 때
                 1200: {
-                    loop: false,
                     centeredSlides: false,
                     slidesPerView: "5",
                     spaceBetween: 20,
