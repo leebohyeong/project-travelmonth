@@ -13,7 +13,8 @@ import org.springframework.stereotype.Service;
 
 @Service
 @RequiredArgsConstructor
-public class ShowcaseServiceImpl extends CommonServiceImplWrapper implements ShowcaseService {
+public class ShowcaseServiceImpl extends CommonServiceImplWrapper implements ShowcaseService
+{
 
 	private final ObjectMapper MAPPER;
 
@@ -22,19 +23,24 @@ public class ShowcaseServiceImpl extends CommonServiceImplWrapper implements Sho
 	 * @return
 	 */
 	@Override
-	public Object getList() {
-		try {
+	public Object getList()
+	{
+		try
+		{
 			JSONObject jsonObject = RequestUrl.get(TRAVEL_MONTH_SITE_URL + "/showcase/list");
-			if (jsonObject != null) {
+			if (jsonObject != null)
+			{
 				boolean result = (boolean) jsonObject.get("result");
-				if (!result) {
+				if (!result)
+				{
 					String message = String.valueOf(jsonObject.get("message"));
 					throw new RuntimeException(message);
 				}
 				return MAPPER.convertValue(jsonObject, CommonResponse.List.class);
 			}
 		}
-		catch (Exception exception) {
+		catch (Exception exception)
+		{
 			LOGGER.error("Showcase List Exception : {}", exception.getMessage(), exception);
 		}
 		return null;

@@ -19,16 +19,19 @@ public class CommonServiceImpl extends CommonServiceImplWrapper implements Commo
 	private final ObjectMapper MAPPER;
 
 	/**
-	 * GET AREA LIST
+	 * GET SIDO LIST
 	 * @return
 	 */
 	@Override
-	public Object getSidoList() {
+	public Object getSidoList()
+	{
 		try {
 			JSONObject jsonObject = RequestUrl.get(TRAVEL_MONTH_SITE_URL + "/area/list");
-			if (jsonObject != null) {
+			if (jsonObject != null)
+			{
 				boolean result = (boolean) jsonObject.get("result");
-				if (!result) {
+				if (!result)
+				{
 					String message = String.valueOf(jsonObject.get("message"));
 					throw new RuntimeException(message);
 				}
@@ -42,24 +45,29 @@ public class CommonServiceImpl extends CommonServiceImplWrapper implements Commo
 	}
 
 	/**
-	 * GET SIDO
+	 * GET SIDO BY NAME_EN
 	 * @param nameEn
 	 * @return
 	 */
 	@Override
-	public Object getSidoByNameEn(String nameEn) {
-		try {
+	public Object getSidoByNameEn(String nameEn)
+	{
+		try
+		{
 			JSONObject jsonObject = RequestUrl.get(TRAVEL_MONTH_SITE_URL + "/area/en/" + nameEn);
-			if (jsonObject != null) {
+			if (jsonObject != null)
+			{
 				boolean result = (boolean) jsonObject.get("result");
-				if (!result) {
+				if (!result)
+				{
 					String message = String.valueOf(jsonObject.get("message"));
 					throw new RuntimeException(message);
 				}
 				return jsonObject;
 			}
 		}
-		catch (Exception exception) {
+		catch (Exception exception)
+		{
 			LOGGER.error("Area Exception : {}", exception.getMessage(), exception);
 		}
 		return null;

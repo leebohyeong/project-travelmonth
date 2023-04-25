@@ -6,6 +6,7 @@ import kr.or.visitkorea.korean.global.common.service.impl.CommonServiceImplWrapp
 import kr.or.visitkorea.korean.global.dto.CommonResponse;
 import kr.or.visitkorea.korean.global.util.RequestUrl;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.json.simple.JSONObject;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -13,7 +14,8 @@ import org.springframework.stereotype.Service;
 
 @Service
 @RequiredArgsConstructor
-public class AreaServiceImpl  extends CommonServiceImplWrapper implements AreaService {
+public class AreaServiceImpl  extends CommonServiceImplWrapper implements AreaService
+{
 
 	private final ObjectMapper MAPPER;
 
@@ -24,20 +26,30 @@ public class AreaServiceImpl  extends CommonServiceImplWrapper implements AreaSe
 	 */
 	@Override
 	@SuppressWarnings("unchecked")
-	public Object getList(final JSONObject request) {
+	public Object getList(JSONObject request) {
 		try {
-			JSONObject parameter = new JSONObject(){{ put("search_area", request.get("code")); }};
-			JSONObject jsonObject = RequestUrl.get(TRAVEL_MONTH_SITE_URL + "/program/travel-list", parameter);
-			if (jsonObject != null) {
-				boolean result = (boolean) jsonObject.get("result");
-				if (!result) {
-					String message = String.valueOf(jsonObject.get("message"));
-					throw new RuntimeException(message);
+			if (request != null)
+			{
+				boolean result = (boolean) request.get("result");
+				if (result)
+				{
+					JSONObject data = (JSONObject) request.get("data");
+					JSONObject jsonObject = RequestUrl.get(TRAVEL_MONTH_SITE_URL + "/program/travel-list?search_area=" + data.get("code"));
+					if (jsonObject != null)
+					{
+						result = (boolean) jsonObject.get("result");
+						if (!result)
+						{
+							String message = String.valueOf(jsonObject.get("message"));
+							throw new RuntimeException(message);
+						}
+						return MAPPER.convertValue(jsonObject, CommonResponse.List.class);
+					}
 				}
-				return MAPPER.convertValue(jsonObject, CommonResponse.List.class);
 			}
 		}
-		catch (Exception exception) {
+		catch (Exception exception)
+		{
 			LOGGER.error("Area List Exception : {}", exception.getMessage(), exception);
 		}
 		return null;

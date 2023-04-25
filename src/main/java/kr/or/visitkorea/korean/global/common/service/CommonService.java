@@ -3,13 +3,13 @@ package kr.or.visitkorea.korean.global.common.service;
 public interface CommonService {
 
 	/**
-	 * GET AREA LIST
+	 * GET SIDO LIST
 	 * @return
 	 */
 	Object getSidoList();
 
 	/**
-	 * GET SIDO
+	 * GET SIDO BY NAME_EN
 	 * @param nameEn
 	 * @return
 	 */
