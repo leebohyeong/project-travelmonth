@@ -103,7 +103,18 @@
         .swiper {
 
             &-slide {
-                aspect-ratio: 1920/905;
+                a {
+                    overflow: hidden;
+                    display: block;
+                    aspect-ratio: 1920/905;
+
+                    iframe {
+                        width: 100%;
+                        border: none;
+                        aspect-ratio: 1920/905;
+                        pointer-events: none;
+                    }
+                }
             }
 
             &-navigation {
