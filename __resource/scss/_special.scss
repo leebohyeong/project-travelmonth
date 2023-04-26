@@ -1,0 +1,311 @@
+@use "sass:math";
+
+.special-list {
+    > header {
+        margin: 0 calc(-1 * var(--site-padding-horizon));
+        padding: 0 var(--site-padding-horizon);
+        background: {
+            image: url(/travelmonth/assets/images/special/bg_header_mo.png);
+            repeat: no-repeat;
+            position: center;
+            size: cover;
+        };
+
+        @include media-queries($from: sm) {
+            background: {
+                image: url(/travelmonth/assets/images/special/bg_header.png);
+            };
+        }
+
+        > div {
+            display: flex;
+            flex-direction: column;
+            max-width: 1160px;
+            height: 200px;
+            margin: 0 auto;
+            letter-spacing: -0.02em;
+
+            @include media-queries($from: xl) {
+                justify-content: center;
+                height: 372px;
+                padding: 0 48px;
+            }
+        }
+
+        h2 {
+            font-weight: 500;
+            font-family: GmarketSans, sans-serif;
+
+            strong {
+                display: block;
+                margin-top: 25px;
+                font-weight: 500;
+                font-size: 30px;
+
+                @include media-queries($from: xl) {
+                    margin-top: 0;
+                    font-size: 84px;
+                }
+            }
+
+            span {
+                font-style: normal;
+                color: #d863b2;
+            }
+        }
+
+        p {
+            padding-top: 8px;
+            font-size: 11px;
+
+            @include media-queries($from: xl) {
+                padding: 0 0 20px;
+                font-size: 20px;
+            }
+        }
+    }
+
+    section {
+        position: relative;
+        margin: calc(55px / 2) calc(-1 * var(--site-padding-horizon)) -60px;
+
+        @include media-queries($from: lg) {
+            margin: 70px calc(-1 * var(--site-padding-horizon)) -240px;
+            padding: 0 var(--site-padding-horizon) 120px;
+            background: url(/travelmonth/assets/images/special/bg_content.png) no-repeat center bottom;
+        }
+
+        header {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding-bottom: 30px;
+
+            h3 {
+                width: calc(196px/ 2);
+                height: calc(51px/ 2);
+                margin-bottom: 10px;
+                border-radius: 25px;
+                background-color: #db79c1;
+                color: #fff;
+                font-size: 12px;
+                line-height: calc(51px/ 2);
+                text-align: center;
+
+                @include media-queries($from: lg) {
+                    width: 140px;
+                    height: 36px;
+                    font-size: 16px;
+                    line-height: 36px;
+                }
+            }
+
+            p {
+                font-size: 15px;
+                text-align: center;
+
+                @include media-queries($from: lg) {
+                    margin-bottom: 40px;
+                    font-size: 24px;
+
+                    br {
+                        &:nth-of-type(1) {
+                            display: none;
+                        }
+                    }
+                }
+            }
+
+            strong {
+                display: block;
+                margin-top: 8px;
+                font-size: 25px;
+
+                @include media-queries($from: lg) {
+                    margin-top: 0;
+                    font-size: 42px;
+                }
+            }
+
+            span {
+                color: #d863b2;
+            }
+        }
+
+        > div {
+            padding-bottom: calc(343px / 2);
+            background: url(/travelmonth/assets/images/special/bg_content_mo.png) no-repeat center bottom / contain;
+
+            @include media-queries($from: sm) {
+                padding-bottom: 0;
+                background: none;
+            }
+
+            p {
+                text-align: center;
+
+                &:nth-of-type(1) {
+                    margin: calc(36px/ 2) 0 calc(60px / 2);
+                    color: #3b3b3b;
+                    font-weight: lighter;
+                    font-size: calc(18px / 2);
+
+                    @include media-queries($from: lg) {
+                        margin: 22px 0 45px;
+                        font-weight: 300;
+                        font-size: 14px;
+                        line-height: 1;
+                        text-align: center;
+                    }
+                }
+
+                a {
+                    display: inline-block;
+                    padding: calc(26px / 2) calc(90px / 2) calc(26px / 2) calc(60px / 2);
+                    border-radius: 38px;
+                    background: #37bf8a url(/travelmonth/assets/images/special/icon_arrow.png) no-repeat right 24px center / 15px auto;
+                    color: #fff;
+                    font-weight: bold;
+                    font-size: 15px;
+
+                    @include media-queries($from: lg) {
+                        display: block;
+                        padding: 20px 60px 20px 36px;
+                        border-radius: 30px;
+                        background: #37bf8a url(/travelmonth/assets/images/special/icon_arrow.png) no-repeat right 36px center;
+                        color: #fff;
+                        font-size: 23px;
+                        line-height: 1;
+                    }
+                }
+            }
+        }
+    }
+
+    dl {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        position: relative;
+        padding: 0 calc(30px / 2);
+
+        @include media-queries($from: lg) {
+            flex-direction: row;
+            padding: 0;
+        }
+
+        div {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            width: 100%;
+            max-width: 290px;
+            height: 90px;
+            padding-left: calc(176px / 2);
+            border-radius: 32px;
+            border: 1px solid #d3d3d3;
+            background: {
+                repeat: no-repeat;
+                position: 20px center;
+            };
+
+            @for $i from 1 through 5 {
+                &:nth-of-type(#{$i}) {
+                    background-image: url(/travelmonth/assets/images/special/img_item_#{$i}.png);
+                }
+            }
+
+            &:nth-of-type(1),
+            &:nth-of-type(3),
+            &:nth-of-type(5) {
+                background-position: calc(47px / 2) center;
+            }
+
+            &:nth-of-type(2) {
+                background-position: calc(42px / 2) center;
+            }
+
+            &:nth-of-type(4) {
+                background-position: calc(38px / 2) center;
+            }
+
+            @include media-queries($from: lg) {
+                justify-content: flex-start;
+                align-items: center;
+                width: 217px;
+                height: 262px;
+                padding-left: 0;
+                background-position: center bottom 180px !important;
+            }
+
+            & + div {
+                margin-top: 10px;
+
+                @include media-queries($from: lg) {
+                    margin-top: 0;
+                }
+            }
+
+            span {
+                display: block;
+                padding-top: 3px;
+                font-size: 10px;
+
+                @include media-queries($from: lg) {
+                    padding-top: 20px;
+                    font-size: 16px;
+                    text-align: center;
+                }
+            }
+        }
+
+        dt {
+            font-weight: bold;
+            font-size: calc(30px / 2);
+            line-height: 1;
+
+            @include media-queries($from: lg) {
+                padding-top: 100px;
+                font-size: 24px;
+            }
+        }
+
+        dd {
+            padding-top: 5px;
+            font-weight: 500;
+            font-size: calc(24px / 2);
+
+            @include media-queries($from: lg) {
+                padding-top: 20px;
+                font-size: 20px;
+                text-align: center;
+            }
+        }
+
+        > span {
+
+            @include media-queries($from: lg) {
+                display: block;
+                position: absolute;
+                &:nth-of-type(1) {
+                    bottom: -70px;
+                    left: -74px;
+                    width: 127px;
+                    height: 138px;
+                    background: url(/travelmonth/assets/images/special/img_man.png) no-repeat center center;
+                }
+
+                &:nth-of-type(2) {
+                    bottom: 23px;
+                    right: -132px;
+                    width: 144px;
+                    height: 106px;
+                    background: url(/travelmonth/assets/images/special/img_plane.png) no-repeat center center;
+                }
+            }
+
+        }
+    }
+
+
+}
