@@ -12,9 +12,12 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 @RequiredArgsConstructor
-public class InstagramServiceImpl<T> extends CommonServiceImplWrapper implements InstagramService<T> {
+public class InstagramServiceImpl<T> extends CommonServiceImplWrapper implements InstagramService<T>
+{
 
 	/**
 	 * GET LIST
@@ -22,22 +25,27 @@ public class InstagramServiceImpl<T> extends CommonServiceImplWrapper implements
 	 */
 	@Override
 	@SuppressWarnings("unchecked")
-	public Object getList() {
-		try {
-			JSONObject jsonObject = RequestUrl.get(EgovProperties.getProperty("Globals.Instagram.Request.Url"));
-			if (jsonObject != null) {
+	public Object getList()
+	{
+		try
+		{
+			JSONObject jsonObject = RequestUrl.get(INSTAGRAM_REQUEST_URL);
+			if (jsonObject != null)
+			{
 				JSONObject header = (JSONObject) jsonObject.get("header");
-				if ("success".equals(String.valueOf(header.get("process")))) {
+				if ("success".equals(String.valueOf(header.get("process"))))
+				{
 					JSONObject body = (JSONObject) jsonObject.get("body");
-					if (body != null) {
+					if (body != null)
+					{
 						JSONObject result = (JSONObject) body.get("result");
-						final JSONArray data = (JSONArray) result.get("data");
-						return new CommonResponse.List<T>(new CommonResponse.List.Data<T>(data));
+						return new CommonResponse.List<T>(new CommonResponse.List.Data<T>((List<T>) result.get("data")));
 					}
 				}
 			}
 		}
-		catch (Exception exception) {
+		catch (Exception exception)
+		{
 			LOGGER.error("Instagram List Exception : {}", exception.getMessage(), exception);
 		}
 		return null;

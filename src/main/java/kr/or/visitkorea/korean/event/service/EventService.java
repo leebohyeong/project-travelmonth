@@ -1,6 +1,7 @@
 package kr.or.visitkorea.korean.event.service;
 
-public interface EventService {
+public interface EventService
+{
 
 	/**
 	 * GET MAIN LIST
