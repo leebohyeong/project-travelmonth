@@ -1,36 +1,36 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <div class="skipnav"><a href="#content">본문 영역으로 바로가기</a></div>
 <nav class="quick-visitkorea">
-	<div><a href="https://korean.visitkorea.or.kr" target="_blank"><span>대한민국구석구석 바로가기</span></a></div>
+    <div><a href="https://korean.visitkorea.or.kr" target="_blank"><span>대한민국구석구석 바로가기</span></a></div>
 </nav>
 <header class="site-header">
-	<div><h1><a href="/html/"><span>여행가는 달</span></a></h1>
-		<p>
-			<button type="button"><span>메뉴</span></button>
-		</p>
-		<nav>
-			<ul data-id="main">
-				<li><a href="/html/travelmonth/intro.html">여행가는 달이란?</a>
-					<div>
-						<ul>
-							<li><a href="/html/travelmonth/intro.html">여행가는 달 소개</a></li>
-							<li><a href="/html/travelmonth/organization.html">여행가는 달 참여기관</a></li>
-						</ul>
-					</div>
-				</li>
-				<li><a href="/html/benefits/local.html">여행혜택</a>
-					<div>
-						<ul>
-							<li><a href="/html/benefits/traffic.html">교통혜택</a></li>
-							<li><a href="/html/benefits/stay.html">숙박혜택</a></li>
-							<li><a href="/html/benefits/play.html">놀거리혜택</a></li>
-						</ul>
-					</div>
-				</li>
-				<li><a href="/html/trend/list.html">여행트렌드관</a></li>
-				<li><a href="/html/special/list.html">여행상품 특별 기획전</a></li>
-				<li><a href="/html/event/list.html">이벤트</a></li>
-			</ul>
-		</nav>
-	</div>
+    <div><h1><a href="/html/"><span>여행가는 달</span></a></h1>
+        <p>
+            <button type="button"><span>메뉴</span></button>
+        </p>
+        <nav>
+            <ul data-id="main">
+                <li><a href="/html/travelmonth/intro.html">여행가는 달이란?</a>
+                    <div>
+                        <ul>
+                            <li><a href="/html/travelmonth/intro.html">여행가는 달 소개</a></li>
+                            <li><a href="/html/travelmonth/organization.html">여행가는 달 참여기관</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li><a href="/html/benefits/local.html">여행혜택</a>
+                    <div>
+                        <ul>
+                            <li><a href="/html/benefits/traffic.html">교통혜택</a></li>
+                            <li><a href="/html/benefits/stay.html">숙박혜택</a></li>
+                            <li><a href="/html/benefits/play.html">놀거리혜택</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li><a href="/html/trend/list.html">여행트렌드관</a></li>
+                <li><a href="/html/special/list.html">여행상품 특별 기획전</a></li>
+                <li><a href="/html/event/list.html">이벤트</a></li>
+            </ul>
+        </nav>
+    </div>
 </header>

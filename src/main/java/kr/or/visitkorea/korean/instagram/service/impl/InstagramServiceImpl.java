@@ -1,19 +1,17 @@
 package kr.or.visitkorea.korean.instagram.service.impl;
 
-import egovframework.com.cmm.service.EgovProperties;
 import kr.or.visitkorea.korean.global.common.service.impl.CommonServiceImplWrapper;
 import kr.or.visitkorea.korean.global.dto.CommonResponse;
 import kr.or.visitkorea.korean.global.util.RequestUrl;
 import kr.or.visitkorea.korean.instagram.service.InstagramService;
 import lombok.RequiredArgsConstructor;
-import org.json.simple.JSONArray;
+import lombok.extern.slf4j.Slf4j;
 import org.json.simple.JSONObject;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+@Slf4j
 @Service
 @RequiredArgsConstructor
 public class InstagramServiceImpl<T> extends CommonServiceImplWrapper implements InstagramService<T>
@@ -46,7 +44,7 @@ public class InstagramServiceImpl<T> extends CommonServiceImplWrapper implements
 		}
 		catch (Exception exception)
 		{
-			LOGGER.error("Instagram List Exception : {}", exception.getMessage(), exception);
+			log.error("Instagram List Exception : {}", exception.getMessage(), exception);
 		}
 		return null;
 	}

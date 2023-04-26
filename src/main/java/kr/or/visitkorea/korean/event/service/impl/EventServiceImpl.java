@@ -1,16 +1,16 @@
 package kr.or.visitkorea.korean.event.service.impl;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import kr.or.visitkorea.korean.global.common.service.impl.CommonServiceImplWrapper;
-import kr.or.visitkorea.korean.global.util.RequestUrl;
 import kr.or.visitkorea.korean.event.service.EventService;
+import kr.or.visitkorea.korean.global.common.service.impl.CommonServiceImplWrapper;
 import kr.or.visitkorea.korean.global.dto.CommonResponse;
+import kr.or.visitkorea.korean.global.util.RequestUrl;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.json.simple.JSONObject;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 
+@Slf4j
 @Service
 @RequiredArgsConstructor
 public class EventServiceImpl extends CommonServiceImplWrapper implements EventService
@@ -42,7 +42,7 @@ public class EventServiceImpl extends CommonServiceImplWrapper implements EventS
 		}
 		catch (Exception exception)
 		{
-			LOGGER.error("Event Main List Exception : {}", exception.getMessage(), exception);
+			log.error("Event Main List Exception : {}", exception.getMessage(), exception);
 		}
 		return null;
 	}
