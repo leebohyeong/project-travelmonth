@@ -488,24 +488,36 @@
     }
 
     header + section {
-        margin-top: 90px;
+        margin-top: 40px;
+
+        @include media-queries($from: lg) {
+            margin-top: 90px;
+        }
     }
 
     section {
         display: grid;
         max-width: 890px;
-        margin: 60px auto 0;
+        margin: 20px 10px 0;
 
         @include media-queries($from: lg) {
             grid-template-columns: math.ceil(percentage(math.div(550, 890))) (100% - math.ceil(percentage(math.div(550, 890))));
+            margin: 60px auto 0;
         }
 
         > div {
             position: relative;
 
             &:nth-child(1) {
+                padding: 20px 24px 24px;
                 border-radius: 14px 14px 0 0;
                 background: #f5f5f5;
+
+                @include media-queries($to: lg) {
+                    display: flex;
+                    align-items: center;
+                    flex-direction: column;
+                }
 
                 @include media-queries($from: lg) {
                     padding: 28px 32px 52px;
@@ -514,42 +526,71 @@
 
                 h3 {
                     font-weight: 500;
-                    font-size: 42px;
                     font-family: "GmarketSans", sans-serif;
                     line-height: 1.1;
                     letter-spacing: -0.04em;
 
+                    @include media-queries($to: lg) {
+                        font-size: 24px;
+                        text-align: center;
+                    }
+
+                    @include media-queries($from: lg) {
+                        font-size: 42px;
+                    }
+
                     &::before {
                         display: block;
-                        width: 48px;
-                        height: 48px;
-                        margin-bottom: 20px;
+                        width: 32px;
+                        height: 32px;
+                        margin: 0 auto 10px;
                         background: {
                             repeat: no-repeat;
                             position: center;
                             size: contain;
                         };
                         content: "";
+
+                        @include media-queries($from: lg) {
+                            width: 48px;
+                            height: 48px;
+                            margin: 0 0 20px;
+                        }
                     }
 
                     span {
                         display: block;
                         padding-bottom: 4px;
                         color: #838383;
-                        font-size: 24px;
+                        font-size: 12px;
                         letter-spacing: -0.02em;
+
+                        @include media-queries($from: lg) {
+                            font-size: 24px;
+                        }
                     }
                 }
 
                 > div {
-                    margin-top: 20px;
+                    @include media-queries($to: lg) {
+                        margin-top: 12px;
+                        text-align: center;
+                    }
+
+                    @include media-queries($from: lg) {
+                        margin-top: 20px;
+                    }
                 }
 
                 h4 {
                     font-weight: 500;
-                    font-size: 24px;
+                    font-size: 14px;
                     font-family: "GmarketSans", sans-serif;
                     letter-spacing: -0.02em;
+
+                    @include media-queries($from: lg) {
+                        font-size: 24px;
+                    }
                 }
 
                 h4 + :is(p, ul) {
@@ -559,19 +600,32 @@
                 p,
                 li {
                     color: #838383;
-                    font-size: 18px;
+                    font-size: 12px;
                     line-height: math.div(26, 18);
                     letter-spacing: -0.03em;
+
+                    @include media-queries($from: lg) {
+                        font-size: 18px;
+                    }
                 }
 
                 li {
-                    padding-left: 10px;
-                    font-size: 16px;
+                    padding-left: 8px;
+                    font-size: 10px;
+
+                    @include media-queries($from: lg) {
+                        padding-left: 10px;
+                        font-size: 16px;
+                    }
 
                     &::before {
                         float: left;
-                        margin-left: -10px;
+                        margin-left: -8px;
                         content: "*";
+
+                        @include media-queries($from: lg) {
+                            margin-left: -10px;
+                        }
                     }
                 }
             }
@@ -590,8 +644,9 @@
                 }
 
                 @include media-queries($to: lg) {
-                    border-top: 1px dashed #fff;
                     grid-row-start: 3;
+                    padding: 30px math.ceil(percentage(math.div(50, 330))) 0;
+                    border-top: 1px dashed #fff;
 
                     &::before,
                     &::after {
@@ -636,39 +691,74 @@
 
                 h4 {
                     position: absolute;
-                    top: 20px;
-                    right: 20px;
+
+                    @include media-queries($to: lg) {
+                        top: 14px;
+                        left: 20px;
+
+                        img {
+                            transform-origin: left top;
+                            scale: math.div(2, 3);
+                        }
+                    }
+
+                    @include media-queries($from: lg) {
+                        top: 20px;
+                        right: 20px;
+                    }
                 }
 
                 div + div {
-                    margin-top: 48px;
+                    margin-top: 24px;
+
+                    @include media-queries($from: lg) {
+                        margin-top: 48px;
+                    }
                 }
 
                 h5 {
                     color: #fff;
                     font-weight: 700;
-                    font-size: 26px;
+                    font-size: 20px;
                     line-height: math.div(28, 26);
                     font-family: "GmarketSans", sans-serif;
                     text-align: center;
+
+                    @include media-queries($from: lg) {
+                        font-size: 26px;
+                    }
 
                     span {
                         display: block;
                         padding-bottom: 4px;
                         font-weight: 500;
-                        font-size: 16px;
+                        font-size: 12px;
+
+                        @include media-queries($from: lg) {
+                            font-size: 16px;
+                        }
                     }
                 }
 
                 dl {
                     position: relative;
-                    margin-top: 12px;
-                    padding: 20px 10px 12px;
-                    border-radius: 10px;
                     background: var(--benefits-program-ticket-color-2);
                     color: #fff;
                     font-family: "GmarketSans", sans-serif;
                     text-align: center;
+
+                    @include media-queries($to: lg) {
+                        max-width: 240px;
+                        margin: 8px auto 0;
+                        padding: 12px 10px 8px;
+                        border-radius: 8px;
+                    }
+
+                    @include media-queries($from: lg) {
+                        margin-top: 12px;
+                        padding: 20px 10px 12px;
+                        border-radius: 10px;
+                    }
 
                     &::before,
                     &::after {
@@ -693,67 +783,108 @@
 
                 dt {
                     font-weight: 500;
-                    font-size: 16px;
+                    font-size: 12px;
                     line-height: math.div(22, 16);
                     letter-spacing: -0.035em;
+
+                    @include media-queries($from: lg) {
+                        font-size: 16px;
+                    }
                 }
 
                 dd {
                     padding-top: 4px;
                     font-weight: 700;
-                    font-size: 20px;
+                    font-size: 16px;
                     letter-spacing: -0.04em;
+
+                    @include media-queries($from: lg) {
+                        font-size: 20px;
+                    }
 
                     strong {
                         color: #fff25f;
                         font-weight: 700;
-                        font-size: 40px;
+                        font-size: 30px;
+
+                        @include media-queries($from: lg) {
+                            font-size: 40px;
+                        }
                     }
 
                     span {
-                        font-size: 20px;
+                        font-size: 16px;
                         letter-spacing: -0.04em;
+
+                        @include media-queries($from: lg) {
+                            font-size: 20px;
+                        }
                     }
                 }
 
                 div + p {
-                    margin-top: 16px;
+                    margin-top: 12px;
                     text-align: center;
+
+                    @include media-queries($from: lg) {
+                        margin-top: 16px;
+                    }
 
                     a {
                         display: inline-block;
-                        padding: 8px 36px 8px 16px;
+                        padding: 8px 20px;
                         border-radius: 18px;
-                        background: #fff url("/travelmonth/assets/images/benefits/icon_benefits_view.png") no-repeat right 16px center/12px auto;
+                        background: #fff;
                         color: #000;
-                        font-weight: $font-weight-light;
-                        font-size: 16px;
+                        font-weight: $font-weight-medium;
+                        font-size: 14px;
                         line-height: 20px;
+
+                        @include media-queries($from: lg) {
+                            padding: 8px 36px 8px 16px;
+                            background: #fff url("/travelmonth/assets/images/benefits/icon_benefits_view.png") no-repeat right 16px center/12px auto;
+                            font-weight: $font-weight-light;
+                            font-size: 16px;
+                        }
                     }
                 }
 
                 div + div + p {
-                    margin-top: 40px;
+                    margin-top: 30px;
+
+                    @include media-queries($from: lg) {
+                        margin-top: 40px;
+                    }
                 }
             }
 
             &:nth-child(3) {
-                padding: 10px 30px 0;
-
                 @include media-queries($to: lg) {
-                    background: #f5f5f5;
                     grid-row-start: 2;
+                    display: flex;
+                    justify-content: center;
+                    padding-bottom: 30px;
+                    background: #f5f5f5;
+                }
+
+                @include media-queries($from: lg) {
+                    padding: 10px 30px 0;
                 }
 
                 div {
                     display: flex;
                     align-items: flex-start;
-                    padding-top: 8px;
+                    padding-top: 2px;
                     color: #303030;
                     font-weight: $font-weight-light;
-                    font-size: 16px;
+                    font-size: 12px;
                     line-height: math.div(20, 16);
                     letter-spacing: -0.03em;
+
+                    @include media-queries($from: lg) {
+                        padding-top: 8px;
+                        font-size: 16px;
+                    }
                 }
 
                 dt {
@@ -775,27 +906,43 @@
 
             &:nth-child(4) {
                 @include media-queries($to: lg) {
+                    display: flex;
+                    justify-content: center;
                     border-radius: 0 0 14px 14px;
                     background: var(--benefits-program-ticket-color-1);
                 }
 
                 ul {
-                    padding: 10px math.ceil(percentage(math.div(30, 330))) 0;
+                    padding: 12px 0 24px;
+
+                    @include media-queries($from: lg) {
+                        padding: 10px math.ceil(percentage(math.div(30, 330))) 0;
+                    }
                 }
 
                 li {
-                    padding: 8px 0 0 8px;
-                    color: #303030;
+                    padding: 2px 0 0 6px;
+                    color: #fff;
                     font-weight: $font-weight-light;
-                    font-size: 16px;
+                    font-size: 12px;
                     line-height: math.div(20, 16);
                     letter-spacing: -0.03em;
                     white-space: nowrap;
 
+                    @include media-queries($from: lg) {
+                        padding: 8px 0 0 8px;
+                        color: #303030;
+                        font-size: 16px;
+                    }
+
                     &::before {
                         float: left;
-                        margin-left: -8px;
+                        margin-left: -6px;
                         content: "\b7";
+
+                        @include media-queries($from: lg) {
+                            margin-left: -8px;
+                        }
                     }
                 }
             }
