@@ -4,6 +4,25 @@
     .site-header {
         background-color: transparent;
         box-shadow: none;
+
+        @include media-queries($form: xl) {
+            &.active {
+                background: #fff;
+                box-shadow: 0 1px 0 0 #d3d3d3;
+            }
+
+            &.on {
+                > div {
+                    border-radius: 0;
+                }
+
+                nav::before {
+                    left: 50%;
+                    max-width: 1200px;
+                    transform: translateX(-50%);
+                }
+            }
+        }
     }
 }
 

@@ -4,6 +4,21 @@ import Swiper, {Autoplay, Pagination, Navigation, Scrollbar, FreeMode} from "swi
 
 const main = () => {
 
+    (() => {
+        document.addEventListener('scroll', function() {
+            const currentScrollValue = document.documentElement.scrollTop;
+            const siteHeader = findOne('#travelmonth-main .site-header');
+
+            if(currentScrollValue > 70) {
+                siteHeader.classList.add('active');
+                siteHeader.classList.remove('on');
+            } else {
+                siteHeader.classList.remove('active');
+                siteHeader.classList.add('on');
+            }
+        });
+    })();
+
     //intro
     (() => {
         const intro = findOne('.main__intro');
