@@ -221,13 +221,13 @@
                                             <c:choose>
                                                 <c:when test="${not empty row.link}">
                                                     <a href="${row.link}" target="${row.link_target}">
-                                                        <div class="june-contents__tourist-banner" style="background-image:url(${row.image})">
+                                                        <div class="june-contents__tourist-banner" style="background-image:url('${row.image}')">
                                                             <p class="screen_out">${row.title}</p>
                                                         </div>
                                                     </a>
                                                 </c:when>
                                                 <c:otherwise>
-                                                    <div class="june-contents__tourist-banner" style="background-image:url(${row.image})">
+                                                    <div class="june-contents__tourist-banner" style="background-image:url('${row.image}')">
                                                         <p class="screen_out">${row.title}</p>
                                                     </div>
                                                 </c:otherwise>
@@ -244,7 +244,7 @@
                                             <c:if test="${loop.index gt 6 && loop.index lt 11}">
                                                 <c:choose>
                                                     <c:when test="${not empty row.link}">
-                                                        <a href="${row.link}"  target="${row.link_target}" class="june-contents__tourist-item" style="background-image:url(${row.image})">
+                                                        <a href="${row.link}"  target="${row.link_target}" class="june-contents__tourist-item" style="background-image:url('${row.image}')">
                                                             <p class="june-contents__tourist-text">${row.title}</p>
                                                         </a>
                                                     </c:when>
@@ -272,7 +272,7 @@
                                         <c:set var="list" value="${event.data.list}"/>
                                         <c:forEach var="row" items="${list}" varStatus="loop">
                                             <div class="swiper-slide">
-                                                <a href="${row.link}" target="${row.link_target}" style="background-image:url(${row.thumbnail})">
+                                                <a href="${row.link}" target="${row.link_target}" style="background-image:url('${row.thumbnail}')">
                                                     <p>${row.title}</p>
                                                 </a>
                                             </div>
@@ -329,7 +329,7 @@
                                     <c:set var="list" value="${instagram.data.list}"/>
                                     <c:forEach var="row" items="${list}" varStatus="loop">
                                         <div class="swiper-slide">
-                                            <a href="${row.permalink}" target="_blank" style="background-image:url(${row.media_url})"></a>
+                                            <a href="${row.permalink}" target="_blank" style="background-image:url('${row.media_url}')"></a>
                                         </div>
                                     </c:forEach>
                                 </c:if>
