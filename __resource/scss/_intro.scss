@@ -1,0 +1,341 @@
+@use "sass:math";
+
+.travelmonth-intro {
+    header.mo {
+        display: block;
+        position: relative;
+        padding-bottom: 67.3%;
+        background: url(/travelmonth/assets/images/intro/bg_header_mo.png) no-repeat center center /auto 100%;
+        text-align: center;
+
+        h2 {
+            position: absolute;
+            top: 12.3%;
+            left: 50%;
+            width: 100%;
+            font-size: 30px;
+            line-height: 1;
+            transform: translateX(-50%);
+        }
+
+        p {
+            position: absolute;
+            top: 28.2%;
+            left: 50%;
+            width: 100%;
+            padding: 0 60px;
+            font-size: 12px;
+            line-height: math.div(24, 18);
+            transform: translateX(-50%);
+        }
+
+        @include media-queries($from: xl) {
+            display: none;
+        }
+    }
+
+    header.pc {
+        display: none;
+
+        @include media-queries($from: xl) {
+
+            display: block;
+            position: relative;
+            height: 372px;
+            background: url(/travelmonth/assets/images/intro/bg_header.png) no-repeat center center;
+            text-align: center;
+
+            h2 {
+                padding: 58px 0 25px;
+                font-size: 50px;
+                line-height: 1;
+            }
+
+            p {
+                font-size: 18px;
+                line-height: math.div(24, 18);
+            }
+        }
+    }
+
+    section {
+        > div {
+            padding: 0 10px;
+        }
+
+        @include media-queries($from: xl) {
+            > div {
+                width: 1200px;
+                margin: 0 auto;
+                padding: 0;
+            }
+        }
+    }
+
+    h3 {
+        padding: 38px 0 16px;
+        text-align: center;
+
+        span {
+            font-size: 20px;
+            line-height: 1;
+        }
+
+        strong {
+            color: #37bf8a;
+        }
+
+        @include media-queries($from: xl) {
+            padding: 115px 0 55px;
+
+            span {
+                font-size: 42px;
+            }
+        }
+    }
+
+    &--video {
+        padding: 30px 0px 47px;
+        background: linear-gradient(to bottom, #fff 60%, #eafaf6 60%);
+
+        .category-tab {
+            display: flex;
+
+            li {
+                width: 50%;
+            }
+
+            &__item {
+                display: block;
+                height: 40px;
+                background-color: #f7f7f7;
+                color: #ababab;
+                font-size: 12px;
+                line-height: 40px;
+                text-align: center;
+
+                &--active {
+                    background-color: #37bf8a;
+                    color: #fff;
+                }
+            }
+        }
+
+        .category-panel {
+            display: none;
+
+            &--active {
+                display: block;
+            }
+        }
+
+        @include media-queries($from: xl) {
+            padding: 120px 0 130px;
+
+            .category-tab {
+                width: 1000px;
+                margin: 0 auto;
+
+                &__item {
+                    height: 84px;
+                    font-size: 24px;
+                    line-height: 84px;
+                }
+            }
+
+            .category-tab-contents {
+                width: 1000px;
+                margin: 0 auto;
+            }
+        }
+    }
+
+    &--poster {
+        padding-bottom: 16px;
+        background-color: #f7f7f7;
+
+        h3 {
+            span {
+                padding-right: 24px;
+                background: url(/travelmonth/assets/images/intro/icon_poster_header.png) no-repeat right center/auto 100%;
+            }
+        }
+
+        h4 {
+            padding: 20px 15px 6px 20px;
+            color: #303030;
+            font-weight: 500;
+            font-size: 12px;
+            line-height: 1;
+        }
+
+        p {
+            display: flex;
+            justify-content: space-between;
+
+            span {
+                display: block;
+                width: calc((100% - 14px) / 2);
+                padding-top: 66.7%;
+                background: {
+                    repeat: no-repeat;
+                    position: center top;
+                    size: auto 100%;
+                };
+            }
+        }
+
+        ul {
+            padding: 0 15px 0 20px;
+        }
+
+        li {
+            display: flex;
+            color: #303030;
+            font-size: 10px;
+            line-height: math.div(32, 18);
+
+            & + li {
+                margin-top: 2px;
+            }
+        }
+
+        @include media-queries($from: xl) {
+            padding-bottom: 100px;
+
+            h3 {
+                span {
+                    padding-right: 52px;
+                }
+            }
+
+            h4 {
+                width: 1000px;
+                margin: 0 auto;
+                padding: 40px 0 5px 0;
+                font-weight: bold;
+                font-size: 12px;
+            }
+
+            p {
+                width: 1000px;
+                margin: 0 auto;
+
+                span {
+                    display: block;
+                    width: calc((100% - 20px) / 2);
+                    background: {
+                        repeat: no-repeat;
+                        position: center top;
+                        size: auto 100%;
+                    };
+                }
+            }
+
+            ul {
+                width: 1000px;
+                margin: 0 auto;
+                padding: 0;
+            }
+
+            li {
+                font-size: 12px;
+                line-height: math.div(18, 12);
+            }
+        }
+    }
+
+    &--leaflet {
+        padding-bottom: 60px;
+
+        h3 {
+            span {
+                padding-right: 30px;
+                background: url(/travelmonth/assets/images/intro/icon_leaflet_header.png) no-repeat right center/auto 100%;
+            }
+        }
+
+        > div {
+            div {
+                &:nth-of-type(1) {
+                    display: flex;
+                    justify-content: space-between;
+
+                    p {
+                        width: calc((100% - 20px) / 3);
+                    }
+
+                    span {
+                        padding-top: 141.5%;
+                    }
+                }
+
+                &:nth-of-type(2) {
+                    padding-top: 30px;
+
+                    span {
+                        padding-top: 70.6%;
+                    }
+                }
+
+                p {
+                    font-size: 10px;
+                    line-height: 1;
+                    text-align: center;
+                }
+
+                span {
+                    display: block;
+                    width: 100%;
+                    margin-bottom: 10px;
+                    background: {
+                        repeat: no-repeat;
+                        position: center center;
+                        size: auto 100%;
+                    };
+                }
+            }
+        }
+
+        @include media-queries($from: xl) {
+            padding-bottom: 220px;
+
+            h3 {
+                span {
+                    padding-right: 60px;
+                }
+            }
+
+            > div {
+                div {
+                    &:nth-of-type(1) {
+                        display: flex;
+                        justify-content: space-between;
+
+                        p {
+                            width: calc((100% - 40px) / 3);
+
+                            &:nth-of-type(2) {
+                                margin-top: 60px;
+                            }
+                        }
+                    }
+
+                    &:nth-of-type(2) {
+                        padding-top: 60px;
+                    }
+
+                    p {
+                        font-size: 22px;
+                    }
+
+                    span {
+                        display: block;
+                        width: 100%;
+                        margin-bottom: 20px;
+                    }
+                }
+            }
+        }
+    }
+}
