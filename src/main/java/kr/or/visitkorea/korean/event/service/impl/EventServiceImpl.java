@@ -13,7 +13,8 @@ import org.springframework.stereotype.Service;
 
 @Service
 @RequiredArgsConstructor
-public class EventServiceImpl extends CommonServiceImplWrapper implements EventService {
+public class EventServiceImpl extends CommonServiceImplWrapper implements EventService
+{
 
 	private final ObjectMapper MAPPER;
 
@@ -23,20 +24,24 @@ public class EventServiceImpl extends CommonServiceImplWrapper implements EventS
 	 */
 	@Override
 	@SuppressWarnings("unchecked")
-	public Object getMainList() {
-		try {
-			JSONObject parameters = new JSONObject(){{ put("search_main_st", "Y"); }};
-			JSONObject jsonObject = RequestUrl.get(TRAVEL_MONTH_SITE_URL + "/event/list", parameters);
-			if (jsonObject != null) {
+	public Object getMainList()
+	{
+		try
+		{
+			JSONObject jsonObject = RequestUrl.get(TRAVEL_MONTH_SITE_URL + "/event/list?search_main_st=Y");
+			if (jsonObject != null)
+			{
 				boolean result = (boolean) jsonObject.get("result");
-				if (!result) {
+				if (!result)
+				{
 					String message = String.valueOf(jsonObject.get("message"));
 					throw new RuntimeException(message);
 				}
 				return MAPPER.convertValue(jsonObject, CommonResponse.List.class);
 			}
 		}
-		catch (Exception exception) {
+		catch (Exception exception)
+		{
 			LOGGER.error("Event Main List Exception : {}", exception.getMessage(), exception);
 		}
 		return null;

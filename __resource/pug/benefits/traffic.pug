@@ -11,69 +11,176 @@ block body
                     span 2023 여행가는 달 특별할인혜택
                     strong 교통혜택
                 p 국내여행 준비중이라면?<br>여행가는 달에서 준비한 교통혜택을 챙겨가세요!
-        div.benefits-program__list
-            section.benefits-program__item
-                div.benefits-program__content
-                    div.benefits-program__item--info
-                        h3.
-                            #[span 여행가는 달]
-                            철도 할인 프로모션
+        section(data-theme="train")
+            div
+                h3.
+                    #[span 여행가는 달]
+                    철도 할인 프로모션
+                div
+                    div
+                        h4 하나. 지역관광 결합형 KTX 할인
+                        p KTX 관광열차 승차권 할인(주말 30%/주중 50% 할인)
+                        p 지역 숙박권 혹은 관광지 입장권 등 결합구매 시 KTX 할인
                         ul
-                            li
-                                h4 하나. 지역관광 결합형 KTX 할인
-                                p.
-                                    KTX 관광열차 승차권 할인(주말 30%/주중 50% 할인)<br>
-                                    지역 숙박권 혹은 관광지 입장권 등 결합구매 시 KTX 할인<br>
-                                    * 참여사 : 야놀자, 웹투어, 쏘카, 무브, 와그, 마실, 여행공방, 해밀여행사
-                            li
-                                h4 둘. 관광열차 할인
-                                p.
-                                    관광열차 5개 노선 대상 승차권 할인(주말 30%/주중 50% 할인)<br>
-                                    * 서해금빛열차, 남도해양열차, 동해산타열차, 백두대간협곡열차, 정선아리랑열차
-                            li
-                                h4 셋. 내일로패스 할인
-                                p.
-                                    전 연령 대상 내일로패스 1만원 할인(5만명 대상)<br>
-                                    * KTX 1일 1회, 좌석 지정가능(이용기간 중 총 2회)<br>
-                                    일반열차 1일 2회, 좌석 지정가능
-                    div.benefits-program__item--addition
+                            li 참여사 : 야놀자, 웹투어, 쏘카, 무브, 와그, 마실, 여행공방, 해밀여행사
+                div
+                    div
+                        h4 둘. 관광열차 할인
+                        p 관광열차 5개 노선 대상 승차권 할인(주말 30%/주중 50% 할인)
                         ul
-                            li 판매 기간  :  0월 00일 ~ 0월 00일
-                            li 이용 기간  :  0월 00일 ~ 0월 00일
-                            li 문의처 : 1544-7788
-                div.benefits-program__coupons
-                    div.benefits-program__item--info
-                        h4.
-                            KTX 타고 떠나는
-                            자유로운 기차여행
-                        dl
-                            dt.
-                                KTX 관광상품 및<br>
-                                관광열차 승차권
-                            dd 최대 50% 할인
-                        h4.
-                            대한민국 대표 철도여행패스
-                            국내 방방곡곡을
-                            자유롭게!
-                        dl
-                            dt 내일로패스 이용권
-                            dd 1만원 할인
-                        a(href="#") 할인혜택 보러가기
-                    div.benefits-program__item--addition
+                            li 서해금빛열차, 남도해양열차, 동해산타열차, 백두대간협곡열차, 정선아리랑열차
+                div
+                    div
+                        h4 셋. 내일로패스 할인
+                        p 전 연령 대상 내일로패스 1만원 할인(5만명 대상)
                         ul
-                            li 이용일 기준일은 승차 시작일 기준
-                            li 예산 소진 시 조기 마감 가능
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+                            li KTX 1일 1회, 좌석 지정가능(이용기간 중 총 2회)<br>일반열차 1일 2회, 좌석 지정가능
+            div
+                h4
+                    img(src="/travelmonth/assets/images/@temp/logo_korail.png" alt="KORAIL")
+                div
+                    h5.
+                        #[span KTX 타고 떠나는]
+                        자유로운 기차여행
+                    dl
+                        dt.
+                            KTX 관광상품 및<br>
+                            관광열차 승차권
+                        dd 최대 #[strong 50#[span %]] 할인
+                div
+                    h5.
+                        #[span 대한민국 대표 철도여행패스]
+                        국내 방방곡곡을 자유롭게!
+                    dl
+                        dt 내일로패스 이용권
+                        dd #[strong 1#[span 만원]] 할인
+                p
+                    a(href="#") 할인혜택 보러가기
+            div
+                dl
+                    div
+                        dt 판매 기간
+                        dd 0월 00일 ~ 0월 00일
+                    div
+                        dt 이용 기간
+                        dd 0월 00일 ~ 0월 00일
+                    div
+                        dt 문의처
+                        dd 1544-7788
+            div
+                ul
+                    li 이용일 기준일은 승차 시작일 기준
+                    li 예산 소진 시 조기 마감 가능
+        section(data-theme="airplane")
+            div
+                h3.
+                    #[span 여행가는 달]
+                    국내 항공권 할인
+                div
+                    h4 지방공항 도착 편도 항공<br>노선 이용 시 할인
+                    ul
+                        li 제주•부산 제외
+            div
+                h4
+                    img(src="/travelmonth/assets/images/@temp/logo_kac.png" alt="KAC")
+                div
+                    h5.
+                        #[span 비행기타고 떠나는]
+                        방방곡곡 국내여행
+                    dl
+                        dt 지방공항 도착 편도 항공권
+                        dd #[strong 1.5~2.1#[span 만원]] 할인
+                p
+                    a(href="#") 할인혜택 보러가기
+            div
+                dl
+                    div
+                        dt 판매 기간
+                        dd 2023년 5월 24일 ~ 7월 15일
+                    div
+                        dt 이용 기간
+                        dd 2023년 6월 1일 ~ 7월 22일
+                    div
+                        dt 참여항공사
+                        dd 진에어, 제주항공, 플라이강원, 하이에어, 에어부산
+            div
+                ul
+                    li 이용일 기준일은 항공기 탑승일 기준
+                    li 예산 소진 시 조기 마감 가능
+        section(data-theme="bus")
+            div
+                h3.
+                    #[span 여행가는 달]
+                    시티투어 할인
+                div
+                    h4 카카오T를 통해 시티투어<br>승차권 예매 시 할인
+            div
+                h4
+                    img(src="/travelmonth/assets/images/@temp/logo_t.png" alt="T")
+                div
+                    h5.
+                        #[span 편리하게 만나보는]
+                        지역 시티투어버스
+                    dl
+                        dt 카카오T 앱에서 승차권 예매 시
+                        dd #[strong 50#[span %]] 할인
+                p
+                    a(href="#") 할인혜택 보러가기
+            div
+                dl
+                    div
+                        dt 판매 기간
+                        dd 2023년 5월 24일 ~ 7월 15일
+                    div
+                        dt 이용 기간
+                        dd 2023년 6월 1일 ~ 7월 22일
+                    div
+                        dt 문의처
+                        dd
+                            a(href="#" target="_blank") 카카오T 고객센터 바로가기
+            div
+                ul
+                    li 이용일 기준일은 시티투어버스 탑승일 기준
+                    li 예산 소진 시 조기 마감 가능
+        section(data-theme="car")
+            div
+                h3.
+                    #[span 여행가는 달]
+                    카모아 렌터카 할인
+                div
+                    div
+                        h4 전국 렌터카 10% 할인
+                        ul
+                            li 제주•부산 제외
+                div
+                    div
+                        h4 일부 지역 소재 렌터카 30% 할인
+                        ul
+                            li 결제 건당 최대 3만원 할인
+            div
+                h4
+                    img(src="/travelmonth/assets/images/@temp/logo_carmoa.png" alt="카모아")
+                div
+                    h5.
+                        #[span 전국 어디서나]
+                        렌터카를 쉽고 빠르게!
+                    dl
+                        dt 카모아 렌터카
+                        dd #[strong 10#[span %]~30#[span %]] 할인
+                p
+                    a(href="#") 할인혜택 보러가기
+            div
+                dl
+                    div
+                        dt 판매 기간
+                        dd 2023년 5월 24일 ~ 7월 15일
+                    div
+                        dt 이용 기간
+                        dd 2023년 6월 1일 ~ 7월 22일
+                    div
+                        dt 문의처
+                        dd 1544-7788
+            div
+                ul
+                    li 이용일 기준일은 렌터카 이용 시작일 기준
+                    li 예산 소진 시 조기 마감 가능

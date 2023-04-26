@@ -1,6 +1,7 @@
 package kr.or.visitkorea.korean.showcase.service;
 
-public interface ShowcaseService {
+public interface ShowcaseService
+{
 
 	/**
 	 * GET LIST

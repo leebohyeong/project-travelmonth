@@ -13,8 +13,6 @@
         }
 
         h2 {
-
-
             font: {
                 family: "GmarketSans", sans-serif;
                 weight: $font-weight-bold;
@@ -44,6 +42,16 @@
                 line-height: math.div(32, 18);
             }
         }
+
+        @include media-queries($to: xl) {
+            h2 {
+                font-size: 21px;
+            }
+
+            p {
+                font-size: 12px;
+            }
+        }
     }
 
     &__intro {
@@ -55,53 +63,59 @@
         .swiper {
 
             &-slide {
-                height: 100%;
+                aspect-ratio: 1920/905;
             }
 
             &-navigation {
-                &-prev,
-                &-next {
-                    position: absolute;
-                    top: 50%;
-                    transform: translateY(-50%);
-                    z-index: 10;
-                    width: 60px;
-                    height: 60px;
-                    background-color: rgba(#fff, .4);
-                    border: 2px solid #fff;
-                    border-radius: 50%;
-                    cursor: pointer;
-                    background: {
-                        repeat: no-repeat;
-                        position: center;
-                    };
-                }
+                @include media-queries($from: xl) {
+                    &-prev,
+                    &-next {
+                        position: absolute;
+                        top: 50%;
+                        transform: translateY(-50%);
+                        z-index: 10;
+                        width: 60px;
+                        height: 60px;
+                        background-color: rgba(#fff, .4);
+                        border: 2px solid #fff;
+                        border-radius: 50%;
+                        cursor: pointer;
+                        background: {
+                            repeat: no-repeat;
+                            position: center;
+                        };
+                    }
 
-                &-prev {
-                    left: 10.9375vw;
-                    background: {
-                        image: url(/travelmonth/assets/images/main/icon_button_prev_white.png);
-                    };
-                }
+                    &-prev {
+                        left: 10.9375vw;
+                        background: {
+                            image: url(/travelmonth/assets/images/main/icon_button_prev_white.png);
+                        };
+                    }
 
-                &-next {
-                    right: 10.9375vw;
-                    background: {
-                        image: url(/travelmonth/assets/images/main/icon_button_next_white.png);
-                    };
+                    &-next {
+                        right: 10.9375vw;
+                        background: {
+                            image: url(/travelmonth/assets/images/main/icon_button_next_white.png);
+                        };
+                    }
                 }
-                
             }
 
             &-pagination {
-                display: grid;
-                grid-template-columns: repeat(3, 1fr);
+                display: flex;
+                align-content: center;
+                justify-content: space-between;
                 grid-column-gap: 16px;
                 position: absolute;
                 left: 50%;
                 transform: translateX(-50%);
-                bottom: 28px;
+                bottom: 20px;
                 z-index: 10;
+
+                @include media-queries($from: xl) {
+                    bottom: 155px;
+                }
 
                 .swiper-pagination-bullet {
                     display: block;
@@ -113,19 +127,34 @@
                     &-active {
                         background-color: #fff;
                     }
+
+                    @include media-queries($to: xl) {
+                        width: 8px;
+                        height: 8px;
+                    }
                 }
             }
         }
+
+        @include media-queries($to: xl) {
+            img {
+                width: 100%;
+            }
+        }
+
     }
 
     &__category {
         max-width: 1440px;
         margin: 0 auto;
-        padding: 50px 0 70px 0;
 
         @include media-queries($from: xl) {
-            display: flex;
-            align-items: center;
+            display: grid;
+            grid-template-columns: 334px 1fr;
+            position: relative;
+            z-index: 1;
+            margin: -130px auto 95px;
+            box-shadow: rgba(#454545, .2) 0 20px 20px;
         }
 
         .category-tab {
@@ -147,27 +176,31 @@
                     background-color: #fff;
                     color: #369d75;
                 }
+
+                @include media-queries($from: xl) {
+                    padding: 23px 0;
+                }
             }
 
             p {
                 font: {
                     weight: $font-weight-light;
-                    size: 18px;
+                    size: 14px;
                 }
-                line-height: math.div(36, 24);
                 text-align: center;
+                line-height: 1.5;
 
                 strong {
                     display: block;
                     font: {
                         weight: $font-weight-extraBold;
-                        size: 20px
+                        size: 20px;
                     }
                 }
 
-
                 @include media-queries($from: xl) {
                     font-size: 24px;
+                    line-height: math.div(36, 24);
 
                     strong {
                         font-size: 32px;
@@ -178,53 +211,74 @@
 
         .category-panel {
             display: none;
-
-            @include media-queries($to: xl) {
-                margin-top: 58px;
-            }
-
+            height: 100%;
+            padding: 25px 0 38px 0;
+            background-color: #fff;
 
             &--active {
                 display: block;
+            }
+
+            .swiper-slide {
+                &:last-of-type {
+                    a::after {
+                        display: none;
+                    }
+                }
             }
 
             a {
                 display: block;
                 position: relative;
                 padding: 0 20px;
+                background-color: #fff;
                 color: #000;
                 font: {
                     weight: $font-weight-light;
                     size: 21px;
                 }
                 text-align: center;
+                transition: font-weight .15s;
 
-                @include media-queries($from: xl) {
-                    padding: 0 40px;
-                    font-size: 24px;
+                @include media-queries($to: xl) {
+                    font-size: 12px;
                 }
 
                 &::before {
                     display: block;
                     width: 23px;
-                    margin: 0 auto 8px;
+                    margin: 0 auto 12px;
                     background: {
                         repeat: no-repeat;
                         position: center bottom;
-                        size: 23px auto;
+                        size: contain;
                     };
                     content:'';
                 }
-
-                &::after {
-                    position: absolute;
-                    top: 25%;
-                    bottom: 31.6666666667%;
-                    left: 0;
-                    width: 1px;
-                    background: #ebebeb;
-                    content: "";
+                
+                &:hover {
+                    font-weight: $font-weight-extraBold;
+                    color: #37bf8a;
                 }
+
+                @include media-queries($from: xl) {
+                    width: 100%;
+                    padding: 0;
+                    font-size: 24px;
+
+                    &::after {
+                        position: absolute;
+                        top: 25%;
+                        right: 0;
+                        bottom: 31.6666666667%;
+                        width: 1px;
+                        height: 43px;
+                        right: 0;
+                        background: #ebebeb;
+                        content:'';
+                    }
+                }
+
             }
 
             .swiper {
@@ -247,10 +301,21 @@
         }
 
         .category-tab-contents__location {
+            .swiper {
+                @include media-queries($from: xl) {
+                    height: 100%;
+
+                    &-wrapper {
+                        display: grid;
+                        grid-template-columns: repeat(9, 1fr);
+                    }
+                }
+            }
+
             @each $code, $width in ('a', 17, 35), ('b', 32, 27), ('c', 22, 30), ('d', 34, 29), ('e', 21, 33), ('f', 36, 27), ('g', 45, 19), ('h', 36, 25), ('i', 29, 29), ('j', 44, 23), ('k', 33, 35), ('l', 28, 24), ('m', 23, 33), ('n', 25, 34), ('o', 22, 36), ('p', 48, 25), ('q', 18, 33), {
                 [data-theme="#{$code}"]::before {
                     width: #{$width}px;
-                    height: 56px;
+                    height: 40px;
                     background-image: url("/travelmonth/assets/images/main/icon_category_location_#{$code}.png");
                     background-size: #{$width}px auto;
                 }
@@ -264,12 +329,30 @@
         }
 
         .category-tab-contents__program {
-            @each $code, $width in ('a', 63, 73), ('b', 60, 71), ('c', 60, 72), ('d', 71, 70), ('e', 60, 73), {
+            .swiper {
+                @include media-queries($from: xl) {
+                    height: 100%;
+
+                    &-wrapper {
+                        display: grid;
+                        grid-template-columns: repeat(5, 1fr);
+                        align-content: center;
+                    }
+                }
+            }
+
+            @each $code, $width, $m-width, $m-height in ('a', 63, 30, 34), ('b', 60, 28, 33), ('c', 60, 29, 34), ('d', 71, 34, 33), ('e', 60, 28, 34), {
                 [data-theme="#{$code}"]::before {
                     width: #{$width}px;
                     height: 74px;
                     background-image: url("/travelmonth/assets/images/main/icon_category_program_#{$code}.png");
                     background-size: #{$width}px auto;
+
+                    @include media-queries($to: xl) {
+                        width: #{$m-width}px;
+                        height: #{$m-height}px;
+                        background-size: #{$m-width}px auto;
+                    }
                 }
 
                 @media (hover: hover) {
@@ -278,6 +361,8 @@
                     }
                 }
             }
+
+
         }
     }
 
@@ -289,6 +374,7 @@
             font: {
                 family: "GmarketSans", sans-serif;
                 weight: $font-weight-bold;
+                size: 21px;
             }
             text-align: center;
         }
@@ -300,44 +386,70 @@
         }
 
         .trend-swiper {
-            max-width: 1630px;
+            max-width: 1644px;
             margin: 50px auto 0;
-            padding: 0 14px;
+            padding-left: 14px;
             box-sizing: border-box;
+
+            @include media-queries($to: xl) {
+                margin-top: 20px;
+            }
 
             .swiper {
                 &-slide {
                     width: auto;
 
-
                     @for $i from 1 through 10 {
                         &:nth-child(#{$i}) {
                             a:hover {
                                 span::after {
-                                    opacity: 1;
-                                    content: url(/travelmonth/assets/images/main/img_trend_on_#{$i}.png);
+                                    position: absolute;
+                                    top: 0;
+                                    left: 0;
+                                    width: 100%;
+                                    aspect-ratio: 142/180;
+                                    background: url(/travelmonth/assets/images/main/img_trend_on_#{$i}.png) no-repeat center/cover;
+                                    content:'';
                                 }
                             }
                         }
                     }
 
-                    a {
-                        display: block;
+                    @for $i from 1 through 10 {
+                        &:nth-child(#{$i}) {
+                            a {
+                                span {
+                                    background: {
+                                        image: url(/travelmonth/assets/images/main/img_trend_#{$i}.png);
+                                        position: center;
+                                        repeat: no-repeat;
+                                        size: cover;
+                                    }
+                                }
+                            }
+                        }
                     }
 
-                    span {
+                    &:nth-of-type(2n) {
+                        padding-top: 20px;
+
+                        @include media-queries($from: xl) {
+                            padding-top: 40px;
+                        }
+                    }
+
+
+
+                    a {
                         display: block;
                         position: relative;
 
-                        &::after {
-                            opacity: 0;
-                            position: absolute;
-                            top: 0;
-                            left: 0;
-                            width: 100%;
-                            height: 100%;
-                            transition: opacity .15s;
-                        }
+                    }
+
+                    span {
+                        overflow: hidden;
+                        display: block;
+                        aspect-ratio: 142/180;
                     }
 
                     p {
@@ -349,16 +461,28 @@
                         }
                         line-height: math.div(22, 18);
                         text-align: center;
+
+                        @include media-queries($to: xl) {
+                            padding-top: 8px;
+                            font-size: 12px;
+                        }
                     }
                 }
 
-                .swiper-scrollbar {
-                    @include media-queries($to: 1640px) {
+
+                @include media-queries($to: 1640px) {
+
+                    &-wrapper {
+                        padding-bottom: 36px;
+                    }
+
+                    .swiper-scrollbar {
                         width: 100%;
                         height: 3px;
                         background: #dfdfdf;
                     }
                 }
+
 
                 .swiper-scrollbar-drag {
                     position: relative;
@@ -374,17 +498,22 @@
     }
 
     &__benefits {
-        max-width: 1440px;
+        max-width: 1468px;
         margin: 0 auto;
         padding: 120px 14px 120px;
+
+        @include media-queries($to: xl) {
+            padding: 40px 14px;
+        }
 
         ul {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
-            grid-gap: 20px;
+            grid-gap: 9px;
 
             @include media-queries($from: xl) {
                 grid-template-columns: repeat(3, 1fr);
+                grid-gap: 20px;
             }
 
             li {
@@ -414,7 +543,7 @@
                 align-items: flex-start;
                 justify-content: center;
                 position: relative;
-                aspect-ratio: 322/251;
+                aspect-ratio: 466/340;
                 border-radius: 30px;
                 color: #fff;
                 text-align: center;
@@ -431,8 +560,9 @@
                             font: {
                                 family: "GmarketSans", sans-serif;
                                 weight: $font-weight-bold;
-                                size: 25px;
+                                size: 13px;
                             }
+                            line-height: 1;
 
                             @include media-queries($from: xl) {
                                 font-size: 34px;
@@ -440,7 +570,8 @@
                         }
 
                         &:last-of-type {
-                            padding-top: 20px;
+                            padding-top: 8px;
+                            font-size: 12px;
 
                             @include media-queries($from: xl) {
                                 font-size: 22px;
@@ -491,12 +622,15 @@
 
         > div {
             position: relative;
-            max-width: 1440px;
+            max-width: 1468px;
             margin: 0 auto;
-            padding: 120px 0 140px 0;
+            padding: 30px 14px 80px;
 
-            &::after {
-                @include media-queries($from: xl) {
+
+            @include media-queries($from: xl) {
+                padding: 120px 14px 140px 14px;
+
+                &::after {
                     position: absolute;
                     bottom: 56px;
                     left: -178px;
@@ -506,6 +640,7 @@
                     content: '';
                 }
             }
+
         }
 
         header {
@@ -518,7 +653,7 @@
                 font: {
                     family: "GmarketSans", sans-serif;
                     weight: $font-weight-bold;
-                    size: 42px;
+                    size: 21px;
                 }
 
                 strong {
@@ -526,8 +661,8 @@
                     color: #37bf8a;
                 }
 
-                @include media-queries($to: xl) {
-                    font-size: 25px;
+                @include media-queries($from: xl) {
+                    font-size: 42px;
                 }
             }
 
@@ -538,35 +673,34 @@
                 width: 89px;
                 height: 46px;
                 background: url(/travelmonth/assets/images/main/img_june.png) no-repeat center;
-
-                @include media-queries($to: xl) {
-
-                }
             }
         }
 
         .june-contents {
             display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            grid-column-gap: 47px;
-            margin-top: 63px;
-            padding: 0 14px;
+            grid-template-columns: 1fr;
+            grid-column-gap: 0;
+            grid-row-gap: 14px;
+            margin-top: 20px;
 
-            @include media-queries($to: xl) {
-                grid-template-columns: 1fr;
-                grid-column-gap: 0;
+            @include media-queries($from: xl) {
+                grid-template-columns: 49.93055555556% 1fr;
+                //grid-template-columns: 1fr 1fr;
+                grid-column-gap: 47px;
                 grid-row-gap: 28px;
+                margin-top: 63px;
             }
 
             &__information {
+
                 iframe {
                     width: 100%;
                     border: none;
                     border-radius: 32px;
-                    aspect-ratio: 16/9.95;
+                    aspect-ratio: 719/421;
 
                     @include media-queries($to: xxl) {
-                        aspect-ratio: 16/9;
+                        aspect-ratio: 16/9.95;
                     }
                 }
 
@@ -574,13 +708,13 @@
                     display: flex;
                     align-items: flex-start;
                     grid-column-gap: 75px;
-                    margin-top: 16px;
+                    margin-top: 11px;
                     padding: 50px 14px 40px 47px;
                     border-radius: 32px;
                     background-color: #fff;
 
                     @include media-queries($to: xxl) {
-                        grid-column-gap: 40px;
+                        //grid-column-gap: 40px;
                         padding: 40px 20px;
                     }
 
@@ -603,7 +737,7 @@
                             }
 
                             @include media-queries($to: xl) {
-                                font-size: 25px;
+                                font-size: 15px;
                                 br {
                                     display: none;
                                 }
@@ -612,30 +746,38 @@
 
                         a {
                             display: inline-block;
-                            padding-right: 30px;
-                            background: url(/travelmonth/assets/images/main/icon_link_arrow_gray.png) no-repeat right center/auto 22px;
+                            padding-right: 16px;
+                            background: url(/travelmonth/assets/images/main/icon_link_arrow_gray.png) no-repeat right top 1px/auto 11px;
                             color: #000;
                             font: {
                                 weight: $font-weight-light;
-                                size: 18px;
+                                size: 12px;
                             }
-                            line-height: math.div(32, 18);
 
-                            @include media-queries($from: xxl) {
+                            @include media-queries($from: xl) {
                                 margin-top: 5px;
+                                padding-right: 30px;
+                                font-size: 18px;
+                                line-height: math.div(32, 18);
+                                background-size: auto 22px;
                             }
                         }
                     }
 
                     ul {
                         @include media-queries($to: xl) {
-                            margin-top: 35px;
+                            margin-top: 17px;
                         }
                     }
 
                     li {
                         &:nth-of-type(n+2) {
-                            margin-top: 20px;
+                            margin-top: 12px;
+
+                            @include media-queries($from: xl) {
+                                margin-top: 24px;
+                            }
+
                         }
 
                         a {
@@ -643,7 +785,7 @@
                             align-items: flex-start;
                             color: #000;
                             font-weight: $font-weight-medium;
-                            @include line-clamp(16px * 1.2, 1);
+                            @include line-clamp(12px * 1.6, 1);
 
                             &:hover {
                                 color: #58b490;
@@ -684,6 +826,7 @@
 
                     @include media-queries($to: xl) {
                         grid-gap: 10px;
+                        margin-top: 15px;
                     }
                 }
 

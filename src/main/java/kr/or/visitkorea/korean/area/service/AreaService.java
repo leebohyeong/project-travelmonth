@@ -1,12 +1,15 @@
 package kr.or.visitkorea.korean.area.service;
 
-public interface AreaService {
+import org.json.simple.JSONObject;
+
+public interface AreaService
+{
 
 	/**
 	 * GET LIST
-	 * @param area
+	 * @param request
 	 * @return
 	 */
-	Object getList(String area);
+	Object getList(JSONObject request);
 
 }
