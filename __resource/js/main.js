@@ -31,7 +31,7 @@ const main = () => {
 
     })();
 
-    //tab
+    //category tab
     (() => {
         const category = findOne('.main__category');
         const tabMenus = find('.category-tab a', category);
@@ -67,6 +67,14 @@ const main = () => {
             freeMode: {
                 enabled: true,
             },
+
+            breakpoints: {
+                //브라우저가 1200보다 클 때
+                1200: {
+                    enabled: false,
+                },
+            },
+
             modules: [FreeMode],
         });
 
@@ -120,12 +128,12 @@ const main = () => {
     (() => {
         const event = findOne('.main__event');
         const eventCarousel = new Swiper(findOne('.swiper', event),{
-            loop: false,
-            speed: 500,
-            spaceBetween: 20,
+            spaceBetween: 10,
             slidesPerView: 2.5,
-            centeredSlides: false,
-            slideToClickedSlide: true,
+
+            freeMode: {
+                enabled: true,
+            },
 
             navigation: {
                 prevEl: findOne('.event-swiper__paging-prev', event),
@@ -140,13 +148,10 @@ const main = () => {
                 1200: {
                     spaceBetween: 20,
                     slidesPerView: 'auto',
-                    centeredSlides: true,
-                    initialSlide: 2,
-                    allowTouchMove: false,
                 },
             },
 
-            modules: [Navigation, Scrollbar],
+            modules: [FreeMode, Navigation, Scrollbar],
         });
     })();
 
@@ -154,10 +159,8 @@ const main = () => {
     (() => {
         const organization = findOne('.main__organization');
         const organizationCarousel = new Swiper(findOne('.swiper', organization),{
-            loop: false,
-            slidesPerView: "auto",
-            // centeredSlides: true,
-            spaceBetween: 40,
+            slidesPerView: 3.5,
+            spaceBetween: 20,
 
             autoplay: {
                 delay: 3000,
@@ -167,7 +170,7 @@ const main = () => {
             breakpoints: {
                 //브라우저가 1200보다 클 때
                 1200: {
-                    centeredSlides: false,
+                    slidesPerView: "auto",
                     spaceBetween: 100,
                 },
             },
@@ -182,24 +185,26 @@ const main = () => {
         const removeClass = findOne('.swiper');
 
         const instagramCarousel = new Swiper(findOne('.swiper', instagram),{
-            loop: false,
-            centeredSlides: true,
-            slidesPerView: "auto",
-            spaceBetween: 13,
+            slidesPerView: 3.5,
+            spaceBetween: 6,
+
+            freeMode: {
+                enabled: true,
+            },
+
             scrollbar: {
                 el: '.swiper-scrollbar',
             },
 
             breakpoints: {
                 //브라우저가 1200보다 클 때
-                1200: {
-                    centeredSlides: false,
+                996: {
                     slidesPerView: "5",
                     spaceBetween: 20,
                 },
             },
 
-            modules: [Scrollbar],
+            modules: [FreeMode, Scrollbar],
         });
 
     })();

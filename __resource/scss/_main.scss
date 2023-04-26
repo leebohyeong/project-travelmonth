@@ -1,12 +1,22 @@
 @use "sass:math";
 
+#travelmonth-main {
+    .site-header {
+        background-color: transparent;
+        box-shadow: none;
+    }
+}
+
+
 .main {
     @include media-queries($from: xl) {
         margin-top: -150px;
     }
 
     &__header {
+        max-width: 1468px;
         padding: 0 14px;
+        margin: 0 auto;
 
         > * {
             color: #000;
@@ -30,14 +40,25 @@
 
         a {
             display: inline-block;
-            margin-top: 3px;
-            padding-right: 30px;
-            background: url(/travelmonth/assets/images/main/icon_link_arrow_gray.png) no-repeat right center/auto 22px;
+            margin-top: 8px;
+            padding-right: 16px;
+            background: {
+                image: url(/travelmonth/assets/images/main/icon_link_arrow_gray.png);
+                position: right 1px top 1px;
+                repeat: no-repeat;
+                size: auto 11px;
+            };
             font-weight: $font-weight-light;
-            font-size: 24px;
-            line-height: math.div(32, 24);
+            font-size: 12px;
+
 
             @include media-queries($from: xl) {
+                margin-top: 3px;
+                padding-right: 30px;
+                background: {
+                    position: right center;
+                    size: auto 22px;
+                };
                 font-size: 18px;
                 line-height: math.div(32, 18);
             }
@@ -253,9 +274,9 @@
                         position: center bottom;
                         size: contain;
                     };
-                    content:'';
+                    content: '';
                 }
-                
+
                 &:hover {
                     font-weight: $font-weight-extraBold;
                     color: #37bf8a;
@@ -275,7 +296,7 @@
                         height: 43px;
                         right: 0;
                         background: #ebebeb;
-                        content:'';
+                        content: '';
                     }
                 }
 
@@ -409,7 +430,7 @@
                                     width: 100%;
                                     aspect-ratio: 142/180;
                                     background: url(/travelmonth/assets/images/main/img_trend_on_#{$i}.png) no-repeat center/cover;
-                                    content:'';
+                                    content: '';
                                 }
                             }
                         }
@@ -437,7 +458,6 @@
                             padding-top: 40px;
                         }
                     }
-
 
 
                     a {
@@ -624,7 +644,7 @@
             position: relative;
             max-width: 1468px;
             margin: 0 auto;
-            padding: 30px 14px 80px;
+            padding: 30px 14px 40px;
 
 
             @include media-queries($from: xl) {
@@ -677,15 +697,12 @@
         }
 
         .june-contents {
-            display: grid;
-            grid-template-columns: 1fr;
-            grid-column-gap: 0;
-            grid-row-gap: 14px;
+            display: block;
             margin-top: 20px;
 
             @include media-queries($from: xl) {
+                display: grid;
                 grid-template-columns: 49.93055555556% 1fr;
-                //grid-template-columns: 1fr 1fr;
                 grid-column-gap: 47px;
                 grid-row-gap: 28px;
                 margin-top: 63px;
@@ -714,8 +731,7 @@
                     background-color: #fff;
 
                     @include media-queries($to: xxl) {
-                        //grid-column-gap: 40px;
-                        padding: 40px 20px;
+                        padding: 23px 20px 16px;
                     }
 
                     @include media-queries($to: xl) {
@@ -785,6 +801,7 @@
                             align-items: flex-start;
                             color: #000;
                             font-weight: $font-weight-medium;
+                            font-size: 12px;
                             @include line-clamp(12px * 1.6, 1);
 
                             &:hover {
@@ -809,6 +826,10 @@
             }
 
             &__tourist {
+                @include media-queries($to: xl) {
+                    margin-top: 14px;
+                }
+
                 &-banner {
                     padding-top: percentage(math.div(123, 673));
                     background: {
@@ -868,26 +889,30 @@
 
     &__event {
         > div {
-            max-width: 1920px;
-            margin: 0 auto;
-            padding: 120px 0;
-        }
+            //max-width: 1920px;
+            //margin: 0 auto;
+            padding: 34px 0 40px 0;
 
-        header {
-            max-width: 1440px;
-            margin: 0 auto;
+            @include media-queries($from: xl) {
+                padding: 120px 0;
+            }
         }
 
         .event-swiper {
             position: relative;
-            max-width: 1920px;
-            margin: 80px auto 0;
-            padding: 0 14px;
+            margin-top: 24px;
+            padding-left: 14px;
+
+            @include media-queries($from: xl) {
+                margin-top: 80px;
+                margin-left: 240px;
+                padding-left: 0;
+            }
 
             .swiper {
                 &-wrapper {
                     @include media-queries($to: xl) {
-                        padding-bottom: 53px;
+                        padding-bottom: 36px;
                     }
                 }
 
@@ -896,6 +921,10 @@
 
                     @include media-queries($from: xl) {
                         width: 17.96875%;
+
+                        &:nth-of-type(2n) {
+                            padding-top: 52px;
+                        }
                     }
 
                     a {
@@ -918,10 +947,12 @@
                         }
 
                         p {
-                            padding-top: 17px;
+                            padding-top: 8px;
                             color: #000;
+                            font-size: 12px;
 
                             @include media-queries($from: xl) {
+                                padding-top: 17px;
                                 font-size: 24px;
                                 line-height: math.div(32, 24);
                             }
@@ -950,6 +981,8 @@
             }
 
             &__paging {
+                display: none;
+
                 @include media-queries($to: xl) {
                     display: none;
                 }
@@ -989,9 +1022,13 @@
     }
 
     &__organization {
-        padding: 90px 0 84px;
+        padding: 34px 0 25px;
         background-color: #f7f7f7;
         text-align: center;
+
+        @include media-queries($from: xl) {
+            padding: 90px 0 84px;
+        }
 
         > div {
             max-width: 1920px;
@@ -999,7 +1036,11 @@
         }
 
         header + div {
-            padding-top: 28px;
+            padding-top: 16px;
+
+            @include media-queries($from: xl) {
+                padding-top: 28px;
+            }
         }
 
         .swiper {
@@ -1082,14 +1123,14 @@
             }
 
             @include media-queries($to: xl) {
-                padding: 20px 14px;
+                padding: 30px 0;
             }
 
             h2 {
                 font: {
                     family: "GmarketSans", sans-serif;
                     weight: $font-weight-bold;
-                    size: 25px;
+                    size: 23px;
                 }
 
                 @include media-queries($from: xl) {
@@ -1101,6 +1142,7 @@
                 padding-top: 4px;
                 font: {
                     weight: $font-weight-light;
+                    size: 13px;
                 }
                 line-height: math.div(34, 20);
 
@@ -1111,7 +1153,10 @@
 
                 strong {
                     weight: $font-weight-semiBold;
-                    padding-left: 6px;
+
+                    &:nth-of-type(2) {
+                        padding-left: 6px;
+                    }
 
                     @include media-queries($from: xl) {
                         &:nth-of-type(2) {
@@ -1124,18 +1169,29 @@
 
             a {
                 display: inline-block;
-                margin: 25px auto 0;
-                padding-right: 30px;
-                background: url(/travelmonth/assets/images/main/icon_link_arrow_white.png) no-repeat right center/auto 22px;
+                margin: 14px auto 0;
+                padding-right: 16px;
+                background: {
+                    image: url(/travelmonth/assets/images/main/icon_link_arrow_white.png);
+                    position: right 1px top 4px;
+                    repeat: no-repeat;
+                    size: auto 11px;
+                };
                 color: #fff;
                 font: {
                     weight: $font-weight-light;
+                    size: 12px;
                 }
                 line-height: math.div(32, 20);
 
                 @include media-queries($from: xl) {
                     width: 196px;
                     margin: 25px 0 0;
+                    padding-right: 30px;
+                    background: {
+                        position: right center;
+                        size: auto 22px;
+                    };
                     font-size: 18px;
                     line-height: math.div(32, 18);
                 }
@@ -1144,21 +1200,25 @@
     }
 
     &__instagram {
-        max-width: 1440px;
+        max-width: 1468px;
         margin: 0 auto;
-        padding: 117px 0 172px 0;
+        padding: 40px 0 60px 0;
+
+        @include media-queries($from: xl) {
+            padding: 120px 0 170px 0;
+        }
 
         .instagram-swiper {
-            padding: 65px 14px 0;
+            padding: 28px 0 0 14px;
 
-            @include media-queries($to: xl) {
-                padding-top: 52px;
+            @include media-queries($from: xl) {
+                padding: 65px 14px 0 14px;
             }
 
             .swiper {
                 &-wrapper {
                     @include media-queries($to: xl) {
-                        padding-bottom: 54px;
+                        padding-bottom: 36px;
                     }
                 }
 
