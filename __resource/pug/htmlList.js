@@ -9,4 +9,5 @@ module.exports = [
     {name: 'trend/list'},
     {name: 'special/list'},
     {name: 'event/list'},
+    {name: 'event/june'},
 ];
