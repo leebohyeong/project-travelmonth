@@ -59,6 +59,9 @@ src/main/webapp/assets/js/*.js
 src/main/webapp/html/*.html
 
 src/main/resources/templates/**/*.html
+src/main/resources/egovframework/egovProps/globals.properties
 
 application.yml
 target/
+
+src/main/resources/egovframework/egovProps/globals.properties
