@@ -23,7 +23,7 @@ div(class=`benefits__menu benefits__menu--${isBenefitsLocal ? 'local' : 'program
                     span 지역의 여행상품과 여행혜택을 확인하세요.
                     select
                         each item in sidoList.filter(item => !['전국', '서울', '인천', '경기'].includes(item.name))
-                            option(value=item.nameEn.toLowerCase())= item.name
+                            option(value=item.nameEn.toLowerCase() data-url="/html/benefits/local.html")= item.name
                 ul
                     each item in sidoList.filter(item => !['전국', '서울', '인천', '경기'].includes(item.name))
                         li(data-sido=item.nameEn.toLowerCase())

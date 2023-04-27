@@ -507,6 +507,17 @@ body {
         }
     }
 
+    > div {
+        p {
+            color: #000;
+            font-size: 16px;
+
+            @include media-queries($from: xl) {
+                font-size: 20px;
+            }
+        }
+    }
+
     > p {
         padding-top: 20px;
         text-align: center;
@@ -541,7 +552,7 @@ body {
     }
 
     &--benefits {
-        div {
+        a div {
             p {
                 line-height: 18px;
 
@@ -578,7 +589,7 @@ body {
             }
         }
 
-        div + p {
+        a div + p {
             margin-top: 12px;
             color: #000;
             font-weight: $font-weight-medium;
@@ -631,7 +642,7 @@ body {
             }
         }
 
-        div {
+        a div {
             margin-top: 12px;
 
             p {
@@ -743,10 +754,11 @@ body {
             }
         }
 
-        @include media-queries($from: lg) {
+        @include media-queries($from: md) {
             li {
                 &:nth-child(4) {
                     grid-column: 1 / 4;
+                    background-image: url("/travelmonth/assets/images/benefits/p_benefits_special.png");
 
                     a {
                         aspect-ratio: 1160 / 178;

@@ -423,7 +423,7 @@
 }
 
 .benefits-program {
-    > header {
+    header {
         margin: 0 calc(-1 * var(--site-padding-horizon));
         padding: 0 var(--site-padding-horizon);
         background: {
@@ -459,6 +459,8 @@
             line-height: 1;
 
             span {
+                display: block;
+                padding-bottom: 8px;
                 font-size: 12px;
 
                 @include media-queries($from: xl) {
@@ -468,7 +470,6 @@
 
             strong {
                 display: block;
-                padding-top: 8px;
                 font-weight: 500;
                 font-size: 30px;
 
@@ -489,496 +490,498 @@
         }
     }
 
-    header + section {
-        margin-top: 40px;
+    :is(&--traffic, &--stay) {
+        header + section {
+            margin-top: 40px;
 
-        @include media-queries($from: lg) {
-            margin-top: 90px;
-        }
-    }
-
-    section {
-        display: grid;
-        max-width: 890px;
-        margin: 20px 10px 0;
-
-        @include media-queries($from: lg) {
-            grid-template-columns: math.ceil(percentage(math.div(550, 890))) (100% - math.ceil(percentage(math.div(550, 890))));
-            margin: 60px auto 0;
+            @include media-queries($from: lg) {
+                margin-top: 90px;
+            }
         }
 
-        > div {
-            position: relative;
+        section {
+            display: grid;
+            max-width: 890px;
+            margin: 20px 10px 0;
 
-            &:nth-child(1) {
-                padding: 20px 24px 24px;
-                border-radius: 14px 14px 0 0;
-                background: #f5f5f5;
+            @include media-queries($from: lg) {
+                grid-template-columns: math.ceil(percentage(math.div(550, 890))) (100% - math.ceil(percentage(math.div(550, 890))));
+                margin: 60px auto 0;
+            }
 
-                @include media-queries($to: lg) {
-                    display: flex;
-                    align-items: center;
-                    flex-direction: column;
-                }
+            > div {
+                position: relative;
 
-                @include media-queries($from: lg) {
-                    padding: 28px 32px 52px;
-                    border-radius: 28px 0 0 28px;
-                }
-
-                h3 {
-                    font-weight: 500;
-                    font-family: "GmarketSans", sans-serif;
-                    line-height: 1.1;
-                    letter-spacing: -0.04em;
+                &:nth-child(1) {
+                    padding: 20px 24px 24px;
+                    border-radius: 14px 14px 0 0;
+                    background: #f5f5f5;
 
                     @include media-queries($to: lg) {
-                        font-size: 24px;
-                        text-align: center;
+                        display: flex;
+                        align-items: center;
+                        flex-direction: column;
                     }
 
                     @include media-queries($from: lg) {
-                        font-size: 42px;
+                        padding: 28px 32px 52px;
+                        border-radius: 28px 0 0 28px;
                     }
 
-                    &::before {
-                        display: block;
-                        width: 32px;
-                        height: 32px;
-                        margin: 0 auto 10px;
-                        background: {
-                            repeat: no-repeat;
-                            position: center;
-                            size: contain;
-                        };
-                        content: "";
+                    h3 {
+                        font-weight: 500;
+                        font-family: "GmarketSans", sans-serif;
+                        line-height: 1.1;
+                        letter-spacing: -0.04em;
+
+                        @include media-queries($to: lg) {
+                            font-size: 24px;
+                            text-align: center;
+                        }
 
                         @include media-queries($from: lg) {
-                            width: 48px;
-                            height: 48px;
-                            margin: 0 0 20px;
+                            font-size: 42px;
+                        }
+
+                        &::before {
+                            display: block;
+                            width: 32px;
+                            height: 32px;
+                            margin: 0 auto 10px;
+                            background: {
+                                repeat: no-repeat;
+                                position: center;
+                                size: contain;
+                            };
+                            content: "";
+
+                            @include media-queries($from: lg) {
+                                width: 48px;
+                                height: 48px;
+                                margin: 0 0 20px;
+                            }
+                        }
+
+                        span {
+                            display: block;
+                            padding-bottom: 4px;
+                            color: #838383;
+                            font-size: 12px;
+                            letter-spacing: -0.02em;
+
+                            @include media-queries($from: lg) {
+                                font-size: 24px;
+                            }
                         }
                     }
 
-                    span {
-                        display: block;
-                        padding-bottom: 4px;
-                        color: #838383;
-                        font-size: 12px;
+                    > div {
+                        @include media-queries($to: lg) {
+                            margin-top: 12px;
+                            text-align: center;
+                        }
+
+                        @include media-queries($from: lg) {
+                            margin-top: 20px;
+                        }
+
+                        > div {
+                            @include media-queries($to: lg) {
+                                //padding-top: 12px;
+                            }
+
+                            @include media-queries($from: lg) {
+                                //padding-top: 20px;
+                            }
+                        }
+                    }
+
+                    h4 {
+                        font-weight: 500;
+                        font-size: 14px;
+                        font-family: "GmarketSans", sans-serif;
                         letter-spacing: -0.02em;
 
                         @include media-queries($from: lg) {
                             font-size: 24px;
                         }
                     }
-                }
 
-                > div {
-                    @include media-queries($to: lg) {
-                        margin-top: 12px;
-                        text-align: center;
-                    }
-
-                    @include media-queries($from: lg) {
-                        margin-top: 20px;
-                    }
-
-                    > div {
-                        @include media-queries($to: lg) {
-                            //padding-top: 12px;
-                        }
-
-                        @include media-queries($from: lg) {
-                            //padding-top: 20px;
-                        }
-                    }
-                }
-
-                h4 {
-                    font-weight: 500;
-                    font-size: 14px;
-                    font-family: "GmarketSans", sans-serif;
-                    letter-spacing: -0.02em;
-
-                    @include media-queries($from: lg) {
-                        font-size: 24px;
-                    }
-                }
-
-                h4 + p {
-                    margin-top: 8px;
-
-                    @include media-queries($from: lg) {
-                        margin-top: 12px;
-                    }
-                }
-
-                h4 + ul {
-                    @include media-queries($from: lg) {
+                    h4 + p {
                         margin-top: 8px;
-                    }
-                }
-
-                p,
-                li {
-                    color: #838383;
-                    font-size: 12px;
-                    line-height: math.div(26, 18);
-                    letter-spacing: -0.03em;
-
-                    @include media-queries($from: lg) {
-                        font-size: 18px;
-                    }
-                }
-
-                li {
-                    padding-left: 8px;
-                    font-size: 10px;
-
-                    @include media-queries($to: lg) {
-                        display: inline-block;
-                    }
-
-                    @include media-queries($from: lg) {
-                        padding-left: 10px;
-                        font-size: 16px;
-                    }
-
-                    &::before {
-                        float: left;
-                        margin-left: -8px;
-                        content: "*";
 
                         @include media-queries($from: lg) {
-                            margin-left: -10px;
+                            margin-top: 12px;
+                        }
+                    }
+
+                    h4 + ul {
+                        @include media-queries($from: lg) {
+                            margin-top: 8px;
+                        }
+                    }
+
+                    p,
+                    li {
+                        color: #838383;
+                        font-size: 12px;
+                        line-height: math.div(26, 18);
+                        letter-spacing: -0.03em;
+
+                        @include media-queries($from: lg) {
+                            font-size: 18px;
+                        }
+                    }
+
+                    li {
+                        padding-left: 8px;
+                        font-size: 10px;
+
+                        @include media-queries($to: lg) {
+                            display: inline-block;
+                        }
+
+                        @include media-queries($from: lg) {
+                            padding-left: 10px;
+                            font-size: 16px;
+                        }
+
+                        &::before {
+                            float: left;
+                            margin-left: -8px;
+                            content: "*";
+
+                            @include media-queries($from: lg) {
+                                margin-left: -10px;
+                            }
                         }
                     }
                 }
-            }
 
-            &:nth-child(2) {
-                position: relative;
-                background: var(--benefits-program-ticket-color-1);
-
-                &::before,
-                &::after {
-                    position: absolute;
-                    z-index: 10;
-                    background: #fff;
-                    content: "";
-                    pointer-events: none;
-                }
-
-                @include media-queries($to: lg) {
-                    grid-row-start: 3;
-                    padding: 30px math.ceil(percentage(math.div(50, 330))) 0;
-                    border-top: 1px dashed #fff;
+                &:nth-child(2) {
+                    position: relative;
+                    background: var(--benefits-program-ticket-color-1);
 
                     &::before,
                     &::after {
-                        top: -7px;
-                        width: 7px;
-                        height: 14px;
+                        position: absolute;
+                        z-index: 10;
+                        background: #fff;
+                        content: "";
+                        pointer-events: none;
                     }
-
-                    &::before {
-                        left: 0;
-                        border-radius: 0 7px 7px 0;
-                    }
-
-                    &::after {
-                        right: 0;
-                        border-radius: 7px 0 0 7px;
-                    }
-                }
-
-                @include media-queries($from: lg) {
-                    padding: 70px math.ceil(percentage(math.div(50, 330))) 52px;
-                    border-radius: 0 28px 28px 0;
-                    border-left: 1px dashed #fff;
-
-                    &::before,
-                    &::after {
-                        left: -14px;
-                        width: 28px;
-                        height: 14px;
-                    }
-
-                    &::before {
-                        top: 0;
-                        border-radius: 0 0 14px 14px;
-                    }
-
-                    &::after {
-                        bottom: 0;
-                        border-radius: 14px 14px 0 0;
-                    }
-                }
-
-                h4 {
-                    position: absolute;
 
                     @include media-queries($to: lg) {
-                        top: 14px;
-                        left: 20px;
+                        grid-row-start: 3;
+                        padding: 30px math.ceil(percentage(math.div(50, 330))) 0;
+                        border-top: 1px dashed #fff;
 
-                        img {
-                            transform-origin: left top;
-                            scale: math.div(2, 3);
+                        &::before,
+                        &::after {
+                            top: -7px;
+                            width: 7px;
+                            height: 14px;
+                        }
+
+                        &::before {
+                            left: 0;
+                            border-radius: 0 7px 7px 0;
+                        }
+
+                        &::after {
+                            right: 0;
+                            border-radius: 7px 0 0 7px;
                         }
                     }
 
                     @include media-queries($from: lg) {
-                        top: 20px;
-                        right: 20px;
-                    }
-                }
+                        padding: 70px math.ceil(percentage(math.div(50, 330))) 52px;
+                        border-radius: 0 28px 28px 0;
+                        border-left: 1px dashed #fff;
 
-                div + div {
-                    margin-top: 24px;
+                        &::before,
+                        &::after {
+                            left: -14px;
+                            width: 28px;
+                            height: 14px;
+                        }
 
-                    @include media-queries($from: lg) {
-                        margin-top: 48px;
-                    }
-                }
+                        &::before {
+                            top: 0;
+                            border-radius: 0 0 14px 14px;
+                        }
 
-                h5 {
-                    color: #fff;
-                    font-weight: 700;
-                    font-size: 20px;
-                    line-height: math.div(28, 26);
-                    font-family: "GmarketSans", sans-serif;
-                    text-align: center;
-
-                    @include media-queries($from: lg) {
-                        font-size: 26px;
+                        &::after {
+                            bottom: 0;
+                            border-radius: 14px 14px 0 0;
+                        }
                     }
 
-                    span {
-                        display: block;
-                        padding-bottom: 4px;
+                    h4 {
+                        position: absolute;
+
+                        @include media-queries($to: lg) {
+                            top: 14px;
+                            left: 20px;
+
+                            img {
+                                transform-origin: left top;
+                                scale: math.div(2, 3);
+                            }
+                        }
+
+                        @include media-queries($from: lg) {
+                            top: 20px;
+                            right: 20px;
+                        }
+                    }
+
+                    div + div {
+                        margin-top: 24px;
+
+                        @include media-queries($from: lg) {
+                            margin-top: 48px;
+                        }
+                    }
+
+                    h5 {
+                        color: #fff;
+                        font-weight: 700;
+                        font-size: 20px;
+                        line-height: math.div(28, 26);
+                        font-family: "GmarketSans", sans-serif;
+                        text-align: center;
+
+                        @include media-queries($from: lg) {
+                            font-size: 26px;
+                        }
+
+                        span {
+                            display: block;
+                            padding-bottom: 4px;
+                            font-weight: 500;
+                            font-size: 12px;
+
+                            @include media-queries($from: lg) {
+                                font-size: 16px;
+                            }
+                        }
+                    }
+
+                    dl {
+                        position: relative;
+                        background: var(--benefits-program-ticket-color-2);
+                        color: #fff;
+                        font-family: "GmarketSans", sans-serif;
+                        text-align: center;
+
+                        @include media-queries($to: lg) {
+                            max-width: 240px;
+                            margin: 8px auto 0;
+                            padding: 12px 10px 8px;
+                            border-radius: 8px;
+                        }
+
+                        @include media-queries($from: lg) {
+                            margin-top: 12px;
+                            padding: 20px 10px 12px;
+                            border-radius: 10px;
+                        }
+
+                        &::before,
+                        &::after {
+                            position: absolute;
+                            top: calc(50% - 4px);
+                            width: 4px;
+                            height: 8px;
+                            background: var(--benefits-program-ticket-color-1);
+                            content: "";
+                        }
+
+                        &::before {
+                            left: 0;
+                            border-radius: 0 4px 4px 0;
+                        }
+
+                        &::after {
+                            right: 0;
+                            border-radius: 4px 0 0 4px;
+                        }
+                    }
+
+                    dt {
                         font-weight: 500;
                         font-size: 12px;
+                        line-height: math.div(22, 16);
+                        letter-spacing: -0.035em;
 
                         @include media-queries($from: lg) {
                             font-size: 16px;
                         }
                     }
-                }
 
-                dl {
-                    position: relative;
-                    background: var(--benefits-program-ticket-color-2);
-                    color: #fff;
-                    font-family: "GmarketSans", sans-serif;
-                    text-align: center;
-
-                    @include media-queries($to: lg) {
-                        max-width: 240px;
-                        margin: 8px auto 0;
-                        padding: 12px 10px 8px;
-                        border-radius: 8px;
-                    }
-
-                    @include media-queries($from: lg) {
-                        margin-top: 12px;
-                        padding: 20px 10px 12px;
-                        border-radius: 10px;
-                    }
-
-                    &::before,
-                    &::after {
-                        position: absolute;
-                        top: calc(50% - 4px);
-                        width: 4px;
-                        height: 8px;
-                        background: var(--benefits-program-ticket-color-1);
-                        content: "";
-                    }
-
-                    &::before {
-                        left: 0;
-                        border-radius: 0 4px 4px 0;
-                    }
-
-                    &::after {
-                        right: 0;
-                        border-radius: 4px 0 0 4px;
-                    }
-                }
-
-                dt {
-                    font-weight: 500;
-                    font-size: 12px;
-                    line-height: math.div(22, 16);
-                    letter-spacing: -0.035em;
-
-                    @include media-queries($from: lg) {
-                        font-size: 16px;
-                    }
-                }
-
-                dd {
-                    padding-top: 4px;
-                    font-weight: 700;
-                    font-size: 16px;
-                    letter-spacing: -0.04em;
-
-                    @include media-queries($from: lg) {
-                        font-size: 20px;
-                    }
-
-                    strong {
-                        color: #fff25f;
+                    dd {
+                        padding-top: 4px;
                         font-weight: 700;
-                        font-size: 30px;
-
-                        @include media-queries($from: lg) {
-                            font-size: 40px;
-                        }
-                    }
-
-                    span {
                         font-size: 16px;
                         letter-spacing: -0.04em;
 
                         @include media-queries($from: lg) {
                             font-size: 20px;
                         }
+
+                        strong {
+                            color: #fff25f;
+                            font-weight: 700;
+                            font-size: 30px;
+
+                            @include media-queries($from: lg) {
+                                font-size: 40px;
+                            }
+                        }
+
+                        span {
+                            font-size: 16px;
+                            letter-spacing: -0.04em;
+
+                            @include media-queries($from: lg) {
+                                font-size: 20px;
+                            }
+                        }
                     }
-                }
 
-                div + p {
-                    margin-top: 12px;
-                    text-align: center;
-
-                    @include media-queries($from: lg) {
-                        margin-top: 16px;
-                    }
-
-                    a {
-                        display: inline-block;
-                        padding: 8px 20px;
-                        border-radius: 18px;
-                        background: #fff;
-                        color: #000;
-                        font-weight: $font-weight-medium;
-                        font-size: 14px;
-                        line-height: 20px;
+                    div + p {
+                        margin-top: 12px;
+                        text-align: center;
 
                         @include media-queries($from: lg) {
-                            padding: 8px 36px 8px 16px;
-                            background: #fff url("/travelmonth/assets/images/benefits/icon_benefits_view.png") no-repeat right 16px center/12px auto;
-                            font-weight: $font-weight-light;
-                            font-size: 16px;
+                            margin-top: 16px;
+                        }
+
+                        a {
+                            display: inline-block;
+                            padding: 8px 20px;
+                            border-radius: 18px;
+                            background: #fff;
+                            color: #000;
+                            font-weight: $font-weight-medium;
+                            font-size: 14px;
+                            line-height: 20px;
+
+                            @include media-queries($from: lg) {
+                                padding: 8px 36px 8px 16px;
+                                background: #fff url("/travelmonth/assets/images/benefits/icon_benefits_view.png") no-repeat right 16px center/12px auto;
+                                font-weight: $font-weight-light;
+                                font-size: 16px;
+                            }
+                        }
+                    }
+
+                    div + div + p {
+                        margin-top: 30px;
+
+                        @include media-queries($from: lg) {
+                            margin-top: 40px;
                         }
                     }
                 }
 
-                div + div + p {
-                    margin-top: 30px;
-
-                    @include media-queries($from: lg) {
-                        margin-top: 40px;
-                    }
-                }
-            }
-
-            &:nth-child(3) {
-                @include media-queries($to: lg) {
-                    grid-row-start: 2;
-                    display: flex;
-                    justify-content: center;
-                    background: #f5f5f5;
-                }
-
-                dl {
+                &:nth-child(3) {
                     @include media-queries($to: lg) {
-                        padding-bottom: 30px;
+                        grid-row-start: 2;
+                        display: flex;
+                        justify-content: center;
+                        background: #f5f5f5;
                     }
 
-                    @include media-queries($from: lg) {
-                        padding: 10px 30px 0;
-                    }
-                }
-
-                div {
-                    display: flex;
-                    align-items: flex-start;
-                    padding-top: 2px;
-                    color: #303030;
-                    font-weight: $font-weight-light;
-                    font-size: 12px;
-                    line-height: math.div(20, 16);
-                    letter-spacing: -0.03em;
-
-                    @include media-queries($from: lg) {
-                        padding-top: 8px;
-                        font-size: 16px;
-                    }
-                }
-
-                dt {
-                    padding-left: 8px;
-                    white-space: nowrap;
-
-                    &::before {
-                        float: left;
-                        margin-left: -8px;
-                        content: "\b7";
-                    }
-
-                    &::after {
-                        padding: 0 4px;
-                        content: ":";
-                    }
-                }
-
-                a {
-                    color: var(--benefits-program-ticket-color-2);
-                    font-weight: $font-weight-bold;
-                    text-decoration: underline;
-                }
-            }
-
-            &:nth-child(4) {
-                @include media-queries($to: lg) {
-                    display: flex;
-                    justify-content: center;
-                    border-radius: 0 0 14px 14px;
-                    background: var(--benefits-program-ticket-color-1);
-                }
-
-                ul {
-                    padding: 12px 0 24px;
-
-                    @include media-queries($from: lg) {
-                        padding: 10px math.ceil(percentage(math.div(30, 330))) 0;
-                    }
-                }
-
-                li {
-                    padding: 2px 0 0 6px;
-                    color: #fff;
-                    font-weight: $font-weight-light;
-                    font-size: 12px;
-                    line-height: math.div(20, 16);
-                    letter-spacing: -0.03em;
-                    white-space: nowrap;
-
-                    @include media-queries($from: lg) {
-                        padding: 8px 0 0 8px;
-                        color: #303030;
-                        font-size: 16px;
-                    }
-
-                    &::before {
-                        float: left;
-                        margin-left: -6px;
-                        content: "\b7";
+                    dl {
+                        @include media-queries($to: lg) {
+                            padding-bottom: 30px;
+                        }
 
                         @include media-queries($from: lg) {
+                            padding: 10px 30px 0;
+                        }
+                    }
+
+                    div {
+                        display: flex;
+                        align-items: flex-start;
+                        padding-top: 2px;
+                        color: #303030;
+                        font-weight: $font-weight-light;
+                        font-size: 12px;
+                        line-height: math.div(20, 16);
+                        letter-spacing: -0.03em;
+
+                        @include media-queries($from: lg) {
+                            padding-top: 8px;
+                            font-size: 16px;
+                        }
+                    }
+
+                    dt {
+                        padding-left: 8px;
+                        white-space: nowrap;
+
+                        &::before {
+                            float: left;
                             margin-left: -8px;
+                            content: "\b7";
+                        }
+
+                        &::after {
+                            padding: 0 4px;
+                            content: ":";
+                        }
+                    }
+
+                    a {
+                        color: var(--benefits-program-ticket-color-2);
+                        font-weight: $font-weight-bold;
+                        text-decoration: underline;
+                    }
+                }
+
+                &:nth-child(4) {
+                    @include media-queries($to: lg) {
+                        display: flex;
+                        justify-content: center;
+                        border-radius: 0 0 14px 14px;
+                        background: var(--benefits-program-ticket-color-1);
+                    }
+
+                    ul {
+                        padding: 12px 0 24px;
+
+                        @include media-queries($from: lg) {
+                            padding: 10px math.ceil(percentage(math.div(30, 330))) 0;
+                        }
+                    }
+
+                    li {
+                        padding: 2px 0 0 6px;
+                        color: #fff;
+                        font-weight: $font-weight-light;
+                        font-size: 12px;
+                        line-height: math.div(20, 16);
+                        letter-spacing: -0.03em;
+                        white-space: nowrap;
+
+                        @include media-queries($from: lg) {
+                            padding: 8px 0 0 8px;
+                            color: #303030;
+                            font-size: 16px;
+                        }
+
+                        &::before {
+                            float: left;
+                            margin-left: -6px;
+                            content: "\b7";
+
+                            @include media-queries($from: lg) {
+                                margin-left: -8px;
+                            }
                         }
                     }
                 }
@@ -1008,5 +1011,73 @@
 
     > header {
         background-image: url(/travelmonth/assets/images/benefits/stay/bg_header.jpg);
+    }
+}
+
+.benefits-program--play {
+    header {
+        background-image: url(/travelmonth/assets/images/benefits/play/bg_header.jpg);
+    }
+
+    header + nav {
+        padding-top: 40px;
+
+        @include media-queries($from: xl) {
+            padding-top: 90px;
+        }
+
+        ul {
+            display: flex;
+            align-items: center;
+        }
+
+        li:not(:last-child) {
+            position: relative;
+            margin-right: 12px;
+            padding-right: 13px;
+
+            @include media-queries($from: xl) {
+                margin-right: 24px;
+                padding-right: 25px;
+            }
+
+            &::after {
+                position: absolute;
+                top: calc(50% - 4px);
+                right: 0;
+                width: 1px;
+                height: 8px;
+                background: #b6b6b6;
+                content: "";
+
+                @include media-queries($from: xl) {
+                    top: calc(50% - 9px);
+                    height: 18px;
+                }
+            }
+        }
+
+        a {
+            color: #000;
+            font-weight: $font-weight-medium;
+            font-size: 16px;
+
+            @include media-queries($from: xl) {
+                font-size: 30px;
+            }
+        }
+
+        .benefits-program__item--current {
+            color: #37bf8a;
+            font-weight: $font-weight-bold;
+        }
+    }
+
+    .list-thumbnail {
+        padding-top: 16px;
+
+        @include media-queries($from: xl) {
+            padding-top: 36px;
+        }
     }
 }
