@@ -8,6 +8,7 @@
 <body id="travelmonth-benefits-local">
     <%@ include file="../include/include-header.jspf" %>
     <div id="container">
+        <c:set var="area_name_en" value="${fn:replace(fn:toLowerCase(area.data.name_en), ',', '-')}"/>
         <div class="benefits">
             <div class="benefits__container">
                 <div class="benefits__menu benefits__menu--local">
@@ -19,7 +20,7 @@
                             </ul>
                         </nav>
                         <div>
-                            <c:set var="sido" value="${sido:getList()}"/>
+                            <c:set var="sido" value="${sido:getFilteredList()}"/>
                             <c:if test="${not empty sido}">
                                 <c:if test="${sido.result}">
                                     <c:set var="list" value="${sido.data.list}"/>
@@ -27,22 +28,22 @@
                                         <span>지역의 여행상품과 여행혜택을 확인하세요.</span>
                                         <select>
                                             <c:forEach var="row" items="${list}" varStatus="loop">
-                                                <option value="${row.code}">${row.name_kr}</option>
+                                                <option value="${fn:replace(fn:toLowerCase(row.name_en), ',', '-')}" <c:if test="${area_name_en eq row.name_en}">selected</c:if>>${row.name_kr}</option>
                                             </c:forEach>
                                         </select>
                                     </p>
                                     <ul>
                                         <c:forEach var="row" items="${list}" varStatus="loop">
-                                            <li data-sido="${row.code}">
+                                            <li data-sido="${fn:replace(fn:toLowerCase(row.name_en), ',', '-')}">
                                                 <c:choose>
-                                                    <c:when test="${area.data.code eq row.code}">
+                                                    <c:when test="${area_name_en eq fn:toLowerCase(row.name_en)}">
                                                         <strong>
                                                             <span>${row.name_kr}</span>
                                                         </strong>
                                                         <span></span>
                                                     </c:when>
                                                     <c:otherwise>
-                                                        <a href="#">
+                                                        <a href="/travelmonth/area/${row.name_en}.do">
                                                             <span>${row.name_kr}</span>
                                                         </a>
                                                         <span></span>
@@ -57,20 +58,15 @@
                     </div>
                 </div>
                 <div class="benefits__content">
-                    <c:choose>
-                        <c:set var="local" value="${area.data.code}"/>
-                        <c:when test="${area.data.code eq '01' || area.data.code eq '04' || area.data.code eq '09'}">
-                            <c:set var="local" value="seoul-incheon-gyeonggi"/>
-                        </c:when>
-                    </c:choose>
-                    <article class="benefits-local" data-local="${local}">
+                    <c:set var="title" value="${fn:replace(area.data.name_detail_kr, ',', '/')}"/>
+                    <article class="benefits-local" data-local="${fn:replace(fn:toLowerCase(area.data.name_en), ',', '-')}">
                             <header>
-                                <h2>${area.data.name_kr} 여행</h2>
+                                <h2>${title} 여행</h2>
                                 <p>지역별 다양한 여행혜택과 여행상품을 보다 빠르고 쉽게 만나보세요!</p>
                             </header>
                             <section class="list-thumbnail list-thumbnail--benefits">
                                 <h3>
-                                    매력있는 <strong>${area.data.name_kr}</strong> 여행혜택 알아보기
+                                    매력있는 <strong>${title}</strong> 여행혜택 알아보기
                                 </h3>
                                 <ul>
                                     <c:if test="${not empty enjoy}">
@@ -161,7 +157,7 @@
                             </c:if>
                         </c:if>
                         <section class="list-thumbnail list-thumbnail--goods">
-                            <h3>트렌디한 <strong>${area.data.name_kr}</strong> 여행상품 알아보기</h3>
+                            <h3>트렌디한 <strong>${title}</strong> 여행상품 알아보기</h3>
                             <ul>
 
                                 <li><a href="#" data-type="d" data-bs-toggle="modal" data-bs-target="#modal-goods-1"><span
