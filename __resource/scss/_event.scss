@@ -110,10 +110,9 @@
         }
     }
 
-    #juneModal1 {
+    &__modal {
         .modal-content {
             background: transparent;
-            padding-top: 102px;
         }
 
         .modal-body {
@@ -122,14 +121,22 @@
             }
         }
 
+        .modal-header {
+            padding-bottom: 22px;
+            text-align: right;
+        }
+
         .btn-close {
-            width: 80px;
+            width: 40px;
+            height: 40px;
+            background: transparent;
+            border: none;
 
             background: {
                 image: url(/travelmonth/assets/images/event/june/icon_button_close.png);
                 position: center;
                 repeat: no-repeat;
-                size: auto 80px;
+                size: auto 40px;
             }
         }
 
