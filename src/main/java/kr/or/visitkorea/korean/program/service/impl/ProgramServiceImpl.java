@@ -34,7 +34,8 @@ public class ProgramServiceImpl extends CommonServiceImplWrapper implements Prog
 				if (result)
 				{
 					JSONObject data = (JSONObject) request.get("data");
-					JSONObject jsonObject = RequestUrl.get(TRAVEL_MONTH_SITE_URL + "/program/enjoy-list?search_area=" + data.get("code"));
+					JSONObject jsonObject = RequestUrl.get(
+							TRAVEL_MONTH_SITE_URL + "/program/enjoy-list?search_area=" + String.valueOf(data.get("code")).replaceAll(",", "-"));
 					if (jsonObject != null)
 					{
 						result = (boolean) jsonObject.get("result");

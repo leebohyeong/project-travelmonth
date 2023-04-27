@@ -2,7 +2,8 @@ package kr.or.visitkorea.korean.program.service;
 
 import org.json.simple.JSONObject;
 
-public interface ProgramService {
+public interface ProgramService
+{
 
 	/**
 	 * GET ENJOY LIST
