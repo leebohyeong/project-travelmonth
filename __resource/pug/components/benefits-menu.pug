@@ -25,7 +25,7 @@ div(class=`benefits__menu benefits__menu--${isBenefitsLocal ? 'local' : 'program
                         each item in sidoList.slice(1)
                             option(value=item.code)= item.name
                 ul
-                    each item in sidoList.slice(1)
+                    each item in sidoList.filter(item => !['전국', '서울', '인천', '경기'].includes(item.name))
                         li(data-sido=item.code)
                             if item.name === '강원'
                                 strong

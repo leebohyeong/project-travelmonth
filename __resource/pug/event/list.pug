@@ -4,4 +4,23 @@ append variables
     - const bodyId = 'event-list';
 
 block body
+    style.
+        .t {
+            display: flex;
+            align-items: flex-end;
+            position: fixed;
+            left: 0;
+            top: 0;
+            z-index: 5000;
+            width: 100%;
+            height: calc(var(--vh, 1vh) * 100);
+            box-sizing: border-box;
+        }
+    .t
+        .a 테스트
+
+    script.
+        const set1Vh = () => document.documentElement.style.setProperty('--vh', window.innerHeight * 0.01 + 'px');
+        set1Vh();
+        window.addEventListener('resize', set1Vh);
 

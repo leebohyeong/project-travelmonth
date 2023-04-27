@@ -11,7 +11,7 @@ const globalNav = () => {
         menu.scrollTop = 0;
     };
 
-    on(menuButton, 'click', toggleMenu)
+    on(menuButton, 'click', toggleMenu);
 };
 
 const ListThumbnail = class {
