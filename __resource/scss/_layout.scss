@@ -710,6 +710,7 @@ body {
 
         a {
             display: block;
+            padding: 0 12px;
             aspect-ratio: 466 / 340;
             letter-spacing: -0.02em;
             text-align: center;
@@ -724,7 +725,7 @@ body {
             line-height: 1;
 
             @include media-queries($from: xl) {
-                padding-top: 50px;
+                padding-top: percentage(math.div(40, 374));
                 font-size: 28px;
             }
         }
@@ -734,11 +735,11 @@ body {
             color: #393939;
             font-weight: $font-weight-regular;
             font-size: 14px;
-            line-height: math.div(24, 20);
+            line-height: math.div(24, 18);
 
             @include media-queries($from: xl) {
                 margin-top: 12px;
-                font-size: 20px;
+                font-size: 17px;
             }
         }
 

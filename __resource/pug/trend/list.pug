@@ -4,16 +4,18 @@ include ../components/list-thumbnail
 
 append variables
     - const bodyId = 'trend-list';
+    - const trendTheme = 'a';
 
 block body
-    article.trend-list(data-theme="a")
+    article.trend-list(data-theme=trendTheme)
         div
             header
                 div
+                    - let currentThemeItem = themeList.filter(item => item.code.toLowerCase() === trendTheme)[0];
                     h2
-                        span 여행트렌드 1
-                        strong 농어촌/섬관광
-                    p 코로나19 이후 번잡하고 답답한 도시를 벗어나 휴식과 함께 새로운 경험,<br>잊지 못할 추억을 만드는 농어촌/섬 관광입니다.
+                        span!= currentThemeItem.titleSub
+                        strong!= currentThemeItem.titleMain
+                    p!= currentThemeItem.content
             nav
                 .swiper
                     .swiper-wrapper

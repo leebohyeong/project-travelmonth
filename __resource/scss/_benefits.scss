@@ -212,11 +212,11 @@
                 }
 
                 li {
-                    @each $code, $left, $top in ('01', 98, 116, '서울'), ('02', 278, 384, '부산'), ('03', 238, 320, '대구'), ('04', 72, 132, '인천'), ('05', 80, 390, '광주'),
-                            ('06', 132, 256, '대전'), ('07', 298, 348, '울산'), ('08', 110, 222, '세종'), ('09', 140, 158, '경기'), ('10', 220, 90, '강원'),
-                            ('11', 164, 234, '충북'), ('12', 80, 244, '충남'), ('13', 118, 336, '전북'), ('14', 124, 406, '전남'), ('15', 264, 268, '경북'),
-                            ('16', 190, 362, '경남'), ('17', 82, 528, '제주'), ('18', 104, 124, '서울/인천/경기') {
-                        &[data-sido="#{$code}"] {
+                    @each $code, $left, $top, $name-en in ('01-04-09', 104, 124, 'seoul-incheon-gyeonggi', '서울/인천/경기'), ('01', 98, 116, 'seoul', '서울'), ('02', 278, 384, 'busan', '부산'), ('03', 238, 320, 'daegu', '대구'), ('04', 72, 132,'incheon', '인천'), ('05', 80, 390, 'gwangju', '광주'),
+                            ('06', 132, 256, 'daejeon', '대전'), ('07', 298, 348, 'ulsan', '울산'), ('08', 110, 222, 'sejong', '세종'), ('09', 140, 158, 'gyeonggi', '경기'), ('10', 220, 90, 'gangwon', '강원'),
+                            ('11', 164, 234, 'chungbuk', '충북'), ('12', 80, 244, 'chungnam', '충남'), ('13', 118, 336, 'jeonbuk', '전북'), ('14', 124, 406, 'jeonnam', '전남'), ('15', 264, 268, 'gyeongbuk', '경북'),
+                            ('16', 190, 362, 'gyeongnam', '경남'), ('17', 82, 528, 'jeju', '제주') {
+                        &[data-sido="#{$name-en}"] {
                             a,
                             strong {
                                 top: percentage(math.div($top - 40, 539));
@@ -224,7 +224,7 @@
                             }
 
                             > span {
-                                background-image: url("/travelmonth/assets/images/benefits/map_#{$code}.png");
+                                background-image: url("/travelmonth/assets/images/benefits/map_#{str-replace($name-en, '-', '_')}.png");
                             }
                         }
                     }
@@ -383,7 +383,7 @@
         letter-spacing: -0.02em;
 
         @include media-queries($to: xl) {
-            padding-right: 120px;
+            padding-right: 160px;
         }
 
         @include media-queries($from: xl) {
@@ -410,12 +410,14 @@
         }
     }
 
-    &[data-local="10"] header {
-        background-image: url("/travelmonth/assets/images/benefits/bg_local_10.png");
-        background-size: 78px auto;
+    @each $name, $width, $height in ('seoul-incheon-gyeonggi', 123, 126), ('seoul', 123, 126), ('busan', 162, 106), ('daegu', 218, 86), ('incheon', 149, 137), ('gwangju', 196, 112), ('daejeon', 244, 120), ('ulsan', 194, 90), ('sejong', 121, 73), ('gyeonggi', 231, 81), ('gangwon', 123, 100), ('chungbuk', 193, 95), ('chungnam', 153, 113), ('jeonbuk', 129, 119), ('jeonnam', 221, 100), ('gyeongbuk', 205, 103), ('gyeongnam', 125, 150), ('jeju', 101, 100) {
+        &[data-local="#{$name}"] header {
+            background-image: url("/travelmonth/assets/images/benefits/bg_local_#{str-replace($name, '-', '_')}.png");
+            background-size: #{ceil($width * 0.65)}px auto;
 
-        @include media-queries($from: xl) {
-            background-size: 123px auto;
+            @include media-queries($from: xl) {
+                background-size: #{$width}px auto;
+            }
         }
     }
 }
