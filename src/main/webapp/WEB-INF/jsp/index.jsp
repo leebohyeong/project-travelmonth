@@ -190,18 +190,12 @@
                                             <c:forEach var="row" items="${list}" varStatus="loop">
                                                 <c:if test="${loop.index gt 0 && loop.index lt 6}">
                                                     <li>
-                                                        <c:set var="target" value=""/>
-                                                        <c:set var="href" value="href='#'"/>
-                                                        <c:if test="${not empty row.link}">
-                                                            <c:set var="href" value="href='${row.link}'"/>
-                                                            <c:set var="target" value="target='${row.link_target}'"/>
-                                                        </c:if>
                                                         <c:choose>
-                                                            <c:when test="${not empty link}">
+                                                            <c:when test="${not empty row.link}">
                                                                 <a href="${row.link}" target="${row.link_target}">${row.title}</a>
                                                             </c:when>
                                                             <c:otherwise>
-                                                                ${row.title}
+                                                                <strong>${row.title}</strong>
                                                             </c:otherwise>
                                                         </c:choose>
                                                     </li>
@@ -249,7 +243,9 @@
                                                         </a>
                                                     </c:when>
                                                     <c:otherwise>
-                                                        <p class="june-contents__tourist-text">${row.title}</p>
+                                                        <strong style="background-image:url('${row.image}')">
+                                                            <p class="june-contents__tourist-text">${row.title}</p>
+                                                        </strong>
                                                     </c:otherwise>
                                                 </c:choose>
                                             </c:if>

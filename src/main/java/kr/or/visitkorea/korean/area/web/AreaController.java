@@ -23,13 +23,13 @@ public class AreaController<T> extends CommonControllerWrapper
 	private final CommonService COMMON_SERVICE;
 
 	/**
-	 * 지역별 목록 페이지
+	 * 지역별 페이지
 	 * @param area
 	 * @param model
 	 * @return
 	 */
 	@RequestMapping(value = "/{area}.do", method = RequestMethod.GET)
-	public String list(@PathVariable("area") String area, Model model)
+	public String index(@PathVariable("area") String area, Model model)
 	{
 		try
 		{
@@ -42,7 +42,7 @@ public class AreaController<T> extends CommonControllerWrapper
 		{
 			log.error(area.substring(0, 1).toUpperCase() + area.substring(1) + " Page Exception : {}", exception.getMessage(), exception);
 		}
-		return "/area/list";
+		return "/area/index";
 	}
 
 
