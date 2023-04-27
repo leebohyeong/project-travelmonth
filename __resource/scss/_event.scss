@@ -1,0 +1,140 @@
+@use "sass:math";
+
+.event-june {
+
+    section {
+        position: relative;
+        max-width: 1920px;
+        margin: 0 auto;
+
+        &:nth-of-type(1) {
+            aspect-ratio: 1920/651;
+        }
+
+        &:nth-of-type(2) {
+            aspect-ratio: 1920/683;
+        }
+
+        &:nth-of-type(3) {
+            aspect-ratio: 1920/2180;
+
+            button {
+                position: absolute;
+                left: 36.4%;
+                width: 12.76041666667%;
+                height: 2.39583333333%;
+                background: transparent;
+                border: none;
+
+                &:first-of-type {
+                    top: 21.45%;
+                }
+
+                &:last-of-type {
+                    top: 68.05%;
+                }
+            }
+        }
+
+        &:nth-of-type(4) {
+            aspect-ratio: 1920/1429;
+
+            > a {
+                display: block;
+                position: absolute;
+                top: 84%;
+                left: 35.4%;
+                width: 29.1666666667%;
+                height: 10%;
+            }
+        }
+
+        &:nth-of-type(5) {
+            aspect-ratio: 1920/707;
+        }
+
+        @for $i from 1 through 5 {
+            &:nth-child(#{$i}) {
+                background: {
+                    image: url(/travelmonth/assets/images/event/june/img_event_june_#{$i}.jpg);
+                    repeat: no-repeat;
+                    position: center;
+                    size: cover;
+                };
+            }
+        }
+
+        @include media-queries($to: xl) {
+
+            &:nth-of-type(1) {
+                aspect-ratio: 1000/651;
+            }
+
+            &:nth-of-type(2) {
+                aspect-ratio: 1000/683;
+            }
+
+            &:nth-of-type(3) {
+                aspect-ratio: 1000/2180;
+
+                button {
+                    width: 24.760417%;
+                    left: 23.8%;
+                }
+            }
+
+            &:nth-of-type(4) {
+                aspect-ratio: 1000/1429;
+
+                > a {
+                    left: 22%;
+                    width: 56.166667%;
+                }
+            }
+
+            &:nth-of-type(5) {
+                aspect-ratio: 1000/707;
+            }
+
+
+            @for $i from 1 through 5 {
+                &:nth-child(#{$i}) {
+                    background: {
+                        image: url(/travelmonth/assets/images/event/june/img_small_event_june_#{$i}.jpg);
+                        repeat: no-repeat;
+                        position: center;
+                        size: cover;
+                    };
+                }
+            }
+        }
+    }
+
+    #juneModal1 {
+        .modal-content {
+            background: transparent;
+            padding-top: 102px;
+        }
+
+        .modal-body {
+            img {
+                border-radius: 12px;
+            }
+        }
+
+        .btn-close {
+            width: 80px;
+
+            background: {
+                image: url(/travelmonth/assets/images/event/june/icon_button_close.png);
+                position: center;
+                repeat: no-repeat;
+                size: auto 80px;
+            }
+        }
+
+
+
+
+    }
+}
