@@ -124,6 +124,10 @@
         .modal-header {
             padding-bottom: 22px;
             text-align: right;
+
+            @include media-queries($to: xl) {
+                padding-bottom: 10px;
+            }
         }
 
         .btn-close {
@@ -137,6 +141,10 @@
                 position: center;
                 repeat: no-repeat;
                 size: auto 40px;
+            }
+
+            @include media-queries($to: xl) {
+                background-size: auto 20px;
             }
         }
 
