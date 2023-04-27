@@ -5,9 +5,11 @@ import Swiper, {Autoplay, Pagination, Navigation, Scrollbar, FreeMode} from "swi
 const main = () => {
 
     (() => {
+        const siteHeader = findOne('#travelmonth-main .site-header');
+        siteHeader.classList.add('on');
+
         document.addEventListener('scroll', function() {
             const currentScrollValue = document.documentElement.scrollTop;
-            const siteHeader = findOne('#travelmonth-main .site-header');
 
             if(currentScrollValue > 70) {
                 siteHeader.classList.add('active');
