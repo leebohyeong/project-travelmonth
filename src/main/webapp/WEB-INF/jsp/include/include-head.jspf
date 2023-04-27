@@ -20,10 +20,10 @@
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon.ico">
 <link rel="icon" type="image/png" sizes="16x16" href="/favicon.ico">
 <script>if (/MSIE \d|Trident.*rv:/.test(navigator.userAgent)) {
-	window.location = 'microsoft-edge:' + window.location;
-	setTimeout(function () {
-		window.location = 'https://go.microsoft.com/fwlink/?linkid=2135547';
-	}, 13);
+    window.location = 'microsoft-edge:' + window.location;
+    setTimeout(function () {
+        window.location = 'https://go.microsoft.com/fwlink/?linkid=2135547';
+    }, 13);
 }
 </script>
 <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/vendors.css">

@@ -5,16 +5,15 @@ import kr.or.visitkorea.korean.global.common.service.CommonService;
 import kr.or.visitkorea.korean.global.dto.CommonResponse;
 import kr.or.visitkorea.korean.global.util.RequestUrl;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.json.simple.JSONObject;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 
-import java.util.HashMap;
-
+@Slf4j
 @Service
 @RequiredArgsConstructor
-public class CommonServiceImpl extends CommonServiceImplWrapper implements CommonService {
+public class CommonServiceImpl extends CommonServiceImplWrapper implements CommonService
+{
 
 	private final ObjectMapper MAPPER;
 
@@ -39,7 +38,7 @@ public class CommonServiceImpl extends CommonServiceImplWrapper implements Commo
 			}
 		}
 		catch (Exception exception) {
-			LOGGER.error("Area List Exception : {}", exception.getMessage(), exception);
+			log.error("Area List Exception : {}", exception.getMessage(), exception);
 		}
 		return null;
 	}
@@ -68,7 +67,7 @@ public class CommonServiceImpl extends CommonServiceImplWrapper implements Commo
 		}
 		catch (Exception exception)
 		{
-			LOGGER.error("Area Exception : {}", exception.getMessage(), exception);
+			log.error("Area Exception : {}", exception.getMessage(), exception);
 		}
 		return null;
 	}

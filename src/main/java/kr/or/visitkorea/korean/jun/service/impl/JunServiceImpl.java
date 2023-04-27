@@ -1,21 +1,20 @@
-package kr.or.visitkorea.korean.showcase.service.impl;
+package kr.or.visitkorea.korean.jun.service.impl;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import kr.or.visitkorea.korean.global.common.service.impl.CommonServiceImplWrapper;
 import kr.or.visitkorea.korean.global.dto.CommonResponse;
 import kr.or.visitkorea.korean.global.util.RequestUrl;
+import kr.or.visitkorea.korean.jun.service.JunService;
 import kr.or.visitkorea.korean.showcase.service.ShowcaseService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.json.simple.JSONObject;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 
 @Slf4j
 @Service
 @RequiredArgsConstructor
-public class ShowcaseServiceImpl extends CommonServiceImplWrapper implements ShowcaseService
+public class JunServiceImpl extends CommonServiceImplWrapper implements JunService
 {
 
 	private final ObjectMapper MAPPER;
@@ -29,7 +28,7 @@ public class ShowcaseServiceImpl extends CommonServiceImplWrapper implements Sho
 	{
 		try
 		{
-			JSONObject jsonObject = RequestUrl.get(TRAVEL_MONTH_SITE_URL + "/main/showcase-list");
+			JSONObject jsonObject = RequestUrl.get(TRAVEL_MONTH_SITE_URL + "/main/jun-list");
 			if (jsonObject != null)
 			{
 				boolean result = (boolean) jsonObject.get("result");

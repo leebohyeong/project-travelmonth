@@ -2,18 +2,22 @@ package kr.or.visitkorea.korean.global.common.web;
 
 import kr.or.visitkorea.korean.event.service.EventService;
 import kr.or.visitkorea.korean.instagram.service.InstagramService;
+import kr.or.visitkorea.korean.jun.service.JunService;
 import kr.or.visitkorea.korean.showcase.service.ShowcaseService;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+@Slf4j
 @Controller
 @RequiredArgsConstructor
 public class CommonController<T> extends CommonControllerWrapper
 {
 
+	private final JunService JUN_SERVICE;
 	private final EventService EVENT_SERVICE;
 	private final ShowcaseService SHOWCASE_SERVICE;
 	private final InstagramService<T> INSTAGRAM_SERVICE;
@@ -29,13 +33,14 @@ public class CommonController<T> extends CommonControllerWrapper
 	{
 		try
 		{
+			model.addAttribute("jun", JUN_SERVICE.getList());
 			model.addAttribute("event", EVENT_SERVICE.getMainList());
 			model.addAttribute("showcase", SHOWCASE_SERVICE.getList());
 			model.addAttribute("instagram", INSTAGRAM_SERVICE.getList());
 		}
 		catch (Exception exception)
 		{
-			LOGGER.error("Index Page Exception : {}", exception.getMessage(), exception);
+			log.error("Index Page Exception : {}", exception.getMessage(), exception);
 		}
 		return "/index";
 	}
