@@ -317,14 +317,30 @@
                     </article>
                     <aside class="list-thumbnail list-thumbnail--benefits-more"><h3>설렘으로 꽉 찬 혜택 추가로 확인하기</h3>
                         <ul>
-                            <li data-benefit="traffic"><a href="/html/benefits/traffic.html"><h4>교통혜택</h4>
-                                <p>국내여행 준비중이라면<br>교통혜택을 챙겨가세요!</p></a></li>
-                            <li data-benefit="stay"><a href="/html/benefits/stay.html"><h4>숙박혜택</h4>
-                                <p>여행의 완성은 잠자리!<br>역대급 숙박혜택을 확인하세요</p></a></li>
-                            <li data-benefit="play"><a href="/html/benefits/play.html"><h4>놀거리혜택</h4>
-                                <p>놀거리혜택으로<br>풍성한 여행을 만들어가세요!</p></a></li>
-                            <li data-benefit="special"><a href="/html/special/list.html"><h4>여행상품<br>특별 기획전</h4>
-                                <p>여행가는 달 기간동안<br>여행업계가 선보이는<br>각종 혜택들을 만나보세요.</p></a></li>
+                            <li data-benefit="traffic">
+                                <a href="${pageContext.request.contextPath}/benefits/traffic.do">
+                                    <h4>교통혜택</h4>
+                                    <p>국내여행 준비중이라면<br>교통혜택을 챙겨가세요!</p>
+                                </a>
+                            </li>
+                            <li data-benefit="stay">
+                                <a href="${pageContext.request.contextPath}/benefits/stay.do">
+                                    <h4>숙박혜택</h4>
+                                    <p>여행의 완성은 잠자리!<br>역대급 숙박혜택을 확인하세요</p>
+                                </a>
+                            </li>
+                            <li data-benefit="play">
+                                <a href="${pageContext.request.contextPath}/benefits/play.do">
+                                    <h4>놀거리혜택</h4>
+                                    <p>놀거리혜택으로<br>풍성한 여행을 만들어가세요!</p>
+                                </a>
+                            </li>
+                            <li data-benefit="special">
+                                <a href="#">
+                                    <h4>여행상품<br>특별 기획전</h4>
+                                    <p>여행가는 달 기간동안<br>여행업계가 선보이는<br>각종 혜택들을 만나보세요.</p>
+                                </a>
+                            </li>
                         </ul>
                     </aside>
                 </div>
