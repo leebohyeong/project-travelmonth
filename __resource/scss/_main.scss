@@ -108,6 +108,10 @@
                     display: block;
                     aspect-ratio: 1920/905;
 
+                    @include media-queries($to: xl) {
+                        aspect-ratio: 483/377;
+                    }
+
                     iframe {
                         width: 100%;
                         border: none;
@@ -595,7 +599,7 @@
                 position: relative;
                 aspect-ratio: 466/340;
                 border-radius: 30px;
-                color: #fff;
+                color: #000;
                 text-align: center;
 
                 div {
@@ -919,8 +923,6 @@
 
     &__event {
         > div {
-            //max-width: 1920px;
-            //margin: 0 auto;
             padding: 34px 0 40px 0;
 
             @include media-queries($from: xl) {
@@ -935,7 +937,8 @@
 
             @include media-queries($from: xl) {
                 margin-top: 80px;
-                margin-left: 240px;
+                //margin-left: 240px;
+                margin-left: percentage(math.div(240, 1920));
                 padding-left: 0;
             }
 
@@ -1060,35 +1063,39 @@
             padding: 90px 0 84px;
         }
 
-        > div {
+        header + div {
+            overflow: hidden;
             max-width: 1920px;
             margin: 0 auto;
-        }
-
-        header + div {
             padding-top: 16px;
 
             @include media-queries($from: xl) {
                 padding-top: 28px;
             }
-        }
 
-        .swiper {
-            &_wrapper {
-                align-items: center;
-            }
+            & > div {
+                display: flex;
+                width: 200%;
+                grid-column-gap: 100px;
+                animation: marquee 45s linear infinite var(--marquee-direction) var(--marquee-play-state);
 
-            &-slide {
-                width: auto;
+                --marquee-direction: normal;
+                --marquee-play-state: running;
 
-                a {
-                    display: block;
-                    background-position: center;
-                    background-repeat: no-repeat;
-                    background-size: contain;
-                    text-align: center;
+                @include media-queries($to: xl) {
+                    grid-column-gap: 20px;
+                }
+
+                @keyframes marquee {
+                    0% {
+                        transform: translateX(0);
+                    }
+                    100% {
+                        transform: translateX(-50%);
+                    }
                 }
             }
+
         }
     }
 

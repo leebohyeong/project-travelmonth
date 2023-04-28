@@ -172,30 +172,6 @@ const main = () => {
         });
     })();
 
-    //여행가는 달 참여기관
-    (() => {
-        const organization = findOne('.main__organization');
-        const organizationCarousel = new Swiper(findOne('.swiper', organization),{
-            slidesPerView: 3.5,
-            spaceBetween: 20,
-
-            autoplay: {
-                delay: 3000,
-                disableOnInteraction: false,
-            },
-
-            breakpoints: {
-                //브라우저가 1200보다 클 때
-                1200: {
-                    slidesPerView: "auto",
-                    spaceBetween: 100,
-                },
-            },
-
-            modules: [Autoplay],
-        });
-    })();
-
     //인스타그램
     (() => {
         const instagram = findOne('.main__instagram');

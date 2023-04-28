@@ -288,10 +288,25 @@
             <section class="main__organization">
                 <div>
                     <header class="main__header"><h2>여행가는 달 참여기관</h2></header>
+                    <div>
+                        <div>
+                            <a href="#" target="_blank"><img src="/travelmonth/assets/images/main/img_organization_1.png" alt="국립공원공단"></a>
+                            <a href="#" target="_blank"><img src="/travelmonth/assets/images/main/img_organization_2.png" alt="코레일관광개발"></a>
+                            <a href="#" target="_blank"><img src="/travelmonth/assets/images/main/img_organization_3.png" alt="한국어촌어항공단"></a>
+                            <a href="#" target="_blank"><img src="/travelmonth/assets/images/main/img_organization_4.png" alt="남해관광문화재단"></a>
+                            <a href="#" target="_blank"><img src="/travelmonth/assets/images/main/img_organization_5.png" alt="KORAIL"></a>
+                            <a href="#" target="_blank"><img src="/travelmonth/assets/images/main/img_organization_6.png" alt="한국임업진흥원"></a>
+                            <a href="#" target="_blank"><img src="/travelmonth/assets/images/main/img_organization_1.png" alt="국립공원공단"></a>
+                            <a href="#" target="_blank"><img src="/travelmonth/assets/images/main/img_organization_2.png" alt="코레일관광개발"></a>
+                            <a href="#" target="_blank"><img src="/travelmonth/assets/images/main/img_organization_3.png" alt="한국어촌어항공단"></a>
+                            <a href="#" target="_blank"><img src="/travelmonth/assets/images/main/img_organization_4.png" alt="남해관광문화재단"></a>
+                            <a href="#" target="_blank"><img src="/travelmonth/assets/images/main/img_organization_5.png" alt="KORAIL"></a>
+                            <a href="#" target="_blank"><img src="/travelmonth/assets/images/main/img_organization_6.png" alt="한국임업진흥원"></a>
+                        </div>
+                    </div>
                     <div class="swiper">
                         <div class="swiper-wrapper">
-                            <div class="swiper-slide"><a href="#" target="_blank"><img
-                                    src="/travelmonth/assets/images/main/img_organization_1.png" alt=""></a></div>
+                            <div class="swiper-slide"></div>
                             <div class="swiper-slide"><a href="#" target="_blank"><img
                                     src="/travelmonth/assets/images/main/img_organization_2.png" alt=""></a></div>
                             <div class="swiper-slide"><a href="#" target="_blank"><img

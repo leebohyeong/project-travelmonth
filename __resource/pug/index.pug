@@ -25,7 +25,10 @@ block body
                                     img(src="/travelmonth/assets/images/main/img_main_bg_m.jpg" alt="")
                         .swiper-slide
                             a(href="#")
-                                iframe(src="https://www.youtube.com/embed/vwjE85JBIH4?controls=0&loop=1&playlist=vwjE85JBIH4&autoplay=1&mute=1&showinfo=0&rel=0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen)
+                                //iframe(src="https://www.youtube.com/embed/vwjE85JBIH4?controls=0&loop=1&playlist=vwjE85JBIH4&autoplay=1&mute=1&showinfo=0&rel=0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen)
+                                picture
+                                    source(srcset="/travelmonth/assets/images/main/img_main_bg.jpg" media="(min-width: 992px)")
+                                    img(src="/travelmonth/assets/images/main/img_main_bg_m.jpg" alt="")
 
                     .swiper-navigation
                         .swiper-navigation-prev
@@ -209,7 +212,8 @@ block body
                     p
                 div.june-contents
                     div.june-contents__information
-                        iframe(src="https://www.youtube.com/embed/vwjE85JBIH4")
+                        //iframe(src="https://www.youtube.com/embed/vwjE85JBIH4")
+                        iframe(src="")
                             span.screen_out 여행가는달 유튜브영상
                         div
                             div
@@ -307,26 +311,44 @@ block body
             div
                 header.main__header
                     h2 여행가는 달 참여기관
-                div.swiper
-                    div.swiper-wrapper
-                        div.swiper-slide
-                            a(href="#" target="_blank")
-                                img(src="/travelmonth/assets/images/main/img_organization_1.png" alt="")
-                        div.swiper-slide
-                            a(href="#" target="_blank")
-                                img(src="/travelmonth/assets/images/main/img_organization_2.png" alt="")
-                        div.swiper-slide
-                            a(href="#" target="_blank")
-                                img(src="/travelmonth/assets/images/main/img_organization_3.png" alt="")
-                        div.swiper-slide
-                            a(href="#" target="_blank")
-                                img(src="/travelmonth/assets/images/main/img_organization_4.png" alt="")
-                        div.swiper-slide
-                            a(href="#" target="_blank")
-                                img(src="/travelmonth/assets/images/main/img_organization_5.png" alt="")
-                        div.swiper-slide
-                            a(href="#" target="_blank")
-                                img(src="/travelmonth/assets/images/main/img_organization_6.png" alt="")
+                div
+                    div
+                        a(href="#" target="_blank")
+                            img(src="/travelmonth/assets/images/main/img_organization_1.png" alt="국립공원공단")
+
+                        a(href="#" target="_blank")
+                            img(src="/travelmonth/assets/images/main/img_organization_2.png" alt="코레일관광개발")
+
+                        a(href="#" target="_blank")
+                            img(src="/travelmonth/assets/images/main/img_organization_3.png" alt="한국어촌어항공단")
+
+                        a(href="#" target="_blank")
+                            img(src="/travelmonth/assets/images/main/img_organization_4.png" alt="남해관광문화재단")
+
+                        a(href="#" target="_blank")
+                            img(src="/travelmonth/assets/images/main/img_organization_5.png" alt="KORAIL")
+
+                        a(href="#" target="_blank")
+                            img(src="/travelmonth/assets/images/main/img_organization_6.png" alt="한국임업진흥원")
+
+                        a(href="#" target="_blank")
+                            img(src="/travelmonth/assets/images/main/img_organization_1.png" alt="국립공원공단")
+
+                        a(href="#" target="_blank")
+                            img(src="/travelmonth/assets/images/main/img_organization_2.png" alt="코레일관광개발")
+
+                        a(href="#" target="_blank")
+                            img(src="/travelmonth/assets/images/main/img_organization_3.png" alt="한국어촌어항공단")
+
+                        a(href="#" target="_blank")
+                            img(src="/travelmonth/assets/images/main/img_organization_4.png" alt="남해관광문화재단")
+
+                        a(href="#" target="_blank")
+                            img(src="/travelmonth/assets/images/main/img_organization_5.png" alt="KORAIL")
+
+                        a(href="#" target="_blank")
+                            img(src="/travelmonth/assets/images/main/img_organization_6.png" alt="한국임업진흥원")
+
 
         section.main__travel
             header
@@ -337,7 +359,8 @@ block body
                 a(href="#") 여행가는 달 자세히보기
 
             div
-                iframe(src="https://www.youtube.com/embed/vwjE85JBIH4")
+                //iframe(src="https://www.youtube.com/embed/vwjE85JBIH4")
+                iframe(src="")
                     span.screen_out 여행으로[웃음을]재생하기
 
         section.main__instagram
