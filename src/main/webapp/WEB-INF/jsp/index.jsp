@@ -59,13 +59,18 @@
                     <div class="category-panel category-tab-contents__location category-panel--active">
                         <div class="swiper">
                             <div class="swiper-wrapper">
-                                <c:set var="sido" value="${sido:getList()}"/>
-                                <c:if test="${not empty sido}">
-                                    <c:if test="${sido.result}">
-                                        <c:set var="list" value="${sido.data.list}"/>
+                                <c:set var="local" value="${local:getList()}"/>
+                                <c:if test="${not empty local}">
+                                    <c:if test="${local.result}">
+                                        <c:set var="list" value="${local.data.list}"/>
                                         <c:forEach var="row" items="${list}" varStatus="loop">
                                             <div class="swiper-slide">
-                                                <a href="/travelmonth/area/${fn:toLowerCase(row.name_en)}.do" data-theme="${row.code}">${row.name_kr}</a>
+                                                <c:set var="name_en" value="${fn:toLowerCase(row.name_en)}"/>
+                                                <c:if test="${row.code eq '01' || row.code eq '04' || row.code eq '09'}">
+                                                    <c:set var="name_en" value="seoul-incheon-gyeonggi"/>
+                                                </c:if>
+                                                <a href="${pageContext.request.contextPath}/benefits/local/${name_en}.do"
+                                                   data-theme="${row.code}">${row.name_kr}</a>
                                             </div>
                                         </c:forEach>
                                     </c:if>
@@ -77,13 +82,14 @@
                         <div class="swiper">
                             <div class="swiper-wrapper">
                                 <div class="swiper-slide">
-                                    <a href="#" data-theme="a">교통 <br>혜택</a>
+                                    <a href="${pageContext.request.contextPath}/benefits/traffic.do" data-theme="a">교통 <br>혜택</a>
                                 </div>
                                 <div class="swiper-slide">
-                                    <a href="#" data-theme="b">숙박 <br>혜택</a>
+                                    <a href="${pageContext.request.contextPath}/benefits/stay.do" data-theme="b">숙박
+                                        <br>혜택</a>
                                 </div>
                                 <div class="swiper-slide">
-                                    <a href="#" data-theme="c">놀거리 <br>혜택</a>
+                                    <a href="${pageContext.request.contextPath}/benefits/play.do" data-theme="c">놀거리 <br>혜택</a>
                                 </div>
                                 <div class="swiper-slide">
                                     <a href="#" data-theme="d">여행 <br>트렌드관</a>
@@ -128,7 +134,8 @@
                     </div>
                 </div>
             </section>
-            <section class="main__benefits"><h2 class="screen_out">여행혜택</h2>
+            <section class="main__benefits">
+                <h2 class="screen_out">여행혜택</h2>
                 <ul>
                     <li><a href="#">
                         <div><p>교통혜택</p>
@@ -192,7 +199,8 @@
                                                     <li>
                                                         <c:choose>
                                                             <c:when test="${not empty row.link}">
-                                                                <a href="${row.link}" target="${row.link_target}">${row.title}</a>
+                                                                <a href="${row.link}"
+                                                                   target="${row.link_target}">${row.title}</a>
                                                             </c:when>
                                                             <c:otherwise>
                                                                 <strong>${row.title}</strong>
@@ -215,13 +223,15 @@
                                             <c:choose>
                                                 <c:when test="${not empty row.link}">
                                                     <a href="${row.link}" target="${row.link_target}">
-                                                        <div class="june-contents__tourist-banner" style="background-image:url('${row.image}')">
+                                                        <div class="june-contents__tourist-banner"
+                                                             style="background-image:url('${row.image}')">
                                                             <p class="screen_out">${row.title}</p>
                                                         </div>
                                                     </a>
                                                 </c:when>
                                                 <c:otherwise>
-                                                    <div class="june-contents__tourist-banner" style="background-image:url('${row.image}')">
+                                                    <div class="june-contents__tourist-banner"
+                                                         style="background-image:url('${row.image}')">
                                                         <p class="screen_out">${row.title}</p>
                                                     </div>
                                                 </c:otherwise>
@@ -238,7 +248,9 @@
                                             <c:if test="${loop.index gt 6 && loop.index lt 11}">
                                                 <c:choose>
                                                     <c:when test="${not empty row.link}">
-                                                        <a href="${row.link}"  target="${row.link_target}" class="june-contents__tourist-item" style="background-image:url('${row.image}')">
+                                                        <a href="${row.link}" target="${row.link_target}"
+                                                           class="june-contents__tourist-item"
+                                                           style="background-image:url('${row.image}')">
                                                             <p class="june-contents__tourist-text">${row.title}</p>
                                                         </a>
                                                     </c:when>
@@ -268,7 +280,8 @@
                                         <c:set var="list" value="${event.data.list}"/>
                                         <c:forEach var="row" items="${list}" varStatus="loop">
                                             <div class="swiper-slide">
-                                                <a href="${row.link}" target="${row.link_target}" style="background-image:url('${row.thumbnail}')">
+                                                <a href="${row.link}" target="${row.link_target}"
+                                                   style="background-image:url('${row.thumbnail}')">
                                                     <p>${row.title}</p>
                                                 </a>
                                             </div>
@@ -290,33 +303,28 @@
                     <header class="main__header"><h2>여행가는 달 참여기관</h2></header>
                     <div>
                         <div>
-                            <a href="#" target="_blank"><img src="/travelmonth/assets/images/main/img_organization_1.png" alt="국립공원공단"></a>
-                            <a href="#" target="_blank"><img src="/travelmonth/assets/images/main/img_organization_2.png" alt="코레일관광개발"></a>
-                            <a href="#" target="_blank"><img src="/travelmonth/assets/images/main/img_organization_3.png" alt="한국어촌어항공단"></a>
-                            <a href="#" target="_blank"><img src="/travelmonth/assets/images/main/img_organization_4.png" alt="남해관광문화재단"></a>
-                            <a href="#" target="_blank"><img src="/travelmonth/assets/images/main/img_organization_5.png" alt="KORAIL"></a>
-                            <a href="#" target="_blank"><img src="/travelmonth/assets/images/main/img_organization_6.png" alt="한국임업진흥원"></a>
-                            <a href="#" target="_blank"><img src="/travelmonth/assets/images/main/img_organization_1.png" alt="국립공원공단"></a>
-                            <a href="#" target="_blank"><img src="/travelmonth/assets/images/main/img_organization_2.png" alt="코레일관광개발"></a>
-                            <a href="#" target="_blank"><img src="/travelmonth/assets/images/main/img_organization_3.png" alt="한국어촌어항공단"></a>
-                            <a href="#" target="_blank"><img src="/travelmonth/assets/images/main/img_organization_4.png" alt="남해관광문화재단"></a>
-                            <a href="#" target="_blank"><img src="/travelmonth/assets/images/main/img_organization_5.png" alt="KORAIL"></a>
-                            <a href="#" target="_blank"><img src="/travelmonth/assets/images/main/img_organization_6.png" alt="한국임업진흥원"></a>
+                            <a href="#" target="_blank"><img src="${pageContext.request.contextPath}/assets/images/main/img_organization_1.png" alt="국립공원공단"></a>
+                            <a href="#" target="_blank"><img src="${pageContext.request.contextPath}/assets/images/main/img_organization_2.png" alt="코레일관광개발"></a>
+                            <a href="#" target="_blank"><img src="${pageContext.request.contextPath}/assets/images/main/img_organization_3.png" alt="한국어촌어항공단"></a>
+                            <a href="#" target="_blank"><img src="${pageContext.request.contextPath}/assets/images/main/img_organization_4.png" alt="남해관광문화재단"></a>
+                            <a href="#" target="_blank"><img src="${pageContext.request.contextPath}/assets/images/main/img_organization_5.png" alt="KORAIL"></a>
+                            <a href="#" target="_blank"><img src="${pageContext.request.contextPath}/assets/images/main/img_organization_6.png" alt="한국임업진흥원"></a>
+                            <a href="#" target="_blank"><img src="${pageContext.request.contextPath}/assets/images/main/img_organization_1.png" alt="국립공원공단"></a>
+                            <a href="#" target="_blank"><img src="${pageContext.request.contextPath}/assets/images/main/img_organization_2.png" alt="코레일관광개발"></a>
+                            <a href="#" target="_blank"><img src="${pageContext.request.contextPath}/assets/images/main/img_organization_3.png" alt="한국어촌어항공단"></a>
+                            <a href="#" target="_blank"><img src="${pageContext.request.contextPath}/assets/images/main/img_organization_4.png" alt="남해관광문화재단"></a>
+                            <a href="#" target="_blank"><img src="${pageContext.request.contextPath}/assets/images/main/img_organization_5.png" alt="KORAIL"></a>
+                            <a href="#" target="_blank"><img src="${pageContext.request.contextPath}/assets/images/main/img_organization_6.png" alt="한국임업진흥원"></a>
                         </div>
                     </div>
                     <div class="swiper">
                         <div class="swiper-wrapper">
                             <div class="swiper-slide"></div>
-                            <div class="swiper-slide"><a href="#" target="_blank"><img
-                                    src="/travelmonth/assets/images/main/img_organization_2.png" alt=""></a></div>
-                            <div class="swiper-slide"><a href="#" target="_blank"><img
-                                    src="/travelmonth/assets/images/main/img_organization_3.png" alt=""></a></div>
-                            <div class="swiper-slide"><a href="#" target="_blank"><img
-                                    src="/travelmonth/assets/images/main/img_organization_4.png" alt=""></a></div>
-                            <div class="swiper-slide"><a href="#" target="_blank"><img
-                                    src="/travelmonth/assets/images/main/img_organization_5.png" alt=""></a></div>
-                            <div class="swiper-slide"><a href="#" target="_blank"><img
-                                    src="/travelmonth/assets/images/main/img_organization_6.png" alt=""></a></div>
+                            <div class="swiper-slide"><a href="#" target="_blank"><img src="${pageContext.request.contextPath}/assets/images/main/img_organization_2.png" alt=""></a></div>
+                            <div class="swiper-slide"><a href="#" target="_blank"><img src="${pageContext.request.contextPath}/assets/images/main/img_organization_3.png" alt=""></a></div>
+                            <div class="swiper-slide"><a href="#" target="_blank"><img src="${pageContext.request.contextPath}/assets/images/main/img_organization_4.png" alt=""></a></div>
+                            <div class="swiper-slide"><a href="#" target="_blank"><img src="${pageContext.request.contextPath}/assets/images/main/img_organization_5.png" alt=""></a></div>
+                            <div class="swiper-slide"><a href="#" target="_blank"><img src="${pageContext.request.contextPath}/assets/images/main/img_organization_6.png" alt=""></a></div>
                         </div>
                     </div>
                 </div>
@@ -340,7 +348,8 @@
                                     <c:set var="list" value="${instagram.data.list}"/>
                                     <c:forEach var="row" items="${list}" varStatus="loop">
                                         <div class="swiper-slide">
-                                            <a href="${row.permalink}" target="_blank" style="background-image:url('${row.media_url}')"></a>
+                                            <a href="${row.permalink}" target="_blank"
+                                               style="background-image:url('${row.media_url}')"></a>
                                         </div>
                                     </c:forEach>
                                 </c:if>
