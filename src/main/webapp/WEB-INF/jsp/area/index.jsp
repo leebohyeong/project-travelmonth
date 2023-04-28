@@ -72,26 +72,33 @@
                                     <c:if test="${not empty enjoy}">
                                         <c:if test="${enjoy.result}">
                                             <c:set var="list" value="${enjoy.data.list}"/>
-                                            <c:forEach var="row" items="${list}" varStatus="loop">
-                                                <li>
-                                                    <a href="#modal-benefits-${row.seq}" data-type="${fn:toLowerCase(row.enjoy_gb)}" data-bs-toggle="modal" data-bs-target="#modal-benefits-${row.seq}"
-                                                       data-gtag-action="여행혜택 1_${row.title}" data-gtag-category="${title}">
-                                                        <span style="background-image: url('${row.image}')"></span>
-                                                        <div>
-                                                            <p>
-                                                                <c:choose>
-                                                                    <c:when test="${row.enjoy_gb eq 'D'}">할인혜택</c:when>
-                                                                    <c:when test="${row.enjoy_gb eq 'T'}">여행정보</c:when>
-                                                                    <c:when test="${row.enjoy_gb eq 'E'}">이벤트</c:when>
-                                                                    <c:otherwise>-</c:otherwise>
-                                                                </c:choose>
-                                                            </p>
-                                                            <p>${row.agency_name}</p>
-                                                        </div>
-                                                        <p>${row.title}</p>
-                                                    </a>
-                                                </li>
-                                            </c:forEach>
+                                            <c:choose>
+                                                <c:when test="${not empty list}">
+                                                    <c:forEach var="row" items="${list}" varStatus="loop">
+                                                        <li>
+                                                            <a href="#modal-benefits-${row.seq}" data-type="${fn:toLowerCase(row.enjoy_gb)}" data-bs-toggle="modal" data-bs-target="#modal-benefits-${row.seq}"
+                                                               data-gtag-action="여행혜택 1_${row.title}" data-gtag-category="${title}">
+                                                                <span style="background-image: url('${row.image}')"></span>
+                                                                <div>
+                                                                    <p>
+                                                                        <c:choose>
+                                                                            <c:when test="${row.enjoy_gb eq 'D'}">할인혜택</c:when>
+                                                                            <c:when test="${row.enjoy_gb eq 'T'}">여행정보</c:when>
+                                                                            <c:when test="${row.enjoy_gb eq 'E'}">이벤트</c:when>
+                                                                            <c:otherwise>-</c:otherwise>
+                                                                        </c:choose>
+                                                                    </p>
+                                                                    <p>${row.agency_name}</p>
+                                                                </div>
+                                                                <p>${row.title}</p>
+                                                            </a>
+                                                        </li>
+                                                    </c:forEach>
+                                                </c:when>
+                                                <c:otherwise>
+                                                    등록된 내용이 없습니다.
+                                                </c:otherwise>
+                                            </c:choose>
                                         </c:if>
                                     </c:if>
                                 </ul>
@@ -213,69 +220,105 @@
                         <section class="list-thumbnail list-thumbnail--goods">
                             <h3>트렌디한 <strong>${title}</strong> 여행상품 알아보기</h3>
                             <ul>
-                                <li>
-                                    <a href="#" data-type="d" data-bs-toggle="modal" data-bs-target="#modal-goods-1"><span
-                                        style="background-image: url('https://cdn.visitkorea.or.kr/img/call?cmd=VIEW&amp;id=3f8fbd92-6b7e-46ba-9161-21bfd76e8e1b&amp;mode=progress')"></span>
-                                    <p>예약신청기간 : 5/24~6/20</p>
-                                    <p>산속등대 어뮤즈월드<br>이용요금 반값 할인</p>
-                                    <div><p>40,000원~</p>
-                                        <p>당일</p></div>
-                                    </a>
-                                </li>
-                                <li><a href="#"><span
-                                        style="background-image: url('https://cdn.visitkorea.or.kr/img/call?cmd=VIEW&amp;id=de35655e-97a2-4a2d-8da0-812767f53fef&amp;mode=progress')"></span>
-                                    <p>예약신청기간 : 5/24~6/20</p>
-                                    <p>고래바다여행선 타고, 호캉스 가자</p></a></li>
-                                <li><a href="#"><span
-                                        style="background-image: url('https://cdn.visitkorea.or.kr/img/call?cmd=VIEW&amp;id=f6c2cdb3-7c48-4ec1-b326-33e19002b0f1&amp;mode=progress')"></span>
-                                    <p>예약신청기간 : 5/24~6/20</p>
-                                    <p>경북으로 떠나는 친환경 기차여행 이벤트</p></a></li>
+                                <c:if test="${not empty travel}">
+                                    <c:if test="${travel.result}">
+                                        <c:set var="list" value="${travel.data.list}"/>
+                                        <c:choose>
+                                            <c:when test="${not empty list}">
+                                                <c:forEach var="row" items="${list}" varStatus="loop">
+                                                    <li>
+                                                        <a href="#" data-type="d" data-bs-toggle="modal" data-bs-target="#modal-goods-${row.seq}">
+                                                            <span style="background-image: url('${row.image}')"></span>
+                                                            <p>
+                                                                <fmt:parseDate var="strFromDate" pattern="yyyy-MM-dd" value="${row.from_date}"/>
+                                                                <fmt:formatDate var="fromDate" pattern="MM/dd" value="${strFromDate}"/>
+                                                                <fmt:parseDate var="strToDate" pattern="yyyy-MM-dd" value="${row.to_date}"/>
+                                                                <fmt:formatDate var="ToDate" pattern="MM/dd" value="${strToDate}"/>
+                                                                예약신청기간 : ${fromDate}~${ToDate}
+                                                            </p>
+                                                            <p>${row.title}</p>
+                                                            <div>
+                                                                <c:if test="${row.travel_gb eq 'P'}">
+                                                                    <c:if test="${not empty row.price}">
+                                                                        <p>${row.price}</p>
+                                                                    </c:if>
+                                                                </c:if>
+                                                                <p>
+                                                                    <c:choose>
+                                                                        <c:when test="${fn:contains(row.travel_type, 'L') && fn:contains(row.travel_type, 'D')}">숙박/당일</c:when>
+                                                                        <c:when test="${fn:contains(row.travel_type, 'L')}">숙박</c:when>
+                                                                        <c:when test="${fn:contains(row.travel_type, 'D')}">당일</c:when>
+                                                                    </c:choose>
+                                                                </p>
+                                                            </div>
+                                                        </a>
+                                                    </li>
+                                                </c:forEach>
+                                            </c:when>
+                                            <c:otherwise>
+                                                등록된 내용이 없습니다.
+                                            </c:otherwise>
+                                        </c:choose>
+                                    </c:if>
+                                </c:if>
                             </ul>
                             <p>
                                 <button type="button">MORE</button>
                             </p>
                         </section>
-                        <div class="modal fade modal-goods" id="modal-goods-1" tabindex="-1" data-bs-backdrop="static"
-                             aria-hidden="true">
-                            <div class="modal-dialog">
-                                <div class="modal-content">
-                                    <article>
-                                        <div style="background-image: url('https://cdn.visitkorea.or.kr/img/call?cmd=VIEW&amp;id=3f8fbd92-6b7e-46ba-9161-21bfd76e8e1b&amp;mode=progress')"></div>
-                                        <div><p>여행상품</p>
-                                            <p>숙박•당일</p></div>
-                                        <h3>산속등대 어뮤즈월드 이용요금 반값 할인</h3>
-                                        <dl>
-                                            <div>
-                                                <dt>예약신청기간</dt>
-                                                <dd>2023-05-10 ~ 2023-06-01</dd>
+                        <c:if test="${not empty travel}">
+                            <c:if test="${travel.result}">
+                                <c:set var="list" value="${travel.data.list}"/>
+                                <c:forEach var="row" items="${list}" varStatus="loop">
+                                    <div class="modal fade modal-goods" id="modal-goods-${row.seq}" tabindex="-1" data-bs-backdrop="static" aria-hidden="true">
+                                        <div class="modal-dialog">
+                                            <div class="modal-content">
+                                                <article>
+                                                    <div style="background-image: url('${row.image}')"></div>
+                                                    <div>
+                                                        <p>
+                                                            <c:choose>
+                                                                <c:when test="${row.travel_gb eq 'C'}">여행콘텐츠</c:when>
+                                                                <c:when test="${row.travel_gb eq 'P'}">여행상품</c:when>
+                                                                <c:otherwise>-</c:otherwise>
+                                                            </c:choose>
+                                                        </p>
+                                                        <p>
+                                                            <c:choose>
+                                                                <c:when test="${fn:contains(row.travel_type, 'L') && fn:contains(row.travel_type, 'D')}">숙박 당일</c:when>
+                                                                <c:when test="${fn:contains(row.travel_type, 'L')}">숙박</c:when>
+                                                                <c:when test="${fn:contains(row.travel_type, 'D')}">당일</c:when>
+                                                            </c:choose>
+                                                        </p>
+                                                    </div>
+                                                    <h3>${row.title}</h3>
+                                                    <dl>
+                                                        <div>
+                                                            <dt>예약접수기간</dt>
+                                                            <dd>${row.from_date} ~ ${row.to_date}</dd>
+                                                        </div>
+                                                        <div>
+                                                            <dt>안내사항</dt>
+                                                            <dd>${row.content}</dd>
+                                                        </div>
+                                                        <div>
+                                                            <dt>주요 방문처</dt>
+                                                            <dd>${row.content_detail}</dd>
+                                                        </div>
+                                                        <div>
+                                                            <dt>문의처</dt>
+                                                            <dd>${row.contact_information}</dd>
+                                                        </div>
+                                                    </dl>
+                                                    <p><a href="${row.link}"><span>자세히 보기</span></a></p>
+                                                </article>
+                                                <button class="modal-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button>
                                             </div>
-                                            <div>
-                                                <dt>할인적용기간</dt>
-                                                <dd>2023-06-01 ~ 2023-06-30</dd>
-                                            </div>
-                                            <div>
-                                                <dt>혜택상세</dt>
-                                                <dd>어뮤즈월드 이용요금 50% 할인 어뮤즈월드 이용요금 50% 할인 어뮤즈월드 이용요금 50% 할인</dd>
-                                            </div>
-                                            <div>
-                                                <dt>혜택제공조건</dt>
-                                                <dd>어린이만 이용가능(8세 이상~19세 미만)</dd>
-                                            </div>
-                                            <div>
-                                                <dt>참고사항</dt>
-                                                <dd>동반하는 어른은 정가</dd>
-                                            </div>
-                                            <div>
-                                                <dt>문의처</dt>
-                                                <dd>063-245-2456</dd>
-                                            </div>
-                                        </dl>
-                                        <p><a href="#"><span>자세히 보기</span></a></p></article>
-                                    <button class="modal-close" type="button" data-bs-dismiss="modal"
-                                            aria-label="Close"></button>
-                                </div>
-                            </div>
-                        </div>
+                                        </div>
+                                    </div>
+                                </c:forEach>
+                            </c:if>
+                        </c:if>
                     </article>
                     <aside class="list-thumbnail list-thumbnail--benefits-more"><h3>설렘으로 꽉 찬 혜택 추가로 확인하기</h3>
                         <ul>
