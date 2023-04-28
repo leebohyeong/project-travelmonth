@@ -3,16 +3,16 @@ package kr.or.visitkorea.korean.global.common.service;
 public interface CommonService {
 
 	/**
-	 * GET SIDO LIST
+	 * GET LOCAL LIST
 	 * @return
 	 */
-	Object getSidoList();
+	Object getLocalList();
 
 	/**
-	 * GET SIDO BY NAME_EN
+	 * GET LOCAL BY NAME_EN
 	 * @param nameEn
 	 * @return
 	 */
-	Object getSidoByNameEn(String nameEn);
+	Object getLocalByNameEn(String nameEn);
 
 }

@@ -18,14 +18,14 @@ public class CommonServiceImpl extends CommonServiceImplWrapper implements Commo
 	private final ObjectMapper MAPPER;
 
 	/**
-	 * GET SIDO LIST
+	 * GET LOCAL LIST
 	 * @return
 	 */
 	@Override
-	public Object getSidoList()
+	public Object getLocalList()
 	{
 		try {
-			JSONObject jsonObject = RequestUrl.get(TRAVEL_MONTH_SITE_URL + "/area/list");
+			JSONObject jsonObject = RequestUrl.get(TRAVEL_MONTH_SITE_URL + "/local/list");
 			if (jsonObject != null)
 			{
 				boolean result = (boolean) jsonObject.get("result");
@@ -38,22 +38,22 @@ public class CommonServiceImpl extends CommonServiceImplWrapper implements Commo
 			}
 		}
 		catch (Exception exception) {
-			log.error("Area List Exception : {}", exception.getMessage(), exception);
+			log.error("local List Exception : {}", exception.getMessage(), exception);
 		}
 		return null;
 	}
 
 	/**
-	 * GET SIDO BY NAME_EN
+	 * GET LOCAL BY NAME_EN
 	 * @param nameEn
 	 * @return
 	 */
 	@Override
-	public Object getSidoByNameEn(String nameEn)
+	public Object getLocalByNameEn(String nameEn)
 	{
 		try
 		{
-			JSONObject jsonObject = RequestUrl.get(TRAVEL_MONTH_SITE_URL + "/area/en/" + nameEn);
+			JSONObject jsonObject = RequestUrl.get(TRAVEL_MONTH_SITE_URL + "/local/en/" + nameEn);
 			if (jsonObject != null)
 			{
 				boolean result = (boolean) jsonObject.get("result");
@@ -67,7 +67,7 @@ public class CommonServiceImpl extends CommonServiceImplWrapper implements Commo
 		}
 		catch (Exception exception)
 		{
-			log.error("Area Exception : {}", exception.getMessage(), exception);
+			log.error("Local Exception : {}", exception.getMessage(), exception);
 		}
 		return null;
 	}

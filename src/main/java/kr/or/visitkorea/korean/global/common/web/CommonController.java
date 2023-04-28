@@ -45,4 +45,24 @@ public class CommonController<T> extends CommonControllerWrapper
 		return "/index";
 	}
 
+	/**
+	 * 여행가는 달이란? > 여행가는 달 소개 페이지
+	 * @return
+	 */
+	@RequestMapping(value = "/intro.do", method = RequestMethod.GET)
+	public String intro()
+	{
+		return "/intro";
+	}
+
+	/**
+	 * 여행가는 달이란? > 여행가는 달 참여기관 페이지
+	 * @return
+	 */
+	@RequestMapping(value = "/organization.do", method = RequestMethod.GET)
+	public String organization()
+	{
+		return "/organization";
+	}
+
 }

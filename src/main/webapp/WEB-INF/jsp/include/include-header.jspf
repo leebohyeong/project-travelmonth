@@ -1,4 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<c:set var="path" value="${requestScope['javax.servlet.forward.servlet_path']}"/>
 <!-- Google Tag Manager (noscript) -->
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PJVBVKB"
                   height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
@@ -9,26 +10,28 @@
     <div><a href="https://korean.visitkorea.or.kr" target="_blank"><span>대한민국구석구석 바로가기</span></a></div>
 </nav>
 <header class="site-header">
-    <div><h1><a href="/html/"><span>여행가는 달</span></a></h1>
+    <div><h1><a href="${pageContext.request.contextPath}/index.do"><span>여행가는 달</span></a></h1>
         <p>
             <button type="button"><span>메뉴</span></button>
         </p>
         <nav>
             <ul data-id="main">
-                <li><a href="/html/travelmonth/intro.html">여행가는 달이란?</a>
+                <li>
+                    <a href="${pageContext.request.contextPath}/intro.do">여행가는 달이란?</a>
                     <div>
                         <ul>
-                            <li><a href="/html/travelmonth/intro.html">여행가는 달 소개</a></li>
-                            <li><a href="/html/travelmonth/organization.html">여행가는 달 참여기관</a></li>
+                            <li><a href="${pageContext.request.contextPath}/intro.do">여행가는 달 소개</a></li>
+                            <li><a href="${pageContext.request.contextPath}/organization.do">여행가는 달 참여기관</a></li>
                         </ul>
                     </div>
                 </li>
-                <li><a href="/html/benefits/local.html">여행혜택</a>
+                <li>
+                    <a href="${pageContext.request.contextPath}/benefits/local/gangwon.do">여행혜택</a>
                     <div>
                         <ul>
-                            <li><a href="/html/benefits/traffic.html">교통혜택</a></li>
-                            <li><a href="/html/benefits/stay.html">숙박혜택</a></li>
-                            <li><a href="/html/benefits/play.html">놀거리혜택</a></li>
+                            <li><a href="${pageContext.request.contextPath}/benefits/traffic.do">교통혜택</a></li>
+                            <li><a href="${pageContext.request.contextPath}/benefits/stay.do">숙박혜택</a></li>
+                            <li><a href="${pageContext.request.contextPath}/benefits/play.do">놀거리혜택</a></li>
                         </ul>
                     </div>
                 </li>

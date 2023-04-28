@@ -13,33 +13,37 @@ import java.util.stream.Collectors;
 
 @Slf4j
 @Component
-public class Sido {
+public class Local
+{
 
-	private final CommonService SERVICE;
-	private static CommonService STATIC_SERVICE;
+	private static CommonService SERVICE;
+	private final CommonService FINAL_SERVICE;
 
-	public Sido(CommonService SERVICE) { this.SERVICE = SERVICE; }
+
+	public Local(CommonService SERVICE) { this.FINAL_SERVICE = SERVICE; }
 
 	@PostConstruct
-	private void init() { STATIC_SERVICE = SERVICE; }
+	private void init() { SERVICE = FINAL_SERVICE; }
 
 	/**
 	 * GET LIST
 	 * @return
 	 */
-	public static Object getList() {
-		return STATIC_SERVICE.getSidoList();
+	public static Object getList()
+	{
+		return SERVICE.getLocalList();
 	}
 
 	/**
 	 * GET FILTERED LIST
 	 * @return
 	 */
-	public static Object getFilteredList() {
-		List<HashMap<String, String>>list = ((CommonResponse.List) STATIC_SERVICE.getSidoList()).getData().getList();
+	@SuppressWarnings("unchecked")
+	public static Object getFilteredList()
+	{
+		List<HashMap<String, String>>list = ((CommonResponse.List) SERVICE.getLocalList()).getData().getList();
 		List<HashMap<String, String>> filteredList = list.stream()
-				.filter(row -> !row.get("name_kr").matches("(서울|경기|인천)"))
-				.collect(Collectors.toList());
+				.filter(row -> !row.get("name_kr").matches("(서울|경기|인천)")).collect(Collectors.toList());
 		filteredList.add(0, new LinkedHashMap<String, String>(){{
 			put("code","01-04-09");
 			put("name_en","seoul-incheon-gyeonggi");

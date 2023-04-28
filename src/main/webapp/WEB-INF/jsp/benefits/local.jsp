@@ -8,27 +8,22 @@
 <body id="travelmonth-benefits-local">
     <%@ include file="../include/include-header.jspf" %>
     <div id="container">
-        <c:set var="area_name_en" value="${fn:replace(fn:toLowerCase(area.data.name_en), ',', '-')}"/>
+        <c:set var="local_name_en" value="${fn:replace(fn:toLowerCase(local.data.name_en), ',', '-')}"/>
         <div class="benefits">
             <div class="benefits__container">
                 <div class="benefits__menu benefits__menu--local">
                     <div><h2><span>여행가는 달의 다양한</span><strong>여행정보와 여행혜택을<br>확인해 보세요!</strong></h2>
-                        <nav>
-                            <ul>
-                                <li><strong>지역별</strong></li>
-                                <li><a href="#">프로그램별</a></li>
-                            </ul>
-                        </nav>
+                        <%@ include file="include/include-nav.jspf" %>
                         <div>
-                            <c:set var="sido" value="${sido:getFilteredList()}"/>
-                            <c:if test="${not empty sido}">
-                                <c:if test="${sido.result}">
-                                    <c:set var="list" value="${sido.data.list}"/>
+                            <c:set var="taglib" value="${local:getFilteredList()}"/>
+                            <c:if test="${not empty taglib}">
+                                <c:if test="${taglib.result}">
+                                    <c:set var="list" value="${taglib.data.list}"/>
                                     <p>
                                         <span>지역의 여행상품과 여행혜택을 확인하세요.</span>
                                         <select>
                                             <c:forEach var="row" items="${list}" varStatus="loop">
-                                                <option value="${fn:replace(fn:toLowerCase(row.name_en), ',', '-')}" <c:if test="${area_name_en eq row.name_en}">selected</c:if>>${row.name_kr}</option>
+                                                <option value="${fn:replace(fn:toLowerCase(row.name_en), ',', '-')}" <c:if test="${local_name_en eq row.name_en}">selected</c:if>>${row.name_kr}</option>
                                             </c:forEach>
                                         </select>
                                     </p>
@@ -36,14 +31,14 @@
                                         <c:forEach var="row" items="${list}" varStatus="loop">
                                             <li data-sido="${fn:replace(fn:toLowerCase(row.name_en), ',', '-')}">
                                                 <c:choose>
-                                                    <c:when test="${area_name_en eq fn:toLowerCase(row.name_en)}">
+                                                    <c:when test="${local_name_en eq fn:toLowerCase(row.name_en)}">
                                                         <strong>
                                                             <span>${row.name_kr}</span>
                                                         </strong>
                                                         <span></span>
                                                     </c:when>
                                                     <c:otherwise>
-                                                        <a href="/travelmonth/area/${row.name_en}.do">
+                                                        <a href="/travelmonth/benefits/local/${fn:toLowerCase(row.name_en)}.do">
                                                             <span>${row.name_kr}</span>
                                                         </a>
                                                         <span></span>
@@ -58,8 +53,8 @@
                     </div>
                 </div>
                 <div class="benefits__content">
-                    <c:set var="title" value="${fn:replace(area.data.name_detail_kr, ',', '/')}"/>
-                    <article class="benefits-local" data-local="${fn:replace(fn:toLowerCase(area.data.name_en), ',', '-')}">
+                    <c:set var="title" value="${fn:replace(local.data.name_detail_kr, ',', '/')}"/>
+                    <article class="benefits-local" data-local="${fn:replace(fn:toLowerCase(local.data.name_en), ',', '-')}">
                             <header>
                                 <h2>${title} 여행</h2>
                                 <p>지역별 다양한 여행혜택과 여행상품을 보다 빠르고 쉽게 만나보세요!</p>
