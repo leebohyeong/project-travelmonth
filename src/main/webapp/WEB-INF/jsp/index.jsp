@@ -169,15 +169,14 @@
             </aside>
             <section class="main__june">
                 <div>
-                    <header><h2><strong>준</strong>이 추천해 <strong>준</strong> 여행정보</h2>
-                        <p></p></header>
+                    <header><h2><strong>준</strong>이 추천해 <strong>준</strong> 여행정보</h2><p></p></header>
                     <div class="june-contents">
                         <div class="june-contents__information">
                             <c:if test="${not empty june}">
                                 <c:if test="${june.result}">
                                     <c:set var="list" value="${june.data.list}"/>
                                     <c:forEach var="row" items="${list}" varStatus="loop">
-                                        <c:if test="${row.jun_gb eq 'A'}">
+                                        <c:if test="${row.june_gb eq 'A'}">
                                             <iframe src="${row.link}">
                                                 <span class="screen_out">여행가는달 유튜브영상</span>
                                             </iframe>
@@ -219,7 +218,7 @@
                                 <c:if test="${june.result}">
                                     <c:set var="list" value="${june.data.list}"/>
                                     <c:forEach var="row" items="${list}" varStatus="loop">
-                                        <c:if test="${row.jun_gb eq 'G'}">
+                                        <c:if test="${row.june_gb eq 'G'}">
                                             <c:choose>
                                                 <c:when test="${not empty row.link}">
                                                     <a href="${row.link}" target="${row.link_target}">
