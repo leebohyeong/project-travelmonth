@@ -35,8 +35,8 @@
                         </ul>
                     </div>
                 </li>
-                <li><a href="/html/trend/list.html">여행트렌드관</a></li>
-                <li><a href="/html/special/list.html">여행상품 특별 기획전</a></li>
+                <li><a href="${pageContext.request.contextPath}/trend/list.do">여행트렌드관</a></li>
+                <li><a href="${pageContext.request.contextPath}/special/list.do">여행상품 특별 기획전</a></li>
                 <li><a href="${pageContext.request.contextPath}/event/list.do">이벤트</a></li>
             </ul>
         </nav>

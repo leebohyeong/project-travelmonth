@@ -1,5 +1,6 @@
 package kr.or.visitkorea.korean.event.web;
 
+import kr.or.visitkorea.korean.event.service.EventService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Controller;
@@ -13,6 +14,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 @RequestMapping("/event")
 public class EventController {
 
+	private final EventService SERVICE;
+
 	/**
 	 * 이벤트 페이지
 	 * @param model
@@ -23,7 +26,7 @@ public class EventController {
 	{
 		try
 		{
-
+			model.addAttribute("event", SERVICE.getList());
 		}
 		catch (Exception exception)
 		{
@@ -40,14 +43,6 @@ public class EventController {
 	@RequestMapping(value = "/june.do", method = RequestMethod.GET)
 	public String june(Model model)
 	{
-		try
-		{
-
-		}
-		catch (Exception exception)
-		{
-			log.error("June Page Exception : {}", exception.getMessage(), exception);
-		}
 		return "/event/june";
 	}
 

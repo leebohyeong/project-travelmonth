@@ -48,7 +48,7 @@
                                             <ul>
                                                 <c:forEach var="row" items="${list}" varStatus="loop">
                                                     <li>
-                                                        <a href="#" data-type="d" data-bs-toggle="modal" data-bs-target="#modal-benefits-1">
+                                                        <a href="#" data-type="d" data-bs-toggle="modal" data-bs-target="#modal-benefits-${row.seq}">
                                                             <span style="background-image: url('${row.image}')"></span>
                                                             <div>
                                                                 <p>
@@ -58,9 +58,9 @@
                                                                         <c:when test="${row.enjoy_gb eq 'E'}">이벤트</c:when>
                                                                     </c:choose>
                                                                 </p>
-                                                                <p>${row.title}</p>
+                                                                <p>${row.agency_name}</p>
                                                             </div>
-                                                            <p>산속등대 어뮤즈월드<br>이용요금 반값 할인</p>
+                                                            <p>${row.title}</p>
                                                         </a>
                                                     </li>
                                                 </c:forEach>
@@ -76,49 +76,114 @@
                                 <button type="button">MORE</button>
                             </p>
                         </section>
-                        <div class="modal fade modal-benefits" id="modal-benefits-1" data-type="d" tabindex="-1"
-                             data-bs-backdrop="static" aria-hidden="true">
-                            <div class="modal-dialog">
-                                <div class="modal-content">
-                                    <article>
-                                        <div style="background-image: url('https://cdn.visitkorea.or.kr/img/call?cmd=VIEW&amp;id=3f8fbd92-6b7e-46ba-9161-21bfd76e8e1b&amp;mode=progress')"></div>
-                                        <div><p>할인혜택</p>
-                                            <p>어뮤즈월드</p></div>
-                                        <h3>산속등대 어뮤즈월드 이용요금 반값 할인</h3>
-                                        <dl>
-                                            <div>
-                                                <dt>예약신청기간</dt>
-                                                <dd>
-                                                    <div>2023-05-10 ~ 2023-06-01</div>
-                                                    <div>일요일은 안 받음</div>
-                                                </dd>
+                        <c:if test="${not empty enjoy}">
+                            <c:if test="${enjoy.result}">
+                                <c:set var="list" value="${enjoy.data.list}"/>
+                                <c:if test="${not empty list}">
+                                    <c:forEach var="row" items="${list}" varStatus="loop">
+                                        <div class="modal fade modal-benefits" id="modal-benefits-${row.seq}" data-type="d" tabindex="-1" data-bs-backdrop="static" aria-hidden="true">
+                                            <div class="modal-dialog">
+                                                <div class="modal-content">
+                                                    <article>
+                                                        <div style="background-image: url('${row.image}')"></div>
+                                                        <div>
+                                                            <p>
+                                                                <c:choose>
+                                                                    <c:when test="${row.enjoy_gb eq 'D'}">할인혜택</c:when>
+                                                                    <c:when test="${row.enjoy_gb eq 'T'}">여행정보</c:when>
+                                                                    <c:when test="${row.enjoy_gb eq 'E'}">이벤트</c:when>
+                                                                </c:choose>
+                                                            </p>
+                                                            <p>${row.agency_name}</p>
+                                                        </div>
+                                                        <h3>${row.title}</h3>
+                                                        <dl>
+                                                            <c:choose>
+                                                                <c:when test="${row.enjoy_gb eq 'D'}">
+                                                                    <div>
+                                                                        <dt>예약접수기간</dt>
+                                                                        <dd>
+                                                                            <div>${row.from_date} ~ ${row.to_date}</div>
+                                                                        </dd>
+                                                                    </div>
+                                                                    <div>
+                                                                        <dt>할인적용기간</dt>
+                                                                        <dd>${row.discount_start_date} ~ ${row.discount_end_date}</dd>
+                                                                    </div>
+                                                                    <div>
+                                                                        <dt>혜택상세</dt>
+                                                                        <dd>${row.content}</dd>
+                                                                    </div>
+                                                                    <div>
+                                                                        <dt>혜택제공조건</dt>
+                                                                        <dd>${row.content_detail}</dd>
+                                                                    </div>
+                                                                    <div>
+                                                                        <dt>참고사항</dt>
+                                                                        <dd>${row.notes}</dd>
+                                                                    </div>
+                                                                </c:when>
+                                                                <c:when test="${row.enjoy_gb eq 'T'}">
+                                                                    <div>
+                                                                        <dt>진행기간</dt>
+                                                                        <dd>
+                                                                            <div>${row.from_date} ~ ${row.to_date}</div>
+                                                                        </dd>
+                                                                    </div>
+                                                                    <div>
+                                                                        <dt>장소</dt>
+                                                                        <dd>
+                                                                            <div>${row.content}</div>
+                                                                        </dd>
+                                                                    </div>
+                                                                    <div>
+                                                                        <dt>간략소개</dt>
+                                                                        <dd>
+                                                                            <div>${row.content_detail}</div>
+                                                                        </dd>
+                                                                    </div>
+                                                                </c:when>
+                                                                <c:when test="${row.enjoy_gb eq 'E'}">
+                                                                    <div>
+                                                                        <dt>진행기간</dt>
+                                                                        <dd>
+                                                                            <div>${row.from_date} ~ ${row.to_date}</div>
+                                                                        </dd>
+                                                                    </div>
+                                                                    <div>
+                                                                        <dt>소개내용</dt>
+                                                                        <dd>
+                                                                            <div>${row.content}</div>
+                                                                        </dd>
+                                                                    </div>
+                                                                    <div>
+                                                                        <dt>당첨인원</dt>
+                                                                        <dd>
+                                                                            <div>${row.content_detail}</div>
+                                                                        </dd>
+                                                                    </div>
+                                                                    <div>
+                                                                        <dt>참여방법</dt>
+                                                                        <dd>
+                                                                            <div>${row.notes}</div>
+                                                                        </dd>
+                                                                    </div>
+                                                                </c:when>
+                                                            </c:choose>
+                                                            <div>
+                                                                <dt>문의처</dt>
+                                                                <dd>${row.contact_information}</dd>
+                                                            </div>
+                                                        </dl>
+                                                        <p><a href="${row.link}" target="_blank"><span>자세히 보기</span></a></p></article>
+                                                    <button class="modal-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                </div>
                                             </div>
-                                            <div>
-                                                <dt>할인적용기간</dt>
-                                                <dd>2023-06-01 ~ 2023-06-30</dd>
-                                            </div>
-                                            <div>
-                                                <dt>혜택상세</dt>
-                                                <dd>어뮤즈월드 이용요금 50% 할인 어뮤즈월드 이용요금 50% 할인 어뮤즈월드 이용요금 50% 할인</dd>
-                                            </div>
-                                            <div>
-                                                <dt>혜택제공조건</dt>
-                                                <dd>어린이만 이용가능(8세 이상~19세 미만)</dd>
-                                            </div>
-                                            <div>
-                                                <dt>참고사항</dt>
-                                                <dd>동반하는 어른은 정가</dd>
-                                            </div>
-                                            <div>
-                                                <dt>문의처</dt>
-                                                <dd>063-245-2456</dd>
-                                            </div>
-                                        </dl>
-                                        <p><a href="#"><span>자세히 보기</span></a></p></article>
-                                    <button class="modal-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button>
-                                </div>
-                            </div>
-                        </div>
+                                        </div>
+                                    </c:forEach>
+                                </c:if>
+                            </c:if>
+                        </c:if>
                     </article>
                 </div>
             </div>
