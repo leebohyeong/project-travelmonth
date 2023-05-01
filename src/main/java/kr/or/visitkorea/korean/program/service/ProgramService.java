@@ -1,7 +1,5 @@
 package kr.or.visitkorea.korean.program.service;
 
-import org.json.simple.JSONObject;
-
 public interface ProgramService
 {
 
@@ -10,13 +8,13 @@ public interface ProgramService
 	 * @param request
 	 * @return
 	 */
-	Object getEnjoyList(JSONObject request);
+	Object getEnjoyList(Object request);
 
 	/**
 	 * GET TRAVEL LIST
 	 * @param request
 	 * @return
 	 */
-	Object getTravelList(JSONObject request);
+	Object getTravelList(Object request);
 
 }

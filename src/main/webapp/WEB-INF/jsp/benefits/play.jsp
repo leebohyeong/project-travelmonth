@@ -33,34 +33,45 @@
                         </header>
                         <nav>
                             <ul>
-                                <li><a class="benefits-program__item--current" href="#">전체</a></li>
-                                <li><a href="#">할인혜택</a></li>
-                                <li><a href="#">여행정보</a></li>
-                                <li><a href="#">이벤트</a></li>
+                                <li><a class="<c:if test='${empty search.search_play_gb}'>benefits-program__item--current</c:if>" href="?search_play_gb=">전체</a></li>
+                                <li><a class="<c:if test='${search.search_play_gb eq "D"}'>benefits-program__item--current</c:if>" href="?search_play_gb=D">할인혜택</a></li>
+                                <li><a class="<c:if test='${search.search_play_gb eq "T"}'>benefits-program__item--current</c:if>" href="?search_play_gb=T">여행정보</a></li>
+                                <li><a class="<c:if test='${search.search_play_gb eq "E"}'>benefits-program__item--current</c:if>" href="?search_play_gb=E">이벤트</a></li>
                             </ul>
                         </nav>
                         <section class="list-thumbnail list-thumbnail--benefits">
-                            <ul>
-                                <li><a href="#" data-type="d" data-bs-toggle="modal"
-                                       data-bs-target="#modal-benefits-1"><span
-                                        style="background-image: url('https://cdn.visitkorea.or.kr/img/call?cmd=VIEW&amp;id=3f8fbd92-6b7e-46ba-9161-21bfd76e8e1b&amp;mode=progress')"></span>
-                                    <div><p>할인혜택</p>
-                                        <p>어뮤즈월드</p></div>
-                                    <p>산속등대 어뮤즈월드<br>이용요금 반값 할인</p></a></li>
-                                <li><a href="#" data-type="t" data-bs-toggle="modal"
-                                       data-bs-target="#modal-benefits-2"><span
-                                        style="background-image: url('https://cdn.visitkorea.or.kr/img/call?cmd=VIEW&amp;id=de35655e-97a2-4a2d-8da0-812767f53fef&amp;mode=progress')"></span>
-                                    <div><p>여행정보</p>
-                                        <p>어뮤즈월드</p></div>
-                                    <p>고래바다여행선 타고, 호캉스 가자</p></a></li>
-                                <li><a href="#" data-type="e" data-bs-toggle="modal"
-                                       data-bs-target="#modal-benefits-3"><span
-                                        style="background-image: url('https://cdn.visitkorea.or.kr/img/call?cmd=VIEW&amp;id=f6c2cdb3-7c48-4ec1-b326-33e19002b0f1&amp;mode=progress')"></span>
-                                    <div><p>이벤트</p>
-                                        <p>어뮤즈월드</p></div>
-                                    <p>경북으로 떠나는 친환경 기차여행 이벤트</p></a></li>
-                            </ul>
-                            <div><p>등록된 내용이 없습니다.</p></div>
+                            <c:if test="${not empty enjoy}">
+                                <c:if test="${enjoy.result}">
+                                    <c:set var="list" value="${enjoy.data.list}"/>
+                                    <c:choose>
+                                        <c:when test="${not empty list}">
+                                            <ul>
+                                                <c:forEach var="row" items="${list}" varStatus="loop">
+                                                    <li>
+                                                        <a href="#" data-type="d" data-bs-toggle="modal" data-bs-target="#modal-benefits-1">
+                                                            <span style="background-image: url('${row.image}')"></span>
+                                                            <div>
+                                                                <p>
+                                                                    <c:choose>
+                                                                        <c:when test="${row.enjoy_gb eq 'D'}">할인혜택</c:when>
+                                                                        <c:when test="${row.enjoy_gb eq 'T'}">여행정보</c:when>
+                                                                        <c:when test="${row.enjoy_gb eq 'E'}">이벤트</c:when>
+                                                                    </c:choose>
+                                                                </p>
+                                                                <p>${row.title}</p>
+                                                            </div>
+                                                            <p>산속등대 어뮤즈월드<br>이용요금 반값 할인</p>
+                                                        </a>
+                                                    </li>
+                                                </c:forEach>
+                                            </ul>
+                                        </c:when>
+                                        <c:otherwise>
+                                            <div><p>등록된 내용이 없습니다.</p></div>
+                                        </c:otherwise>
+                                    </c:choose>
+                                </c:if>
+                            </c:if>
                             <p>
                                 <button type="button">MORE</button>
                             </p>
@@ -104,8 +115,7 @@
                                             </div>
                                         </dl>
                                         <p><a href="#"><span>자세히 보기</span></a></p></article>
-                                    <button class="modal-close" type="button" data-bs-dismiss="modal"
-                                            aria-label="Close"></button>
+                                    <button class="modal-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button>
                                 </div>
                             </div>
                         </div>

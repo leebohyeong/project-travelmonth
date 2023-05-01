@@ -1,7 +1,9 @@
 package kr.or.visitkorea.korean.benefits.web;
 
+import kr.or.visitkorea.korean.benefits.web.dto.PlayRequest;
 import kr.or.visitkorea.korean.global.common.service.CommonService;
 import kr.or.visitkorea.korean.global.common.web.CommonControllerWrapper;
+import kr.or.visitkorea.korean.global.util.Common;
 import kr.or.visitkorea.korean.program.service.ProgramService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -53,14 +55,6 @@ public class BenefitsController<T> extends CommonControllerWrapper
 	@RequestMapping(value = "/traffic.do", method = RequestMethod.GET)
 	public String traffic(Model model)
 	{
-		try
-		{
-
-		}
-		catch (Exception exception)
-		{
-
-		}
 		return "/benefits/traffic";
 	}
 
@@ -72,14 +66,6 @@ public class BenefitsController<T> extends CommonControllerWrapper
 	@RequestMapping(value = "/stay.do", method = RequestMethod.GET)
 	public String stay(Model model)
 	{
-		try
-		{
-
-		}
-		catch (Exception exception)
-		{
-
-		}
 		return "/benefits/stay";
 	}
 
@@ -89,15 +75,16 @@ public class BenefitsController<T> extends CommonControllerWrapper
 	 * @return
 	 */
 	@RequestMapping(value = "/play.do", method = RequestMethod.GET)
-	public String play(Model model)
+	public String play(PlayRequest.Search request, Model model)
 	{
 		try
 		{
-
+			model.addAttribute("search", searchParameter(request));
+			model.addAttribute("enjoy", PROGRAM_SERVICE.getEnjoyList(request));
 		}
 		catch (Exception exception)
 		{
-
+			log.error("Play Page Exception : {}", exception.getMessage(), exception);
 		}
 		return "/benefits/play";
 	}
