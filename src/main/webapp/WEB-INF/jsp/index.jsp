@@ -173,9 +173,9 @@
                         <p></p></header>
                     <div class="june-contents">
                         <div class="june-contents__information">
-                            <c:if test="${not empty jun}">
-                                <c:if test="${jun.result}">
-                                    <c:set var="list" value="${jun.data.list}"/>
+                            <c:if test="${not empty june}">
+                                <c:if test="${june.result}">
+                                    <c:set var="list" value="${june.data.list}"/>
                                     <c:forEach var="row" items="${list}" varStatus="loop">
                                         <c:if test="${row.jun_gb eq 'A'}">
                                             <iframe src="${row.link}">
@@ -191,9 +191,9 @@
                                     <a href="#">더보기</a>
                                 </div>
                                 <ul>
-                                    <c:if test="${not empty jun}">
-                                        <c:if test="${jun.result}">
-                                            <c:set var="list" value="${jun.data.list}"/>
+                                    <c:if test="${not empty june}">
+                                        <c:if test="${june.result}">
+                                            <c:set var="list" value="${june.data.list}"/>
                                             <c:forEach var="row" items="${list}" varStatus="loop">
                                                 <c:if test="${loop.index gt 0 && loop.index lt 6}">
                                                     <li>
@@ -215,9 +215,9 @@
                             </div>
                         </div>
                         <div class="june-contents__tourist">
-                            <c:if test="${not empty jun}">
-                                <c:if test="${jun.result}">
-                                    <c:set var="list" value="${jun.data.list}"/>
+                            <c:if test="${not empty june}">
+                                <c:if test="${june.result}">
+                                    <c:set var="list" value="${june.data.list}"/>
                                     <c:forEach var="row" items="${list}" varStatus="loop">
                                         <c:if test="${row.jun_gb eq 'G'}">
                                             <c:choose>
@@ -241,9 +241,9 @@
                                 </c:if>
                             </c:if>
                             <div class="june-contents__tourist-list">
-                                <c:if test="${not empty jun}">
-                                    <c:if test="${jun.result}">
-                                        <c:set var="list" value="${jun.data.list}"/>
+                                <c:if test="${not empty june}">
+                                    <c:if test="${june.result}">
+                                        <c:set var="list" value="${june.data.list}"/>
                                         <c:forEach var="row" items="${list}" varStatus="loop">
                                             <c:if test="${loop.index gt 6 && loop.index lt 11}">
                                                 <c:choose>

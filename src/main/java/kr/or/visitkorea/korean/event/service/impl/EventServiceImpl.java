@@ -19,6 +19,35 @@ public class EventServiceImpl extends CommonServiceImplWrapper implements EventS
 	private final ObjectMapper MAPPER;
 
 	/**
+	 * GET LIST
+	 *
+	 * @return
+	 */
+	@Override
+	public Object getList()
+	{
+		try
+		{
+			JSONObject jsonObject = RequestUrl.get(TRAVEL_MONTH_SITE_URL + "/event/list");
+			if (jsonObject != null)
+			{
+				boolean result = (boolean) jsonObject.get("result");
+				if (!result)
+				{
+					String message = String.valueOf(jsonObject.get("message"));
+					throw new RuntimeException(message);
+				}
+				return MAPPER.convertValue(jsonObject, CommonResponse.List.class);
+			}
+		}
+		catch (Exception exception)
+		{
+			log.error("Event List Exception : {}", exception.getMessage(), exception);
+		}
+		return null;
+	}
+
+	/**
 	 * GET MAIN LIST
 	 * @return
 	 */
@@ -43,6 +72,35 @@ public class EventServiceImpl extends CommonServiceImplWrapper implements EventS
 		catch (Exception exception)
 		{
 			log.error("Event Main List Exception : {}", exception.getMessage(), exception);
+		}
+		return null;
+	}
+
+	/**
+	 * GET MAIN LIST
+	 *
+	 * @return
+	 */
+	@Override
+	public Object getBannerList()
+	{
+		try
+		{
+			JSONObject jsonObject = RequestUrl.get(TRAVEL_MONTH_SITE_URL + "/event/list?search_banner_st=Y");
+			if (jsonObject != null)
+			{
+				boolean result = (boolean) jsonObject.get("result");
+				if (!result)
+				{
+					String message = String.valueOf(jsonObject.get("message"));
+					throw new RuntimeException(message);
+				}
+				return MAPPER.convertValue(jsonObject, CommonResponse.List.class);
+			}
+		}
+		catch (Exception exception)
+		{
+			log.error("Event Banner List Exception : {}", exception.getMessage(), exception);
 		}
 		return null;
 	}
