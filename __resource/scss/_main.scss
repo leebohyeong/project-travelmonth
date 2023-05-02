@@ -865,7 +865,7 @@
                 }
 
                 &-banner {
-                    a {
+                    a, strong {
                         display: block;
                         padding-top: percentage(math.div(123, 673));
                         background: {

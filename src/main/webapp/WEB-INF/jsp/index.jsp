@@ -228,9 +228,10 @@
                                                     </div>
                                                 </c:when>
                                                 <c:otherwise>
-                                                    <div class="june-contents__tourist-banner"
-                                                         style="background-image:url('${row.image}')">
-                                                        <p class="screen_out">${row.title}</p>
+                                                    <div class="june-contents__tourist-banner">
+                                                        <strong style="background-image:url('${row.image}')">
+                                                            <p class="screen_out">${row.title}</p>
+                                                        </strong>
                                                     </div>
                                                 </c:otherwise>
                                             </c:choose>
