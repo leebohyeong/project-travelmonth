@@ -15,7 +15,9 @@ block body
                     p Modal body text goes here.
     .main
         section.main__intro
-            div.intro-swiper
+            //iframe(src="https://www.youtube.com/embed/vwjE85JBIH4?controls=0&loop=1&playlist=vwjE85JBIH4&autoplay=1&mute=1&showinfo=0&rel=0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen)
+
+            div.intro-carousel
                 .swiper
                     .swiper-wrapper
                         .swiper-slide
@@ -24,11 +26,9 @@ block body
                                     source(srcset="/travelmonth/assets/images/main/img_main_bg.jpg" media="(min-width: 992px)")
                                     img(src="/travelmonth/assets/images/main/img_main_bg_m.jpg" alt="")
                         .swiper-slide
-                            a(href="#")
-                                //iframe(src="https://www.youtube.com/embed/vwjE85JBIH4?controls=0&loop=1&playlist=vwjE85JBIH4&autoplay=1&mute=1&showinfo=0&rel=0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen)
-                                picture
-                                    source(srcset="/travelmonth/assets/images/main/img_main_bg.jpg" media="(min-width: 992px)")
-                                    img(src="/travelmonth/assets/images/main/img_main_bg_m.jpg" alt="")
+                            picture
+                                source(srcset="/travelmonth/assets/images/main/img_main_bg.jpg" media="(min-width: 992px)")
+                                img(src="/travelmonth/assets/images/main/img_main_bg_m.jpg" alt="")
 
                     .swiper-navigation
                         .swiper-navigation-prev
@@ -115,7 +115,7 @@ block body
 
         section.main__trend
             h2 요즘 여행 트렌드는
-            div.trend-swiper
+            div.trend-carousel
                 .swiper
                     .swiper-wrapper
                         .swiper-slide
@@ -164,40 +164,37 @@ block body
                                     동반여행
 
                     .swiper-scrollbar
-        section.main__benefits
-            h2.screen_out 여행혜택
+        section.main__benefits.list-thumbnail.list-thumbnail--benefits-more
+            h3 설렘으로 꽉 찬 혜택 추가로 확인하기
             ul
-                li
-                    a(href="#")
-                        div
-                            p 교통혜택
-                            p.
-                                국내여행 준비중이라면 <br>
-                                교통혜택을 챙겨가세요!
-                li
-                    a(href="#")
-                        div
-                            p 숙박혜택
-                            p.
-                                여행의 완성은 잠자리! <br>
-                                역대급 숙박혜택을 확인하세요
-                li
-                    a(href="#")
-                        div
-                            p 놀거리혜택택
-                            p.
-                                놀거리혜택으로 <br>
-                                풍성한 여행을 만들어가세요!
-                li
-                    a(href="#")
-                        div
-                            p.
-                                여행상품 <br>
-                                특별 기획전
-                            p.
-                                여행가는 달 기간동안 <br>
-                                여행업계가 선보이는 <br>
-                                각종 혜택들을 만나보세요.
+                li(data-benefit="traffic")
+                    a(href="${pageContext.request.contextPath}/benefits/traffic.do")
+                        h4 교통혜택
+                        p 국내여행 준비중이라면<br>교통혜택을 챙겨가세요!
+
+                li(data-benefit="stay")
+                    a(href="${pageContext.request.contextPath}/benefits/traffic.do")
+                        h4 숙박혜택
+                        p.
+                            여행의 완성은 잠자리! <br>
+                            역대급 숙박혜택을 확인하세요
+
+                li(data-benefit="play")
+                    a(href="${pageContext.request.contextPath}/benefits/traffic.do")
+                        h4 놀거리혜택
+                        p.
+                            놀거리혜택으로 <br>
+                            풍성한 여행을 만들어가세요!
+
+                li(data-benefit="special")
+                    a(href="${pageContext.request.contextPath}/benefits/traffic.do")
+                        h4.
+                            여행상품 <br>
+                            특별 기획전
+                        p.
+                            여행가는 달 기간동안 <br>
+                            여행업계가 선보이는 <br>
+                            각종 혜택들을 만나보세요.
 
         aside.main__special
             div

@@ -1,31 +1,23 @@
 @use "sass:math";
 
+
 #travelmonth-main {
     .site-header {
-        background-color: transparent;
-        box-shadow: none;
-
         @include media-queries($form: xl) {
-            &.active {
-                background: #fff;
-                box-shadow: 0 1px 0 0 #d3d3d3;
-            }
-
-            &.on {
-                > div {
-                    border-radius: 0;
-                }
+            &--main-init {
+                background-color: transparent;
+                box-shadow: none;
 
                 nav::before {
                     left: 50%;
                     max-width: 1200px;
+                    margin-top: -5px;
                     transform: translateX(-50%);
                 }
             }
         }
     }
 }
-
 
 .main {
     @include media-queries($from: xl) {
@@ -95,7 +87,15 @@
     }
 
     &__intro {
-        .intro-swiper {
+
+        iframe {
+            width: 100%;
+            border: none;
+            aspect-ratio: 1920/905;
+            pointer-events: none;
+        }
+
+        .intro-carousel {
             max-width: 1920px;
             margin: 0 auto;
         }
@@ -103,20 +103,14 @@
         .swiper {
 
             &-slide {
+                > picture,
                 a {
                     overflow: hidden;
                     display: block;
                     aspect-ratio: 1920/905;
 
-                    @include media-queries($to: xl) {
-                        aspect-ratio: 483/377;
-                    }
-
-                    iframe {
-                        width: 100%;
-                        border: none;
-                        aspect-ratio: 1920/905;
-                        pointer-events: none;
+                    @include media-queries($to: 992px) {
+                        aspect-ratio: 720/563;
                     }
                 }
             }
@@ -440,7 +434,7 @@
             }
         }
 
-        .trend-swiper {
+        .trend-carousel {
             max-width: 1644px;
             margin: 50px auto 0;
             padding-left: 14px;
@@ -457,14 +451,36 @@
                     @for $i from 1 through 10 {
                         &:nth-child(#{$i}) {
                             a:hover {
-                                span::after {
+                                span::before {
+                                    opacity: 1;
                                     position: absolute;
                                     top: 0;
                                     left: 0;
                                     width: 100%;
                                     aspect-ratio: 142/180;
-                                    background: url(/travelmonth/assets/images/main/img_trend_on_#{$i}.png) no-repeat center/cover;
+                                    background-color: rgba(#37bf8a, .8);
+                                    border-radius: 71px;
                                     content: '';
+
+                                    @include media-queries($to: xl) {
+                                        aspect-ratio: 136/172;
+                                        border-radius: 40px;
+                                    }
+
+                                }
+
+                                span:after {
+                                    display: flex;
+                                    align-items: center;
+                                    justify-content: center;
+                                    position: relative;
+                                    height: 100%;
+                                    z-index: 10;
+                                    content: url("/travelmonth/assets/images/benefits/icon_benefits_trend_#{$i}.png");
+
+                                    @include media-queries($to: xl) {
+                                        scale: 0.5;
+                                    }
                                 }
                             }
                         }
@@ -562,12 +578,13 @@
 
         ul {
             display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            grid-gap: 9px;
+            grid-template-columns: repeat(3, 1fr);
+            grid-gap: 20px;
 
-            @include media-queries($from: xl) {
-                grid-template-columns: repeat(3, 1fr);
-                grid-gap: 20px;
+            @include media-queries($to: md) {
+                grid-template-columns: repeat(2, 1fr);
+                grid-gap: 9px;
+
             }
 
             li {
@@ -578,63 +595,74 @@
                     }
                 }
 
-                @for $i from 1 through 4 {
-                    &:nth-child(#{$i}) {
-                        a {
-                            background: {
-                                image: url('/travelmonth/assets/images/main/img_benefits_#{$i}.png');
-                                position: center;
-                                repeat: no-repeat;
-                                size: cover;
-                            };
-                        }
+                @each $benefit in 'traffic', 'stay', 'play', 'special' {
+                    [data-benefit="#{$benefit}"] {
+                        background: {
+                            image: url("/travelmonth/assets/images/benefits/bg_benefits_#{$benefit}.png");
+                            position: center;
+                            repeat: no-repeat;
+                            size: cover;
+                        };
                     }
                 }
+
+                //@for $i from 1 through 4 {
+                //    &:nth-child(#{$i}) {
+                //        a {
+                //            background: {
+                //                image: url("/travelmonth/assets/images/benefits/bg_benefits_#{$benefit}.png");
+                //                position: center;
+                //                repeat: no-repeat;
+                //                size: cover;
+                //            };
+                //        }
+                //    }
+                //}
             }
 
-            a {
-                display: flex;
-                align-items: flex-start;
-                justify-content: center;
-                position: relative;
-                aspect-ratio: 466/340;
-                border-radius: 30px;
-                color: #000;
-                text-align: center;
-
-                div {
-                    padding-top: 25px;
-
-                    @include media-queries($from: xl) {
-                        padding-top: 50px;
-                    }
-
-                    p {
-                        &:first-of-type {
-                            font: {
-                                family: "GmarketSans", sans-serif;
-                                weight: $font-weight-bold;
-                                size: 13px;
-                            }
-                            line-height: 1;
-
-                            @include media-queries($from: xl) {
-                                font-size: 34px;
-                            }
-                        }
-
-                        &:last-of-type {
-                            padding-top: 8px;
-                            font-size: 12px;
-
-                            @include media-queries($from: xl) {
-                                font-size: 22px;
-                                line-height: math.div(30, 22);
-                            }
-                        }
-                    }
-                }
-            }
+            //a {
+            //    display: flex;
+            //    align-items: flex-start;
+            //    justify-content: center;
+            //    position: relative;
+            //    aspect-ratio: 466/340;
+            //    border-radius: 30px;
+            //    color: #000;
+            //    text-align: center;
+            //
+            //    div {
+            //        padding-top: 25px;
+            //
+            //        @include media-queries($from: xl) {
+            //            padding-top: 50px;
+            //        }
+            //
+            //        p {
+            //            &:first-of-type {
+            //                font: {
+            //                    family: "GmarketSans", sans-serif;
+            //                    weight: $font-weight-bold;
+            //                    size: 13px;
+            //                }
+            //                line-height: 1;
+            //
+            //                @include media-queries($from: xl) {
+            //                    font-size: 34px;
+            //                }
+            //            }
+            //
+            //            &:last-of-type {
+            //                padding-top: 8px;
+            //                font-size: 12px;
+            //
+            //                @include media-queries($from: xl) {
+            //                    font-size: 22px;
+            //                    line-height: math.div(30, 22);
+            //                }
+            //            }
+            //        }
+            //    }
+            //}
 
         }
     }

@@ -4,22 +4,24 @@ import Swiper, {Autoplay, Pagination, Navigation, Scrollbar, FreeMode} from "swi
 
 const main = () => {
 
+    //main header
     (() => {
-        const siteHeader = findOne('#travelmonth-main .site-header');
-        siteHeader.classList.add('on');
+        const siteHeaderMain = findOne('#travelmonth-main .site-header');
+        const siteHeaderMainInit = 'site-header--main-init'
+
+        siteHeaderMain.classList.add(siteHeaderMainInit);
 
         document.addEventListener('scroll', function() {
             const currentScrollValue = document.documentElement.scrollTop;
 
-            if(currentScrollValue > 70) {
-                siteHeader.classList.add('active');
-                siteHeader.classList.remove('on');
+            if(currentScrollValue <= 0) {
+                siteHeaderMain.classList.add(siteHeaderMainInit);
             } else {
-                siteHeader.classList.remove('active');
-                siteHeader.classList.add('on');
+                siteHeaderMain.classList.remove(siteHeaderMainInit);
             }
         });
     })();
+
 
     //intro
     (() => {

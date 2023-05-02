@@ -10,7 +10,7 @@
     <div id="container">
         <div class="main">
             <section class="main__intro">
-                <div class="intro-swiper">
+                <div class="intro-carousel">
                     <div class="swiper">
                         <div class="swiper-wrapper">
                             <c:if test="${not empty showcase}">
@@ -103,7 +103,7 @@
                 </div>
             </section>
             <section class="main__trend"><h2>요즘 여행 트렌드는</h2>
-                <div class="trend-swiper">
+                <div class="trend-carousel">
                     <div class="swiper">
                         <div class="swiper-wrapper">
                             <div class="swiper-slide"><a href="#"><span></span>
