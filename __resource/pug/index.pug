@@ -165,7 +165,7 @@ block body
 
                     .swiper-scrollbar
         section.main__benefits.list-thumbnail.list-thumbnail--benefits-more
-            h3 설렘으로 꽉 찬 혜택 추가로 확인하기
+            h2 여행혜택
             ul
                 li(data-benefit="traffic")
                     a(href="${pageContext.request.contextPath}/benefits/traffic.do")
@@ -198,8 +198,8 @@ block body
 
         aside.main__special
             div
-                h2.screen_out 여행상품 특별 기획전
-                p.screen_out 여행가는 달 기간동안 여행업계가 선보이는 #[strong 각종 혜택들을 만나보세요.]
+                h2 여행상품 특별 기획전
+                p 여행가는 달 기간동안 여행업계가 선보이는 #[strong 각종 혜택들을 만나보세요.]
                 a(href="#") 기획전 바로가기
 
         section.main__june
@@ -211,7 +211,7 @@ block body
                     div.june-contents__information
                         //iframe(src="https://www.youtube.com/embed/vwjE85JBIH4")
                         iframe(src="")
-                            span.screen_out 여행가는달 유튜브영상
+                            span 여행가는달 유튜브영상
                         div
                             div
                                 p.
@@ -238,7 +238,7 @@ block body
                     div.june-contents__tourist
                         div.june-contents__tourist-banner
                             strong(style="background-image:url(/travelmonth/assets/images/main/img_june_banner.png)")
-                                p.screen_out.
+                                p.
                                     여행가는 달 광고 영상에서 <br>
                                     본 관광지는 어디일까요?
 
@@ -265,7 +265,7 @@ block body
                 header.main__header
                     h2 이벤트
                     a(href="#") 이벤트 바로가기
-                .event-swiper
+                .event-carousel
                     div.swiper
                         div.swiper-wrapper
                             div.swiper-slide
@@ -299,9 +299,9 @@ block body
                                 a(href="#" target="_blank" style="background-image:url(/travelmonth/assets/images/main/img_event_1.png)").
                                     #[p 부모님과 여.행.기 <br> SNS 인증샷 이벤트]
 
-                        .event-swiper__paging
-                            .event-swiper__paging-prev
-                            .event-swiper__paging-next
+                        .event-carousel__paging
+                            .event-carousel__paging-prev
+                            .event-carousel__paging-next
 
                         .swiper-scrollbar
 
@@ -359,13 +359,13 @@ block body
             div
                 //iframe(src="https://www.youtube.com/embed/vwjE85JBIH4")
                 iframe(src="")
-                    span.screen_out 여행으로[웃음을]재생하기
+                    span 여행으로[웃음을]재생하기
 
         section.main__instagram
             header.main__header
                 h2 INSTAGRAM
                 a(href="#") 여행가는 달 인스타그램 방문하기
-            .instagram-swiper
+            .instagram-carousel
                 div.swiper
                     div.swiper-wrapper
                         div.swiper-slide

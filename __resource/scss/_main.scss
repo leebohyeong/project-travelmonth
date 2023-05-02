@@ -576,6 +576,10 @@
             padding: 40px 14px;
         }
 
+        h2 {
+            @include visually-hidden;
+        }
+
         ul {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
@@ -605,70 +609,17 @@
                         };
                     }
                 }
-
-                //@for $i from 1 through 4 {
-                //    &:nth-child(#{$i}) {
-                //        a {
-                //            background: {
-                //                image: url("/travelmonth/assets/images/benefits/bg_benefits_#{$benefit}.png");
-                //                position: center;
-                //                repeat: no-repeat;
-                //                size: cover;
-                //            };
-                //        }
-                //    }
-                //}
             }
-
-            //a {
-            //    display: flex;
-            //    align-items: flex-start;
-            //    justify-content: center;
-            //    position: relative;
-            //    aspect-ratio: 466/340;
-            //    border-radius: 30px;
-            //    color: #000;
-            //    text-align: center;
-            //
-            //    div {
-            //        padding-top: 25px;
-            //
-            //        @include media-queries($from: xl) {
-            //            padding-top: 50px;
-            //        }
-            //
-            //        p {
-            //            &:first-of-type {
-            //                font: {
-            //                    family: "GmarketSans", sans-serif;
-            //                    weight: $font-weight-bold;
-            //                    size: 13px;
-            //                }
-            //                line-height: 1;
-            //
-            //                @include media-queries($from: xl) {
-            //                    font-size: 34px;
-            //                }
-            //            }
-            //
-            //            &:last-of-type {
-            //                padding-top: 8px;
-            //                font-size: 12px;
-            //
-            //                @include media-queries($from: xl) {
-            //                    font-size: 22px;
-            //                    line-height: math.div(30, 22);
-            //                }
-            //            }
-            //        }
-            //    }
-            //}
-
         }
     }
 
     &__special {
         display: none;
+
+        h2,
+        h2 + p {
+            @include visually-hidden;
+        }
 
         @include media-queries($from: xl) {
             display: block;
@@ -777,6 +728,10 @@
                     border: none;
                     border-radius: 32px;
                     aspect-ratio: 719/421;
+
+                    span {
+                        @include visually-hidden;
+                    }
 
                     @include media-queries($to: xxl) {
                         aspect-ratio: 16/9.95;
@@ -901,6 +856,10 @@
                             repeat: no-repeat;
                             size: cover;
                         };
+
+                        p {
+                            @include visually-hidden;
+                        }
                     }
                 }
 
@@ -914,6 +873,12 @@
                         display: block;
                         position: relative;
                         padding-top: percentage(math.div(279, 327));
+
+
+                        p {
+                            @include visually-hidden;
+                        }
+
                         @for $i from 1 through 4 {
                             &:nth-child(#{$i}) {
                                 //background: url('/travelmonth/assets/images/main/img_june_tourist_#{$i}.png');
@@ -929,8 +894,6 @@
                         margin-top: 15px;
                     }
                 }
-
-
 
                 &-text {
                     position: absolute;
@@ -963,7 +926,7 @@
             }
         }
 
-        .event-swiper {
+        .event-carousel {
             position: relative;
             margin-top: 24px;
             padding-left: 14px;
@@ -1169,6 +1132,10 @@
                 border: none;
                 aspect-ratio: 16/9;
 
+                span {
+                    @include visually-hidden;
+                }
+
                 @include media-queries($from: xl) {
                     max-width: 960px;
                 }
@@ -1277,7 +1244,7 @@
             padding: 120px 0 170px 0;
         }
 
-        .instagram-swiper {
+        .instagram-carousel {
             padding: 28px 0 0 14px;
 
             @include media-queries($from: xl) {
