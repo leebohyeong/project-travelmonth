@@ -12,17 +12,8 @@
             <div class="benefits__container">
                 <div class="benefits__menu benefits__menu--program">
                     <div><h2><span>여행가는 달의 다양한</span><strong>여행정보와 여행혜택을<br>확인해 보세요!</strong></h2>
-                        <%@ include file="include/include-nav.jspf" %>
-                        <div>
-                            <select>
-                                <option value="traffic">교통혜택</option>
-                                <option value="stay">숙박혜택</option>
-                                <option value="play" selected>놀거리혜택</option>
-                                <option value="trend">여행트랜드관</option>
-                                <option value="special">여행상품 특별 기획전</option>
-                            </select>
-                            <%@ include file="include/include-menu.jspf" %>
-                        </div>
+                        <%@ include file="../include/include-benefits-nav.jspf" %>
+                        <%@ include file="../include/include-benefits-menu.jspf" %>
                     </div>
                 </div>
                 <div class="benefits__content">
@@ -34,9 +25,9 @@
                         <nav>
                             <ul>
                                 <li><a class="<c:if test='${empty search.search_play_gb}'>benefits-program__item--current</c:if>" href="?search_play_gb=">전체</a></li>
-                                <li><a class="<c:if test='${search.search_play_gb eq "D"}'>benefits-program__item--current</c:if>" href="?search_play_gb=D">할인혜택</a></li>
-                                <li><a class="<c:if test='${search.search_play_gb eq "T"}'>benefits-program__item--current</c:if>" href="?search_play_gb=T">여행정보</a></li>
-                                <li><a class="<c:if test='${search.search_play_gb eq "E"}'>benefits-program__item--current</c:if>" href="?search_play_gb=E">이벤트</a></li>
+                                <li><a class="<c:if test='${fn:toUpperCase(search.search_play_gb) eq "D"}'>benefits-program__item--current</c:if>" href="?search_play_gb=d">할인혜택</a></li>
+                                <li><a class="<c:if test='${fn:toUpperCase(search.search_play_gb) eq "T"}'>benefits-program__item--current</c:if>" href="?search_play_gb=t">여행정보</a></li>
+                                <li><a class="<c:if test='${fn:toUpperCase(search.search_play_gb) eq "E"}'>benefits-program__item--current</c:if>" href="?search_play_gb=e">이벤트</a></li>
                             </ul>
                         </nav>
                         <section class="list-thumbnail list-thumbnail--benefits">
@@ -47,8 +38,12 @@
                                         <c:when test="${not empty list}">
                                             <ul>
                                                 <c:forEach var="row" items="${list}" varStatus="loop">
-                                                    <li>
-                                                        <a href="#" data-type="d" data-bs-toggle="modal" data-bs-target="#modal-benefits-${row.seq}">
+                                                    <c:set var="hidden_class" value=""/>
+                                                    <c:if test="${loop.count > 6}">
+                                                        <c:set var="hidden_class" value="class='list-thumbnail__item--hide'"/>
+                                                    </c:if>
+                                                    <li ${hidden_class}>
+                                                        <a href="#" data-type="${fn:toLowerCase(row.enjoy_gb)}" data-bs-toggle="modal" data-bs-target="#modal-benefits-${row.seq}">
                                                             <span style="background-image: url('${row.image}')"></span>
                                                             <div>
                                                                 <p>
@@ -72,9 +67,11 @@
                                     </c:choose>
                                 </c:if>
                             </c:if>
-                            <p>
-                                <button type="button">MORE</button>
-                            </p>
+                            <c:if test="${not empty enjoy}">
+                                <c:if test="${enjoy.result}">
+                                    <c:if test="${fn:length(enjoy.data.list) > 6}"><p><button type="button">MORE</button></p></c:if>
+                                </c:if>
+                            </c:if>
                         </section>
                         <c:if test="${not empty enjoy}">
                             <c:if test="${enjoy.result}">

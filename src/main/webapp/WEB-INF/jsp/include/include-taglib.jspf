@@ -2,4 +2,5 @@
 <%@ taglib prefix="local" uri="/WEB-INF/tlds/local.tld"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
+<%@ taglib prefix="common" uri="/WEB-INF/tlds/common.tld"%>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>

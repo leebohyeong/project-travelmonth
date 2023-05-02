@@ -1,0 +1,82 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<div>
+    <select>
+        <option value="traffic" data-url="${pageContext.request.contextPath}/benefits/traffic.do" <c:if test="${fn:contains(path, '/benefits/traffic.do')}">selected</c:if>>교통혜택</option>
+        <option value="stay" data-url="${pageContext.request.contextPath}/benefits/stay.do" <c:if test="${fn:contains(path, '/benefits/stay.do')}">selected</c:if>>숙박혜택</option>
+        <option value="play" data-url="${pageContext.request.contextPath}/benefits/play.do" <c:if test="${fn:contains(path, '/benefits/play.do')}">selected</c:if>>놀거리혜택</option>
+        <option value="trend" data-url="${pageContext.request.contextPath}/trend/list.do" <c:if test="${fn:contains(path, '/trend/list.do')}">selected</c:if>>여행트랜드관</option>
+        <option value="special" data-url="${pageContext.request.contextPath}/special/list.do" <c:if test="${fn:contains(path, '/special/list.do')}">selected</c:if>>여행상품 특별 기획전</option>
+    </select>
+    <ul>
+        <li>
+            <c:choose>
+                <c:when test="${fn:contains(path, '/benefits/traffic.do')}">
+                    <strong class="benefits__menu-link benefits__menu-link--traffic">
+                        <span>교통혜택</span>
+                    </strong>
+                </c:when>
+                <c:otherwise>
+                    <a class="benefits__menu-link benefits__menu-link--traffic" href="${pageContext.request.contextPath}/benefits/traffic.do">
+                        <span>교통혜택</span>
+                    </a>
+                </c:otherwise>
+            </c:choose>
+        </li>
+        <li>
+            <c:choose>
+                <c:when test="${fn:contains(path, '/benefits/stay.do')}">
+                    <strong class="benefits__menu-link benefits__menu-link--stay">
+                        <span>숙박혜택</span>
+                    </strong>
+                </c:when>
+                <c:otherwise>
+                    <a class="benefits__menu-link benefits__menu-link--stay" href="${pageContext.request.contextPath}/benefits/stay.do">
+                        <span>숙박혜택</span>
+                    </a>
+                </c:otherwise>
+            </c:choose>
+        </li>
+        <li>
+            <c:choose>
+                <c:when test="${fn:contains(path, '/benefits/play.do')}">
+                    <strong class="benefits__menu-link benefits__menu-link--play">
+                        <span>놀거리혜택</span>
+                    </strong>
+                </c:when>
+                <c:otherwise>
+                    <a class="benefits__menu-link benefits__menu-link--play" href="${pageContext.request.contextPath}/benefits/play.do">
+                        <span>놀거리혜택</span>
+                    </a>
+                </c:otherwise>
+            </c:choose>
+        </li>
+        <li>
+            <c:choose>
+                <c:when test="${fn:contains(path, '/trend/')}">
+                    <strong class="benefits__menu-link benefits__menu-link--play">
+                        <span>여행트랜드관</span>
+                    </strong>
+                </c:when>
+                <c:otherwise>
+                    <a class="benefits__menu-link benefits__menu-link--play" href="${pageContext.request.contextPath}/trend/list.do">
+                        <span>여행트랜드관</span>
+                    </a>
+                </c:otherwise>
+            </c:choose>
+        </li>
+        <li>
+            <c:choose>
+                <c:when test="${fn:contains(path, '/special/list.do')}">
+                    <strong class="benefits__menu-link benefits__menu-link--special">
+                        <span>여행상품 특별 기획전</span>
+                    </strong>
+                </c:when>
+                <c:otherwise>
+                    <a class="benefits__menu-link benefits__menu-link--special" href="${pageContext.request.contextPath}/special/list.do">
+                        <span>여행상품 특별 기획전</span>
+                    </a>
+                </c:otherwise>
+            </c:choose>
+        </li>
+    </ul>
+</div>
