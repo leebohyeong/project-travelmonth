@@ -114,7 +114,7 @@ const trendList = () => {
         })());
     })();
 
-    findOne('[data-bs-target="#modal-trend-content-1"]').click();
+    // findOne('[data-bs-target="#modal-trend-content-1"]').click();
 };
 
 export {

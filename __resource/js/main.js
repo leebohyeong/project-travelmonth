@@ -55,7 +55,7 @@ const main = () => {
         const category = findOne('.main__category');
         const tabMenus = find('.category-tab a', category);
         const tabPanels = find(`.category-panel`, category);
-        const loaction = findOne('.category-tab-contents__location', category);
+        const location = findOne('.category-tab-contents__location', category);
         const program = findOne('.category-tab-contents__program', category);
 
         const toggleTabPanels = (currentIndex) => {
@@ -81,7 +81,7 @@ const main = () => {
             })
         );
 
-        const categoryLoactionCarousel = new Swiper(findOne('.swiper', loaction),{
+        const categoryLocationCarousel = new Swiper(findOne('.swiper', location),{
             slidesPerView: 'auto',
             freeMode: {
                 enabled: true,
@@ -131,11 +131,15 @@ const main = () => {
             },
 
             breakpoints: {
-                //브라우저가 1200보다 클 때
+                768: {
+                    slidesPerView: 6.5,
+                },
+                992: {
+                    slidesPerView: 8.5,
+                },
                 1200: {
                     slidesPerView: 10,
                     spaceBetween: 20,
-                    // allowTouchMove: false,
                 },
             },
 

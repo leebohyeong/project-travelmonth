@@ -448,59 +448,6 @@
                 &-slide {
                     width: auto;
 
-                    @for $i from 1 through 10 {
-                        &:nth-child(#{$i}) {
-                            a:hover {
-                                span::before {
-                                    opacity: 1;
-                                    position: absolute;
-                                    top: 0;
-                                    left: 0;
-                                    width: 100%;
-                                    aspect-ratio: 142/180;
-                                    background-color: rgba(#37bf8a, .8);
-                                    border-radius: 71px;
-                                    content: '';
-
-                                    @include media-queries($to: xl) {
-                                        aspect-ratio: 136/172;
-                                        border-radius: 40px;
-                                    }
-
-                                }
-
-                                span:after {
-                                    display: flex;
-                                    align-items: center;
-                                    justify-content: center;
-                                    position: relative;
-                                    height: 100%;
-                                    z-index: 10;
-                                    content: url("/travelmonth/assets/images/benefits/icon_benefits_trend_#{$i}.png");
-
-                                    @include media-queries($to: xl) {
-                                        scale: 0.5;
-                                    }
-                                }
-                            }
-                        }
-                    }
-
-                    @for $i from 1 through 10 {
-                        &:nth-child(#{$i}) {
-                            a {
-                                span {
-                                    background: {
-                                        image: url(/travelmonth/assets/images/main/img_trend_#{$i}.png);
-                                        position: center;
-                                        repeat: no-repeat;
-                                        size: cover;
-                                    }
-                                }
-                            }
-                        }
-                    }
-
                     &:nth-of-type(2n) {
                         padding-top: 20px;
 
@@ -509,17 +456,54 @@
                         }
                     }
 
-
                     a {
                         display: block;
                         position: relative;
 
+                        &::before,
+                        &::after {
+                            display: block;
+                            width: 100%;
+                            aspect-ratio: 142/180;
+                            background: {
+                                position: center;
+                                repeat: no-repeat;
+                            }
+                            content: "";
+                        }
+
+                        &::before {
+                            background-size: 100% auto;
+                        }
+
+                        &::after {
+                            position: absolute;
+                            top: 0;
+                            left: 0;
+                            opacity: 0;
+                            transition: .15s;
+                        }
+
+                        &:hover::after {
+                            opacity: 1;
+                        }
                     }
 
-                    span {
-                        overflow: hidden;
-                        display: block;
-                        aspect-ratio: 142/180;
+                    @each $code, $width in ('a', 64), ('b', 56), ('c', 56), ('d', 64), ('e', 53), ('f', 46), ('g', 40), ('h', 59), ('i', 69), ('j', 61) {
+                        [data-theme="#{$code}"] {
+                            &::before {
+                                background-image: url(/travelmonth/assets/images/main/img_trend_#{$code}.png);
+                            }
+
+                            &::after {
+                                background-image: url(/travelmonth/assets/images/trend/icon_theme_#{$code}_white.png), url(/travelmonth/assets/images/main/bg_trend.png);
+                                background-size: #{ceil($width * 0.65)}px auto, 100% auto;
+
+                                @include media-queries($from: xl) {
+                                    background-size: auto auto, 100% auto;
+                                }
+                            }
+                        }
                     }
 
                     p {
@@ -539,9 +523,7 @@
                     }
                 }
 
-
                 @include media-queries($to: 1640px) {
-
                     &-wrapper {
                         padding-bottom: 36px;
                     }
@@ -552,7 +534,6 @@
                         background: #dfdfdf;
                     }
                 }
-
 
                 .swiper-scrollbar-drag {
                     position: relative;
