@@ -865,12 +865,15 @@
                 }
 
                 &-banner {
-                    padding-top: percentage(math.div(123, 673));
-                    background: {
-                        position: center;
-                        repeat: no-repeat;
-                        size: cover;
-                    };
+                    a {
+                        display: block;
+                        padding-top: percentage(math.div(123, 673));
+                        background: {
+                            position: center;
+                            repeat: no-repeat;
+                            size: cover;
+                        };
+                    }
                 }
 
                 &-list {
@@ -879,25 +882,27 @@
                     grid-gap: 16px;
                     margin-top: 18px;
 
+                    a, strong {
+                        display: block;
+                        position: relative;
+                        padding-top: percentage(math.div(279, 327));
+                        @for $i from 1 through 4 {
+                            &:nth-child(#{$i}) {
+                                //background: url('/travelmonth/assets/images/main/img_june_tourist_#{$i}.png');
+                                background-repeat: no-repeat;
+                                background-position: center top;
+                                background-size: 100% auto;
+                            }
+                        }
+                    }
+
                     @include media-queries($to: xl) {
                         grid-gap: 10px;
                         margin-top: 15px;
                     }
                 }
 
-                a, strong {
-                    display: block;
-                    position: relative;
-                    padding-top: percentage(math.div(279, 327));
-                    @for $i from 1 through 4 {
-                        &:nth-child(#{$i}) {
-                            //background: url('/travelmonth/assets/images/main/img_june_tourist_#{$i}.png');
-                            background-repeat: no-repeat;
-                            background-position: center top;
-                            background-size: 100% auto;
-                        }
-                    }
-                }
+
 
                 &-text {
                     position: absolute;
