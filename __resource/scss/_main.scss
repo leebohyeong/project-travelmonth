@@ -1,20 +1,16 @@
 @use "sass:math";
 
 
-#travelmonth-main {
-    .site-header {
-        @include media-queries($form: xl) {
-            &--main-init {
-                background-color: transparent;
-                box-shadow: none;
+.site-header--main-init {
+    @include media-queries($form: xl) {
+        background-color: transparent;
+        box-shadow: none;
 
-                nav::before {
-                    left: 50%;
-                    max-width: 1200px;
-                    margin-top: -5px;
-                    transform: translateX(-50%);
-                }
-            }
+        nav::before {
+            left: 50%;
+            max-width: 1200px;
+            margin-top: -5px;
+            transform: translateX(-50%);
         }
     }
 }
@@ -436,7 +432,7 @@
                     vertical-align: middle;
                     margin-left: 9px;
                     line-height: 1;
-                    content: url(/travelmonth/assets/images/main/icon_trend.png);
+                    content: url("/travelmonth/assets/images/main/icon_trend.png");
 
                     @include media-queries($to: xl) {
                         margin-left: -4px;
@@ -455,7 +451,6 @@
                 }
             }
         }
-
 
 
         .trend-carousel {
@@ -516,11 +511,11 @@
                     @each $code, $width in ('a', 64), ('b', 56), ('c', 56), ('d', 64), ('e', 53), ('f', 46), ('g', 40), ('h', 59), ('i', 69), ('j', 61) {
                         [data-theme="#{$code}"] {
                             &::before {
-                                background-image: url(/travelmonth/assets/images/main/img_trend_#{$code}.png);
+                                background-image: url("/travelmonth/assets/images/main/img_trend_#{$code}.png");
                             }
 
                             &::after {
-                                background-image: url(/travelmonth/assets/images/trend/icon_theme_#{$code}_white.png), url(/travelmonth/assets/images/main/bg_trend.png);
+                                background-image: url("/travelmonth/assets/images/trend/icon_theme_#{$code}_white.png"), url("/travelmonth/assets/images/main/bg_trend.png");
                                 background-size: #{ceil($width * 0.65)}px auto, 100% auto;
 
                                 @include media-queries($from: xl) {
@@ -829,7 +824,7 @@
 
                         }
 
-                        a,strong {
+                        a, strong {
                             display: flex;
                             align-items: flex-start;
                             color: #000;

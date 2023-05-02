@@ -1,32 +1,25 @@
-import {find, findOne, on} from "./helper";
+import {find, findOne, getOffset, on} from "./helper";
 
 import Swiper, {Autoplay, Pagination, Navigation, Scrollbar, FreeMode} from "swiper";
 
 const main = () => {
-
     //main header
     (() => {
-        const siteHeaderMain = findOne('#travelmonth-main .site-header');
-        const siteHeaderMainInit = 'site-header--main-init'
+        const quickVisitkorea = findOne('.quick-visitkorea');
+        const header = findOne('.site-header');
+        const headerInitClassName = 'site-header--main-init';
+        const scrollHeader = () => header.classList[window.scrollY < quickVisitkorea.clientHeight ? 'add' : 'remove'](headerInitClassName);
 
-        siteHeaderMain.classList.add(siteHeaderMainInit);
+        scrollHeader();
 
-        document.addEventListener('scroll', function() {
-            const currentScrollValue = document.documentElement.scrollTop;
-
-            if(currentScrollValue <= 0) {
-                siteHeaderMain.classList.add(siteHeaderMainInit);
-            } else {
-                siteHeaderMain.classList.remove(siteHeaderMainInit);
-            }
-        });
+        window.addEventListener('scroll', scrollHeader);
     })();
 
 
     //intro
     (() => {
         const intro = findOne('.main__intro');
-        const introCarousel = new Swiper(findOne('.swiper', intro),{
+        const introCarousel = new Swiper(findOne('.swiper', intro), {
             loop: true,
             slidesPerView: "auto",
 
@@ -81,7 +74,7 @@ const main = () => {
             })
         );
 
-        const categoryLocationCarousel = new Swiper(findOne('.swiper', location),{
+        const categoryLocationCarousel = new Swiper(findOne('.swiper', location), {
             slidesPerView: 'auto',
             freeMode: {
                 enabled: true,
@@ -97,7 +90,7 @@ const main = () => {
             modules: [FreeMode],
         });
 
-        const categoryProgramCarousel = new Swiper(findOne('.swiper', program),{
+        const categoryProgramCarousel = new Swiper(findOne('.swiper', program), {
             slidesPerView: 5,
             freeMode: {
                 enabled: true,
@@ -118,7 +111,7 @@ const main = () => {
     //트렌드
     (() => {
         const trend = findOne('.main__trend');
-        const trendCarousel = new Swiper(findOne('.swiper', trend),{
+        const trendCarousel = new Swiper(findOne('.swiper', trend), {
             spaceBetween: 10,
             slidesPerView: 4.5,
 
@@ -150,7 +143,7 @@ const main = () => {
     //이벤트
     (() => {
         const event = findOne('.main__event');
-        const eventCarousel = new Swiper(findOne('.swiper', event),{
+        const eventCarousel = new Swiper(findOne('.swiper', event), {
             spaceBetween: 10,
             slidesPerView: 2.5,
 
@@ -183,7 +176,7 @@ const main = () => {
         const instagram = findOne('.main__instagram');
         const removeClass = findOne('.swiper');
 
-        const instagramCarousel = new Swiper(findOne('.swiper', instagram),{
+        const instagramCarousel = new Swiper(findOne('.swiper', instagram), {
             slidesPerView: 3.5,
             spaceBetween: 6,
 

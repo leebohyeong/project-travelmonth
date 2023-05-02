@@ -27,7 +27,7 @@ div(class=`benefits__menu benefits__menu--${isBenefitsLocal ? 'local' : 'program
                 ul
                     each item in sidoList.filter(item => !['전국', '서울', '인천', '경기'].includes(item.name))
                         li(data-sido=item.nameEn.toLowerCase())
-                            if item.name === '강원'
+                            if item.name === '대전'
                                 strong
                                     span= item.name
                             else
