@@ -44,7 +44,8 @@ public class ProgramServiceImpl extends CommonServiceImplWrapper implements Prog
 						JSONObject data = (JSONObject) jsonObject.get("data");
 						parameter = "?search_area=" + String.valueOf(data.get("code")).replaceAll(",", "-");
 					}
-				} else {
+				} else
+				{
 					parameter = Common.getUrlQueryString(request);
 				}
 			}
@@ -89,7 +90,8 @@ public class ProgramServiceImpl extends CommonServiceImplWrapper implements Prog
 						JSONObject data = (JSONObject) jsonObject.get("data");
 						parameter = "?search_area=" + String.valueOf(data.get("code")).replaceAll(",", "-");
 					}
-				} else {
+				} else
+				{
 					parameter = Common.getUrlQueryString(request);
 				}
 			}
