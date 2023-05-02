@@ -419,20 +419,44 @@
         max-width: 1920px;
         margin: 0 auto;
 
-        h2 {
-            font: {
-                family: "GmarketSans", sans-serif;
-                weight: $font-weight-bold;
-                size: 21px;
-            }
+        header {
             text-align: center;
+
+            h2 {
+                display: inline-block;
+                position: relative;
+                font: {
+                    family: "GmarketSans", sans-serif;
+                    weight: $font-weight-bold;
+                    size: 21px;
+                }
+
+                &::after {
+                    display: inline-block;
+                    vertical-align: middle;
+                    margin-left: 9px;
+                    line-height: 1;
+                    content: url(/travelmonth/assets/images/main/icon_trend.png);
+
+                    @include media-queries($to: xl) {
+                        margin-left: -4px;
+                        scale: .5;
+                    }
+                }
+
+                strong {
+                    color: #37bf8a;
+                }
+            }
+
+            @include media-queries($from: xl) {
+                h2 {
+                    font-size: 42px;
+                }
+            }
         }
 
-        @include media-queries($from: xl) {
-            h2 {
-                font-size: 42px;
-            }
-        }
+
 
         .trend-carousel {
             max-width: 1644px;
@@ -659,8 +683,12 @@
 
         header {
             position: relative;
-            padding-top: 46px;
+            padding-top: 24px;
             text-align: center;
+
+            @include media-queries($from: xl) {
+                padding-top: 46px;
+            }
 
             h2 {
                 color: #000;
@@ -687,6 +715,12 @@
                 width: 89px;
                 height: 46px;
                 background: url(/travelmonth/assets/images/main/img_june.png) no-repeat center;
+
+                @include media-queries($to: xl) {
+                    width: 45px;
+                    height: 19px;
+                    background-size: contain;
+                }
             }
         }
 
@@ -771,9 +805,10 @@
                             @include media-queries($from: xl) {
                                 margin-top: 5px;
                                 padding-right: 30px;
+                                background-size: auto 22px;
+                                background-position: right 1px top 5px;
                                 font-size: 18px;
                                 line-height: math.div(32, 18);
-                                background-size: auto 22px;
                             }
                         }
                     }
@@ -1130,6 +1165,7 @@
             flex-direction: column;
             justify-content: center;
             align-items: center;
+            position: relative;
             background-color: #4bc595;
             color: #fff;
             text-align: center;
@@ -1138,6 +1174,14 @@
                 align-items: flex-start;
                 padding-left: 95px;
                 text-align: left;
+
+                &::after {
+                    position: absolute;
+                    right: 106px;
+                    bottom: -61px;
+                    content: url(/travelmonth/assets/images/main/icon_travel.png);
+                    z-index: 1;
+                }
             }
 
             @include media-queries($to: xl) {

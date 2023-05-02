@@ -102,7 +102,9 @@
                 </div>
             </div>
         </section>
-        <section class="main__trend"><h2>요즘 여행 트렌드는</h2>
+        <section class="main__trend">
+            <h2>요즘 <strong>여행 트렌드</strong>는
+            </h2>
             <div class="trend-carousel">
                 <div class="swiper">
                     <div class="swiper-wrapper">
