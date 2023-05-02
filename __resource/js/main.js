@@ -155,8 +155,8 @@ const main = () => {
             },
 
             navigation: {
-                prevEl: findOne('.event-swiper__paging-prev', event),
-                nextEl: findOne('.event-swiper__paging-next', event),
+                prevEl: findOne('.event-carousel__paging-prev', event),
+                nextEl: findOne('.event-carousel__paging-next', event),
             },
 
             scrollbar: {
