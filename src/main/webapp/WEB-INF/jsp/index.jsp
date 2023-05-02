@@ -221,17 +221,17 @@
                                         <c:if test="${row.june_gb eq 'G'}">
                                             <c:choose>
                                                 <c:when test="${not empty row.link}">
-                                                    <a href="${row.link}" target="${row.link_target}">
-                                                        <div class="june-contents__tourist-banner"
-                                                             style="background-image:url('${row.image}')">
+                                                    <div class="june-contents__tourist-banner">
+                                                        <a href="${row.link}" target="${row.link_target}" style="background-image:url('${row.image}')">
                                                             <p class="screen_out">${row.title}</p>
-                                                        </div>
-                                                    </a>
+                                                        </a>
+                                                    </div>
                                                 </c:when>
                                                 <c:otherwise>
-                                                    <div class="june-contents__tourist-banner"
-                                                         style="background-image:url('${row.image}')">
-                                                        <p class="screen_out">${row.title}</p>
+                                                    <div class="june-contents__tourist-banner">
+                                                        <strong style="background-image:url('${row.image}')">
+                                                            <p class="screen_out">${row.title}</p>
+                                                        </strong>
                                                     </div>
                                                 </c:otherwise>
                                             </c:choose>
