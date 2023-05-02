@@ -373,7 +373,11 @@
 }
 
 .modal-trend-contents {
-    --modal-trend-contents-padding-horizon: 90px;
+    --modal-trend-contents-padding-horizon: 36px;
+
+    @include media-queries($from: xl) {
+        --modal-trend-contents-padding-horizon: 90px;
+    }
 
     .modal-dialog {
         width: min(100% - 26px, 1120px);
@@ -382,17 +386,22 @@
     &__theme {
         display: flex;
         align-items: center;
-        padding: 28px 50px 20px;
+        padding: 14px 20px 10px;
         font-weight: 500;
-        font-size: 30px;
+        font-size: 16px;
         font-family: "GmarketSans", sans-serif;
         letter-spacing: -0.02em;
 
+        @include media-queries($from: xl) {
+            padding: 28px 50px 20px;
+            font-size: 30px;
+        }
+
         &::before {
             display: block;
-            width: 64px;
-            height: 64px;
-            margin-right: 24px;
+            width: 32px;
+            height: 32px;
+            margin-right: 12px;
             border-radius: 100%;
             background: {
                 color: #37bf8a;
@@ -400,14 +409,33 @@
                 position: center;
             };
             content: "";
+
+            @include media-queries($from: xl) {
+                width: 64px;
+                height: 64px;
+                margin-right: 24px;
+            }
+        }
+    }
+
+    @each $code, $width in ('a', 64), ('b', 56), ('c', 56), ('d', 64), ('e', 53), ('f', 46), ('g', 40), ('h', 59), ('i', 69), ('j', 61) {
+        &[data-theme="#{$code}"] &__theme {
+            &::before {
+                background-image: url("/travelmonth/assets/images/trend/icon_theme_#{$code}_white.png");
+                background-size: #{floor(math.div($width, 2) * math.div(42, 61))}px auto;
+
+                @include media-queries($from: xl) {
+                    background-size: #{floor($width * math.div(42, 61))}px auto;
+                }
+            }
         }
     }
 
     &__title {
         display: flex;
         align-items: flex-end;
-        height: 300px;
-        padding: 36px var(--modal-trend-contents-padding-horizon);
+        aspect-ratio: 1120 / 300;
+        padding: 16px var(--modal-trend-contents-padding-horizon);
         background: {
             repeat: no-repeat;
             position: center;
@@ -415,17 +443,26 @@
         };
         color: #fff;
         font-weight: 500;
-        font-size: 40px;
+        font-size: 20px;
         font-family: "GmarketSans", sans-serif;
         line-height: math.div(50, 40);
         letter-spacing: -0.05em;
+
+        @include media-queries($from: xl) {
+            padding: 36px var(--modal-trend-contents-padding-horizon);
+            font-size: 40px;
+        }
     }
 
     &__tab {
         display: flex;
         align-items: center;
         flex-wrap: wrap;
-        padding: 26px var(--modal-trend-contents-padding-horizon) 0;
+        padding: 16px var(--modal-trend-contents-padding-horizon) 0;
+
+        @include media-queries($from: xl) {
+            padding: 26px var(--modal-trend-contents-padding-horizon) 0;
+        }
 
         li {
             padding: 6px 6px 0 0;
@@ -434,13 +471,20 @@
 
     &__tab-item {
         display: block;
-        padding: 0 24px;
-        border-radius: 28px;
+        padding: 0 20px;
+        border-radius: 16px;
         border: 1px solid #b8b8b8;
         color: #b3b3b3;
-        font-size: 24px;
-        line-height: 54px;
+        font-size: 14px;
+        line-height: 30px;
         white-space: nowrap;
+
+        @include media-queries($from: xl) {
+            padding: 0 24px;
+            border-radius: 28px;
+            font-size: 24px;
+            line-height: 54px;
+        }
 
         &--active {
             border-color: #37bf8a;
@@ -451,7 +495,11 @@
 
     &__panel {
         display: none;
-        padding: 40px var(--modal-trend-contents-padding-horizon);
+        padding: 28px var(--modal-trend-contents-padding-horizon);
+
+        @include media-queries($from: xl) {
+            padding: 40px var(--modal-trend-contents-padding-horizon);
+        }
 
         &--active {
             display: block;
@@ -461,20 +509,32 @@
     &__panel-title {
         color: #3d3d3d;
         font-weight: 500;
-        font-size: 26px;
+        font-size: 16px;
         font-family: "GmarketSans", sans-serif;
         line-height: math.div(28, 26);
         letter-spacing: -0.05em;
+
+        @include media-queries($from: xl) {
+            font-size: 26px;
+        }
     }
 
     &__panel-contents {
         color: #303030;
         font-weight: $font-weight-light;
-        font-size: 22px;
+        font-size: 14px;
         line-height: math.div(28, 22);
 
+        @include media-queries($from: xl) {
+            font-size: 22px;
+        }
+
         p {
-            padding-top: 16px;
+            padding-top: 8px;
+
+            @include media-queries($from: xl) {
+                padding-top: 16px;
+            }
         }
 
         img {
@@ -488,7 +548,11 @@
         border-radius: 12px;
         background: #eee;
         font-weight: $font-weight-medium;
-        font-size: 20px;
+        font-size: 12px;
+
+        @include media-queries($from: xl) {
+            font-size: 20px;
+        }
 
         > div {
             display: flex;
