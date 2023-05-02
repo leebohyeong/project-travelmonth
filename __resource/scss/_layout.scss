@@ -772,6 +772,40 @@ body {
             }
         }
     }
+
+    &--events {
+        max-width: (386px * 3) + (20px * 2);
+        padding-top: 0;
+
+        a {
+            p {
+                color: #000;
+                line-height: math.div(24, 20);
+                letter-spacing: -0.03em;
+
+                &:nth-of-type(1) {
+                    font-weight: $font-weight-medium;
+                    font-size: 14px;
+
+                    @include media-queries($from: xl) {
+                        font-size: 22px;
+                        @include line-clamp(30px, 3);
+                    }
+                }
+
+                &:nth-of-type(2) {
+                    padding-top: 8px;
+                    font-weight: $font-weight-light;
+                    font-size: 10px;
+
+                    @include media-queries($from: xl) {
+                        padding-top: 12px;
+                        font-size: 18px;
+                    }
+                }
+            }
+        }
+    }
 }
 
 .list-programs {

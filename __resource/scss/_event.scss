@@ -1,7 +1,12 @@
 @use "sass:math";
 
-.event-june {
+.event-list {
+    > div {
+        padding: var(--site-content-padding);
+    }
+}
 
+.event-june {
     section {
         position: relative;
         max-width: 1920px;

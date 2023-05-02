@@ -1020,6 +1020,8 @@
     }
 
     header + nav {
+        max-width: ((374px * 3) + (20px * 2));
+        margin: 0 auto;
         padding-top: 40px;
 
         @include media-queries($from: xl) {

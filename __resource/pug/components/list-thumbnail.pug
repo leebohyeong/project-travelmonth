@@ -17,3 +17,12 @@ mixin list-thumbnail-contents(list)
                 a(href=`#modal-trend-content-${index + 1}` data-bs-toggle="modal" data-bs-target=`#modal-trend-content-${index + 1}`)
                     span(style=`background-image: url('/travelmonth/assets/images/@temp/${item.thumbnail}')`)
                     p!= item.title
+
+mixin list-thumbnail-events(list)
+    ul
+        each item, index in list
+            li(class=`${index > 5 ? 'list-thumbnail__item--hide' : ''}`)
+                a(href='#')
+                    span(style=`background-image: url('/travelmonth/assets/images/@temp/${item.thumbnail}')`)
+                    p!= item.title
+                    p!= item.period

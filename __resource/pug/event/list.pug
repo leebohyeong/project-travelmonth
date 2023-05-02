@@ -1,8 +1,22 @@
 extends ../components/layout
 
+include ../components/list-thumbnail
+
 append variables
     - const bodyId = 'event-list';
 
 block body
-
+    article.event-list
+        header
+        aside
+        div
+            nav
+                ul
+                    li
+                        a(href="") 진행 중 이벤트
+                    li
+                        a(href="") 종료 이벤트 및 당첨자 발표
+            section.list-thumbnail.list-thumbnail--events
+                - const listThumbnailEvents = JSON.parse('[' + JSON.stringify(listThumbnail.events).replace(/^\[/, '').replace(/]$/, ',').repeat(4).replace(/,$/, '') + ']').sort(() => Math.random() - 0.5);
+                +list-thumbnail-events(listThumbnailEvents)
 
