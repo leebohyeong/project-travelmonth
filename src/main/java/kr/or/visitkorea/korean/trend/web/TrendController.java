@@ -47,7 +47,7 @@ public class TrendController extends CommonControllerWrapper
 			request.setSearch_trend_gb(trend);
 			model.addAttribute("search", searchParameter(request));
 			model.addAttribute("goods", SERVICE.getTravelList(new TrendRequest.Goods(request)));
-			model.addAttribute("content", SERVICE.getTravelList(new TrendRequest.Content(request)));
+			model.addAttribute("contents", SERVICE.getTravelList(new TrendRequest.Content(request)));
 		}
 		catch (Exception exception)
 		{

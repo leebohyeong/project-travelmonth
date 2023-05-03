@@ -7,7 +7,160 @@
 </head>
 <body id="travelmonth-event-list">
     <%@ include file="../include/include-header.jspf" %>
-    <div id="container"></div>
+    <div id="container">
+        <article class="event-list">
+            <header>
+                <div>
+                    <h2>여행가는 달<br> 이벤트</h2>
+                    <p>6월 여행가는 달에만 진행되는 특별한 이벤트<br>참여하시고 푸짐한 경품도 챙기세요!</p>
+                </div>
+            </header>
+            <div class="event-list--swiper">
+                <div class="swiper">
+                    <div class="swiper-wrapper">
+                        <c:if test="${not empty banner}">
+                            <c:if test="${banner.result}">
+                                <c:set var="list" value="${banner.data.list}"/>
+                                <c:forEach var="row" items="${list}" varStatus="loop">
+                                    <div class="swiper-slide">
+                                        <a href="${row.link}" target="${row.link_target}">
+                                            <picture>
+                                                <source srcset="${row.banner}" media="(min-width: 768px)">
+                                                <img src="${row.banner}" alt="${row.banner_alt}">
+                                            </picture>
+                                        </a>
+                                    </div>
+                                </c:forEach>
+                            </c:if>
+                        </c:if>
+                    </div>
+                    <div class="swiper-navigation">
+                        <div class="swiper-navigation-prev"></div>
+                        <div class="swiper-navigation-next"></div>
+                    </div>
+                    <div class="swiper-pagination"></div>
+                </div>
+            </div>
+            <div class="event-list--list">
+                <div class="event-list--list__tab">
+                    <ul class="category-tab">
+                        <li><a class="category-tab__item category-tab__item--active" href="#">진행 중 이벤트</a></li>
+                        <li><a class="category-tab__item" href="#">종료 이벤트 및 당첨자 발표</a></li>
+                    </ul>
+                    <div class="category-tab-contents">
+                        <div class="category-panel category-panel--active">
+                            <section class="list-thumbnail list-thumbnail--events">
+                                <ul>
+                                    <li><a href="#"><span
+                                            style="background-image: url('/travelmonth/assets/images/@temp/thumbnail_3.png')"></span>
+                                        <p>[인천관광공사]<br>청정관광지 만들기<br>'내가 그린(Green) 인천여행' 캠페인</p>
+                                        <p>2022.05.02 ~ 2022.07.28</p></a></li>
+                                    <li><a href="#"><span
+                                            style="background-image: url('/travelmonth/assets/images/@temp/thumbnail_1.png')"></span>
+                                        <p>[한국등산트레킹지원센터]<br>온라인 백일장 글쓰기 이벤트</p>
+                                        <p>2022.05.02 ~ 2022.07.28</p></a></li>
+                                    <li><a href="#"><span
+                                            style="background-image: url('/travelmonth/assets/images/@temp/thumbnail_3.png')"></span>
+                                        <p>[인천관광공사]<br>청정관광지 만들기<br>'내가 그린(Green) 인천여행' 캠페인</p>
+                                        <p>2022.05.02 ~ 2022.07.28</p></a></li>
+                                    <li><a href="#"><span
+                                            style="background-image: url('/travelmonth/assets/images/@temp/thumbnail_3.png')"></span>
+                                        <p>[인천관광공사]<br>청정관광지 만들기<br>'내가 그린(Green) 인천여행' 캠페인</p>
+                                        <p>2022.05.02 ~ 2022.07.28</p></a></li>
+                                    <li><a href="#"><span
+                                            style="background-image: url('/travelmonth/assets/images/@temp/thumbnail_1.png')"></span>
+                                        <p>[한국등산트레킹지원센터]<br>온라인 백일장 글쓰기 이벤트</p>
+                                        <p>2022.05.02 ~ 2022.07.28</p></a></li>
+                                    <li><a href="#"><span
+                                            style="background-image: url('/travelmonth/assets/images/@temp/thumbnail_2.png')"></span>
+                                        <p>[국가보훈처]<br>'유 퀴즈 온 더 기념관' 인스타그램 퀴즈 이벤트</p>
+                                        <p>2022.05.02 ~ 2022.07.28</p></a></li>
+                                    <li class="list-thumbnail__item--hide"><a href="#"><span
+                                            style="background-image: url('/travelmonth/assets/images/@temp/thumbnail_2.png')"></span>
+                                        <p>[국가보훈처]<br>'유 퀴즈 온 더 기념관' 인스타그램 퀴즈 이벤트</p>
+                                        <p>2022.05.02 ~ 2022.07.28</p></a></li>
+                                    <li class="list-thumbnail__item--hide"><a href="#"><span
+                                            style="background-image: url('/travelmonth/assets/images/@temp/thumbnail_1.png')"></span>
+                                        <p>[한국등산트레킹지원센터]<br>온라인 백일장 글쓰기 이벤트</p>
+                                        <p>2022.05.02 ~ 2022.07.28</p></a></li>
+                                    <li class="list-thumbnail__item--hide"><a href="#"><span
+                                            style="background-image: url('/travelmonth/assets/images/@temp/thumbnail_1.png')"></span>
+                                        <p>[한국등산트레킹지원센터]<br>온라인 백일장 글쓰기 이벤트</p>
+                                        <p>2022.05.02 ~ 2022.07.28</p></a></li>
+                                    <li class="list-thumbnail__item--hide"><a href="#"><span
+                                            style="background-image: url('/travelmonth/assets/images/@temp/thumbnail_3.png')"></span>
+                                        <p>[인천관광공사]<br>청정관광지 만들기<br>'내가 그린(Green) 인천여행' 캠페인</p>
+                                        <p>2022.05.02 ~ 2022.07.28</p></a></li>
+                                    <li class="list-thumbnail__item--hide"><a href="#"><span
+                                            style="background-image: url('/travelmonth/assets/images/@temp/thumbnail_2.png')"></span>
+                                        <p>[국가보훈처]<br>'유 퀴즈 온 더 기념관' 인스타그램 퀴즈 이벤트</p>
+                                        <p>2022.05.02 ~ 2022.07.28</p></a></li>
+                                    <li class="list-thumbnail__item--hide"><a href="#"><span
+                                            style="background-image: url('/travelmonth/assets/images/@temp/thumbnail_2.png')"></span>
+                                        <p>[국가보훈처]<br>'유 퀴즈 온 더 기념관' 인스타그램 퀴즈 이벤트</p>
+                                        <p>2022.05.02 ~ 2022.07.28</p></a></li>
+                                </ul>
+                            </section>
+                        </div>
+                        <div class="category-panel">
+                            <section class="list-thumbnail list-thumbnail--events">
+                                <ul>
+                                    <li><a href="#"><span
+                                            style="background-image: url('/travelmonth/assets/images/@temp/thumbnail_3.png')"></span>
+                                        <p>[인천관광공사]<br>청정관광지 만들기<br>'내가 그린(Green) 인천여행' 캠페인</p>
+                                        <p>2022.05.02 ~ 2022.07.28</p></a></li>
+                                    <li><a href="#"><span
+                                            style="background-image: url('/travelmonth/assets/images/@temp/thumbnail_1.png')"></span>
+                                        <p>[한국등산트레킹지원센터]<br>온라인 백일장 글쓰기 이벤트</p>
+                                        <p>2022.05.02 ~ 2022.07.28</p></a></li>
+                                    <li><a href="#"><span
+                                            style="background-image: url('/travelmonth/assets/images/@temp/thumbnail_3.png')"></span>
+                                        <p>[인천관광공사]<br>청정관광지 만들기<br>'내가 그린(Green) 인천여행' 캠페인</p>
+                                        <p>2022.05.02 ~ 2022.07.28</p></a></li>
+                                    <li><a href="#"><span
+                                            style="background-image: url('/travelmonth/assets/images/@temp/thumbnail_3.png')"></span>
+                                        <p>[인천관광공사]<br>청정관광지 만들기<br>'내가 그린(Green) 인천여행' 캠페인</p>
+                                        <p>2022.05.02 ~ 2022.07.28</p></a></li>
+                                    <li><a href="#"><span
+                                            style="background-image: url('/travelmonth/assets/images/@temp/thumbnail_1.png')"></span>
+                                        <p>[한국등산트레킹지원센터]<br>온라인 백일장 글쓰기 이벤트</p>
+                                        <p>2022.05.02 ~ 2022.07.28</p></a></li>
+                                    <li><a href="#"><span
+                                            style="background-image: url('/travelmonth/assets/images/@temp/thumbnail_2.png')"></span>
+                                        <p>[국가보훈처]<br>'유 퀴즈 온 더 기념관' 인스타그램 퀴즈 이벤트</p>
+                                        <p>2022.05.02 ~ 2022.07.28</p></a></li>
+                                    <li class="list-thumbnail__item--hide"><a href="#"><span
+                                            style="background-image: url('/travelmonth/assets/images/@temp/thumbnail_2.png')"></span>
+                                        <p>[국가보훈처]<br>'유 퀴즈 온 더 기념관' 인스타그램 퀴즈 이벤트</p>
+                                        <p>2022.05.02 ~ 2022.07.28</p></a></li>
+                                    <li class="list-thumbnail__item--hide"><a href="#"><span
+                                            style="background-image: url('/travelmonth/assets/images/@temp/thumbnail_1.png')"></span>
+                                        <p>[한국등산트레킹지원센터]<br>온라인 백일장 글쓰기 이벤트</p>
+                                        <p>2022.05.02 ~ 2022.07.28</p></a></li>
+                                    <li class="list-thumbnail__item--hide"><a href="#"><span
+                                            style="background-image: url('/travelmonth/assets/images/@temp/thumbnail_1.png')"></span>
+                                        <p>[한국등산트레킹지원센터]<br>온라인 백일장 글쓰기 이벤트</p>
+                                        <p>2022.05.02 ~ 2022.07.28</p></a></li>
+                                    <li class="list-thumbnail__item--hide"><a href="#"><span
+                                            style="background-image: url('/travelmonth/assets/images/@temp/thumbnail_3.png')"></span>
+                                        <p>[인천관광공사]<br>청정관광지 만들기<br>'내가 그린(Green) 인천여행' 캠페인</p>
+                                        <p>2022.05.02 ~ 2022.07.28</p></a></li>
+                                    <li class="list-thumbnail__item--hide"><a href="#"><span
+                                            style="background-image: url('/travelmonth/assets/images/@temp/thumbnail_2.png')"></span>
+                                        <p>[국가보훈처]<br>'유 퀴즈 온 더 기념관' 인스타그램 퀴즈 이벤트</p>
+                                        <p>2022.05.02 ~ 2022.07.28</p></a></li>
+                                    <li class="list-thumbnail__item--hide"><a href="#"><span
+                                            style="background-image: url('/travelmonth/assets/images/@temp/thumbnail_2.png')"></span>
+                                        <p>[국가보훈처]<br>'유 퀴즈 온 더 기념관' 인스타그램 퀴즈 이벤트</p>
+                                        <p>2022.05.02 ~ 2022.07.28</p></a></li>
+                                </ul>
+                            </section>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </article>
+    </div>
     <%@ include file="../include/include-footer.jspf" %>
 </body>
 </html>

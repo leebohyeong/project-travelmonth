@@ -4,6 +4,7 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.google.common.base.CaseFormat;
 import org.json.simple.JSONObject;
+import org.json.simple.parser.JSONParser;
 
 import java.io.UnsupportedEncodingException;
 import java.lang.reflect.Field;
@@ -19,8 +20,8 @@ public class Common {
 	 * @return
 	 */
 	@SuppressWarnings("unchecked")
-	public static ArrayList<JSONObject>
-	getThemes() {
+	public static ArrayList<JSONObject> getThemes()
+	{
 		return new ArrayList<JSONObject>(){{
 			add(new JSONObject(){{ put("theme", "a"); put("title", "농어촌<br>/섬관광"); put("sub_title", "여행트렌드 1"); put("main_title", "농어촌/섬관광"); put("content", "엔데믹 이후 번잡하고 답답한 도시를 벗어나 휴식과 함께 새로운 경험, <br>잊지 못할 추억을 만드는 농어촌/섬 관광입니다."); }});
 			add(new JSONObject(){{ put("theme", "b"); put("title", "힐링<br>/웰니스"); put("sub_title", "여행트렌드 2"); put("main_title", "힐링/웰니스"); put("content", "일상에 지친 심신을 위로하고 치유하는 여행가는 달이 추천하는 <br>힐링/웰니스 관광입니다."); }});
@@ -36,13 +37,31 @@ public class Common {
 	}
 
 	/**
+	 * TO JSONOBJECT
+	 * @param strJson
+	 * @return
+	 */
+	public static JSONObject toJSONObject(String strJson) {
+		try
+		{
+			JSONParser parser = new JSONParser();
+			return (JSONObject) parser.parse(strJson);
+		}
+		catch (Exception exception) {
+			exception.printStackTrace();
+			return null;
+		}
+	}
+
+	/**
 	 * SEARCH PARAMETER
 	 * @param request
 	 * @return
 	 * @throws JsonProcessingException
 	 * @throws IllegalAccessException
 	 */
-	public static Object searchParameter(Object request) throws JsonProcessingException, IllegalAccessException {
+	public static Object searchParameter(Object request) throws JsonProcessingException, IllegalAccessException
+	{
 		Map<String, Object> parameter = new HashMap<>();
 		if (request.getClass().getSuperclass() != null) {
 			for (Field field : request.getClass().getSuperclass().getDeclaredFields()) {
@@ -94,7 +113,8 @@ public class Common {
 	 * @param request
 	 * @return
 	 */
-	public static String getUrlQueryString(Object request) throws JsonProcessingException, IllegalAccessException {
+	public static String getUrlQueryString(Object request) throws JsonProcessingException, IllegalAccessException
+	{
 		request = searchParameter(request);
 		Map<String, Object> parameter = new ObjectMapper().convertValue(request, Map.class);
 		return parameter.entrySet().stream()
@@ -109,10 +129,14 @@ public class Common {
 	 * @param str
 	 * @return
 	 */
-	public static String urlEncodeUTF8(String str) {
-		try {
+	public static String urlEncodeUTF8(String str)
+	{
+		try
+		{
 			return URLEncoder.encode(str, "UTF-8");
-		} catch (UnsupportedEncodingException e) {
+		}
+		catch (UnsupportedEncodingException e)
+		{
 			throw new UnsupportedOperationException(e);
 		}
 	}

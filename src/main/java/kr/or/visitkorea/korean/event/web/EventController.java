@@ -27,6 +27,7 @@ public class EventController {
 		try
 		{
 			model.addAttribute("event", SERVICE.getList());
+			model.addAttribute("banner", SERVICE.getBannerList());
 		}
 		catch (Exception exception)
 		{

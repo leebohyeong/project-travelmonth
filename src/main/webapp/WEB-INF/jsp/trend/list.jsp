@@ -128,7 +128,7 @@
                                 </c:if>
                             </c:if>
                         </section>
-                        <c:if test="${not empty content}">
+                        <c:if test="${not empty goods}">
                             <c:if test="${goods.result}">
                                 <c:set var="list" value="${goods.data.list}"/>
                                 <c:forEach var="row" items="${list}" varStatus="loop">
@@ -177,16 +177,16 @@
                         </c:if>
                         <section class="list-thumbnail list-thumbnail--contents">
                             <h3>${empty search.search_trend_gb ? '2023 여행' : page_title} 트렌드 알아보기</h3>
-                            <c:if test="${not empty content}">
-                                <c:if test="${content.result}">
-                                    <c:set var="list" value="${content.data.list}"/>
+                            <c:if test="${not empty contents}">
+                                <c:if test="${contents.result}">
+                                    <c:set var="list" value="${contents.data.list}"/>
                                     <c:choose>
                                         <c:when test="${not empty list}">
                                             <ul>
                                                 <c:forEach var="row" items="${list}" varStatus="loop">
                                                     <li>
                                                         <a href="#modal-trend-content-${row.seq}" data-bs-toggle="modal" data-bs-target="#modal-trend-content-${row.seq}">
-                                                            <span style="background-image: url('${row.image}')"></span>`
+                                                            <span style="background-image: url('${row.image}')"></span>
                                                             <p>${row.title}</p>
                                                         </a>
                                                     </li>
@@ -197,64 +197,64 @@
                                     </c:choose>
                                 </c:if>
                             </c:if>
-                            <c:if test="${not empty content}">
-                                <c:if test="${content.result}">
-                                    <c:if test="${fn:length(content.data.list) > 6}"><p><button type="button">MORE</button></p></c:if>
+                            <c:if test="${not empty contents}">
+                                <c:if test="${contents.result}">
+                                    <c:if test="${fn:length(contents.data.list) > 6}"><p><button type="button">MORE</button></p></c:if>
                                 </c:if>
                             </c:if>
                         </section>
-                        <c:if test="${not empty content}">
-                            <c:if test="${content.result}">
-                                <c:set var="list" value="${content.data.list}"/>
+                        <c:if test="${not empty contents}">
+                            <c:if test="${contents.result}">
+                                <c:set var="list" value="${contents.data.list}"/>
                                 <c:forEach var="row" items="${list}" varStatus="loop">
-                                    <div class="modal fade modal-trend-contents" id="modal-trend-content-${row.seq}" data-theme="a" tabindex="-1"
-                                         data-bs-backdrop="static" aria-hidden="true">
+                                    <div class="modal fade modal-trend-contents" id="modal-trend-content-${row.seq}" data-theme="${fn:toLowerCase(row.travel_gb)}" tabindex="-1" data-bs-backdrop="static" aria-hidden="true">
                                         <div class="modal-dialog">
                                             <div class="modal-content">
                                                 <article>
-                                                    <h3 class="modal-trend-contents__title">댕댕이와 사람이 함께<br>행복한 강아지 숲 5스팟</h3>
-                                                    <ul class="modal-trend-contents__tab">
-                                                        <li><a class="modal-trend-contents__tab-item" href="#">추천1</a></li>
-                                                        <li><a class="modal-trend-contents__tab-item" href="#">추천2</a></li>
-                                                        <li><a class="modal-trend-contents__tab-item" href="#">추천3</a></li>
-                                                    </ul>
-                                                    <div class="modal-trend-contents__thumbnail">
-                                                        <div style="background-image: url('https://cdn.visitkorea.or.kr/img/call?cmd=VIEW&amp;id=3f8fbd92-6b7e-46ba-9161-21bfd76e8e1b&amp;mode=progress')"></div>
-                                                    </div>
-                                                    <div class="modal-trend-contents__panel">
-                                                        <h4 class="modal-trend-contents__panel-title">1. 휘바핀란드(강원도 홍천)</h4>
-                                                        <div class="modal-trend-contents__panel-contents">
-                                                            <p>이색 동물들과 함께하는 방목 체험형 동물원이라고
-                                                            생각하시면 될 것 같아요! 울타리가 없는 방목형 양떼목장이라서 강아지 여행 하며 사람 아이도 함께하는 여행이라면 함께 가보기에 좋은
-                                                            장소입니다.</p>
-                                                            <p>
-                                                                <img src="https://cdn.visitkorea.or.kr/img/call?cmd=VIEW&amp;id=f6c2cdb3-7c48-4ec1-b326-33e19002b0f1&amp;mode=progress"
-                                                                     alt="붉은 다리"></p>
-                                                            <p>무엇보다 애견동반 여행 중에 확 트인 초원을 볼 수 있어 좋은 곳이었는데요. 아이가 양떼 목장에서 먹이 주는 것만 재미있어 해서 못
-                                                                가봤지만...</p>
+                                                    <h2 class="modal-trend-contents__theme">
+                                                        <c:forEach var="themes" items="${common:getThemes()}" varStatus="loop">
+                                                            <c:if test="${themes.theme eq fn:toLowerCase(row.travel_gb)}">${themes.main_title}</c:if>
+                                                        </c:forEach>
+                                                    </h2>
+                                                    <c:set var="jsonObject" value="${common:toJSONObject(row.content)}" />
+                                                    <h3 class="modal-trend-contents__title" style="background-image: url('${jsonObject.thumnail}')">${row.title}</h3>
+                                                    <c:if test="${fn:length(jsonObject.contents) > 1}">
+                                                        <ul class="modal-trend-contents__tab">
+                                                            <c:forEach var="sub_row" items="${jsonObject.contents}">
+                                                                <li><a class="modal-trend-contents__tab-item" href="#">${sub_row.tab}</a></li>
+                                                            </c:forEach>
+                                                        </ul>
+                                                    </c:if>
+                                                    <c:forEach var="sub_row" items="${jsonObject.contents}">
+                                                        <div class="modal-trend-contents__panel <c:if test="${fn:length(jsonObject.contents) eq 1}">modal-trend-contents__panel--active</c:if>">
+                                                            <h4 class="modal-trend-contents__panel-title">${sub_row.title}</h4>
+                                                            <div class="modal-trend-contents__panel-contents">
+                                                                <c:forEach var="sub_sub_row" items="${sub_row.contents}">
+                                                                    <c:choose>
+                                                                        <c:when test="${sub_sub_row.type eq 'text'}">
+                                                                            <p>${sub_sub_row.text}</p>
+                                                                        </c:when>
+                                                                        <c:when test="${sub_sub_row.type eq 'image'}">
+                                                                            <p><img src="${sub_sub_row.url}" alt="${sub_sub_row.text}"></p>
+                                                                            <p>${sub_sub_row.text}</p>
+                                                                        </c:when>
+                                                                    </c:choose>
+                                                                </c:forEach>
+                                                            </div>
+                                                            <dl class="modal-trend-contents__panel-info">
+                                                                <c:forEach var="info" items="${sub_row.info}">
+                                                                    <div>
+                                                                        <dt>${info.title}</dt>
+                                                                        <dd>
+                                                                            <c:forEach var="content" items="${info.contents}">
+                                                                                <div>${content}</div>
+                                                                            </c:forEach>
+                                                                        </dd>
+                                                                    </div>
+                                                                </c:forEach>
+                                                            </dl>
                                                         </div>
-                                                        <dl class="modal-trend-contents__panel-info">
-                                                            <div>
-                                                                <dt>주소</dt>
-                                                                <dd>
-                                                                    <div>경기 안성시 공도읍 대신두길 28</div>
-                                                                </dd>
-                                                            </div>
-                                                            <div>
-                                                                <dt>테스트</dt>
-                                                                <dd>
-                                                                    <div>테스트 내용1</div>
-                                                                    <div>테스트 내용2</div>
-                                                                </dd>
-                                                            </div>
-                                                        </dl>
-                                                    </div>
-                                                    <div class="modal-trend-contents__panel"><h4
-                                                            class="modal-trend-contents__panel-title">2</h4></div>
-                                                    <div class="modal-trend-contents__panel"><h4
-                                                            class="modal-trend-contents__panel-title">3</h4></div>
-                                                </article>
-                                                <button class="modal-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                    </c:forEach>
                                             </div>
                                         </div>
                                     </div>

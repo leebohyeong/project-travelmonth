@@ -88,7 +88,9 @@
                                                                             <c:otherwise>-</c:otherwise>
                                                                         </c:choose>
                                                                     </p>
-                                                                    <p>${row.agency_name}</p>
+                                                                    <c:if test="${not empty row.agency_name}">
+                                                                        <p>${row.agency_name}</p>
+                                                                    </c:if>
                                                                 </div>
                                                                 <p>${row.title}</p>
                                                             </a>
@@ -127,7 +129,9 @@
                                                                 <c:otherwise>-</c:otherwise>
                                                             </c:choose>
                                                         </p>
-                                                        <p>${row.agency_name}</p>
+                                                        <c:if test="${not empty row.agency_name}">
+                                                            <p>${row.agency_name}</p>
+                                                        </c:if>
                                                     </div>
                                                     <h3>${row.title}</h3>
                                                     <c:choose>
