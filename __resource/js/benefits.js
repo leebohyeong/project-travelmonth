@@ -1,7 +1,27 @@
 import {findOne, find, on} from './helper';
+import {ListThumbnail} from './common';
+
+const benefits = () => {
+    const menu = findOne('.benefits__menu nav + div');
+
+    if (!menu) return;
+
+    const select = findOne('select', menu);
+    const options = find('option', select);
+
+    on(select, 'change', () => {
+        location.href = options[select.selectedIndex].dataset.url;
+    });
+};
 
 const benefitsLocal = () => {
     const menu = findOne('.benefits__menu--local nav + div');
+
+    (() => {
+        const lists = find('.list-thumbnail');
+
+        lists.forEach(list => new ListThumbnail(list));
+    })();
 
     (() => {
         const currentItem = findOne('strong', menu).closest('li');
@@ -16,17 +36,18 @@ const benefitsLocal = () => {
 
         // localItems.forEach(item => togglEvent(item));
     })();
+};
 
+const benefitsPlay = () => {
     (() => {
-        const select = findOne('select', menu);
-        const options = find('option', select);
+        const lists = find('.list-thumbnail');
 
-        on(select, 'change', () => {
-            location.href = options[select.selectedIndex].dataset.url;
-        });
+        lists.forEach(list => new ListThumbnail(list));
     })();
 };
 
 export {
-    benefitsLocal
+    benefits,
+    benefitsLocal,
+    benefitsPlay,
 }

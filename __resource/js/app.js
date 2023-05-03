@@ -4,7 +4,7 @@ window.bootstrap = bootstrap;
 
 import {globalNav, googleTag} from './common';
 import {main} from './main';
-import {benefitsLocal} from './benefits';
+import {benefits, benefitsLocal, benefitsPlay} from './benefits';
 import {trendList} from './trend';
 import {travelmonthIntro} from './intro';
 import {eventList} from './event';
@@ -13,7 +13,7 @@ import {eventList} from './event';
 const app = new App();
 
 app.add({globalNav, googleTag});
-app.add({benefitsLocal});
+app.add({benefits, benefitsLocal, benefitsPlay});
 app.add({trendList});
 app.add({main});
 app.add({travelmonthIntro});

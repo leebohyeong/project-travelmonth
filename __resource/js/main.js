@@ -1,30 +1,25 @@
-import {find, findOne, on} from "./helper";
+import {find, findOne, getOffset, on} from "./helper";
 
 import Swiper, {Autoplay, Pagination, Navigation, Scrollbar, FreeMode} from "swiper";
 
 const main = () => {
-
+    //main header
     (() => {
-        const siteHeader = findOne('#travelmonth-main .site-header');
-        siteHeader.classList.add('on');
+        const quickVisitkorea = findOne('.quick-visitkorea');
+        const header = findOne('.site-header');
+        const headerInitClassName = 'site-header--main-init';
+        const scrollHeader = () => header.classList[window.scrollY < quickVisitkorea.clientHeight ? 'add' : 'remove'](headerInitClassName);
 
-        document.addEventListener('scroll', function() {
-            const currentScrollValue = document.documentElement.scrollTop;
+        scrollHeader();
 
-            if(currentScrollValue > 70) {
-                siteHeader.classList.add('active');
-                siteHeader.classList.remove('on');
-            } else {
-                siteHeader.classList.remove('active');
-                siteHeader.classList.add('on');
-            }
-        });
+        window.addEventListener('scroll', scrollHeader);
     })();
+
 
     //intro
     (() => {
         const intro = findOne('.main__intro');
-        const introCarousel = new Swiper(findOne('.swiper', intro),{
+        const introCarousel = new Swiper(findOne('.swiper', intro), {
             loop: true,
             slidesPerView: "auto",
 
@@ -53,7 +48,7 @@ const main = () => {
         const category = findOne('.main__category');
         const tabMenus = find('.category-tab a', category);
         const tabPanels = find(`.category-panel`, category);
-        const loaction = findOne('.category-tab-contents__location', category);
+        const location = findOne('.category-tab-contents__location', category);
         const program = findOne('.category-tab-contents__program', category);
 
         const toggleTabPanels = (currentIndex) => {
@@ -79,7 +74,7 @@ const main = () => {
             })
         );
 
-        const categoryLoactionCarousel = new Swiper(findOne('.swiper', loaction),{
+        const categoryLocationCarousel = new Swiper(findOne('.swiper', location), {
             slidesPerView: 'auto',
             freeMode: {
                 enabled: true,
@@ -95,7 +90,7 @@ const main = () => {
             modules: [FreeMode],
         });
 
-        const categoryProgramCarousel = new Swiper(findOne('.swiper', program),{
+        const categoryProgramCarousel = new Swiper(findOne('.swiper', program), {
             slidesPerView: 5,
             freeMode: {
                 enabled: true,
@@ -116,7 +111,7 @@ const main = () => {
     //트렌드
     (() => {
         const trend = findOne('.main__trend');
-        const trendCarousel = new Swiper(findOne('.swiper', trend),{
+        const trendCarousel = new Swiper(findOne('.swiper', trend), {
             spaceBetween: 10,
             slidesPerView: 4.5,
 
@@ -129,11 +124,15 @@ const main = () => {
             },
 
             breakpoints: {
-                //브라우저가 1200보다 클 때
+                768: {
+                    slidesPerView: 6.5,
+                },
+                992: {
+                    slidesPerView: 8.5,
+                },
                 1200: {
                     slidesPerView: 10,
                     spaceBetween: 20,
-                    // allowTouchMove: false,
                 },
             },
 
@@ -144,7 +143,7 @@ const main = () => {
     //이벤트
     (() => {
         const event = findOne('.main__event');
-        const eventCarousel = new Swiper(findOne('.swiper', event),{
+        const eventCarousel = new Swiper(findOne('.swiper', event), {
             spaceBetween: 10,
             slidesPerView: 2.5,
 
@@ -153,8 +152,8 @@ const main = () => {
             },
 
             navigation: {
-                prevEl: findOne('.event-swiper__paging-prev', event),
-                nextEl: findOne('.event-swiper__paging-next', event),
+                prevEl: findOne('.event-carousel__paging-prev', event),
+                nextEl: findOne('.event-carousel__paging-next', event),
             },
 
             scrollbar: {
@@ -177,7 +176,7 @@ const main = () => {
         const instagram = findOne('.main__instagram');
         const removeClass = findOne('.swiper');
 
-        const instagramCarousel = new Swiper(findOne('.swiper', instagram),{
+        const instagramCarousel = new Swiper(findOne('.swiper', instagram), {
             slidesPerView: 3.5,
             spaceBetween: 6,
 

@@ -13,7 +13,7 @@
             <div class="benefits__container">
                 <div class="benefits__menu benefits__menu--local">
                     <div><h2><span>여행가는 달의 다양한</span><strong>여행정보와 여행혜택을<br>확인해 보세요!</strong></h2>
-                        <%@ include file="include/include-nav.jspf" %>
+                        <%@ include file="../include/include-benefits-nav.jspf" %>
                         <div>
                             <c:set var="taglib" value="${local:getFilteredList()}"/>
                             <c:if test="${not empty taglib}">
@@ -23,7 +23,8 @@
                                         <span>지역의 여행상품과 여행혜택을 확인하세요.</span>
                                         <select>
                                             <c:forEach var="row" items="${list}" varStatus="loop">
-                                                <option value="${fn:replace(fn:toLowerCase(row.name_en), ',', '-')}" <c:if test="${local_name_en eq row.name_en}">selected</c:if>>${row.name_kr}</option>
+                                                <option value="${fn:replace(fn:toLowerCase(row.name_en), ',', '-')}" data-url="/travelmonth/benefits/local/${fn:toLowerCase(row.name_en)}.do"
+                                                        <c:if test="${local_name_en eq fn:toLowerCase(row.name_en)}">selected</c:if>>${row.name_kr}</option>
                                             </c:forEach>
                                         </select>
                                     </p>
@@ -53,7 +54,7 @@
                     </div>
                 </div>
                 <div class="benefits__content">
-                    <c:set var="title" value="${fn:replace(local.data.name_detail_kr, ',', '/')}"/>
+                    <c:set var="title" value="${fn:replace(local.data.name_kr, ',', '/')}"/>
                     <article class="benefits-local" data-local="${fn:replace(fn:toLowerCase(local.data.name_en), ',', '-')}">
                             <header>
                                 <h2>${title} 여행</h2>
@@ -63,14 +64,18 @@
                                 <h3>
                                     매력있는 <strong>${title}</strong> 여행혜택 알아보기
                                 </h3>
-                                <ul>
-                                    <c:if test="${not empty enjoy}">
-                                        <c:if test="${enjoy.result}">
-                                            <c:set var="list" value="${enjoy.data.list}"/>
-                                            <c:choose>
-                                                <c:when test="${not empty list}">
+                                <c:if test="${not empty enjoy}">
+                                    <c:if test="${enjoy.result}">
+                                        <c:set var="list" value="${enjoy.data.list}"/>
+                                        <c:choose>
+                                            <c:when test="${not empty list}">
+                                                <ul>
                                                     <c:forEach var="row" items="${list}" varStatus="loop">
-                                                        <li>
+                                                        <c:set var="hidden_class" value=""/>
+                                                        <c:if test="${loop.count > 6}">
+                                                            <c:set var="hidden_class" value="class='list-thumbnail__item--hide'"/>
+                                                        </c:if>
+                                                        <li ${hidden_class}>
                                                             <a href="#modal-benefits-${row.seq}" data-type="${fn:toLowerCase(row.enjoy_gb)}" data-bs-toggle="modal" data-bs-target="#modal-benefits-${row.seq}"
                                                                data-gtag-action="여행혜택 1_${row.title}" data-gtag-category="${title}">
                                                                 <span style="background-image: url('${row.image}')"></span>
@@ -89,17 +94,19 @@
                                                             </a>
                                                         </li>
                                                     </c:forEach>
-                                                </c:when>
-                                                <c:otherwise>
-                                                    등록된 내용이 없습니다.
-                                                </c:otherwise>
-                                            </c:choose>
-                                        </c:if>
+                                                </ul>
+                                            </c:when>
+                                            <c:otherwise>
+                                                <div><p>등록된 내용이 없습니다.</p></div>
+                                            </c:otherwise>
+                                        </c:choose>
                                     </c:if>
-                                </ul>
-                                <p>
-                                    <button type="button">MORE</button>
-                                </p>
+                                </c:if>
+                                <c:if test="${not empty enjoy}">
+                                    <c:if test="${enjoy.result}">
+                                        <c:if test="${fn:length(enjoy.data.list) > 6}"><p><button type="button">MORE</button></p></c:if>
+                                    </c:if>
+                                </c:if>
                         </section>
                         <c:if test="${not empty enjoy}">
                             <c:if test="${enjoy.result}">
@@ -214,14 +221,18 @@
                         </c:if>
                         <section class="list-thumbnail list-thumbnail--goods">
                             <h3>트렌디한 <strong>${title}</strong> 여행상품 알아보기</h3>
-                            <ul>
-                                <c:if test="${not empty travel}">
-                                    <c:if test="${travel.result}">
-                                        <c:set var="list" value="${travel.data.list}"/>
-                                        <c:choose>
-                                            <c:when test="${not empty list}">
+                            <c:if test="${not empty travel}">
+                                <c:if test="${travel.result}">
+                                    <c:set var="list" value="${travel.data.list}"/>
+                                    <c:choose>
+                                        <c:when test="${not empty list}">
+                                            <ul>
                                                 <c:forEach var="row" items="${list}" varStatus="loop">
-                                                    <li>
+                                                    <c:set var="hidden_class" value=""/>
+                                                    <c:if test="${loop.count > 6}">
+                                                        <c:set var="hidden_class" value="class='list-thumbnail__item--hide'"/>
+                                                    </c:if>
+                                                    <li ${hidden_class}>
                                                         <a href="#" data-type="d" data-bs-toggle="modal" data-bs-target="#modal-goods-${row.seq}">
                                                             <span style="background-image: url('${row.image}')"></span>
                                                             <p>
@@ -249,17 +260,19 @@
                                                         </a>
                                                     </li>
                                                 </c:forEach>
-                                            </c:when>
-                                            <c:otherwise>
-                                                등록된 내용이 없습니다.
-                                            </c:otherwise>
-                                        </c:choose>
-                                    </c:if>
+                                            </ul>
+                                        </c:when>
+                                        <c:otherwise>
+                                            <div><p>등록된 내용이 없습니다.</p></div>
+                                        </c:otherwise>
+                                    </c:choose>
                                 </c:if>
-                            </ul>
-                            <p>
-                                <button type="button">MORE</button>
-                            </p>
+                            </c:if>
+                            <c:if test="${not empty travel}">
+                                <c:if test="${travel.result}">
+                                    <c:if test="${fn:length(travel.data.list) > 6}"><p><button type="button">MORE</button></p></c:if>
+                                </c:if>
+                            </c:if>
                         </section>
                         <c:if test="${not empty travel}">
                             <c:if test="${travel.result}">
@@ -336,7 +349,7 @@
                                 </a>
                             </li>
                             <li data-benefit="special">
-                                <a href="#">
+                                <a href="${pageContext.request.contextPath}/special/list.do">
                                     <h4>여행상품<br>특별 기획전</h4>
                                     <p>여행가는 달 기간동안<br>여행업계가 선보이는<br>각종 혜택들을 만나보세요.</p>
                                 </a>

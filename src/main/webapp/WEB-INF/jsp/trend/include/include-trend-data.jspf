@@ -1,0 +1,12 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<c:set var="page_title" value="여행트랜드관"/>
+<c:set var="page_sub_title" value="해보고 싶은 다행한 여행"/>
+<c:set var="page_content" value="로컬관광, 취미여행 등 올해 주목할만 한 여행 트렌드와 한국관광공사가 제안하는 특별한 여행프로그램을 만나보세요."/>
+<c:set var="themes" value="${common:getThemes()}"/>
+<c:forEach var="row" items="${themes}" varStatus="loop">
+    <c:if test="${search.search_trend_gb eq row.theme}">
+        <c:set var="page_title" value="${fn:replace(row.title, '<br>', '')}"/>
+        <c:set var="page_sub_title" value="${row.sub_title}"/>
+        <c:set var="page_content" value="${fn:replace(row.content, '<br>', '')}"/>
+    </c:if>
+</c:forEach>
