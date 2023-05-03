@@ -19,8 +19,13 @@
                 <div class="benefits__content">
                     <article class="benefits-program benefits-program--traffic">
                         <header>
-                            <div><h2><span>2023 여행가는 달 특별할인혜택</span><strong>교통혜택</strong></h2>
-                                <p>국내여행 준비중이라면?<br>여행가는 달에서 준비한 교통혜택을 챙겨가세요!</p></div>
+                            <div>
+                                <h2><span>2023 여행가는 달 특별할인혜택</span><strong>교통혜택</strong></h2>
+                                <p>
+                                    열차•항공•렌터카•시티투어 할인 <br>
+                                    우리 함께 떠나요!
+                                </p>
+                            </div>
                         </header>
                         <section data-theme="train">
                             <div><h3><span>여행가는 달</span>

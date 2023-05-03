@@ -18,7 +18,7 @@
                                 <option value="traffic">교통혜택</option>
                                 <option value="stay">숙박혜택</option>
                                 <option value="play">놀거리혜택</option>
-                                <option value="trend">여행트랜드관</option>
+                                <option value="trend">여행트렌드관</option>
                                 <option value="special" selected>여행상품 특별 기획전</option>
                             </select>
                             <%@ include file="include/include-menu.jspf" %>

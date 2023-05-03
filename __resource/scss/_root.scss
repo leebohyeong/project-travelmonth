@@ -19,12 +19,14 @@
     --benefits-list-column-size: 2;
     --benefits-list-column-gap: 8px;
     --benefits-list-row-gap: 20px;
+    --benefits-list-thumbnail-radius: 12px;
     --modal-margin-top: calc(var(--site-header-height) + 10px);
 
     @include media-queries($from: md) {
         --benefits-list-column-size: 3;
         --benefits-list-column-gap: 20px;
         --benefits-list-row-gap: 50px;
+        --benefits-list-thumbnail-radius: 28px;
     }
 
     @include media-queries($from: xl) {

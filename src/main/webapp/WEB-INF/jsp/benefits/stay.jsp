@@ -19,8 +19,13 @@
                 <div class="benefits__content">
                     <article class="benefits-program benefits-program--stay">
                         <header>
-                            <div><h2><span>2023 여행가는 달 특별할인혜택</span><strong>숙박혜택</strong></h2>
-                                <p>여행의 완성은 잠자리!<br>역대급 숙박혜택을 확인하세요!</p></div>
+                            <div>
+                                <h2><span>2023 여행가는 달 특별할인혜택</span><strong>숙박혜택</strong></h2>
+                                <p>
+                                    국내 숙박 최대 5만원 할인 <br>
+                                    역대급 숙박혜택을 확인하세요!
+                                </p>
+                            </div>
                         </header>
                         <section data-theme="">
                             <div><h3><span>여행가는 달</span>

@@ -1,30 +1,32 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title></title>
-<meta name="author" content="">
-<meta name="description" content="">
-<meta name="keywords" content="">
+<title>2023 여행가는 달 - 대한민국 구석구석</title>
+<meta name="description" content="여행이 활짝! 일상이 번쩍! 대한민국은 절찬여행중">
+<meta name="keywords" content="여행가는 달">
 <meta name="format-detection" content="telephone=no">
 <meta name="format-detection" content="address=no">
-<meta name="author" content="">
+<meta name="author" content="한국관광공사">
 <meta property="og:url" content="">
 <meta property="og:type" content="website">
-<meta property="og:title" content="">
-<meta property="og:image" content="">
-<meta property="og:description" content="">
-<meta property="og:site_name" content="">
+<meta property="og:title" content="2023 여행가는 달">
+<meta property="og:image" content="${pageContext.request.contextPath}/assets/images/common/og_image.png">
+<meta property="og:image:width" content="600">
+<meta property="og:image:height" content="300">
+<meta property="og:description" content="여행이 활짝! 일상이 번쩍! 대한민국은 절찬여행중">
+<meta property="og:site_name" content="2023 여행가는 달">
 <meta property="og:locale" content="ko_KR">
-<meta property="article:author" content="">
-<link rel="apple-touch-icon" sizes="180x180" href="/favicon.ico">
-<link rel="icon" type="image/png" sizes="32x32" href="/favicon.ico">
-<link rel="icon" type="image/png" sizes="16x16" href="/favicon.ico">
-<script>if (/MSIE \d|Trident.*rv:/.test(navigator.userAgent)) {
-    window.location = 'microsoft-edge:' + window.location;
-    setTimeout(function () {
-        window.location = 'https://go.microsoft.com/fwlink/?linkid=2135547';
-    }, 13);
-}
+<meta property="article:author" content="한국관광공사">
+<link rel="apple-touch-icon" sizes="180x180" href="${pageContext.request.contextPath}/assets/images/common/apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="32x32" href="${pageContext.request.contextPath}/assets/images/common/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="${pageContext.request.contextPath}/assets/images/common/favicon-16x16.png">
+<script>
+    if (/MSIE \d|Trident.*rv:/.test(navigator.userAgent)) {
+        window.location = 'microsoft-edge:' + window.location;
+        setTimeout(function () {
+            window.location = 'https://go.microsoft.com/fwlink/?linkid=2135547';
+        }, 13);
+    }
 </script>
 <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/vendors.css">
 <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/app.css">
@@ -33,7 +35,6 @@
 <!-- 구글 옵티마이즈 스크립트, 긴급한 변동사항 등에 활용 -->
 <script src="https://www.googleoptimize.com/optimize.js?id=OPT-5JVS3BG"></script>
 <script src="https://www.googleoptimize.com/optimize.js?id=OPT-NQVD2Q2"></script>
-
 
 <script type="text/javascript">
     var appYn = 'N';

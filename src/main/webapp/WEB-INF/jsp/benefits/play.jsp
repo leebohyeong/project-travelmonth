@@ -19,8 +19,13 @@
                 <div class="benefits__content">
                     <article class="benefits-program benefits-program--play">
                         <header>
-                            <div><h2><strong>놀거리혜택</strong></h2>
-                                <p>여행정보, 할인혜택, 이벤트 등 다양한 놀거리혜택으로<br>풍성한 여행을 만들어가세요!</p></div>
+                            <div>
+                                <h2><strong>놀거리혜택</strong></h2>
+                                <p>
+                                    관광지 입장 할인, 다양한 방문인증 이벤트 등 <br>
+                                    풍성한 혜택을 만나보세요!
+                                </p>
+                            </div>
                         </header>
                         <nav>
                             <ul>

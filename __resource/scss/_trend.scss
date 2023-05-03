@@ -67,6 +67,10 @@
                 @include media-queries($from: xl) {
                     font-size: 84px;
                 }
+
+                span {
+                    font-size: 0.5em;
+                }
             }
         }
 

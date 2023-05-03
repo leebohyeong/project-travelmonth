@@ -333,19 +333,19 @@
                             <li data-benefit="traffic">
                                 <a href="${pageContext.request.contextPath}/benefits/traffic.do">
                                     <h4>교통혜택</h4>
-                                    <p>국내여행 준비중이라면<br>교통혜택을 챙겨가세요!</p>
+                                    <p>열차•항공•렌터카•시티투어 할인<br>우리 함께 떠나요!</p>
                                 </a>
                             </li>
                             <li data-benefit="stay">
                                 <a href="${pageContext.request.contextPath}/benefits/stay.do">
                                     <h4>숙박혜택</h4>
-                                    <p>여행의 완성은 잠자리!<br>역대급 숙박혜택을 확인하세요</p>
+                                    <p>국내 숙박 최대 5만원 할인<br>역대급 숙박혜택을 확인하세요!</p>
                                 </a>
                             </li>
                             <li data-benefit="play">
                                 <a href="${pageContext.request.contextPath}/benefits/play.do">
                                     <h4>놀거리혜택</h4>
-                                    <p>놀거리혜택으로<br>풍성한 여행을 만들어가세요!</p>
+                                    <p>관광지 입장 할인, 다양한 방문인증 이벤트 등<br>풍성한 혜택을 만나보세요!</p>
                                 </a>
                             </li>
                             <li data-benefit="special">
