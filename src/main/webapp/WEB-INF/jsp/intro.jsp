@@ -24,14 +24,16 @@
                     </ul>
                     <div class="category-tab-contents">
                         <div class="category-panel category-panel--active">
-                            <video width="100%" height="100%" poster="/travelmonth/assets/images/intro/thumbnail.png">
-                                <source src="aa.mp4">
-                            </video>
+<%--                            <video width="100%" height="100%" poster="/travelmonth/assets/images/intro/thumbnail.png">--%>
+<%--                                <source src="aa.mp4">--%>
+<%--                            </video>--%>
+                            <iframe src="https://www.youtube.com/embed/syTWVcb7z4E" frameborder="0"></iframe>
                         </div>
                         <div class="category-panel">
-                            <video width="100%" height="100%" poster="/travelmonth/assets/images/intro/thumbnail.png">
-                                <source src="aa.mp4">
-                            </video>
+<%--                            <video width="100%" height="100%" poster="/travelmonth/assets/images/intro/thumbnail.png">--%>
+<%--                                <source src="aa.mp4">--%>
+<%--                            </video>--%>
+                            <iframe src="https://www.youtube.com/embed/grFYVbpd92s" frameborder="0"></iframe>
                         </div>
                     </div>
                 </div>

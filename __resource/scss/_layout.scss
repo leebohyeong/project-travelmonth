@@ -421,6 +421,12 @@ body {
             background-image: url("/travelmonth/assets/images/common/logo_1330.png");
         }
 
+        a {
+            display: block;
+            width: 100%;
+            height: 100%;
+        }
+
         span {
             @include visually-hidden;
         }

@@ -326,39 +326,26 @@
                                 alt="한국임업진흥원"></a>
                     </div>
                 </div>
-                <div class="swiper">
-                    <div class="swiper-wrapper">
-                        <div class="swiper-slide"></div>
-                        <div class="swiper-slide"><a href="#" target="_blank"><img
-                                src="${pageContext.request.contextPath}/assets/images/main/img_organization_2.png"
-                                alt=""></a></div>
-                        <div class="swiper-slide"><a href="#" target="_blank"><img
-                                src="${pageContext.request.contextPath}/assets/images/main/img_organization_3.png"
-                                alt=""></a></div>
-                        <div class="swiper-slide"><a href="#" target="_blank"><img
-                                src="${pageContext.request.contextPath}/assets/images/main/img_organization_4.png"
-                                alt=""></a></div>
-                        <div class="swiper-slide"><a href="#" target="_blank"><img
-                                src="${pageContext.request.contextPath}/assets/images/main/img_organization_5.png"
-                                alt=""></a></div>
-                        <div class="swiper-slide"><a href="#" target="_blank"><img
-                                src="${pageContext.request.contextPath}/assets/images/main/img_organization_6.png"
-                                alt=""></a></div>
-                    </div>
-                </div>
             </div>
         </section>
         <section class="main__travel">
             <header><h2>대한민국은 절찬여행중</h2>
-                <p>6월, 꿈꿔왔던 여행의 주인공이 되어보세요! <br>
-                    <strong>여행가는 달</strong> <strong>2023.6.1 - 6.30</strong></p><a href="${pageContext.request.contextPath}/travelmonth/intro.do">여행가는 달 자세히보기</a></header>
+                <p>
+                    6월, 꿈꿔왔던 여행의 주인공이 되어보세요! <br>
+                    <strong>여행가는 달</strong>
+                    <strong>2023.6.1 - 6.30</strong>
+                </p>
+                <a href="${pageContext.request.contextPath}/travelmonth/intro.do">여행가는 달 자세히보기</a>
+            </header>
             <div>
                 <iframe src="https://www.youtube.com/embed/vwjE85JBIH4"><span>여행으로[웃음을]재생하기</span>
                 </iframe>
             </div>
         </section>
         <section class="main__instagram">
-            <header class="main__header"><h2>INSTAGRAM</h2><a href="https://www.instagram.com/kto9suk9suk/" target="_blank">여행가는 달 인스타그램 방문하기</a></header>
+            <header class="main__header">
+                <h2>INSTAGRAM</h2>
+                <a href="https://www.instagram.com/kto9suk9suk/" target="_blank">여행가는 달 인스타그램 방문하기</a></header>
             <div class="instagram-carousel">
                 <div class="swiper">
                     <div class="swiper-wrapper">
