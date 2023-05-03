@@ -15,7 +15,6 @@ const main = () => {
         window.addEventListener('scroll', scrollHeader);
     })();
 
-
     //intro
     (() => {
         const intro = findOne('.main__intro');
@@ -23,8 +22,8 @@ const main = () => {
             loop: true,
             slidesPerView: "auto",
 
-            Autoplay: {
-                delay: 1000,
+            autoplay: {
+                delay: 5000,
                 disableOnInteraction: false,
             },
 
@@ -39,7 +38,6 @@ const main = () => {
 
             modules: [Autoplay, Navigation, Pagination],
         });
-
 
     })();
 
@@ -177,7 +175,7 @@ const main = () => {
         const removeClass = findOne('.swiper');
 
         const instagramCarousel = new Swiper(findOne('.swiper', instagram), {
-            slidesPerView: 3.5,
+            slidesPerView: 2.5,
             spaceBetween: 6,
 
             freeMode: {

@@ -77,7 +77,7 @@
                                                         </c:if>
                                                         <li ${hidden_class}>
                                                             <a href="#modal-benefits-${row.seq}" data-type="${fn:toLowerCase(row.enjoy_gb)}" data-bs-toggle="modal" data-bs-target="#modal-benefits-${row.seq}"
-                                                               data-gtag-action="여행혜택 1_${row.title}" data-gtag-category="${title}">
+                                                               data-gtag-action="2023 여행가는달_여행혜택 지역별" data-gtag-category="${title}" data-gtag-label="혜택_${row.title}_리스트">
                                                                 <span style="background-image: url('${row.image}')"></span>
                                                                 <div>
                                                                     <p>
@@ -214,7 +214,7 @@
                                                             </dl>
                                                         </c:when>
                                                     </c:choose>
-                                                    <p><a href="${row.link}" data-gtag-action="여행혜택 1_${row.title}" data-gtag-category="${title}" data-gtag-label="자세히 보기 버튼"><span>자세히 보기</span></a></p>
+                                                    <p><a href="${row.link}" data-gtag-action="2023 여행가는달_여행혜택 지역별" data-gtag-category="${title}" data-gtag-label="혜택_${row.title}_팝업"><span>자세히 보기</span></a></p>
                                                 </article>
                                                 <button class="modal-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button>
                                             </div>

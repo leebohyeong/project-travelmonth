@@ -3,14 +3,14 @@
 .travelmonth-intro {
     header {
         background: {
-            image: url(/travelmonth/assets/images/intro/bg_header_mo.png);
+            image: url(/travelmonth/assets/images/intro/bg_header_mo.jpg);
             repeat: no-repeat;
             position: center center;
             size: cover;
         };
 
         @include media-queries($from: sm) {
-            background-image: url(/travelmonth/assets/images/intro/bg_header.png);
+            background-image: url(/travelmonth/assets/images/intro/bg_header.jpg);
         }
 
         > div {
@@ -142,6 +142,12 @@
             &--active {
                 display: block;
             }
+
+            iframe {
+                width: 100%;
+                border: none;
+                aspect-ratio: 16/9;
+            }
         }
 
     }
@@ -177,7 +183,7 @@
                 margin: 0 auto;
                 padding: 40px 0 5px 0;
                 font-weight: bold;
-                font-size: 12px;
+                font-size: 14px;
             }
         }
 
@@ -223,8 +229,8 @@
             line-height: math.div(32, 18);
 
             @include media-queries($from: xl) {
-                font-size: 12px;
-                line-height: math.div(18, 12);
+                font-size: 14px;
+                line-height: math.div(18, 14);
             }
 
             & + li {
