@@ -103,34 +103,13 @@
             </div>
         </section>
         <section class="main__trend">
-            <h2>요즘 <strong>여행 트렌드</strong>는
-            </h2>
+            <header><h2>요즘 <strong>여행 트렌드</strong>는</h2></header>
             <div class="trend-carousel">
                 <div class="swiper">
                     <div class="swiper-wrapper">
-                        <div class="swiper-slide"><a href="#"><span></span>
-                            <p>농어촌/섬관광</p></a></div>
-                        <div class="swiper-slide"><a href="#"><span></span>
-                            <p>힐링/웰니스</p></a></div>
-                        <div class="swiper-slide"><a href="#"><span></span>
-                            <p>친환경여행</p></a></div>
-                        <div class="swiper-slide"><a href="#"><span></span>
-                            <p>살아보기여행 <br>
-                                (생활관광)</p></a></div>
-                        <div class="swiper-slide"><a href="#"><span></span>
-                            <p>열린관광</p></a></div>
-                        <div class="swiper-slide"><a href="#"><span></span>
-                            <p>K-Culture</p></a></div>
-                        <div class="swiper-slide"><a href="#"><span></span>
-                            <p>스포츠케이션</p></a></div>
-                        <div class="swiper-slide"><a href="#"><span></span>
-                            <p>취미여행</p></a></div>
-                        <div class="swiper-slide"><a href="#"><span></span>
-                            <p>미식여행</p></a></div>
-                        <div class="swiper-slide"><a href="#"><span></span>
-                            <p>반려동물 <br>
-                                동반여행
-                            </p></a></div>
+                        <c:forEach var="row" items="${common:getThemes()}" varStatus="loop">
+                            <div class="swiper-slide"><a href="${pageContext.request.contextPath}/trend/trend-${row.theme}.do" data-theme="${row.theme}"><p>${row.main_title}</p></a></div>
+                        </c:forEach>
                     </div>
                     <div class="swiper-scrollbar"></div>
                 </div>
@@ -142,13 +121,13 @@
                 <li data-benefit="traffic">
                     <a href="${pageContext.request.contextPath}/benefits/traffic.do">
                         <h4>교통혜택</h4>
-                        <p>국내여행 준비중이라면<br>교통혜택을 챙겨가세요!</p>
+                        <p>열차&#8226;항공&#8226;렌터카&#8226;시티투어 할인<br>우리 함께 떠나요!</p>
                     </a>
                 </li>
                 <li data-benefit="stay">
                     <a href="${pageContext.request.contextPath}/benefits/stay.do">
                         <h4>숙박혜택</h4>
-                        <p>여행의 완성은 잠자리!<br>역대급 숙박혜택을 확인하세요</p>
+                        <p>국내 숙박 최대 5만원 할인<br>역대급 숙박혜택을 확인하세요!</p>
                     </a>
                 </li>
                 <li data-benefit="play">
@@ -158,9 +137,9 @@
                     </a>
                 </li>
                 <li data-benefit="special">
-                    <a href="#">
+                    <a href="${pageContext.request.contextPath}/special/list.do">
                         <h4>여행상품<br>특별 기획전</h4>
-                        <p>여행가는 달 기간동안<br>여행업계가 선보이는<br>각종 혜택들을 만나보세요.</p>
+                        <p>관광지 입장 할인, 다양한 방문인증 이벤트 등<br>풍성한 혜택을 만나보세요!</p>
                     </a>
                 </li>
             </ul>
@@ -169,7 +148,7 @@
             <div>
                 <h2>여행상품 특별 기획전</h2>
                 <p>여행가는 달 기간동안 여행업계가 선보이는 <strong>각종 혜택들을 만나보세요.</strong></p>
-                <a href="#">기획전 바로가기</a>
+                <a href="${pageContext.request.contextPath}/special/list.do">기획전 바로가기</a>
             </div>
         </aside>
         <section class="main__june">
@@ -193,7 +172,7 @@
                         <div>
                             <div>
                                 <p>주간 <br>여행정보</p>
-                                <a href="#">더보기</a>
+                                <a href="${pageContext.request.contextPath}/benefits/local/gangwon.do">더보기</a>
                             </div>
                             <ul>
                                 <c:if test="${not empty june}">
@@ -277,7 +256,7 @@
         </section>
         <section class="main__event">
             <div>
-                <header class="main__header"><h2>이벤트</h2><a href="#">이벤트 바로가기</a></header>
+                <header class="main__header"><h2>이벤트</h2><a href="${pageContext.request.contextPath}/event/list.do">이벤트 바로가기</a></header>
                 <div class="event-carousel">
                     <div class="swiper">
                         <div class="swiper-wrapper">
@@ -372,14 +351,14 @@
         <section class="main__travel">
             <header><h2>대한민국은 절찬여행중</h2>
                 <p>6월, 꿈꿔왔던 여행의 주인공이 되어보세요! <br>
-                    <strong>여행가는 달</strong> <strong>2023.6.1 - 6.30</strong></p><a href="#">여행가는 달 자세히보기</a></header>
+                    <strong>여행가는 달</strong> <strong>2023.6.1 - 6.30</strong></p><a href="${pageContext.request.contextPath}/travelmonth/intro.do">여행가는 달 자세히보기</a></header>
             <div>
                 <iframe src="https://www.youtube.com/embed/vwjE85JBIH4"><span>여행으로[웃음을]재생하기</span>
                 </iframe>
             </div>
         </section>
         <section class="main__instagram">
-            <header class="main__header"><h2>INSTAGRAM</h2><a href="#">여행가는 달 인스타그램 방문하기</a></header>
+            <header class="main__header"><h2>INSTAGRAM</h2><a href="https://www.instagram.com/kto9suk9suk/" target="_blank">여행가는 달 인스타그램 방문하기</a></header>
             <div class="instagram-carousel">
                 <div class="swiper">
                     <div class="swiper-wrapper">

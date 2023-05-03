@@ -8,15 +8,64 @@ append variables
 block body
     article.event-list
         header
-        aside
-        div
-            nav
-                ul
+            div
+                h2 여행가는 달<br> 이벤트
+                p.
+                    6월 여행가는 달에만 진행되는 특별한 이벤트<br>
+                    참여하시고 푸짐한 경품도 챙기세요!
+        .event-list--swiper
+            .swiper
+                .swiper-wrapper
+                    .swiper-slide
+                        a(href="#")
+                            picture
+                                source(srcset="/travelmonth/assets/images/event/img_2.png" media="(min-width: 768px)")
+                                img(src="/travelmonth/assets/images/event/img_2_mo.png" alt="")
+                    .swiper-slide
+                        a(href="#")
+                            picture
+                                source(srcset="/travelmonth/assets/images/event/img_3.png" media="(min-width: 768px)")
+                                img(src="/travelmonth/assets/images/event/img_3_mo.png" alt="")
+                    .swiper-slide
+                        a(href="#")
+                            picture
+                                source(srcset="/travelmonth/assets/images/event/img_1.png" media="(min-width: 768px)")
+                                img(src="/travelmonth/assets/images/event/img_1_mo.png" alt="")
+                    .swiper-slide
+                        a(href="#")
+                            picture
+                                source(srcset="/travelmonth/assets/images/event/img_2.png" media="(min-width: 768px)")
+                                img(src="/travelmonth/assets/images/event/img_2_mo.png" alt="")
+                    .swiper-slide
+                        a(href="#")
+                            picture
+                                source(srcset="/travelmonth/assets/images/event/img_3.png" media="(min-width: 768px)")
+                                img(src="/travelmonth/assets/images/event/img_3_mo.png" alt="")
+                    .swiper-slide
+                        a(href="#")
+                            picture
+                                source(srcset="/travelmonth/assets/images/event/img_1.png" media="(min-width: 768px)")
+                                img(src="/travelmonth/assets/images/event/img_1_mo.png" alt="")
+                .swiper-navigation
+                    .swiper-navigation-prev
+                    .swiper-navigation-next
+
+                .swiper-pagination
+
+        .event-list--list
+            div.event-list--list__tab
+                ul.category-tab
                     li
-                        a(href="") 진행 중 이벤트
+                        a(href="#").category-tab__item.category-tab__item--active 진행 중 이벤트
                     li
-                        a(href="") 종료 이벤트 및 당첨자 발표
-            section.list-thumbnail.list-thumbnail--events
-                - const listThumbnailEvents = JSON.parse('[' + JSON.stringify(listThumbnail.events).replace(/^\[/, '').replace(/]$/, ',').repeat(4).replace(/,$/, '') + ']').sort(() => Math.random() - 0.5);
-                +list-thumbnail-events(listThumbnailEvents)
+                        a(href="#").category-tab__item 종료 이벤트 및 당첨자 발표
+                div.category-tab-contents
+                    div.category-panel.category-panel--active
+                        section.list-thumbnail.list-thumbnail--events
+                            - const listThumbnailEvents = JSON.parse('[' + JSON.stringify(listThumbnail.events).replace(/^\[/, '').replace(/]$/, ',').repeat(4).replace(/,$/, '') + ']').sort(() => Math.random() - 0.5);
+                            +list-thumbnail-events(listThumbnailEvents)
+                    div.category-panel
+                        section.list-thumbnail.list-thumbnail--events
+                            +list-thumbnail-events(listThumbnailEvents)
+
 

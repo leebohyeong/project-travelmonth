@@ -1,8 +1,241 @@
 @use "sass:math";
 
 .event-list {
-    > div {
+
+    header {
+        background: {
+            image: url(/travelmonth/assets/images/event/bg_header_mo.png);
+            repeat: no-repeat;
+            position: center center;
+            size: cover;
+        };
+
+        @include media-queries($from: sm) {
+            background-image: url(/travelmonth/assets/images/event/bg_header.png);
+        }
+
+        > div {
+            height: calc(485px / 2);
+            text-align: center;
+
+            @include media-queries($from: md) {
+                height: 372px;
+            }
+        }
+
+        h2 {
+            padding: 30px 0 10px;
+            font-weight: 500;
+            font-size: 30px;
+            line-height: 1;
+            font-family: GmarketSans, sans-serif;
+
+            @include media-queries($from: md) {
+                padding: 58px 0 25px;
+                font-size: 50px;
+                line-height: 1;
+            }
+
+            br {
+                @include media-queries($from: md) {
+                    display: none;
+                }
+            }
+        }
+
+        p {
+            padding: 0 40px;
+            font-size: 12px;
+
+            @include media-queries($from: md) {
+                font-size: 18px;
+                line-height: math.div(24, 18);
+            }
+        }
+    }
+
+    &--swiper {
+        max-width: calc(1200px * 3);
+        margin: 100px auto;
+
+        @include media-queries($to: xl) {
+            margin: 40px auto;
+        }
+
+        .swiper {
+
+            &-slide {
+                width: 1200px;
+
+                @include media-queries($to: xl) {
+                    width: percentage(calc(1200 / 1920));
+                }
+
+                @include media-queries($to: md) {
+                    width: percentage(calc(599 / 720));
+                }
+
+                a {
+                    overflow: hidden;
+                    display: block;
+                    aspect-ratio: 1200/560;
+
+                    @include media-queries($to: xl) {
+                        aspect-ratio: 599/279;
+                    }
+                }
+
+                &-prev,
+                &-next {
+                    opacity: .4;
+                }
+            }
+
+            &-navigation {
+                &-prev,
+                &-next {
+                    position: absolute;
+                    top: 50%;
+                    transform: translateY(-50%);
+                    z-index: 10;
+                    width: 60px;
+                    height: 60px;
+                    background-color: #fff;
+                    border: 2px solid #8c8c8c;
+                    border-radius: 50%;
+                    cursor: pointer;
+                    background: {
+                        repeat: no-repeat;
+                        position: center;
+                    };
+
+                    @include media-queries($to: xl) {
+                        width: 45px;
+                        height: 45px;
+                        border: 1.5px solid #8c8c8c;
+                        background-size: 10.5px auto;
+                    }
+
+                    @include media-queries($to: md) {
+                        width: 30px;
+                        height: 30px;
+                        border: 1px solid #8c8c8c;
+                        background-size: 7px auto;
+                    }
+                }
+
+                &-prev {
+                    left: calc(50% - 600px - 20px - 7px);
+                    background: {
+                        image: url(/travelmonth/assets/images/main/icon_button_prev.png);
+                    };
+
+                    @include media-queries($to: xl) {
+                        left: calc(50% - 31.25% - 20px - 7px);
+                    }
+
+                    @include media-queries($to: md) {
+                        left: calc(50% - 41.6% - 10px - 3.5px);
+                    }
+                }
+
+                &-next {
+                    right: calc(50% - 600px - 20px - 7px);
+                    background: {
+                        image: url(/travelmonth/assets/images/main/icon_button_next.png);
+                    };
+
+                    @include media-queries($to: xl) {
+                        right: calc(50% - 31.25% - 20px - 7px);
+                    }
+
+                    @include media-queries($to: md) {
+                        right: calc(50% - 41.6% - 10px - 3.5px);
+                    }
+                }
+            }
+
+            &-pagination {
+                display: flex;
+                align-content: center;
+                justify-content: space-between;
+                grid-column-gap: 16px;
+                position: absolute;
+                left: 50%;
+                transform: translateX(-50%);
+                bottom: 20px;
+                z-index: 10;
+
+                .swiper-pagination-bullet {
+                    display: block;
+                    width: 14px;
+                    height: 14px;
+                    border: 2px solid #fff;
+                    border-radius: 50%;
+
+                    @include media-queries($to: xl) {
+                       display: none;
+                    }
+
+                    &-active {
+                        background-color: #fff;
+                    }
+                }
+            }
+        }
+    }
+
+    &--list {
         padding: var(--site-content-padding);
+
+        .category-tab {
+            display: flex;
+            width: 1200px;
+            margin: 0 auto 70px;
+
+            @include media-queries($to: xl) {
+                width: 100%;
+                margin: 0 auto 40px;
+            }
+
+            @include media-queries($to: md) {
+                margin: 0 auto 20px;
+            }
+
+            li {
+                width: 50%;
+            }
+
+            &__item {
+                display: block;
+                height: 40px;
+                background-color: #f7f7f7;
+                color: #ababab;
+                font-size: 12px;
+                line-height: 40px;
+                text-align: center;
+                font-family: GmarketSans, sans-serif;
+
+                @include media-queries($from: xl) {
+                    height: 84px;
+                    font-size: 24px;
+                    line-height: 84px;
+                }
+
+                &--active {
+                    background-color: #37bf8a;
+                    color: #fff;
+                }
+            }
+        }
+
+        .category-panel  {
+            display: none;
+
+            &--active {
+                display: block;
+            }
+        }
     }
 }
 

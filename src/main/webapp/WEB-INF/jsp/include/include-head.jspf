@@ -7,10 +7,10 @@
 <meta name="format-detection" content="telephone=no">
 <meta name="format-detection" content="address=no">
 <meta name="author" content="한국관광공사">
-<meta property="og:url" content="">
+<meta property="og:url" content="https://korean.visitkorea.or.kr/travelmonth">
 <meta property="og:type" content="website">
 <meta property="og:title" content="2023 여행가는 달">
-<meta property="og:image" content="${pageContext.request.contextPath}/assets/images/common/og_image.png">
+<meta property="og:image" content="https://korean.visitkorea.or.kr/travelmonth/assets/images/common/og_image.png">
 <meta property="og:image:width" content="600">
 <meta property="og:image:height" content="300">
 <meta property="og:description" content="여행이 활짝! 일상이 번쩍! 대한민국은 절찬여행중">

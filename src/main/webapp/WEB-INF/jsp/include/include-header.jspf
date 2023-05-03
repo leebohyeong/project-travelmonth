@@ -7,7 +7,7 @@
 
 <div class="skipnav"><a href="#content">본문 영역으로 바로가기</a></div>
 <nav class="quick-visitkorea">
-    <div><a href="https://korean.visitkorea.or.kr" target="_blank"><span>대한민국구석구석 바로가기</span></a></div>
+    <div><a href="https://korean.visitkorea.or.kr" target="_blank" data-gtag-action="대한민국구석구석 바로가기" data-gtag-category="GNB"><span>대한민국구석구석 바로가기</span></a></div>
 </nav>
 <header class="site-header">
     <div><h1><a href="${pageContext.request.contextPath}/index.do"><span>여행가는 달</span></a></h1>
@@ -17,27 +17,27 @@
         <nav>
             <ul data-id="main">
                 <li>
-                    <a href="${pageContext.request.contextPath}/intro.do">여행가는 달이란?</a>
+                    <a href="${pageContext.request.contextPath}/intro.do" data-gtag-action="여행가는 달 소개" data-gtag-category="GNB">여행가는 달이란?</a>
                     <div>
                         <ul>
-                            <li><a href="${pageContext.request.contextPath}/intro.do">여행가는 달 소개</a></li>
-                            <li><a href="${pageContext.request.contextPath}/organization.do">여행가는 달 참여기관</a></li>
+                            <li><a href="${pageContext.request.contextPath}/intro.do" data-gtag-action="여행가는 달 소개" data-gtag-category="GNB">여행가는 달 소개</a></li>
+                            <li><a href="${pageContext.request.contextPath}/organization.do" data-gtag-action="여행가는 달 참여기관" data-gtag-category="GNB">여행가는 달 참여기관</a></li>
                         </ul>
                     </div>
                 </li>
                 <li>
-                    <a href="${pageContext.request.contextPath}/benefits/local/gangwon.do">여행혜택</a>
+                    <a href="${pageContext.request.contextPath}/benefits/local/gangwon.do" data-gtag-action="지역별 여행혜택" data-gtag-category="GNB">여행혜택</a>
                     <div>
                         <ul>
-                            <li><a href="${pageContext.request.contextPath}/benefits/traffic.do">교통혜택</a></li>
-                            <li><a href="${pageContext.request.contextPath}/benefits/stay.do">숙박혜택</a></li>
-                            <li><a href="${pageContext.request.contextPath}/benefits/play.do">놀거리혜택</a></li>
+                            <li><a href="${pageContext.request.contextPath}/benefits/traffic.do" data-gtag-action="교통혜택" data-gtag-category="GNB">교통혜택</a></li>
+                            <li><a href="${pageContext.request.contextPath}/benefits/stay.do" data-gtag-action="숙박혜택" data-gtag-category="GNB">숙박혜택</a></li>
+                            <li><a href="${pageContext.request.contextPath}/benefits/play.do" data-gtag-action="놀거리혜택" data-gtag-category="GNB">놀거리혜택</a></li>
                         </ul>
                     </div>
                 </li>
-                <li><a href="${pageContext.request.contextPath}/trend/list.do">여행트렌드관</a></li>
-                <li><a href="${pageContext.request.contextPath}/special/list.do">여행상품 특별 기획전</a></li>
-                <li><a href="${pageContext.request.contextPath}/event/list.do">이벤트</a></li>
+                <li><a href="${pageContext.request.contextPath}/trend/list.do" data-gtag-action="여행트렌드관" data-gtag-category="GNB">여행트렌드관</a></li>
+                <li><a href="${pageContext.request.contextPath}/special/list.do" data-gtag-action="여행상품 특별 기획전" data-gtag-category="GNB">여행상품 특별 기획전</a></li>
+                <li><a href="${pageContext.request.contextPath}/event/list.do" data-gtag-action="이벤트" data-gtag-category="GNB">이벤트</a></li>
             </ul>
         </nav>
     </div>
