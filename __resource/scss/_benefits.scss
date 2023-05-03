@@ -30,7 +30,7 @@
 
         h2 {
             display: none;
-            padding-top: 60px;
+            padding-top: 35px;
             color: #fff;
             font-family: "GmarketSans", sans-serif;
             text-align: center;
@@ -58,7 +58,7 @@
             text-align: center;
 
             @include media-queries($from: xl) {
-                padding-top: 40px;
+                padding-top: 20px;
             }
 
             ul {
@@ -164,7 +164,7 @@
                 display: none;
                 position: relative;
                 width: calc(100% - 40px);
-                margin: 40px auto 0;
+                margin: 20px auto 0;
 
                 @include media-queries($from: xl) {
                     display: block;
