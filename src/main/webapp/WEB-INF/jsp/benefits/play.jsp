@@ -78,7 +78,7 @@
                                 <c:set var="list" value="${enjoy.data.list}"/>
                                 <c:if test="${not empty list}">
                                     <c:forEach var="row" items="${list}" varStatus="loop">
-                                        <div class="modal fade modal-benefits" id="modal-benefits-${row.seq}" data-type="d" tabindex="-1" data-bs-backdrop="static" aria-hidden="true">
+                                        <div class="modal fade modal-benefits" id="modal-benefits-${row.seq}" data-type="${fn:toLowerCase(row.enjoy_gb)}" tabindex="-1" data-bs-backdrop="static" aria-hidden="true">
                                             <div class="modal-dialog">
                                                 <div class="modal-content">
                                                     <article>

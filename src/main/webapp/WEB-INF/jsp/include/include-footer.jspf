@@ -8,9 +8,31 @@
                 <p>TEL : 033-738-3000</p></div>
             <p>ⓒ한국관광공사</p></div>
         <ul>
-            <li><!--a(href="https://www.mcst.go.kr/kor/main.jsp" target="_blank")--><span>문화체육관광부</span></li>
-            <li><!--a(href="https://kto.visitkorea.or.kr/kor.kto" target="_blank")--><span>한국관광공사</span></li>
-            <li><!--a(href="" target="_blank")--><span>1330</span></li>
+            <li><a href="https://www.mcst.go.kr/kor/main.jsp" target="_blank"><span>문화체육관광부</span></a></li>
+            <li><a href="https://knto.or.kr/index" target="_blank"><span>한국관광공사</span></a> </li>
+            <li><a href="https://korean.visitkorea.or.kr/notice/news_detail.do?nwsid=be22068c-a08e-4f11-94a3-c374cb74c452" target="_blank"><span>1330</span></a></li>
         </ul>
     </div>
 </footer>
+<script type="text/javascript">
+    window.dataLayer = window.dataLayer || [];
+    dataLayer.push({
+        'user_id': custInfo.uuid, // 기본페이지뷰 시 호출되는 uuid값 활용
+        'first_login': custInfo.firstYn, // 기본페이지뷰 시 호출되는 firstYn값 활용
+        'gender_div': custInfo.gender, // 기본페이지뷰 시 호출되는 gender값 활용
+        'birth_year': custInfo.birthYr, // 기본페이지뷰 시 호출되는 birthYr값 활용
+        'city_name': custInfo.rsdeNm, // 기본페이지뷰 시 호출되는 rsdeNm값 활용
+        'join_date': custInfo.joinYmd, // 기본페이지뷰 시 호출되는 joinYmd값 활용
+        'method': custInfo.channel, // 기본페이지뷰 시 호출되는 channel값 활용
+        'dimension7': custInfo.uuid,
+        'dimension8': custInfo.joinYmd,
+        'dimension9': custInfo.loginYn,
+        'dimension10': custInfo.channel,
+        'dimension11': custInfo.device
+    });
+    function gtag() {
+        dataLayer.push(arguments);
+    }
+    gtag('js', new Date());
+    gtag('config', 'G-LYY1LJZCC4', {otd_nm: ""});
+</script>

@@ -56,7 +56,7 @@ const googleTag = () => {
         if (gtagCategory) options['event_category'] = gtagCategory;
         if (gtagLabel) options['event_label'] = gtagLabel;
 
-        // gtag('event', gtagAction, options);
+         gtag('event', gtagAction, options);
     };
 
     triggers.forEach(trigger => on(trigger, 'click', () => fireEvent(trigger)));
