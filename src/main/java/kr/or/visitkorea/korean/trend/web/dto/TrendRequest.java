@@ -20,11 +20,11 @@ public class TrendRequest {
 	@EqualsAndHashCode(callSuper = true)
 	public static class Goods extends Search {
 
+		private String search_travel_gb = "P";
+
 		public Goods(Search search) {
 			super(search.getSearch_trend_gb());
 		}
-
-		private String search_travel_gb = "P";
 
 	}
 
@@ -32,11 +32,11 @@ public class TrendRequest {
 	@EqualsAndHashCode(callSuper = true)
 	public static class Content extends Search {
 
+		private String search_travel_gb = "C";
+
 		public Content(Search search) {
 			super(search.getSearch_trend_gb());
 		}
-
-		private String search_travel_gb = "C";
 
 	}
 

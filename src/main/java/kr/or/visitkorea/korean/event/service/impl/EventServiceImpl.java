@@ -2,8 +2,10 @@ package kr.or.visitkorea.korean.event.service.impl;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import kr.or.visitkorea.korean.event.service.EventService;
+import kr.or.visitkorea.korean.event.web.dto.EventRequest;
 import kr.or.visitkorea.korean.global.common.service.impl.CommonServiceImplWrapper;
 import kr.or.visitkorea.korean.global.dto.CommonResponse;
+import kr.or.visitkorea.korean.global.util.Common;
 import kr.or.visitkorea.korean.global.util.RequestUrl;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -24,11 +26,20 @@ public class EventServiceImpl extends CommonServiceImplWrapper implements EventS
 	 * @return
 	 */
 	@Override
-	public Object getList()
+	public Object getList(Object request)
 	{
 		try
 		{
-			JSONObject jsonObject = RequestUrl.get(TRAVEL_MONTH_SITE_URL + "/event/list");
+			String parameter = "";
+			if (request != null)
+			{
+				if (request instanceof EventRequest.Progress || request instanceof EventRequest.End)
+				{
+					parameter = Common.getUrlQueryString(request);
+				}
+			}
+
+			JSONObject jsonObject = RequestUrl.get(TRAVEL_MONTH_SITE_URL + "/event/list" + parameter);
 			if (jsonObject != null)
 			{
 				boolean result = (boolean) jsonObject.get("result");

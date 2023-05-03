@@ -1,6 +1,7 @@
 package kr.or.visitkorea.korean.event.web;
 
 import kr.or.visitkorea.korean.event.service.EventService;
+import kr.or.visitkorea.korean.event.web.dto.EventRequest;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Controller;
@@ -22,12 +23,13 @@ public class EventController {
 	 * @return
 	 */
 	@RequestMapping(value = "/list.do", method = RequestMethod.GET)
-	public String list(Model model)
+	public String list(EventRequest.Search request, Model model)
 	{
 		try
 		{
-			model.addAttribute("event", SERVICE.getList());
 			model.addAttribute("banner", SERVICE.getBannerList());
+			model.addAttribute("end", SERVICE.getList(new EventRequest.End(request)));
+			model.addAttribute("progress", SERVICE.getList(new EventRequest.Progress(request)));
 		}
 		catch (Exception exception)
 		{

@@ -7,7 +7,7 @@ public interface EventService
 	 * GET LIST
 	 * @return
 	 */
-	Object getList();
+	Object getList(Object request);
 
 	/**
 	 * GET MAIN LIST
