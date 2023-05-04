@@ -53,7 +53,7 @@ const googleTag = () => {
         const {gtagAction, gtagCategory, gtagLabel} = trigger.dataset;
         const options = {}
 
-        if (gtagCategory) options[gtagCategory] = gtagLabel || '';
+        if (gtagCategory) options[`${gtagCategory}`] = gtagLabel || '';
 
          gtag('event', gtagAction, options);
     };
