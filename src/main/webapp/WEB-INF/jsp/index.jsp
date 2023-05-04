@@ -70,6 +70,9 @@
                                                 <c:set var="name_en" value="seoul-incheon-gyeonggi"/>
                                             </c:if>
                                             <a href="${pageContext.request.contextPath}/benefits/local/${name_en}.do"
+                                               data-gtag-action="2023 여행가는 달_메인"
+                                               data-gtag-category="main_local_tab_${fn:replace(fn:toLowerCase(name_en), '-', '_')}"
+                                               data-gtag-label="${fn:replace(fn:toLowerCase(row.name_kr), '-', '_')}"
                                                data-theme="${row.code}">${row.name_kr}</a>
                                         </div>
                                     </c:forEach>
@@ -82,20 +85,40 @@
                     <div class="swiper">
                         <div class="swiper-wrapper">
                             <div class="swiper-slide">
-                                <a href="${pageContext.request.contextPath}/benefits/traffic.do" data-theme="a">교통 <br>혜택</a>
+                                <a href="${pageContext.request.contextPath}/benefits/traffic.do"
+                                   data-gtag-action="2023 여행가는 달_메인"
+                                   data-gtag-category="main_program_tab_travel"
+                                   data-gtag-label="교통혜택"
+                                   data-theme="a">교통 <br>혜택</a>
                             </div>
                             <div class="swiper-slide">
-                                <a href="${pageContext.request.contextPath}/benefits/stay.do" data-theme="b">숙박
+                                <a href="${pageContext.request.contextPath}/benefits/stay.do"
+                                   data-gtag-action="2023 여행가는 달_메인"
+                                   data-gtag-category="main_program_tab_accommodation"
+                                   data-gtag-label="숙박혜택"
+                                   data-theme="b">숙박
                                     <br>혜택</a>
                             </div>
                             <div class="swiper-slide">
-                                <a href="${pageContext.request.contextPath}/benefits/play.do" data-theme="c">놀거리 <br>혜택</a>
+                                <a href="${pageContext.request.contextPath}/benefits/play.do"
+                                   data-gtag-action="2023 여행가는 달_메인"
+                                   data-gtag-category="main_program_tab_play"
+                                   data-gtag-label="놀거리혜택"
+                                   data-theme="c">놀거리 <br>혜택</a>
                             </div>
                             <div class="swiper-slide">
-                                <a href="${pageContext.request.contextPath}/trend/list.do" data-theme="d">여행 <br>트렌드관</a>
+                                <a href="${pageContext.request.contextPath}/trend/list.do"
+                                   data-gtag-action="2023 여행가는 달_메인"
+                                   data-gtag-category="main_program_tab_trend"
+                                   data-gtag-label="트렌드관"
+                                   data-theme="d">여행 <br>트렌드관</a>
                             </div>
                             <div class="swiper-slide">
-                                <a href="${pageContext.request.contextPath}/special/list.do" data-theme="e">여행상품 <br>특별 기획전</a>
+                                <a href="${pageContext.request.contextPath}/special/list.do"
+                                   data-gtag-action="2023 여행가는 달_메인"
+                                   data-gtag-category="main_program_tab_special"
+                                   data-gtag-label="여행상품 특별 기획전"
+                                   data-theme="e">여행상품 <br>특별 기획전</a>
                             </div>
                         </div>
                     </div>
@@ -108,7 +131,15 @@
                 <div class="swiper">
                     <div class="swiper-wrapper">
                         <c:forEach var="row" items="${common:getThemes()}" varStatus="loop">
-                            <div class="swiper-slide"><a href="${pageContext.request.contextPath}/trend/trend-${row.theme}.do" data-theme="${row.theme}"><p>${row.main_title}</p></a></div>
+                            <div class="swiper-slide">
+                                <a href="${pageContext.request.contextPath}/trend/trend-${row.theme}.do"
+                                   data-gtag-action="2023 여행가는 달_메인"
+                                   data-gtag-category="main_trend_${row.ga_tag}"
+                                   data-gtag-label="${row.ga_tag_title}"
+                                   data-theme="${row.theme}">
+                                    <p>${row.main_title}</p>
+                                </a>
+                            </div>
                         </c:forEach>
                     </div>
                     <div class="swiper-scrollbar"></div>
@@ -119,25 +150,29 @@
             <h2>여행혜택</h2>
             <ul>
                 <li data-benefit="traffic">
-                    <a href="${pageContext.request.contextPath}/benefits/traffic.do">
+                    <a href="${pageContext.request.contextPath}/benefits/traffic.do"
+                       data-gtag-action="2023 여행가는 달_메인" data-gtag-category="main_banner_traffic" data-gtag-label="교통혜택">
                         <h4>교통혜택</h4>
                         <p>열차&#8226;항공&#8226;렌터카&#8226;시티투어 할인<br>우리 함께 떠나요!</p>
                     </a>
                 </li>
                 <li data-benefit="stay">
-                    <a href="${pageContext.request.contextPath}/benefits/stay.do">
+                    <a href="${pageContext.request.contextPath}/benefits/stay.do"
+                       data-gtag-action="2023 여행가는 달_메인" data-gtag-category="main_banner_accommodation" data-gtag-label="숙박혜택">
                         <h4>숙박혜택</h4>
                         <p>국내 숙박 최대 5만원 할인<br>역대급 숙박혜택을 확인하세요!</p>
                     </a>
                 </li>
                 <li data-benefit="play">
-                    <a href="${pageContext.request.contextPath}/benefits/play.do">
+                    <a href="${pageContext.request.contextPath}/benefits/play.do"
+                       data-gtag-action="2023 여행가는 달_메인" data-gtag-category="main_banner_play" data-gtag-label="놀거리혜택">
                         <h4>놀거리혜택</h4>
                         <p>놀거리혜택으로<br>풍성한 여행을 만들어가세요!</p>
                     </a>
                 </li>
                 <li data-benefit="special">
-                    <a href="${pageContext.request.contextPath}/special/list.do">
+                    <a href="${pageContext.request.contextPath}/special/list.do"
+                       data-gtag-action="2023 여행가는 달_메인" data-gtag-category="main_banner_special" data-gtag-label="여행상품 특별 기획전">
                         <h4>여행상품<br>특별 기획전</h4>
                         <p>관광지 입장 할인, 다양한 방문인증 이벤트 등<br>풍성한 혜택을 만나보세요!</p>
                     </a>
@@ -153,8 +188,10 @@
         </aside>
         <section class="main__june">
             <div>
-                <header><h2><strong>준</strong>이 추천해 <strong>준</strong> 여행정보</h2>
-                    <p></p></header>
+                <header>
+                    <h2><strong>준</strong>이 추천해 <strong>준</strong> 여행정보</h2>
+                    <p></p>
+                </header>
                 <div class="june-contents">
                     <div class="june-contents__information">
                         <c:if test="${not empty june}">
@@ -172,7 +209,8 @@
                         <div>
                             <div>
                                 <p>주간 <br>여행정보</p>
-                                <a href="${pageContext.request.contextPath}/benefits/local/gangwon.do">더보기</a>
+                                <a href="${pageContext.request.contextPath}/benefits/local/gangwon.do"
+                                   data-gtag-action="2023 여행가는 달_메인" data-gtag-category="main_local_more" data-gtag-label="주간 여행정보 더보기">더보기</a>
                             </div>
                             <ul>
                                 <c:if test="${not empty june}">
@@ -184,7 +222,10 @@
                                                     <c:choose>
                                                         <c:when test="${not empty row.link}">
                                                             <a href="${row.link}"
-                                                               target="${row.link_target}">${row.title}</a>
+                                                               target="${row.link_target}"
+                                                               data-gtag-action="2023 여행가는 달_메인"
+                                                               data-gtag-category="main_june_left_${loop.count}"
+                                                               data-gtag-label="${common:getTagText(row.title)}">${row.title}</a>
                                                         </c:when>
                                                         <c:otherwise>
                                                             <strong>${row.title}</strong>
@@ -207,8 +248,12 @@
                                         <c:choose>
                                             <c:when test="${not empty row.link}">
                                                 <div class="june-contents__tourist-banner">
-                                                    <a href="${row.link}" target="${row.link_target}"
-                                                       style="background-image:url('${row.image}')">
+                                                    <a href="${row.link}"
+                                                       target="${row.link_target}"
+                                                       style="background-image:url('${row.image}')"
+                                                       data-gtag-action="2023 여행가는 달_메인"
+                                                       data-gtag-category="main_june_right_1"
+                                                       data-gtag-label="${common:getTagText(row.title)}">
                                                         <p>${row.title}</p>
                                                     </a>
                                                 </div>
@@ -233,9 +278,13 @@
                                         <c:if test="${loop.index gt 6 && loop.index lt 11}">
                                             <c:choose>
                                                 <c:when test="${not empty row.link}">
-                                                    <a href="${row.link}" target="${row.link_target}"
+                                                    <a href="${row.link}"
+                                                       target="${row.link_target}"
                                                        class="june-contents__tourist-item"
-                                                       style="background-image:url('${row.image}')">
+                                                       style="background-image:url('${row.image}')"
+                                                       data-gtag-action="2023 여행가는 달_메인"
+                                                       data-gtag-category="main_june_right_${loop.index - 5}"
+                                                       data-gtag-label="${common:getTagText(row.title)}">
                                                         <p class="june-contents__tourist-text">${row.title}</p>
                                                     </a>
                                                 </c:when>
@@ -256,7 +305,11 @@
         </section>
         <section class="main__event">
             <div>
-                <header class="main__header"><h2>이벤트</h2><a href="${pageContext.request.contextPath}/event/list.do">이벤트 바로가기</a></header>
+                <header class="main__header">
+                    <h2>이벤트</h2>
+                    <a href="${pageContext.request.contextPath}/event/list.do"
+                       data-gtag-action="2023 여행가는 달_메인" data-gtag-category="main_event_more" data-gtag-label="이벤트 바로가기">이벤트 바로가기</a>
+                </header>
                 <div class="event-carousel">
                     <div class="swiper">
                         <div class="swiper-wrapper">
@@ -265,8 +318,12 @@
                                     <c:set var="list" value="${event.data.list}"/>
                                     <c:forEach var="row" items="${list}" varStatus="loop">
                                         <div class="swiper-slide">
-                                            <a href="${row.link}" target="${row.link_target}"
-                                               style="background-image:url('${row.thumbnail}')">
+                                            <a href="${row.link}"
+                                               target="${row.link_target}"
+                                               style="background-image:url('${row.thumbnail}')"
+                                               data-gtag-action="2023 여행가는 달_메인"
+                                               data-gtag-category="main_event_list"
+                                               data-gtag-label="${common:getTagText(row.title)}">
                                                 <p>${row.title}</p>
                                             </a>
                                         </div>
@@ -335,7 +392,8 @@
                     <strong>여행가는 달</strong>
                     <strong>2023.6.1 - 6.30</strong>
                 </p>
-                <a href="${pageContext.request.contextPath}/intro.do">여행가는 달 자세히보기</a>
+                <a href="${pageContext.request.contextPath}/intro.do"
+                   data-gtag-action="2023 여행가는 달_메인" data-gtag-category="main_travelmonth_more" data-gtag-label="여행가는 달 자세히보기">여행가는 달 자세히보기</a>
             </header>
             <div>
                 <iframe src="https://www.youtube.com/embed/vwjE85JBIH4"><span>여행으로[웃음을]재생하기</span></iframe>
@@ -344,7 +402,8 @@
         <section class="main__instagram">
             <header class="main__header">
                 <h2>INSTAGRAM</h2>
-                <a href="https://www.instagram.com/travelweek.kto/" target="_blank">여행가는 달 인스타그램 방문하기</a>
+                <a href="https://www.instagram.com/travelweek.kto/" target="_blank"
+                   data-gtag-action="2023 여행가는 달_메인" data-gtag-category="main_instagram_more" data-gtag-label="여행가는 달 인스타그램 방문하기">여행가는 달 인스타그램 방문하기</a>
             </header>
             <div class="instagram-carousel">
                 <div class="swiper">

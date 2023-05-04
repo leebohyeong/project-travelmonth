@@ -19,8 +19,14 @@
             <section class="travelmonth-intro--video">
                 <div class="travelmonth-intro--video__tab">
                     <ul class="category-tab">
-                        <li><a class="category-tab__item category-tab__item--active" href="#">범용영상(40’s)</a></li>
-                        <li><a class="category-tab__item" href="#">혜택영상(40’s)</a></li>
+                        <li>
+                            <a class="category-tab__item category-tab__item--active" href="#"
+                               data-gtag-action="2023 여행가는 달_여행가는 달 소개" data-gtag-category="video_tab_general" data-gtag-label="범용영상">범용영상(40’s)</a>
+                        </li>
+                        <li>
+                            <a class="category-tab__item" href="#"
+                               data-gtag-action="2023 여행가는 달_여행가는 달 소개" data-gtag-category="video_tab_benefit" data-gtag-label="혜택영상">혜택영상(40’s)</a>
+                        </li>
                     </ul>
                     <div class="category-tab-contents">
                         <div class="category-panel category-panel--active">
@@ -46,8 +52,7 @@
                         <ul>
                             <li>1. <span>포스터의 저작권은 한국관광공사와 제작대행사에 있습니다.</span></li>
                             <li>2. <span>포스터 내 반드시 “문화체육관광부”, “한국관광공사” 로고 및 “여행가는 달” 캠페인 로고가 삽입되어야 합니다.</span></li>
-                            <li>3. <span>타 기관의 로고를 삽입하여 사용할 경우 반드시 문화체육관광부 및 한국관광공사 로고와 같이 배치되어야 하며, 그 크기는 관광공사 로고 크기와 유사한 수준이어야 합니다.</span>
-                            </li>
+                            <li>3. <span>타 기관의 로고를 삽입하여 사용할 경우 반드시 문화체육관광부 및 한국관광공사 로고와 같이 배치되어야 하며, 그 크기는 관광공사 로고 크기와 유사한 수준이어야 합니다.</span></li>
                             <li>4. <span>포스터 이미지의 일부분을 사용하는 것은 가능하지만(잘라쓰기), 이미지를 변형하거나, 합성하는 것은 불가합니다.</span></li>
                             <li>5. <span>제작한 게재물의 사용기간은 별도의 확인이 필요하며, 이외의 기간에 해당 이미지를 사용할 경우 발생되는 모델비용 및 문제의 귀속은 최종 사용자가 지게 됩니다.</span>
                             </li>
