@@ -335,17 +335,17 @@
                     <strong>여행가는 달</strong>
                     <strong>2023.6.1 - 6.30</strong>
                 </p>
-                <a href="${pageContext.request.contextPath}/travelmonth/intro.do">여행가는 달 자세히보기</a>
+                <a href="${pageContext.request.contextPath}/intro.do">여행가는 달 자세히보기</a>
             </header>
             <div>
-                <iframe src="https://www.youtube.com/embed/vwjE85JBIH4"><span>여행으로[웃음을]재생하기</span>
-                </iframe>
+                <iframe src="https://www.youtube.com/embed/vwjE85JBIH4"><span>여행으로[웃음을]재생하기</span></iframe>
             </div>
         </section>
         <section class="main__instagram">
             <header class="main__header">
                 <h2>INSTAGRAM</h2>
-                <a href="https://www.instagram.com/kto9suk9suk/" target="_blank">여행가는 달 인스타그램 방문하기</a></header>
+                <a href="https://www.instagram.com/kto9suk9suk/" target="_blank">여행가는 달 인스타그램 방문하기</a>
+            </header>
             <div class="instagram-carousel">
                 <div class="swiper">
                     <div class="swiper-wrapper">

@@ -30,16 +30,7 @@ public class EventServiceImpl extends CommonServiceImplWrapper implements EventS
 	{
 		try
 		{
-			String parameter = "";
-			if (request != null)
-			{
-				if (request instanceof EventRequest.Progress || request instanceof EventRequest.End)
-				{
-					parameter = Common.getUrlQueryString(request);
-				}
-			}
-
-			JSONObject jsonObject = RequestUrl.get(TRAVEL_MONTH_SITE_URL + "/event/list" + parameter);
+			JSONObject jsonObject = RequestUrl.get(TRAVEL_MONTH_SITE_URL + "/event/list" + Common.getUrlQueryString(request));
 			if (jsonObject != null)
 			{
 				boolean result = (boolean) jsonObject.get("result");
