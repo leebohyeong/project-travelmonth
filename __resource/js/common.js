@@ -53,9 +53,11 @@ const googleTag = () => {
         const {gtagAction, gtagCategory, gtagLabel} = trigger.dataset;
         const options = {}
 
-        if (gtagCategory) options[`${gtagCategory}`] = gtagLabel || '';
+        if (gtagCategory && gtagLabel) {
+            options[`${gtagCategory}`] = gtagLabel;
+        }
 
-         gtag('event', gtagAction, options);
+         gtag('event', gtagAction, JSON.parse(JSON.stringify(options)));
     };
 
     triggers.forEach(trigger => on(trigger, 'click', () => fireEvent(trigger)));
