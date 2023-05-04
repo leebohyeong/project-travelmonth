@@ -53,12 +53,12 @@
         <li>
             <c:choose>
                 <c:when test="${fn:contains(path, '/trend/')}">
-                    <strong class="benefits__menu-link benefits__menu-link--play">
+                    <strong class="benefits__menu-link benefits__menu-link--trend">
                         <span>여행트렌드관</span>
                     </strong>
                 </c:when>
                 <c:otherwise>
-                    <a class="benefits__menu-link benefits__menu-link--play" href="${pageContext.request.contextPath}/trend/list.do">
+                    <a class="benefits__menu-link benefits__menu-link--trend" href="${pageContext.request.contextPath}/trend/list.do">
                         <span>여행트렌드관</span>
                     </a>
                 </c:otherwise>

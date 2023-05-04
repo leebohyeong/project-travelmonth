@@ -344,7 +344,7 @@
         <section class="main__instagram">
             <header class="main__header">
                 <h2>INSTAGRAM</h2>
-                <a href="https://www.instagram.com/kto9suk9suk/" target="_blank">여행가는 달 인스타그램 방문하기</a>
+                <a href="https://www.instagram.com/travelweek.kto/" target="_blank">여행가는 달 인스타그램 방문하기</a>
             </header>
             <div class="instagram-carousel">
                 <div class="swiper">
