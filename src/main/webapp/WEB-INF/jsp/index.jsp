@@ -92,10 +92,10 @@
                                 <a href="${pageContext.request.contextPath}/benefits/play.do" data-theme="c">놀거리 <br>혜택</a>
                             </div>
                             <div class="swiper-slide">
-                                <a href="${pageContext.request.contextPath}/travelmonth/trend/list.do" data-theme="d">여행 <br>트렌드관</a>
+                                <a href="${pageContext.request.contextPath}/trend/list.do" data-theme="d">여행 <br>트렌드관</a>
                             </div>
                             <div class="swiper-slide">
-                                <a href="${pageContext.request.contextPath}/travelmonth/special/list.do" data-theme="e">여행상품 <br>특별 기획전</a>
+                                <a href="${pageContext.request.contextPath}/special/list.do" data-theme="e">여행상품 <br>특별 기획전</a>
                             </div>
                         </div>
                     </div>

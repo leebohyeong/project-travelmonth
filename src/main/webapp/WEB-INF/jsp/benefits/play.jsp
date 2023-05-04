@@ -102,80 +102,114 @@
                                                         <dl>
                                                             <c:choose>
                                                                 <c:when test="${row.enjoy_gb eq 'D'}">
-                                                                    <div>
-                                                                        <dt>예약접수기간</dt>
-                                                                        <dd>
-                                                                            <div>${row.from_date} ~ ${row.to_date}</div>
-                                                                        </dd>
-                                                                    </div>
-                                                                    <div>
-                                                                        <dt>할인적용기간</dt>
-                                                                        <dd>${row.discount_start_date} ~ ${row.discount_end_date}</dd>
-                                                                    </div>
-                                                                    <div>
-                                                                        <dt>혜택상세</dt>
-                                                                        <dd>${row.content}</dd>
-                                                                    </div>
-                                                                    <div>
-                                                                        <dt>혜택제공조건</dt>
-                                                                        <dd>${row.content_detail}</dd>
-                                                                    </div>
-                                                                    <div>
-                                                                        <dt>참고사항</dt>
-                                                                        <dd>${row.notes}</dd>
-                                                                    </div>
+                                                                    <c:if test="${not empty row.from_date && not empty row.to_date}">
+                                                                        <div>
+                                                                            <dt>예약접수기간</dt>
+                                                                            <dd>
+                                                                                <div>${row.from_date} ~ ${row.to_date}</div>
+                                                                            </dd>
+                                                                        </div>
+                                                                    </c:if>
+                                                                    <c:if test="${not empty row.discount_start_date && not empty row.discount_end_date}">
+                                                                        <div>
+                                                                            <dt>할인적용기간</dt>
+                                                                            <dd>${row.discount_start_date} ~ ${row.discount_end_date}</dd>
+                                                                        </div>
+                                                                    </c:if>
+                                                                    <c:if test="${not empty row.content}">
+                                                                        <div>
+                                                                            <dt>혜택상세</dt>
+                                                                            <dd>${row.content}</dd>
+                                                                        </div>
+                                                                    </c:if>
+                                                                    <c:if test="${not empty row.content_detail}">
+                                                                        <div>
+                                                                            <dt>혜택제공조건</dt>
+                                                                            <dd>${row.content_detail}</dd>
+                                                                        </div>
+                                                                    </c:if>
+                                                                    <c:if test="${not empty row.notes}">
+                                                                        <div>
+                                                                            <dt>참고사항</dt>
+                                                                            <dd>${row.notes}</dd>
+                                                                        </div>
+                                                                    </c:if>
                                                                 </c:when>
                                                                 <c:when test="${row.enjoy_gb eq 'T'}">
-                                                                    <div>
-                                                                        <dt>진행기간</dt>
-                                                                        <dd>
-                                                                            <div>${row.from_date} ~ ${row.to_date}</div>
-                                                                        </dd>
-                                                                    </div>
-                                                                    <div>
-                                                                        <dt>장소</dt>
-                                                                        <dd>
-                                                                            <div>${row.content}</div>
-                                                                        </dd>
-                                                                    </div>
-                                                                    <div>
-                                                                        <dt>간략소개</dt>
-                                                                        <dd>
-                                                                            <div>${row.content_detail}</div>
-                                                                        </dd>
-                                                                    </div>
+                                                                    <c:if test="${not empty row.from_date && not empty row.to_date}">
+                                                                        <div>
+                                                                            <dt>진행기간</dt>
+                                                                            <dd>
+                                                                                <div>${row.from_date} ~ ${row.to_date}</div>
+                                                                            </dd>
+                                                                        </div>
+                                                                    </c:if>
+                                                                    <c:if test="${not empty row.content}">
+                                                                        <div>
+                                                                            <dt>장소</dt>
+                                                                            <dd>
+                                                                                <div>${row.content}</div>
+                                                                            </dd>
+                                                                        </div>
+                                                                    </c:if>
+                                                                    <c:if test="${not empty row.content_detail}">
+                                                                        <div>
+                                                                            <dt>간략소개</dt>
+                                                                            <dd>
+                                                                                <div>${row.content_detail}</div>
+                                                                            </dd>
+                                                                        </div>
+                                                                    </c:if>
+                                                                    <c:if test="${not empty row.content_detail}">
+                                                                        <div>
+                                                                            <dt>간략소개</dt>
+                                                                            <dd>
+                                                                                <div>${row.content_detail}</div>
+                                                                            </dd>
+                                                                        </div>
+                                                                    </c:if>
                                                                 </c:when>
                                                                 <c:when test="${row.enjoy_gb eq 'E'}">
-                                                                    <div>
-                                                                        <dt>진행기간</dt>
-                                                                        <dd>
-                                                                            <div>${row.from_date} ~ ${row.to_date}</div>
-                                                                        </dd>
-                                                                    </div>
-                                                                    <div>
-                                                                        <dt>소개내용</dt>
-                                                                        <dd>
-                                                                            <div>${row.content}</div>
-                                                                        </dd>
-                                                                    </div>
-                                                                    <div>
-                                                                        <dt>당첨인원</dt>
-                                                                        <dd>
-                                                                            <div>${row.content_detail}</div>
-                                                                        </dd>
-                                                                    </div>
-                                                                    <div>
-                                                                        <dt>참여방법</dt>
-                                                                        <dd>
-                                                                            <div>${row.notes}</div>
-                                                                        </dd>
-                                                                    </div>
+                                                                    <c:if test="${not empty row.from_date && not empty row.to_date}">
+                                                                        <div>
+                                                                            <dt>진행기간</dt>
+                                                                            <dd>
+                                                                                <div>${row.from_date} ~ ${row.to_date}</div>
+                                                                            </dd>
+                                                                        </div>
+                                                                    </c:if>
+                                                                    <c:if test="${not empty row.content}">
+                                                                        <div>
+                                                                            <dt>소개내용</dt>
+                                                                            <dd>
+                                                                                <div>${row.content}</div>
+                                                                            </dd>
+                                                                        </div>
+                                                                    </c:if>
+                                                                    <c:if test="${not empty row.content_detail}">
+                                                                        <div>
+                                                                            <dt>당첨인원</dt>
+                                                                            <dd>
+                                                                                <div>${row.content_detail}</div>
+                                                                            </dd>
+                                                                        </div>
+                                                                    </c:if>
+                                                                    <c:if test="${not empty row.notes}">
+                                                                        <div>
+                                                                            <dt>참여방법</dt>
+                                                                            <dd>
+                                                                                <div>${row.notes}</div>
+                                                                            </dd>
+                                                                        </div>
+                                                                    </c:if>
                                                                 </c:when>
                                                             </c:choose>
-                                                            <div>
-                                                                <dt>문의처</dt>
-                                                                <dd>${row.contact_information}</dd>
-                                                            </div>
+                                                            <c:if test="${not empty row.contact_information}">
+                                                                <div>
+                                                                    <dt>문의처</dt>
+                                                                    <dd>${row.contact_information}</dd>
+                                                                </div>
+                                                            </c:if>
                                                         </dl>
                                                         <p><a href="${row.link}" target="_blank"><span>자세히 보기</span></a></p></article>
                                                     <button class="modal-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button>

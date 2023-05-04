@@ -78,7 +78,7 @@
                             </aside>
                         </c:if>
                         <section class="list-thumbnail list-thumbnail--goods">
-                            <h3>${empty search.search_trend_gb ? '해보고 싶은' : page_title} 여행 떠나보기</h3>
+                            <h3>${empty search.search_trend_gb ? '해보고 싶은' : page_main_title} 여행 떠나보기</h3>
                             <c:if test="${not empty goods}">
                                 <c:if test="${goods.result}">
                                     <c:set var="list" value="${goods.data.list}"/>
@@ -149,22 +149,30 @@
                                                     </div>
                                                     <h3>${row.title}</h3>
                                                     <dl>
-                                                        <div>
-                                                            <dt>예약접수기간</dt>
-                                                            <dd>${row.from_date} ~ ${row.to_date}</dd>
-                                                        </div>
-                                                        <div>
-                                                            <dt>안내사항</dt>
-                                                            <dd>${row.content}</dd>
-                                                        </div>
-                                                        <div>
-                                                            <dt>주요 방문처</dt>
-                                                            <dd>${row.content_detail}</dd>
-                                                        </div>
-                                                        <div>
-                                                            <dt>문의처</dt>
-                                                            <dd>${row.contact_information}</dd>
-                                                        </div>
+                                                        <c:if test="${not empty row.from_date && not empty row.to_date}">
+                                                            <div>
+                                                                <dt>예약접수기간</dt>
+                                                                <dd>${row.from_date} ~ ${row.to_date}</dd>
+                                                            </div>
+                                                        </c:if>
+                                                        <c:if test="${not empty row.content}">
+                                                            <div>
+                                                                <dt>안내사항</dt>
+                                                                <dd>${row.content}</dd>
+                                                            </div>
+                                                        </c:if>
+                                                        <c:if test="${not empty row.content_detail}">
+                                                            <div>
+                                                                <dt>주요방문처</dt>
+                                                                <dd>${row.content_detail}</dd>
+                                                            </div>
+                                                        </c:if>
+                                                        <c:if test="${not empty row.contact_information}">
+                                                            <div>
+                                                                <dt>문의처</dt>
+                                                                <dd>${row.contact_information}</dd>
+                                                            </div>
+                                                        </c:if>
                                                     </dl>
                                                     <p><a href="${row.link}" target="_blank"><span>자세히 보기</span></a></p>
                                                 </article>
