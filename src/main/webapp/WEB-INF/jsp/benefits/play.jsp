@@ -20,7 +20,7 @@
                     <article class="benefits-program benefits-program--play">
                         <header>
                             <div>
-                                <h2><strong>놀거리혜택</strong></h2>
+                                <h2><span>2023 여행가는 달 특별할인혜택</span><strong>놀거리혜택</strong></h2>
                                 <p>
                                     관광지 입장 할인, 다양한 방문인증 이벤트 등 <br>
                                     풍성한 혜택을 만나보세요!
