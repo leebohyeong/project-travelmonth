@@ -31,7 +31,15 @@ public class Local
 	 */
 	public static Object getList()
 	{
-		return SERVICE.getLocalList();
+		try
+		{
+			return SERVICE.getLocalList();
+		}
+		catch (Exception exception)
+		{
+			exception.printStackTrace();
+		}
+		return null;
 	}
 
 	/**
@@ -41,16 +49,24 @@ public class Local
 	@SuppressWarnings("unchecked")
 	public static Object getFilteredList()
 	{
-		List<HashMap<String, String>>list = ((CommonResponse.List) SERVICE.getLocalList()).getData().getList();
-		List<HashMap<String, String>> filteredList = list.stream()
-				.filter(row -> !row.get("name_kr").matches("(서울|경기|인천)")).collect(Collectors.toList());
-		filteredList.add(0, new LinkedHashMap<String, String>(){{
-			put("code","01-04-09");
-			put("name_en","seoul-incheon-gyeonggi");
-			put("name_kr","서울/인천/경기");
-			put("name_detail_kr","서울특별시/인천광역시/경기도");
-		}});
-		return new CommonResponse.List(new CommonResponse.List.Data(filteredList));
+		try
+		{
+			List<HashMap<String, String>>list = ((CommonResponse.List) SERVICE.getLocalList()).getData().getList();
+			List<HashMap<String, String>> filteredList = list.stream()
+					.filter(row -> !row.get("name_kr").matches("(서울|경기|인천)")).collect(Collectors.toList());
+			filteredList.add(0, new LinkedHashMap<String, String>() {{
+				put("code","01-04-09");
+				put("name_en","seoul-incheon-gyeonggi");
+				put("name_kr","서울/인천/경기");
+				put("name_detail_kr","서울특별시/인천광역시/경기도");
+			}});
+			return new CommonResponse.List(new CommonResponse.List.Data(filteredList));
+		}
+		catch (Exception exception)
+		{
+			exception.printStackTrace();
+		}
+		return null;
 	}
 
 }

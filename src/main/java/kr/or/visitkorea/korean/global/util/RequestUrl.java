@@ -61,12 +61,18 @@ public class RequestUrl {
 	 * @param url
 	 * @return
 	 */
-	private static HttpURLConnection connection(String url) {
-		try {
+	private static HttpURLConnection connection(String url)
+	{
+		try
+		{
 			return (HttpURLConnection) new URL(url).openConnection();
-		} catch (MalformedURLException malformedURLException) {
+		}
+		catch (MalformedURLException malformedURLException)
+		{
 			throw new RuntimeException("API URL이 잘못되었습니다. : " + url, malformedURLException);
-		} catch (IOException ioException) {
+		}
+		catch (IOException ioException)
+		{
 			throw new RuntimeException("연결이 실패했습니다. : " + url, ioException);
 		}
 	}
@@ -76,21 +82,28 @@ public class RequestUrl {
 	 * @param body
 	 * @return
 	 */
-	private static JSONObject readBody(InputStream body){
+	private static JSONObject readBody(InputStream body)
+	{
 		InputStreamReader streamReader = new InputStreamReader(body);
 
-		try (BufferedReader lineReader = new BufferedReader(streamReader)) {
+		try (BufferedReader lineReader = new BufferedReader(streamReader))
+		{
 			StringBuilder responseBody = new StringBuilder();
 
 			String line;
-			while ((line = lineReader.readLine()) != null) {
+			while ((line = lineReader.readLine()) != null)
+			{
 				responseBody.append(line);
 			}
 
 			return ((JSONObject) new JSONParser().parse(responseBody.toString()));
-		} catch (IOException ioException) {
+		}
+		catch (IOException ioException)
+		{
 			throw new RuntimeException("API 응답을 읽는 데 실패했습니다.", ioException);
-		} catch (ParseException parseException) {
+		}
+		catch (ParseException parseException)
+		{
 			throw new RuntimeException("API 응답 데이터를 변환하는데 실패했습니다.", parseException);
 		}
 	}
@@ -100,25 +113,33 @@ public class RequestUrl {
 	 * @param parameters
 	 * @return
 	 */
-	private static String toString(Map<String, String> parameters) {
-		try {
-			if (parameters != null) {
+	private static String toString(Map<String, String> parameters)
+	{
+		try
+		{
+			if (parameters != null)
+			{
 				int count = 0;
 				StringBuilder parameter = new StringBuilder();
 				Iterator iterator = parameters.keySet().iterator();
 				while (iterator.hasNext()) {
 					if (count == 0) { parameter.append("?"); } else { parameter.append("&"); }
 					String key = iterator.next().toString();
-					if (parameters.get(key) != null) {
+					if (parameters.get(key) != null)
+					{
 						parameter.append(key).append("=").append(URLEncoder.encode(parameters.get(key), "UTF-8"));
-					} else {
+					}
+					else
+					{
 						parameter.append(key).append("=");
 					}
 					count++;
 				}
 				return parameter.toString();
 			}
-		} catch (Exception exception) {
+		}
+		catch (Exception exception)
+		{
 			throw new RuntimeException("파라미터를 변환하는데 실패했습니다.", exception);
 		}
 		return "";

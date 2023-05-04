@@ -27,7 +27,8 @@ public class PageView {
 	/**
 	 * SEND PAGE VIEW
 	 */
-	public static void sendPageView() {
+	public static void sendPageView()
+	{
 		try
 		{
 			HttpServletRequest request = ((ServletRequestAttributes) RequestContextHolder.currentRequestAttributes()).getRequest();
@@ -41,7 +42,8 @@ public class PageView {
 				}}
 			);
 		}
-		catch (Exception exception) {
+		catch (Exception exception)
+		{
 			exception.printStackTrace();
 		}
 	}
@@ -50,19 +52,23 @@ public class PageView {
 	 * GET REMOTE ADDR
 	 * @return
 	 */
-	public static String getRemoteAddr(){
+	public static String getRemoteAddr()
+	{
 		HttpServletRequest request = ((ServletRequestAttributes) RequestContextHolder.currentRequestAttributes()).getRequest();
 		String ip = request.getHeader("X-FORWARDED-FOR");
 
-		if (ip == null || ip.length() == 0) {
+		if (ip == null || ip.length() == 0)
+		{
 			ip = request.getHeader("Proxy-Client-IP");
 		}
 
-		if (ip == null || ip.length() == 0) {
+		if (ip == null || ip.length() == 0)
+		{
 			ip = request.getHeader("WL-Proxy-Client-IP");
 		}
 
-		if (ip == null || ip.length() == 0) {
+		if (ip == null || ip.length() == 0)
+		{
 			ip = request.getRemoteAddr() ;
 		}
 
