@@ -6,7 +6,8 @@
 <c:set var="themes" value="${common:getThemes()}"/>
 <c:forEach var="row" items="${themes}" varStatus="loop">
     <c:if test="${search.search_trend_gb eq row.theme}">
-        <c:set var="page_title" value="${row.main_title}"/>
+        <c:set var="page_title" value="${row.title}"/>
+        <c:set var="page_main_title" value="${row.main_title}"/>
         <c:set var="page_sub_title" value="${row.sub_title}"/>
         <c:set var="page_content" value="${row.content}"/>
     </c:if>

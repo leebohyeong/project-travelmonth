@@ -80,7 +80,7 @@
                                                                data-type="${fn:toLowerCase(row.enjoy_gb)}"
                                                                data-bs-toggle="modal"
                                                                data-bs-target="#modal-benefits-${row.seq}"
-                                                               data-gtag-action="2023 여행가는달_여행혜택 지역별"
+                                                               data-gtag-action="travelmonth_2023_benefits_local"
                                                                data-gtag-category="local_${fn:replace(fn:toLowerCase(local.data.name_en), ',', '_')}_benefit_list"
                                                                data-gtag-label="${common:getTagText(row.title)}">
                                                                 <span style="background-image: url('${row.image}')"></span>

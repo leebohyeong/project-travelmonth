@@ -9,7 +9,6 @@ import org.springframework.web.context.request.RequestContextHolder;
 import org.springframework.web.context.request.ServletRequestAttributes;
 
 import javax.annotation.PostConstruct;
-import javax.servlet.RequestDispatcher;
 import javax.servlet.http.HttpServletRequest;
 import java.util.HashMap;
 
@@ -33,13 +32,12 @@ public class PageView {
 		{
 			HttpServletRequest request = ((ServletRequestAttributes) RequestContextHolder.currentRequestAttributes()).getRequest();
 			Device device = DeviceUtils.getCurrentDevice(request);
-
 			SERVICE.write(
 				new HashMap<String, String>(){{
 					put("user_ip", getRemoteAddr());
 					put("deviceType", device.isMobile() ? "M" : "W");
-					put("current_url", request.getRequestURI());
 					put("reffer_url", request.getHeader("Referer"));
+					put("current_url", String.valueOf(request.getAttribute("javax.servlet.forward.request_uri")));
 				}}
 			);
 		}
