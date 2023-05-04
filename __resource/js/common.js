@@ -54,7 +54,7 @@ const googleTag = () => {
         const options = {}
 
         if (gtagCategory && gtagLabel) {
-            options[`${gtagCategory}`] = gtagLabel;
+            options[`${gtagCategory.trim()}`] = gtagLabel.trim();
         }
 
          gtag('event', gtagAction, JSON.parse(JSON.stringify(options)));
