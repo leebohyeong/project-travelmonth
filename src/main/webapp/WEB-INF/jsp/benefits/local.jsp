@@ -359,7 +359,8 @@
                             </c:if>
                         </c:if>
                     </article>
-                    <aside class="list-thumbnail list-thumbnail--benefits-more"><h3>설렘으로 꽉 찬 혜택 추가로 확인하기</h3>
+                    <aside class="list-thumbnail list-thumbnail--benefits-more">
+                        <h3>설렘으로 꽉 찬 혜택, 더 알아보기</h3>
                         <ul>
                             <li data-benefit="traffic">
                                 <a href="${pageContext.request.contextPath}/benefits/traffic.do"
