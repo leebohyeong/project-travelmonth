@@ -34,7 +34,7 @@ public class RequestUrl {
 	}
 
 	public static JSONObject Send(String url, String method, Map<String, String> headers, Map<String, String> parameters) {
-		HttpURLConnection httpURLConnection = connection(url + toMap(parameters));
+		HttpURLConnection httpURLConnection = connection(url + toString(parameters));
 		try {
 			httpURLConnection.setRequestMethod(method);
 
@@ -100,7 +100,7 @@ public class RequestUrl {
 	 * @param parameters
 	 * @return
 	 */
-	private static String toMap(Map<String, String> parameters) {
+	private static String toString(Map<String, String> parameters) {
 		try {
 			if (parameters != null) {
 				int count = 0;
@@ -109,7 +109,11 @@ public class RequestUrl {
 				while (iterator.hasNext()) {
 					if (count == 0) { parameter.append("?"); } else { parameter.append("&"); }
 					String key = iterator.next().toString();
-					parameter.append(key).append("=").append(URLEncoder.encode(parameters.get(key), "UTF-8"));
+					if (parameters.get(key) != null) {
+						parameter.append(key).append("=").append(URLEncoder.encode(parameters.get(key), "UTF-8"));
+					} else {
+						parameter.append(key).append("=");
+					}
 					count++;
 				}
 				return parameter.toString();

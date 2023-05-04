@@ -36,12 +36,41 @@ public class Common {
 		}};
 	}
 
+	public static String getTagText(String str) {
+		return removeSpecialCharacter(removeHtmlTag(replaceLineSepatator(str)));
+	}
+
+	public static String removeSpecialCharacter(String str) {
+		String match = "[^\uAC00-\uD7A30-9a-zA-Z_]";
+		str = str.replaceAll(match, " ");
+		return str;
+	}
+
+	/**
+	 * @param str
+	 * @return
+	 */
+	public static String removeHtmlTag(String str)
+	{
+		return  str.replaceAll("<(/)?([a-zA-Z]*)(\\s[a-zA-Z]*=[^>]*)?(\\s)*(/)?>", "");
+	}
+
+	/**
+	 * @param str
+	 * @return
+	 */
+	public static String replaceLineSepatator(String str)
+	{
+		return str.replaceAll("\r\n", " ");
+	}
+
 	/**
 	 * TO JSONOBJECT
 	 * @param strJson
 	 * @return
 	 */
-	public static JSONObject toJSONObject(String strJson) {
+	public static JSONObject toJSONObject(String strJson)
+	{
 		try
 		{
 			JSONParser parser = new JSONParser();

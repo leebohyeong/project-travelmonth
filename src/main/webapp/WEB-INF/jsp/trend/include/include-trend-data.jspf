@@ -1,4 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<c:set var="page_title" value="여행트렌드관"/>
 <c:set var="page_main_title" value="여행트렌드관"/>
 <c:set var="page_sub_title" value="해보고 싶은 다양한 여행"/>
 <c:set var="page_content" value="로컬관광, 취미여행 등 올해 주목할만 한 여행 트렌드와 <br>한국관광공사가 제안하는 특별한 여행프로그램을 만나보세요."/>

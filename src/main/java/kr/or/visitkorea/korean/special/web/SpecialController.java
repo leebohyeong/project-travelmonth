@@ -21,7 +21,7 @@ public class SpecialController {
 	@RequestMapping(value = "/list.do", method = RequestMethod.GET)
 	public String list(Model model)
 	{
-		return "/special/list";
+		return "special/list";
 	}
 
 }

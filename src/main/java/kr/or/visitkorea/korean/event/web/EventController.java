@@ -27,14 +27,15 @@ public class EventController {
 	{
 		try
 		{
-			model.addAttribute("event", SERVICE.getList(request));
 			model.addAttribute("banner", SERVICE.getBannerList());
+			model.addAttribute("ended", SERVICE.getList(new EventRequest.Ended()));
+			model.addAttribute("progress", SERVICE.getList(new EventRequest.Progress()));
 		}
 		catch (Exception exception)
 		{
 			log.error("Event List Page Exception : {}", exception.getMessage(), exception);
 		}
-		return "/event/list";
+		return "event/list";
 	}
 
 	/**
@@ -45,7 +46,7 @@ public class EventController {
 	@RequestMapping(value = "/june.do", method = RequestMethod.GET)
 	public String june(Model model)
 	{
-		return "/event/june";
+		return "event/june";
 	}
 
 }

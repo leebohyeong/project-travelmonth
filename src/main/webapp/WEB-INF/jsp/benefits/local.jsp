@@ -76,8 +76,13 @@
                                                             <c:set var="hidden_class" value="class='list-thumbnail__item--hide'"/>
                                                         </c:if>
                                                         <li ${hidden_class}>
-                                                            <a href="#modal-benefits-${row.seq}" data-type="${fn:toLowerCase(row.enjoy_gb)}" data-bs-toggle="modal" data-bs-target="#modal-benefits-${row.seq}"
-                                                               data-gtag-action="2023 여행가는달_여행혜택 지역별" data-gtag-category="${title}" data-gtag-label="혜택_${fn:replace(row.title, '<br>', ' ')}_리스트">
+                                                            <a href="#modal-benefits-${row.seq}"
+                                                               data-type="${fn:toLowerCase(row.enjoy_gb)}"
+                                                               data-bs-toggle="modal"
+                                                               data-bs-target="#modal-benefits-${row.seq}"
+                                                               data-gtag-action="2023 여행가는달_여행혜택 지역별"
+                                                               data-gtag-category="local_${fn:replace(fn:toLowerCase(local.data.name_en), ',', '_')}_benefit_list"
+                                                               data-gtag-label="${common:getTagText(row.title)}">
                                                                 <span style="background-image: url('${row.image}')"></span>
                                                                 <div>
                                                                     <p>
@@ -214,7 +219,15 @@
                                                             </dl>
                                                         </c:when>
                                                     </c:choose>
-                                                    <p><a href="${row.link}" data-gtag-action="2023 여행가는달_여행혜택 지역별" data-gtag-category="${title}" data-gtag-label="혜택_${fn:replace(row.title, '<br>', ' ')}_팝업"><span>자세히 보기</span></a></p>
+                                                    <p>
+                                                        <a href="${row.link}"
+                                                           target="_blank"
+                                                          data-gtag-action="2023 여행가는달_여행혜택 지역별"
+                                                          data-gtag-category="local_${fn:replace(fn:toLowerCase(local.data.name_en), ',', '_')}_benefit_popup"
+                                                          data-gtag-label="${common:getTagText(row.title)}">
+                                                            <span>자세히 보기</span>
+                                                        </a>
+                                                    </p>
                                                 </article>
                                                 <button class="modal-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button>
                                             </div>
@@ -237,7 +250,13 @@
                                                         <c:set var="hidden_class" value="class='list-thumbnail__item--hide'"/>
                                                     </c:if>
                                                     <li ${hidden_class}>
-                                                        <a href="#" data-type="d" data-bs-toggle="modal" data-bs-target="#modal-goods-${row.seq}" data-gtag-action="2023 여행가는달_여행혜택 지역별" data-gtag-category="${title}" data-gtag-label="상품_${fn:replace(row.title, '<br>', ' ')}_리스트">
+                                                        <a href="#"
+                                                           data-type="d"
+                                                           data-bs-toggle="modal"
+                                                           data-bs-target="#modal-goods-${row.seq}"
+                                                           data-gtag-action="2023 여행가는달_여행혜택 지역별"
+                                                           data-gtag-category="local_${fn:replace(fn:toLowerCase(local.data.name_en), ',', '_')}_product_list"
+                                                           data-gtag-label="상품_${common:getTagText(row.title)}_리스트">
                                                             <span style="background-image: url('${row.image}')"></span>
                                                             <p>
                                                                 <fmt:parseDate var="strFromDate" pattern="yyyy-MM-dd" value="${row.from_date}"/>
@@ -322,7 +341,15 @@
                                                             <dd>${row.contact_information}</dd>
                                                         </div>
                                                     </dl>
-                                                    <p><a href="${row.link}" data-gtag-action="2023 여행가는달_여행혜택 지역별" data-gtag-category="${title}" data-gtag-label="상품_${fn:replace(row.title, '<br>', ' ')}_팝업"><span>자세히 보기</span></a></p>
+                                                    <p>
+                                                        <a href="${row.link}"
+                                                           target="_blank"
+                                                           data-gtag-action="2023 여행가는달_여행혜택 지역별"
+                                                           data-gtag-category="local_${fn:replace(fn:toLowerCase(local.data.name_en), ',', '_')}_product_popup"
+                                                           data-gtag-label="${common:getTagText(row.title)}">
+                                                            <span>자세히 보기</span>
+                                                        </a>
+                                                    </p>
                                                 </article>
                                                 <button class="modal-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button>
                                             </div>
@@ -335,25 +362,37 @@
                     <aside class="list-thumbnail list-thumbnail--benefits-more"><h3>설렘으로 꽉 찬 혜택 추가로 확인하기</h3>
                         <ul>
                             <li data-benefit="traffic">
-                                <a href="${pageContext.request.contextPath}/benefits/traffic.do" data-gtag-action="2023 여행가는달_여행혜택 지역별" data-gtag-category="하단배너" data-gtag-label="교통혜택">
+                                <a href="${pageContext.request.contextPath}/benefits/traffic.do"
+                                   data-gtag-action="2023 여행가는달_여행혜택 지역별"
+                                   data-gtag-category="local_banner_traffic"
+                                   data-gtag-label="교통혜택">
                                     <h4>교통혜택</h4>
                                     <p>열차 항공 렌터카 시티투어 할인<br>우리 함께 떠나요!</p>
                                 </a>
                             </li>
                             <li data-benefit="stay">
-                                <a href="${pageContext.request.contextPath}/benefits/stay.do" data-gtag-action="2023 여행가는달_여행혜택 지역별" data-gtag-category="하단배너" data-gtag-label="숙박혜택">
+                                <a href="${pageContext.request.contextPath}/benefits/stay.do"
+                                   data-gtag-action="2023 여행가는달_여행혜택 지역별"
+                                   data-gtag-category="local_banner_accommodation"
+                                   data-gtag-label="숙박혜택">
                                     <h4>숙박혜택</h4>
                                     <p>국내 숙박 최대 5만원 할인<br>역대급 숙박혜택을 확인하세요!</p>
                                 </a>
                             </li>
                             <li data-benefit="play">
-                                <a href="${pageContext.request.contextPath}/benefits/play.do" data-gtag-action="2023 여행가는달_여행혜택 지역별" data-gtag-category="하단배너" data-gtag-label="놀거리혜택">
+                                <a href="${pageContext.request.contextPath}/benefits/play.do"
+                                   data-gtag-action="2023 여행가는달_여행혜택 지역별"
+                                   data-gtag-category="local_banner_play"
+                                   data-gtag-label="놀거리혜택">
                                     <h4>놀거리혜택</h4>
                                     <p>관광지 입장 할인, 다양한 방문인증 이벤트 등<br>풍성한 혜택을 만나보세요!</p>
                                 </a>
                             </li>
                             <li data-benefit="special">
-                                <a href="${pageContext.request.contextPath}/special/list.do" data-gtag-action="2023 여행가는달_여행혜택 지역별" data-gtag-category="하단배너" data-gtag-label="여행상품 특별 기획전">
+                                <a href="${pageContext.request.contextPath}/special/list.do"
+                                   data-gtag-action="2023 여행가는달_여행혜택 지역별"
+                                   data-gtag-category="local_banner_special"
+                                   data-gtag-label="여행상품 특별 기획전">
                                     <h4>여행상품<br>특별 기획전</h4>
                                     <p>여행가는 달 기간동안<br>여행업계가 선보이는<br>각종 혜택들을 만나보세요.</p>
                                 </a>

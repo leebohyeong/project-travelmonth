@@ -42,7 +42,7 @@ public class CommonController<T> extends CommonControllerWrapper
 		{
 			log.error("Index Page Exception : {}", exception.getMessage(), exception);
 		}
-		return "/index";
+		return "index";
 	}
 
 	/**
@@ -52,7 +52,7 @@ public class CommonController<T> extends CommonControllerWrapper
 	@RequestMapping(value = "/intro.do", method = RequestMethod.GET)
 	public String intro()
 	{
-		return "/intro";
+		return "intro";
 	}
 
 	/**
@@ -62,7 +62,7 @@ public class CommonController<T> extends CommonControllerWrapper
 	@RequestMapping(value = "/organization.do", method = RequestMethod.GET)
 	public String organization()
 	{
-		return "/organization";
+		return "organization";
 	}
 
 }

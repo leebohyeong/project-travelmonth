@@ -50,9 +50,34 @@
                     <div class="category-tab-contents">
                         <div class="category-panel category-panel--active">
                             <section class="list-thumbnail list-thumbnail--events">
-                                <c:if test="${not empty event}">
-                                    <c:if test="${event.result}">
-                                        <c:set var="list" value="${event.data.list}"/>
+                                <c:if test="${not empty progress}">
+                                    <c:if test="${progress.result}">
+                                        <c:set var="list" value="${progress.data.list}"/>
+                                        <c:choose>
+                                            <c:when test="${not empty list}">
+                                                <ul>
+                                                    <c:forEach var="row" items="${list}" varStatus="loop">
+                                                        <li>
+                                                            <a href="${row.link}" target="${row.link_target}">
+                                                                <span style="background-image: url('${row.thumbnail}')"></span>
+                                                                <p>${row.title}</p>
+                                                                <p>${row.from_date} ~ ${row.to_date}</p>
+                                                            </a>
+                                                        </li>
+                                                    </c:forEach>
+                                                </ul>
+                                            </c:when>
+                                            <c:otherwise><div><p>등록된 내용이 없습니다.</p></div></c:otherwise>
+                                        </c:choose>
+                                    </c:if>
+                                </c:if>
+                            </section>
+                        </div>
+                        <div class="category-panel">
+                            <section class="list-thumbnail list-thumbnail--events">
+                                <c:if test="${not empty ended}">
+                                    <c:if test="${ended.result}">
+                                        <c:set var="list" value="${ended.data.list}"/>
                                         <c:choose>
                                             <c:when test="${not empty list}">
                                                 <ul>

@@ -12,6 +12,18 @@
 		<function-signature>java.util.ArrayList getThemes()</function-signature>
 	</function>
     <function>
+        <description>getTagText</description>
+        <name>getTagText</name>
+        <function-class>kr.or.visitkorea.korean.global.util.Common</function-class>
+        <function-signature> java.lang.String getTagText(java.lang.String)</function-signature>
+    </function>
+    <function>
+        <description>replaceLineSepatator</description>
+        <name>replaceLineSepatator</name>
+        <function-class>kr.or.visitkorea.korean.global.util.Common</function-class>
+        <function-signature>java.lang.String replaceLineSepatator(java.lang.String)</function-signature>
+    </function>
+    <function>
         <description>toJSONObject</description>
         <name>toJSONObject</name>
         <function-class>kr.or.visitkorea.korean.global.util.Common</function-class>

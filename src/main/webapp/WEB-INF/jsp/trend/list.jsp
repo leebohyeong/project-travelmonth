@@ -23,7 +23,7 @@
                         <div>
                             <header>
                                 <div>
-                                    <h2><span>${page_sub_title}</span><strong>${page_title}</strong></h2>
+                                    <h2><span>${page_sub_title}</span><strong>${page_main_title}</strong></h2>
                                     <p>${page_content}</p>
                                 </div>
                             </header>

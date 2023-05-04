@@ -53,7 +53,7 @@ public class TrendController extends CommonControllerWrapper
 		{
 			log.error("Trend Page Exception : {}", exception.getMessage(), exception);
 		}
-		return "/trend/list";
+		return "trend/list";
 	}
 
 }

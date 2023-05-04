@@ -44,7 +44,7 @@ public class BenefitsController<T> extends CommonControllerWrapper
 		{
 			log.error("Benefits Local(" + local.substring(0, 1).toUpperCase() + local.substring(1) + ") Page Exception : {}", exception.getMessage(), exception);
 		}
-		return "/benefits/local";
+		return "benefits/local";
 	}
 
 	/**
@@ -55,7 +55,7 @@ public class BenefitsController<T> extends CommonControllerWrapper
 	@RequestMapping(value = "/traffic.do", method = RequestMethod.GET)
 	public String traffic(Model model)
 	{
-		return "/benefits/traffic";
+		return "benefits/traffic";
 	}
 
 	/**
@@ -66,7 +66,7 @@ public class BenefitsController<T> extends CommonControllerWrapper
 	@RequestMapping(value = "/stay.do", method = RequestMethod.GET)
 	public String stay(Model model)
 	{
-		return "/benefits/stay";
+		return "benefits/stay";
 	}
 
 	/**
@@ -86,7 +86,7 @@ public class BenefitsController<T> extends CommonControllerWrapper
 		{
 			log.error("Play Page Exception : {}", exception.getMessage(), exception);
 		}
-		return "/benefits/play";
+		return "benefits/play";
 	}
 
 }
