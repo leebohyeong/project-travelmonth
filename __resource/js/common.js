@@ -32,7 +32,7 @@ const ListThumbnail = class {
     }
 
     #showItems() {
-       this.#hiddenItems.forEach(item => item.classList.remove(this.#hiddenItemClassName));
+        this.#hiddenItems.forEach(item => item.classList.remove(this.#hiddenItemClassName));
     }
 
     #hideMore() {
@@ -57,7 +57,8 @@ const googleTag = () => {
             options[`${gtagCategory.trim()}`] = gtagLabel.trim();
         }
 
-         gtag('event', gtagAction, JSON.parse(JSON.stringify(options)));
+        // ga('send', 'event', gtagCategory, gtagAction, gtagLabel);
+        gtag('event', gtagAction, JSON.parse(JSON.stringify(options)));
     };
 
     triggers.forEach(trigger => on(trigger, 'click', () => fireEvent(trigger)));
