@@ -174,14 +174,6 @@
                                                                             </dd>
                                                                         </div>
                                                                     </c:if>
-                                                                    <c:if test="${not empty row.content_detail}">
-                                                                        <div>
-                                                                            <dt>간략소개</dt>
-                                                                            <dd>
-                                                                                <div>${row.content_detail}</div>
-                                                                            </dd>
-                                                                        </div>
-                                                                    </c:if>
                                                                 </c:when>
                                                                 <c:when test="${row.enjoy_gb eq 'E'}">
                                                                     <c:if test="${not empty row.from_date && not empty row.to_date}">
