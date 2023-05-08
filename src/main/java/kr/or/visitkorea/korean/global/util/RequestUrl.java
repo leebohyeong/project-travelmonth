@@ -17,41 +17,54 @@ import java.util.Map;
 
 public class RequestUrl {
 
-	public static JSONObject get(String url) {
+	public static JSONObject get(String url)
+	{
 		return Send(url, "GET", null, null);
 	}
 
-	public static JSONObject get(String url, Map<String, String> parameters) {
+	public static JSONObject get(String url, Map<String, String> parameters)
+	{
 		return Send(url, "GET", null, parameters);
 	}
 
-	public static JSONObject post(String url) {
+	public static JSONObject post(String url)
+	{
 		return Send(url, "POST", null, null);
 	}
 
-	public static JSONObject post(String url, Map<String, String> parameters) {
+	public static JSONObject post(String url, Map<String, String> parameters)
+	{
 		return Send(url, "POST", null, parameters);
 	}
 
-	public static JSONObject Send(String url, String method, Map<String, String> headers, Map<String, String> parameters) {
+	public static JSONObject Send(String url, String method, Map<String, String> headers, Map<String, String> parameters)
+	{
 		HttpURLConnection httpURLConnection = connection(url + toString(parameters));
-		try {
+		try
+		{
 			httpURLConnection.setRequestMethod(method);
 
-			if (headers != null) {
-				for(Map.Entry<String, String> header : headers.entrySet()) {
+			if (headers != null)
+			{
+				for(Map.Entry<String, String> header : headers.entrySet())
+				{
 					httpURLConnection.setRequestProperty(header.getKey(), header.getValue());
 				}
 			}
 
-			if (HttpURLConnection.HTTP_OK != httpURLConnection.getResponseCode()) {
+			if (HttpURLConnection.HTTP_OK != httpURLConnection.getResponseCode())
+			{
 				return readBody(httpURLConnection.getErrorStream());
 			}
 
 			return readBody(httpURLConnection.getInputStream());
-		} catch (Exception exception) {
+		}
+		catch (Exception exception)
+		{
 			throw new RuntimeException("API 요청과 응답 실패", exception);
-		} finally {
+		}
+		finally
+		{
 			httpURLConnection.disconnect();
 		}
 	}

@@ -4,13 +4,15 @@ import lombok.*;
 
 import java.io.Serializable;
 
-public class TrendRequest {
+public class TrendRequest
+{
 
 	@Data
 	@Builder
 	@NoArgsConstructor
 	@AllArgsConstructor
-	public static class Search implements Serializable {
+	public static class Search implements Serializable
+	{
 
 		private String search_trend_gb;
 
@@ -18,7 +20,8 @@ public class TrendRequest {
 
 	@Data
 	@EqualsAndHashCode(callSuper = true)
-	public static class Goods extends Search {
+	public static class Goods extends Search
+	{
 
 		private String search_travel_gb = "P";
 
@@ -30,7 +33,8 @@ public class TrendRequest {
 
 	@Data
 	@EqualsAndHashCode(callSuper = true)
-	public static class Content extends Search {
+	public static class Content extends Search
+	{
 
 		private String search_travel_gb = "C";
 

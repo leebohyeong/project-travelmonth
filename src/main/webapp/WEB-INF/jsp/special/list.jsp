@@ -66,7 +66,14 @@
                             </dl>
                             <div>
                                 <p>※ 보다 자세한 내용은 G마켓 홈페이지 내 여행상품 특별 기획전에서 확인해 주세요.</p>
-                                <p><a href="#"><span>여행상품 특별 기획전 입장하기</span></a></p>
+                                <p>
+                                    <a href="#"
+                                       data-gtag-action="2023 여행가는 달_여행상품 특별 기획전"
+                                       data-gtag-category="special_enter"
+                                       data-gtag-label="여행상품 특별 기획전 입장하기">
+                                        <span>여행상품 특별 기획전 입장하기</span>
+                                    </a>
+                                </p>
                             </div>
                         </section>
                     </article>

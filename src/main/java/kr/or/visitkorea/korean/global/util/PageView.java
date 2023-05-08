@@ -14,15 +14,22 @@ import java.util.HashMap;
 
 @Slf4j
 @Component
-public class PageView {
+public class PageView
+{
 
 	private static PageViewService SERVICE;
 	private final PageViewService FINAL_SERVICE;
 
-	public PageView(PageViewService SERVICE) { this.FINAL_SERVICE = SERVICE; }
+	public PageView(PageViewService SERVICE)
+	{
+		this.FINAL_SERVICE = SERVICE;
+	}
 
 	@PostConstruct
-	private void init() { SERVICE = FINAL_SERVICE; }
+	private void init()
+	{
+		SERVICE = FINAL_SERVICE;
+	}
 
 	/**
 	 * SEND PAGE VIEW
@@ -34,7 +41,8 @@ public class PageView {
 			HttpServletRequest request = ((ServletRequestAttributes) RequestContextHolder.currentRequestAttributes()).getRequest();
 			Device device = DeviceUtils.getCurrentDevice(request);
 			SERVICE.write(
-				new HashMap<String, String>(){{
+				new HashMap<String, String>()
+				{{
 					put("user_ip", getRemoteAddr());
 					put("deviceType", device.isMobile() ? "M" : "W");
 					put("reffer_url", request.getHeader("Referer"));

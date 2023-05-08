@@ -12,8 +12,10 @@ import java.net.URLEncoder;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.stream.Collectors;
 
-public class Common {
+public class Common
+{
 
 	/**
 	 * GET THEMES
@@ -116,17 +118,43 @@ public class Common {
 		}};
 	}
 
-	public static String getTagText(String str) {
+	/**
+	 * GET THEME
+	 * @param theme
+	 * @return
+	 */
+	public static JSONObject getTheme(String theme)
+	{
+		return getThemes().stream()
+				.filter(row -> theme.equals(row.get(theme)))
+				.findFirst()
+				.orElse(null);
+	}
+
+	/**
+	 * GET TAG TEXT
+	 * @param str
+	 * @return
+	 */
+	public static String getTagText(String str)
+	{
 		return removeSpecialCharacter(removeHtmlTag(replaceLineSepatator(str)));
 	}
 
-	public static String removeSpecialCharacter(String str) {
+	/**
+	 * REMOVE SPECIAL CHARACTER
+	 * @param str
+	 * @return
+	 */
+	public static String removeSpecialCharacter(String str)
+	{
 		String match = "[^\uAC00-\uD7A30-9a-zA-Z_]";
 		str = str.replaceAll(match, " ");
 		return str;
 	}
 
 	/**
+	 * REMOVE HTML TAG
 	 * @param str
 	 * @return
 	 */
@@ -136,6 +164,7 @@ public class Common {
 	}
 
 	/**
+	 * REPLACE LINE SEPATATOR
 	 * @param str
 	 * @return
 	 */

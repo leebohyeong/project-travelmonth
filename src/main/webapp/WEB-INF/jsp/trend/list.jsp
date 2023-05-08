@@ -36,7 +36,11 @@
                                                     <strong data-theme="">전체</strong>
                                                 </c:when>
                                                 <c:otherwise>
-                                                    <a href="${pageContext.request.contextPath}/trend/list.do" data-theme="">전체</a>
+                                                    <a href="${pageContext.request.contextPath}/trend/list.do"
+                                                       data-theme=""
+                                                       data-gtag-action="2023 여행가는 달_trend관"
+                                                       data-gtag-category="trend_all_tab"
+                                                       data-gtag-label="전체">전체</a>
                                                 </c:otherwise>
                                             </c:choose>
                                         </div>
@@ -47,7 +51,11 @@
                                                         <strong data-theme="${row.theme}">${row.title}</strong>
                                                     </c:when>
                                                     <c:otherwise>
-                                                        <a href="${pageContext.request.contextPath}/trend/trend-${row.theme}.do" data-theme="${row.theme}">${row.title}</a>
+                                                        <a href="${pageContext.request.contextPath}/trend/trend-${row.theme}.do"
+                                                           data-theme="${row.theme}"
+                                                           data-gtag-action="2023 여행가는 달_trend관"
+                                                           data-gtag-category="trend_${row.ga_tag}_tab"
+                                                           data-gtag-label="${row.ga_tag_title}">${row.title}</a>
                                                     </c:otherwise>
                                                 </c:choose>
                                             </div>
@@ -66,7 +74,12 @@
                                                     <dl>
                                                         <dt><span>${row.sub_title}</span><strong>${fn:replace(row.title, '<br>', '')}</strong></dt>
                                                         <dd>${row.content}</dd>
-                                                        <dd><a href="${pageContext.request.contextPath}/trend/trend-${row.theme}.do">여행 프로그램 확인하기</a></dd>
+                                                        <dd>
+                                                            <a href="${pageContext.request.contextPath}/trend/trend-${row.theme}.do"
+                                                               data-gtag-action="2023 여행가는 달_trend관"
+                                                               data-gtag-category="trend_${row.ga_tag}_more"
+                                                               data-gtag-label="${row.main_title}_여행 프로그램 확인하기">여행 프로그램 확인하기</a>
+                                                        </dd>
                                                     </dl>
                                                 </div>
                                             </c:forEach>
@@ -91,7 +104,13 @@
                                                         <c:set var="hidden_class" value="class='list-thumbnail__item--hide'"/>
                                                     </c:if>
                                                     <li ${hidden_class}>
-                                                        <a href="#modal-goods-${row.seq}" data-bs-toggle="modal" data-bs-target="#modal-goods-${row.seq}">
+                                                        <c:set var="theme" value="${common:getTheme(fn:toLowerCase('A'))}"/>
+                                                        <a href="#modal-goods-${row.seq}"
+                                                           data-bs-toggle="modal"
+                                                           data-bs-target="#modal-goods-${row.seq}"
+                                                           data-gtag-action="2023 여행가는 달_trend관"
+                                                           data-gtag-category="trend_${theme.ga_tag}_product_list"
+                                                           data-gtag-label="${common:getTagText(row.title)}">
                                                             <span style="background-image: url('${row.image}')"></span>
                                                             <p>
                                                                 <fmt:parseDate var="strFromDate" pattern="yyyy-MM-dd" value="${row.from_date}"/>
@@ -174,7 +193,15 @@
                                                             </div>
                                                         </c:if>
                                                     </dl>
-                                                    <p><a href="${row.link}" target="_blank"><span>자세히 보기</span></a></p>
+                                                    <p>
+                                                        <a href="${row.link}"
+                                                           target="_blank"
+                                                           data-gtag-action="2023 여행가는 달_trend관"
+                                                           data-gtag-category="trend_${theme.ga_tag}_product_popup"
+                                                           data-gtag-label="${common:getTagText(row.title)}">
+                                                            <span>자세히 보기</span>
+                                                        </a>
+                                                    </p>
                                                 </article>
                                                 <button class="modal-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button>
                                             </div>
@@ -184,7 +211,7 @@
                             </c:if>
                         </c:if>
                         <section class="list-thumbnail list-thumbnail--contents">
-                            <h3>${empty search.search_trend_gb ? '2023 여행' : page_title} 트렌드 알아보기</h3>
+                            <h3>${empty search.search_trend_gb ? '2023 여행' : page_main_title} 트렌드 알아보기</h3>
                             <c:if test="${not empty contents}">
                                 <c:if test="${contents.result}">
                                     <c:set var="list" value="${contents.data.list}"/>
@@ -193,7 +220,12 @@
                                             <ul>
                                                 <c:forEach var="row" items="${list}" varStatus="loop">
                                                     <li>
-                                                        <a href="#modal-trend-content-${row.seq}" data-bs-toggle="modal" data-bs-target="#modal-trend-content-${row.seq}">
+                                                        <a href="#modal-trend-content-${row.seq}"
+                                                           data-bs-toggle="modal"
+                                                           data-bs-target="#modal-trend-content-${row.seq}"
+                                                           data-gtag-action="2023 여행가는 달_trend관"
+                                                           data-gtag-category="trend_${theme.ga_tag}_contents_list"
+                                                           data-gtag-label="${common:getTagText(row.title)}">
                                                             <span style="background-image: url('${row.image}')"></span>
                                                             <p>${row.title}</p>
                                                         </a>

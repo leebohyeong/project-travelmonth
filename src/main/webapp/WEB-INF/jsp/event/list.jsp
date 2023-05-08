@@ -23,7 +23,11 @@
                                 <c:set var="list" value="${banner.data.list}"/>
                                 <c:forEach var="row" items="${list}" varStatus="loop">
                                     <div class="swiper-slide">
-                                        <a href="${row.link}" target="${row.link_target}">
+                                        <a href="${row.link}"
+                                           target="${row.link_target}"
+                                           data-gtag-action="2023 여행가는 달_여행상품 특별 기획전"
+                                           data-gtag-category="event_banner_top"
+                                           data-gtag-label="${common:getTagText(row.title)}">
                                             <picture>
                                                 <source srcset="${row.banner}" media="(min-width: 768px)">
                                                 <img src="${row.banner}" alt="${row.banner_alt}">
@@ -58,7 +62,11 @@
                                                 <ul>
                                                     <c:forEach var="row" items="${list}" varStatus="loop">
                                                         <li>
-                                                            <a href="${row.link}" target="${row.link_target}">
+                                                            <a href="${row.link}"
+                                                               target="${row.link_target}"
+                                                               data-gtag-action="2023 여행가는 달_여행상품 특별 기획전"
+                                                               data-gtag-category="event_banner_list"
+                                                               data-gtag-label="${common:getTagText(row.title)}">
                                                                 <span style="background-image: url('${row.thumbnail}')"></span>
                                                                 <p>${row.title}</p>
                                                                 <p>${row.from_date} ~ ${row.to_date}</p>
@@ -83,7 +91,11 @@
                                                 <ul>
                                                     <c:forEach var="row" items="${list}" varStatus="loop">
                                                         <li>
-                                                            <a href="${row.link}" target="${row.link_target}">
+                                                            <a href="${row.link}"
+                                                               target="${row.link_target}"
+                                                               data-gtag-action="2023 여행가는 달_여행상품 특별 기획전"
+                                                               data-gtag-category="event_banner_list"
+                                                               data-gtag-label="${common:getTagText(row.title)}">
                                                                 <span style="background-image: url('${row.thumbnail}')"></span>
                                                                 <p>${row.title}</p>
                                                                 <p>${row.from_date} ~ ${row.to_date}</p>

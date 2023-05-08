@@ -13,7 +13,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 @Controller
 @RequiredArgsConstructor
 @RequestMapping("/event")
-public class EventController {
+public class EventController
+{
 
 	private final EventService SERVICE;
 

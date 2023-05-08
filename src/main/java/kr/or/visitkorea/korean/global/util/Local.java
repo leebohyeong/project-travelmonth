@@ -20,10 +20,16 @@ public class Local
 	private final CommonService FINAL_SERVICE;
 
 
-	public Local(CommonService SERVICE) { this.FINAL_SERVICE = SERVICE; }
+	public Local(CommonService SERVICE)
+	{
+		this.FINAL_SERVICE = SERVICE;
+	}
 
 	@PostConstruct
-	private void init() { SERVICE = FINAL_SERVICE; }
+	private void init()
+	{
+		SERVICE = FINAL_SERVICE;
+	}
 
 	/**
 	 * GET LIST

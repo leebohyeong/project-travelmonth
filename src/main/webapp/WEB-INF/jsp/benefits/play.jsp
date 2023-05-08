@@ -48,7 +48,21 @@
                                                         <c:set var="hidden_class" value="class='list-thumbnail__item--hide'"/>
                                                     </c:if>
                                                     <li ${hidden_class}>
-                                                        <a href="#" data-type="${fn:toLowerCase(row.enjoy_gb)}" data-bs-toggle="modal" data-bs-target="#modal-benefits-${row.seq}">
+                                                        <c:set var="data_gtag_category" value="play_benefit_list"/>
+                                                        <c:choose>
+                                                            <c:when test="${row.enjoy_gb eq 'T'}">
+                                                                <c:set var="data_gtag_category" value="play_info_list"/>
+                                                            </c:when>
+                                                            <c:when test="${row.enjoy_gb eq 'E'}">
+                                                                <c:set var="data_gtag_category" value="play_event_list"/>
+                                                            </c:when>
+                                                        </c:choose>
+                                                        <a href="#" data-type="${fn:toLowerCase(row.enjoy_gb)}"
+                                                           data-bs-toggle="modal"
+                                                           data-bs-target="#modal-benefits-${row.seq}"
+                                                           data-gtag-action="2023 여행가는 달_놀거리혜택"
+                                                           data-gtag-category="${data_gtag_category}"
+                                                           data-gtag-label="${common:getTagText(row.title)}">
                                                             <span style="background-image: url('${row.image}')"></span>
                                                             <div>
                                                                 <p>
@@ -211,7 +225,24 @@
                                                                 </div>
                                                             </c:if>
                                                         </dl>
-                                                        <p><a href="${row.link}" target="_blank"><span>자세히 보기</span></a></p></article>
+                                                        <p>
+                                                            <c:set var="data_gtag_category" value="play_benefit_popup"/>
+                                                            <c:choose>
+                                                                <c:when test="${row.enjoy_gb eq 'T'}">
+                                                                    <c:set var="data_gtag_category" value="play_info_popup"/>
+                                                                </c:when>
+                                                                <c:when test="${row.enjoy_gb eq 'E'}">
+                                                                    <c:set var="data_gtag_category" value="play_event_popup"/>
+                                                                </c:when>
+                                                            </c:choose>
+                                                            <a href="${row.link}" target="_blank"
+                                                               data-gtag-action="2023 여행가는 달_놀거리혜택"
+                                                               data-gtag-category="${data_gtag_category}"
+                                                               data-gtag-label="${common:getTagText(row.title)}">
+                                                                <span>자세히 보기</span>
+                                                            </a>
+                                                        </p>
+                                                    </article>
                                                     <button class="modal-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button>
                                                 </div>
                                             </div>
