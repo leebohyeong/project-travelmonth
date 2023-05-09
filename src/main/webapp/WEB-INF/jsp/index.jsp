@@ -373,13 +373,13 @@
                                         <div class="swiper-slide">
                                             <a href="${row.link}"
                                                target="${row.link_target}"
-                                               style="background-image:url('${row.thumbnail}')"
                                                data-gtag-action="2023 여행가는 달_메인"
                                                data-gtag-category="main_event_list"
                                                data-gtag-label="${common:getTagText(row.title)}"
                                                data-ga-category="2023 여행가는 달_메인"
                                                data-ga-action="이벤트 리스트"
                                                data-ga-label="${common:getTagText(row.title)}">
+                                                <span style="background-image:url('${row.thumbnail}')"></span>
                                                 <p>${row.title}</p>
                                             </a>
                                         </div>

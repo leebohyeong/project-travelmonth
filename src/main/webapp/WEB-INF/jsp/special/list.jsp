@@ -19,16 +19,30 @@
                 <div class="benefits__content">
                     <article class="special-list">
                         <header>
-                            <div><h2><strong><span>여행상품</span><br>
-                                특별 기획전</strong></h2>
-                                <p>쿠폰할인으로 저렴하게<br>여행 패키지 상품도 즐기고</p></div>
+                            <div>
+                                <h2>
+                                    <strong>
+                                        <span>여행상품</span><br>
+                                        특별 기획전
+                                    </strong>
+                                </h2>
+                                <p>
+                                    쿠폰할인으로 저렴하게 여행 패키지 상품도 즐기고 <br>
+                                    국내 여행업계 회복도 지원하고!
+                                </p>
+                            </div>
                         </header>
                         <section>
-                            <header><h3>6월 여행가는 달</h3>
-                                <p>여행업계가 선보이는 <br>
-                                    대한민국 구석구석 100여개의 여행상품을<br>
-                                    <strong><span>30% 할인 가격</span>으로 <br>이용해 보세요.</strong></p></header>
-                            <dl><span class="icon-man"></span><span class="icon-plane"></span>
+                            <header>
+                                <h3>6월 여행가는 달</h3>
+                                <p>
+                                    여행업계가 선보이는 <br>
+                                    대한민국 구석구석 다양한 여행상품을 <br>
+                                    <strong><span>30% 할인 가격</span>으로 <br>이용해 보세요.</strong>
+                                </p>
+                            </header>
+                            <dl>
+<%--                                <span class="icon-man"></span><span class="icon-plane"></span>--%>
                                 <div>
                                     <dt>참여사(상품)</dt>
                                     <dd>총 56개 여행사 101개<br>여행상품</dd>
@@ -36,13 +50,13 @@
                                 <div>
                                     <dt>구매기간</dt>
                                     <dd>5.17~6.30
-                                        <span>*단, 사정에 따라 이용 구매 기간 일부 변동 가능</span>
+<%--                                        <span>*단, 사정에 따라 이용 구매 기간 일부 변동 가능</span>--%>
                                     </dd>
                                 </div>
                                 <div>
                                     <dt>상품 이용 기간</dt>
                                     <dd>6.1~7.15
-                                        <span>*단, 사정에 따라 이용 기간 일부 변동 가능</span>
+                                        <span>*단, 사정에 따라 구매 기간 및 이용 기간 일부 변동 가능</span>
                                     </dd>
                                 </div>
                                 <div>
