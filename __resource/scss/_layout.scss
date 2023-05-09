@@ -2,8 +2,7 @@
 
 body {
     font-family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
-    //word-break: keep-all;
-    word-break: break-all;
+    word-break: keep-all;
 }
 
 .skipnav {
@@ -608,6 +607,13 @@ body {
             @include media-queries($from: xl) {
                 font-size: 20px;
             }
+
+            @include media-queries($to: xl) {
+                font-size: 14px;
+                br {
+                    display: none;
+                }
+            }
         }
 
         [data-type="d"] div p:first-child {
@@ -906,6 +912,12 @@ body {
                 justify-content: space-between;
                 align-items: center;
                 padding: 24px 24px 0;
+
+                @include media-queries($to: xl) {
+                    justify-content: flex-start;
+                    grid-column-gap: 10px;
+                    padding: 20px 0 12px 0;
+                }
             }
         }
 
@@ -921,6 +933,13 @@ body {
                 color: var(--modal-point-color);
                 font-size: 16px;
                 text-align: center;
+
+                @include media-queries($to: xl) {
+                    width: auto;
+                    height: auto;
+                    padding: 0 10px;
+                    font-size: 14px;
+                }
             }
 
             &:nth-of-type(2) {
@@ -928,6 +947,11 @@ body {
                 color: #3d3d3d;
                 font-weight: 500;
                 font-size: 20px;
+
+                @include media-queries($to: xl) {
+                    width: auto;
+                    font-size: 15px;
+                }
             }
         }
 
@@ -938,6 +962,17 @@ body {
             font-size: 30px;
             line-height: math.div(36, 30);
             font-family: 'GmarketSans', sans-serif;
+
+            @include media-queries($to: xl) {
+                padding: 0;
+                font-size: 22px;
+            }
+
+            @include media-queries($to: sm) {
+                br {
+                    display: none;
+                }
+            }
         }
 
         dl {
@@ -947,9 +982,17 @@ body {
             font-size: 16px;
             line-height: 1.5;
 
+            @include media-queries($to: xl) {
+                padding: 15px 0 0;
+            }
+
             > div {
                 display: flex;
                 align-items: flex-start;
+
+                @include media-queries($to: xl) {
+                    display: block;
+                }
 
                 &:not(:first-child) {
                     margin-top: 8px;
@@ -976,6 +1019,7 @@ body {
 
             dd {
                 flex-grow: 1;
+                word-break: break-all;
             }
         }
 
@@ -997,6 +1041,18 @@ body {
                     font-size: 20px;
                     letter-spacing: -0.025em;
                     appearance: none;
+
+
+                    @include media-queries($to: xl) {
+                        width: 180px;
+                        height: 45px;
+                        font-size: 18px;
+                    }
+                }
+
+
+                @include media-queries($to: xl) {
+                    padding: 25px 0 15px;
                 }
             }
         }
