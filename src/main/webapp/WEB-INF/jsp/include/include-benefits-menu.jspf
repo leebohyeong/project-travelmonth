@@ -4,7 +4,7 @@
         <option value="traffic" data-url="${pageContext.request.contextPath}/benefits/traffic.do" <c:if test="${fn:contains(path, '/benefits/traffic.do')}">selected</c:if>>교통혜택</option>
         <option value="stay" data-url="${pageContext.request.contextPath}/benefits/stay.do" <c:if test="${fn:contains(path, '/benefits/stay.do')}">selected</c:if>>숙박혜택</option>
         <option value="play" data-url="${pageContext.request.contextPath}/benefits/play.do" <c:if test="${fn:contains(path, '/benefits/play.do')}">selected</c:if>>놀거리혜택</option>
-        <option value="trend" data-url="${pageContext.request.contextPath}/trend/list.do" <c:if test="${fn:contains(path, '/trend/list.do')}">selected</c:if>>여행트렌드관</option>
+        <option value="trend" data-url="${pageContext.request.contextPath}/trend/list.do" <c:if test="${fn:contains(path, '/trend/list.do') || fn:contains(path, '/trend/trend-')}">selected</c:if>>여행트렌드관</option>
         <option value="special" data-url="${pageContext.request.contextPath}/special/list.do" <c:if test="${fn:contains(path, '/special/list.do')}">selected</c:if>>여행상품 특별 기획전</option>
     </select>
     <ul>
