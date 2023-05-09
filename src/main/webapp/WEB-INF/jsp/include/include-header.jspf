@@ -9,51 +9,110 @@
 
 <div class="skipnav"><a href="#content">본문 영역으로 바로가기</a></div>
 <nav class="quick-visitkorea">
-    <div><a href="https://korean.visitkorea.or.kr" target="_blank"
-            data-gtag-action="2023 여행가는 달_GNB" data-gtag-category="gnb_visitkorea"
-            data-gtag-label="대한민국구석구석 바로가기"><span>대한민국구석구석 바로가기</span></a></div>
+    <div>
+        <a href="https://korean.visitkorea.or.kr" target="_blank"
+            data-gtag-action="2023 여행가는 달_GNB"
+            data-gtag-category="gnb_visitkorea"
+            data-gtag-label="대한민국구석구석 바로가기"
+            data-ga-category="2023 여행가는 달_GNB"
+            data-ga-action="대한민국구석구석 바로가기">
+            <span>대한민국구석구석 바로가기</span>
+        </a>
+    </div>
 </nav>
 <header class="site-header">
-    <div><h1><a href="${pageContext.request.contextPath}/index.do" data-gtag-action="2023 여행가는 달_GNB"
-                data-gtag-category="gnb_logo" data-gtag-label="여행가는 달"><span>여행가는 달</span></a></h1>
+    <div>
+        <h1>
+            <a href="${pageContext.request.contextPath}/index.do"
+                data-gtag-action="2023 여행가는 달_GNB"
+                data-gtag-category="gnb_logo"
+                data-gtag-label="여행가는 달"
+                data-ga-category="2023 여행가는 달_GNB"
+                data-ga-action="여행가는 달">
+                <span>여행가는 달</span>
+            </a>
+        </h1>
         <p>
             <button type="button"><span>메뉴</span></button>
         </p>
         <nav>
             <ul data-id="main">
                 <li>
-                    <a href="${pageContext.request.contextPath}/intro.do" data-gtag-action="2023 여행가는 달_GNB"
-                       data-gtag-category="gnb_travelmonth" data-gtag-label="여행가는 달이란">여행가는 달이란?</a>
+                    <a href="${pageContext.request.contextPath}/intro.do"
+                       data-gtag-action="2023 여행가는 달_GNB"
+                       data-gtag-category="gnb_travelmonth"
+                       data-gtag-label="여행가는 달이란"
+                       data-ga-category="2023 여행가는 달_GNB"
+                       data-ga-action="여행가는 달이란">여행가는 달이란?</a>
                     <div>
                         <ul>
-                            <li><a href="${pageContext.request.contextPath}/intro.do" data-gtag-action="2023 여행가는 달_GNB"
-                                   data-gtag-category="gnb_intro" data-gtag-label="여행가는 달 소개">여행가는 달 소개</a></li>
-                            <li><a href="${pageContext.request.contextPath}/organization.do"
-                                   data-gtag-action="2023 여행가는 달_GNB" data-gtag-category="gnb_organizations" data-gtag-label="여행가는 달 참여기관">여행가는 달 참여기관</a>
+                            <li>
+                                <a href="${pageContext.request.contextPath}/intro.do"
+                                   data-gtag-action="2023 여행가는 달_GNB"
+                                   data-gtag-category="gnb_intro"
+                                   data-gtag-label="여행가는 달 소개"
+                                   data-ga-category="2023 여행가는 달_GNB"
+                                   data-ga-action="여행가는 달 소개">여행가는 달 소개</a>
+                            </li>
+                            <li>
+                                <a href="${pageContext.request.contextPath}/organization.do"
+                                   data-gtag-action="2023 여행가는 달_GNB"
+                                   data-gtag-category="gnb_organizations"
+                                   data-gtag-label="여행가는 달 참여기관"
+                                   data-ga-category="2023 여행가는 달_GNB"
+                                   data-ga-action="여행가는 달 참여기관">여행가는 달 참여기관</a>
                             </li>
                         </ul>
                     </div>
                 </li>
                 <li>
                     <a href="${pageContext.request.contextPath}/benefits/local/gangwon.do"
-                       data-gtag-action="2023 여행가는 달_GNB" data-gtag-category="gnb_local" data-gtag-label="여행혜택">여행혜택</a>
+                       data-gtag-action="2023 여행가는 달_GNB"
+                       data-gtag-category="gnb_local"
+                       data-gtag-label="여행혜택"
+                       data-ga-category="2023 여행가는 달_GNB"
+                       data-ga-action="여행혜택">여행혜택</a>
                     <div>
                         <ul>
                             <li><a href="${pageContext.request.contextPath}/benefits/traffic.do"
-                                   data-gtag-action="2023 여행가는 달_GNB" data-gtag-category="gnb_traffic" data-gtag-label="교통혜택">교통혜택</a></li>
+                                   data-gtag-action="2023 여행가는 달_GNB"
+                                   data-gtag-category="gnb_traffic"
+                                   data-gtag-label="교통혜택"
+                                   data-ga-category="2023 여행가는 달_GNB"
+                                   data-ga-action="교통혜택">교통혜택</a></li>
                             <li><a href="${pageContext.request.contextPath}/benefits/stay.do"
-                                   data-gtag-action="2023 여행가는 달_GNB" data-gtag-category="gnb_accommodation" data-gtag-label="숙박혜택">숙박혜택</a></li>
+                                   data-gtag-action="2023 여행가는 달_GNB"
+                                   data-gtag-category="gnb_accommodation"
+                                   data-gtag-label="숙박혜택"
+                                   data-ga-category="2023 여행가는 달_GNB"
+                                   data-ga-action="숙박혜택">숙박혜택</a></li>
                             <li><a href="${pageContext.request.contextPath}/benefits/play.do"
-                                   data-gtag-action="2023 여행가는 달_GNB" data-gtag-category="gnb_play" data-gtag-label="놀거리혜택">놀거리혜택</a></li>
+                                   data-gtag-action="2023 여행가는 달_GNB"
+                                   data-gtag-category="gnb_play"
+                                   data-gtag-label="놀거리혜택"
+                                   data-ga-category="2023 여행가는 달_GNB"
+                                   data-ga-action="놀거리혜택">놀거리혜택</a></li>
                         </ul>
                     </div>
                 </li>
-                <li><a href="${pageContext.request.contextPath}/trend/list.do" data-gtag-action="2023 여행가는 달_GNB" data-gtag-category="gnb_trend"
-                       data-gtag-label="여행트렌드관">여행트렌드관</a></li>
-                <li><a href="${pageContext.request.contextPath}/special/list.do" data-gtag-action="2023 여행가는 달_GNB" data-gtag-category="gnb_special"
-                       data-gtag-label="여행상품 특별 기획전">여행상품 특별 기획전</a></li>
-                <li><a href="${pageContext.request.contextPath}/event/list.do" data-gtag-action="2023 여행가는 달_GNB" data-gtag-category="gnb_event"
-                       data-gtag-label="이벤트">이벤트</a></li>
+                <li><a href="${pageContext.request.contextPath}/trend/list.do"
+                       data-gtag-action="2023 여행가는 달_GNB"
+                       data-gtag-category="gnb_trend"
+                       data-gtag-label="여행트렌드관"
+                       data-ga-category="2023 여행가는 달_GNB"
+                       data-ga-action="여행트렌드관">여행트렌드관</a></li>
+                <li><a href="${pageContext.request.contextPath}/special/list.do"
+                       data-gtag-action="2023 여행가는 달_GNB"
+                       data-gtag-category="gnb_special"
+                       data-gtag-label="여행상품 특별 기획전"
+                       data-ga-category="2023 여행가는 달_GNB"
+                       data-ga-action="여행상품 특별 기획전">여행상품 특별 기획전</a></li>
+                <li><a href="${pageContext.request.contextPath}/event/list.do"
+                       data-gtag-action="2023 여행가는 달_GNB"
+                       data-gtag-category="gnb_event"
+                       data-gtag-label="이벤트"
+                       data-ga-category="2023 여행가는 달_GNB"
+                       data-ga-action="이벤트">이벤트</a></li>
             </ul>
         </nav>
     </div>

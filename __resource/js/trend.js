@@ -13,13 +13,16 @@ const trendList = () => {
 
     (() => {
         const carouselContainer = findOne('.trend-list nav .swiper');
+        const currentIndex = find('.swiper-slide').findIndex(item => findOne('strong', item));
         const carousel = new Swiper(carouselContainer, {
             slidesPerView: 'auto',
+            initialSlide: currentIndex,
             freeMode: {
                 enabled: true,
             },
             modules: [FreeMode],
         });
+
     })();
 
     (() => {
