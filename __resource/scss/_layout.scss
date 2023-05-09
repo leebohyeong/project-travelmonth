@@ -802,12 +802,19 @@ body {
                 letter-spacing: -0.03em;
 
                 &:nth-of-type(1) {
+                    overflow: hidden;
+                    display: -webkit-box;
+                    text-overflow: ellipsis;
+                    word-break: break-word;
+                    -webkit-box-orient: vertical;
+                    -webkit-line-clamp: 3;
                     font-weight: $font-weight-medium;
                     font-size: 14px;
 
                     @include media-queries($from: xl) {
+
                         font-size: 22px;
-                        @include line-clamp(30px, 3);
+                        //@include line-clamp(30px, 3);
                     }
                 }
 
@@ -987,11 +994,10 @@ body {
             }
 
             > div {
-                display: flex;
-                align-items: flex-start;
 
-                @include media-queries($to: xl) {
-                    display: block;
+                @include media-queries($from: xl) {
+                    display: flex;
+                    align-items: flex-start;
                 }
 
                 &:not(:first-child) {

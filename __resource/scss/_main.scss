@@ -997,14 +997,14 @@
                             size: contain;
                         };
 
-                        &::before {
+                        span {
                             display: block;
-                            padding-top: percentage(math.div(235, 345));
-                            content: '';
-
-                            @include media-queries($to: xl) {
-                                padding-top: percentage(math.div(212, 310));
-                            }
+                            border-radius: 32px;
+                            background-repeat: no-repeat;
+                            background-position: center;
+                            background-size: cover;
+                            aspect-ratio: 374/255;
+                            border-radius: var(--benefits-list-thumbnail-radius);
                         }
 
                         p {
