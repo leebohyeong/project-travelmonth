@@ -13,16 +13,7 @@
                 <div class="benefits__menu benefits__menu--program">
                     <div><h2><span>여행가는 달의 다양한</span><strong>여행정보와 여행혜택을<br>확인해 보세요!</strong></h2>
                         <%@ include file="include/include-nav.jspf" %>
-                        <div>
-                            <select>
-                                <option value="traffic">교통혜택</option>
-                                <option value="stay">숙박혜택</option>
-                                <option value="play">놀거리혜택</option>
-                                <option value="trend">여행트렌드관</option>
-                                <option value="special" selected>여행상품 특별 기획전</option>
-                            </select>
-                            <%@ include file="include/include-menu.jspf" %>
-                        </div>
+                        <%@ include file="../include/include-benefits-menu.jspf" %>
                     </div>
                 </div>
                 <div class="benefits__content">
