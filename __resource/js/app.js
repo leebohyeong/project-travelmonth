@@ -13,7 +13,7 @@ import {specialList} from './special';
 
 const app = new App();
 
-app.add({globalNav, googleTag});
+app.add({globalNav, googleTag, googleAnalytics});
 app.add({benefits, benefitsLocal, benefitsPlay});
 app.add({trendList});
 app.add({main});

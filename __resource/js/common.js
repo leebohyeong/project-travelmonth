@@ -89,9 +89,13 @@ const googleAnalytics = () => {
     const fireEvent = (trigger) => {
         const {gaAction, gaCategory, gaLabel} = trigger.dataset;
 
-        if (!gaCategory || !gaLabel) return;
+        if (!gaCategory) return;
 
-        ga('send', 'event', gaCategory, gaAction, gaLabel);
+        if (!gaLabel) {
+            ga('send', 'event', gaCategory, gaAction);
+        } else  {
+            ga('send', 'event', gaCategory, gaAction, gaLabel);
+        }
     };
 
     triggers.forEach(trigger => on(trigger, 'click', () => fireEvent(trigger)));
