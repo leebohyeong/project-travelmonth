@@ -2,7 +2,7 @@ import App from 'hwaly-app';
 import * as bootstrap from 'bootstrap';
 window.bootstrap = bootstrap;
 
-import {globalNav, googleTag} from './common';
+import {globalNav, googleTag, googleAnalytics} from './common';
 import {main} from './main';
 import {benefits, benefitsLocal, benefitsPlay} from './benefits';
 import {trendList} from './trend';
@@ -21,6 +21,6 @@ app.add({travelmonthIntro});
 app.add({eventList});
 app.add({specialList});
 
-app.auto('globalNav', 'googleTag');
+app.auto('globalNav', 'googleTag', 'googleAnalytics');
 
 app.readyAndRun();

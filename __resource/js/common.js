@@ -78,8 +78,20 @@ const googleTag = () => {
             options[`${gtagCategory.trim()}`] = gtagLabel.trim();
         }
 
-        // ga('send', 'event', gtagCategory, gtagAction, gtagLabel);
         gtag('event', gtagAction, JSON.parse(JSON.stringify(options)));
+    };
+
+    triggers.forEach(trigger => on(trigger, 'click', () => fireEvent(trigger)));
+};
+
+const googleAnalytics = () => {
+    const triggers = find('[data-ga-action]');
+    const fireEvent = (trigger) => {
+        const {gaAction, gaCategory, gaLabel} = trigger.dataset;
+
+        if (!gaCategory || !gaLabel) return;
+
+        ga('send', 'event', gaCategory, gaAction, gaLabel);
     };
 
     triggers.forEach(trigger => on(trigger, 'click', () => fireEvent(trigger)));
@@ -88,6 +100,7 @@ const googleTag = () => {
 export {
     globalNav,
     googleTag,
+    googleAnalytics,
     ListThumbnail,
     BenefitsMenu,
 }
