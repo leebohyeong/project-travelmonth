@@ -1,0 +1,79 @@
+@use "sass:math";
+
+.error {
+    &__container {
+        max-width: 1200px;
+        margin: 292px auto 390px;
+        color: #424242;
+        text-align: center;
+
+        @include media-queries($to: xl) {
+            margin: 120px auto;
+        }
+
+        > div {
+            
+            h2 {
+                padding-top: 210px;
+                background: {
+                    image: url(/travelmonth/assets/images/error/img_error.png);
+                    repeat: no-repeat;
+                    position: center top;
+                    size: 255px auto;
+                };
+                font-weight: $font-weight-semiBold;
+                font-size: 42px;
+
+                @include media-queries($to: xl) {
+                    padding-top: 110px;
+                    background-size: 150px auto;
+                    font-size: 23px;
+                }
+            }
+
+            p {
+                padding-top: 23px;
+                font-weight: $font-weight-light;
+                font-size: 24px;
+
+                @include media-queries($to: xl) {
+                    padding-top: 15px;
+                    font-size: 20px;
+                }
+            }
+
+            a {
+                display: block;
+                position: relative;
+                width: 364px;
+                height: 60px;
+                margin: 76px auto 0;
+                background-color: #37bf8a;
+                //background: #37bf8a url(/travelmonth/assets/images/error/icon_error_arrow.png) no-repeat center right;
+                border-radius: 30px;
+                color: #fff;
+                font-size: 23px;
+                font-weight: $font-weight-light;
+                line-height: 60px;
+
+                &::after {
+                    display: inline-block;
+                    vertical-align: middle;
+                    width: 16px;
+                    height: 13px;
+                    margin-left: 13px;
+                    background: url(/travelmonth/assets/images/error/icon_error_arrow.png) no-repeat center/cover;
+                    content:'';
+                }
+
+                @include media-queries($to: xl) {
+                    width: 220px;
+                    height: 40px;
+                    margin: 30px auto 0;
+                    font-size: 14px;
+                    line-height: 40px;
+                }
+            }
+        }
+    }
+}
