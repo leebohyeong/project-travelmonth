@@ -28,7 +28,10 @@
                                                target="${row.link_target}"
                                                data-gtag-action="2023 여행가는 달_여행상품 특별 기획전"
                                                data-gtag-category="event_banner_top"
-                                               data-gtag-label="${common:getTagText(row.title)}">
+                                               data-gtag-label="${common:getTagText(row.title)}"
+                                               data-ga-category="2023 여행가는 달_이벤트"
+                                               data-ga-action="이벤트_상단탑배너"
+                                               data-ga-label="${common:getTagText(row.title)}">
                                                 <picture>
                                                     <source srcset="${row.banner}" media="(min-width: 768px)">
                                                     <img src="${row.banner}" alt="${row.banner_alt}">
@@ -68,7 +71,10 @@
                                                                target="${row.link_target}"
                                                                data-gtag-action="2023 여행가는 달_여행상품 특별 기획전"
                                                                data-gtag-category="event_banner_list"
-                                                               data-gtag-label="${common:getTagText(row.title)}">
+                                                               data-gtag-label="${common:getTagText(row.title)}"
+                                                               data-ga-category="2023 여행가는 달_이벤트"
+                                                               data-ga-action="이벤트_리스트"
+                                                               data-ga-label="${common:getTagText(row.title)}">
                                                                 <span style="background-image: url('${row.thumbnail}')"></span>
                                                                 <p>${row.title}</p>
                                                                 <p>${row.from_date} ~ ${row.to_date}</p>
@@ -97,7 +103,10 @@
                                                                target="${row.link_target}"
                                                                data-gtag-action="2023 여행가는 달_여행상품 특별 기획전"
                                                                data-gtag-category="event_banner_list"
-                                                               data-gtag-label="${common:getTagText(row.title)}">
+                                                               data-gtag-label="${common:getTagText(row.title)}"
+                                                               data-ga-category="2023 여행가는 달_이벤트"
+                                                               data-ga-action="이벤트_리스트"
+                                                               data-ga-label="${common:getTagText(row.title)}">
                                                                 <span style="background-image: url('${row.thumbnail}')"></span>
                                                                 <p>${row.title}</p>
                                                                 <p>${row.from_date} ~ ${row.to_date}</p>

@@ -29,7 +29,11 @@
                     <p>농촌으로 떠나는 작은 여행</p>
                     <p>고창농촌팜파티</p>
                     <p>주요 일정 안내</p>
-                    <button type="button">타임테이블 확인하기</button>
+                    <button type="button"
+                            data-gtag-action="2023 여행가는 달_같이가 준 이벤트"
+                            data-gtag-category="june_time_table_1"
+                            data-ga-category="2023 여행가는 달_같이가 준 이벤트"
+                            data-ga-action="타임테이블1 확인하기">타임테이블 확인하기</button>
                     <p>대전 출발 → 선운사 및 녹차밭 관람 → <br>
                         농가체험장 쉼드림(중식) → 핸드드립 맷돌 커피& <br>
                         복분자주스 → 편백숲 치유프로그램→ <br>
@@ -44,7 +48,11 @@
                             세계적인 축제 마임축제와 함께 하는 여행</p>
                         <p>고춘천마임축제</p>
                         <p>주요 일정 안내</p>
-                        <button type="button">타임테이블 확인하기</button>
+                        <button type="button"
+                                data-gtag-action="2023 여행가는 달_같이가 준 이벤트"
+                                data-gtag-category="june_time_table_1"
+                                data-ga-category="2023 여행가는 달_같이가 준 이벤트"
+                                data-ga-action="타임테이블1 확인하기">타임테이블 확인하기</button>
                         <p>서울 출발 → 삼악산케이블카 탑승 → 중식 → <br>
                             티타임 → 의암호 스카이워크 → 마임공연 관람 → <br>
                             서울 도착 → 해산</p>
@@ -58,10 +66,6 @@
                         </p>
                     </h2>
                 </div>
-                <button type="button" data-bs-toggle="modal" data-bs-target="#juneModal1"><span class="screen_out">타임테이블 확인하기</span>
-                </button>
-                <button type="button" data-bs-toggle="modal" data-bs-target="#juneModal2"><span class="screen_out">타임테이블 확인하기</span>
-                </button>
             </section>
             <section>
                 <div class="screen_out"><h2>참여방법</h2>
@@ -77,8 +81,18 @@
                             본인과의 관계를 입력
                         </li>
                     </ul>
-                    <a href="#">준이랑 여행가기</a></div>
-                <a href="#"><span class="screen_out">준이랑 여행가기</span></a></section>
+                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSetdfsCSIw-XkGcmGRyMy8jGmI5YC43XHXH2ZZYfmlRxbmzkg/viewform?vc=0&c=0&w=1&flr=0&fbzx=-7716034740995790776"
+                       target="_blank"
+                       data-gtag-action="2023 여행가는 달_같이가 준 이벤트"
+                       data-gtag-category="june_with_go"
+                       data-ga-category="2023 여행가는 달_같이가 준 이벤트"
+                       data-ga-action="준이랑 여행가기">준이랑 여행가기</a></div>
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLSetdfsCSIw-XkGcmGRyMy8jGmI5YC43XHXH2ZZYfmlRxbmzkg/viewform?vc=0&c=0&w=1&flr=0&fbzx=-7716034740995790776"
+                   target="_blank"
+                   data-gtag-action="2023 여행가는 달_같이가 준 이벤트"
+                   data-gtag-category="june_with_go"
+                   data-ga-category="2023 여행가는 달_같이가 준 이벤트"
+                   data-ga-action="준이랑 여행가기"><span class="screen_out">준이랑 여행가기</span></a></section>
             <section>
                 <div class="screen_out"><p>이벤트는 개인정보 연락처 기준 1인 당 1회만 참여 가능합니다. (중복참여 불가)</p>
                     <p>단체여행 당첨자에게는 개별 전화 혹은 문자를 통해 단체여행 당첨 및 프로그램 관련 안내를 드립니다.</p>

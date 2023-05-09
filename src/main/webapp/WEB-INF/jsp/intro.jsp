@@ -21,24 +21,26 @@
                     <ul class="category-tab">
                         <li>
                             <a class="category-tab__item category-tab__item--active" href="#"
-                               data-gtag-action="2023 여행가는 달_여행가는 달 소개" data-gtag-category="video_tab_general" data-gtag-label="범용영상">범용영상(40’s)</a>
+                               data-gtag-action="2023 여행가는 달_여행가는 달 소개"
+                               data-gtag-category="video_tab_general"
+                               data-gtag-label="범용영상"
+                               data-ga-category="2023 여행가는 달_여행가는 달 소개"
+                               data-ga-action="범용영상">범용영상(40’s)</a>
                         </li>
                         <li>
                             <a class="category-tab__item" href="#"
-                               data-gtag-action="2023 여행가는 달_여행가는 달 소개" data-gtag-category="video_tab_benefit" data-gtag-label="혜택영상">혜택영상(40’s)</a>
+                               data-gtag-action="2023 여행가는 달_여행가는 달 소개"
+                               data-gtag-category="video_tab_benefit"
+                               data-gtag-label="혜택영상"
+                               data-ga-category="2023 여행가는 달_여행가는 달 소개"
+                               data-ga-action="혜택영상">혜택영상(40’s)</a>
                         </li>
                     </ul>
                     <div class="category-tab-contents">
                         <div class="category-panel category-panel--active">
-<%--                            <video width="100%" height="100%" poster="/travelmonth/assets/images/intro/thumbnail.png">--%>
-<%--                                <source src="aa.mp4">--%>
-<%--                            </video>--%>
                             <iframe src="https://www.youtube.com/embed/syTWVcb7z4E" frameborder="0"></iframe>
                         </div>
                         <div class="category-panel">
-<%--                            <video width="100%" height="100%" poster="/travelmonth/assets/images/intro/thumbnail.png">--%>
-<%--                                <source src="aa.mp4">--%>
-<%--                            </video>--%>
                             <iframe src="https://www.youtube.com/embed/grFYVbpd92s" frameborder="0"></iframe>
                         </div>
                     </div>

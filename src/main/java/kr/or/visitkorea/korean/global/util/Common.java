@@ -120,15 +120,25 @@ public class Common
 
 	/**
 	 * GET THEME
-	 * @param theme
+	 * @param themes
 	 * @return
 	 */
-	public static JSONObject getTheme(String theme)
+	@SuppressWarnings("unchecked")
+	public static JSONObject getTheme(String themes)
 	{
-		return getThemes().stream()
-				.filter(row -> theme.equals(row.get(theme)))
-				.findFirst()
-				.orElse(null);
+		JSONObject result = new JSONObject();
+		for (String theme : themes.split(",")) {
+			JSONObject jsonObject = new JSONObject();
+			jsonObject = getThemes().stream()
+					.filter(row -> theme.equals(row.get("theme")))
+					.findFirst()
+					.orElse(null);
+			if (jsonObject != null) {
+				result.put("ga_tag", result.get("ga_tag") != null ? result.get("ga_tag") + "_" + jsonObject.get("ga_tag") : jsonObject.get("ga_tag"));
+				result.put("ga_tag_title", result.get("ga_tag_title") != null ? result.get("ga_tag_title") + "_" + jsonObject.get("ga_tag_title") : jsonObject.get("ga_tag_title"));
+			}
+		}
+		return result;
 	}
 
 	/**

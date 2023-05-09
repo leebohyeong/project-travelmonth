@@ -61,7 +61,9 @@
                                     <a href="#"
                                        data-gtag-action="2023 여행가는 달_여행상품 특별 기획전"
                                        data-gtag-category="special_enter"
-                                       data-gtag-label="여행상품 특별 기획전 입장하기">
+                                       data-gtag-label="여행상품 특별 기획전 입장하기"
+                                       data-ga-category="2023 여행가는 달_여행상품 특별 기획전"
+                                       data-ga-action="여행상품 특별 기획전 입장하기">
                                         <span>여행상품 특별 기획전 입장하기</span>
                                     </a>
                                 </p>
