@@ -40,9 +40,7 @@
                                                        data-theme=""
                                                        data-gtag-action="2023 여행가는 달_trend관"
                                                        data-gtag-category="trend_all_tab"
-                                                       data-gtag-label="전체"
-                                                       data-ga-category="2023 여행가는 달_trend관"
-                                                       data-ga-action="TAB_전체">전체</a>
+                                                       data-gtag-label="전체">전체</a>
                                                 </c:otherwise>
                                             </c:choose>
                                         </div>
@@ -57,9 +55,7 @@
                                                            data-theme="${row.theme}"
                                                            data-gtag-action="2023 여행가는 달_trend관"
                                                            data-gtag-category="trend_${row.ga_tag}_tab"
-                                                           data-gtag-label="${row.ga_tag_title}"
-                                                           data-ga-category="2023 여행가는 달_trend관"
-                                                           data-ga-action="TAB_${row.ga_tag_title}">${row.title}</a>
+                                                           data-gtag-label="${row.ga_tag_title}">${row.title}</a>
                                                     </c:otherwise>
                                                 </c:choose>
                                             </div>
@@ -82,9 +78,7 @@
                                                             <a href="${pageContext.request.contextPath}/trend/trend-${row.theme}.do"
                                                                data-gtag-action="2023 여행가는 달_trend관"
                                                                data-gtag-category="trend_${row.ga_tag}_more"
-                                                               data-gtag-label="${row.main_title}_여행 프로그램 확인하기"
-                                                               data-ga-category="2023 여행가는 달_trend관"
-                                                               data-ga-action="TAB_${row.ga_tag_title}">여행 프로그램 확인하기</a>
+                                                               data-gtag-label="${row.main_title}_여행 프로그램 확인하기">여행 프로그램 확인하기</a>
                                                         </dd>
                                                     </dl>
                                                 </div>
@@ -110,16 +104,13 @@
                                                         <c:set var="hidden_class" value="class='list-thumbnail__item--hide'"/>
                                                     </c:if>
                                                     <li ${hidden_class}>
-                                                        <c:set var="theme" value="${common:getTheme(fn:toLowerCase(row.themes))}"/>
+                                                        <c:set var="theme" value="${common:getTheme(fn:toLowerCase('A'))}"/>
                                                         <a href="#modal-goods-${row.seq}"
                                                            data-bs-toggle="modal"
                                                            data-bs-target="#modal-goods-${row.seq}"
                                                            data-gtag-action="2023 여행가는 달_trend관"
                                                            data-gtag-category="trend_${theme.ga_tag}_product_list"
-                                                           data-gtag-label="${common:getTagText(row.title)}"
-                                                           data-ga-category="2023 여행가는 달_trend관"
-                                                           data-ga-action="${theme.ga_tag_title}_여행상품_리스트"
-                                                           data-ga-label="${common:getTagText(row.title)}">
+                                                           data-gtag-label="${common:getTagText(row.title)}">
                                                             <span style="background-image: url('${row.image}')"></span>
                                                             <p>
                                                                 <fmt:parseDate var="strFromDate" pattern="yyyy-MM-dd" value="${row.from_date}"/>
@@ -174,6 +165,9 @@
                                                                 <c:when test="${fn:contains(row.travel_type, 'D')}">당일</c:when>
                                                             </c:choose>
                                                         </p>
+                                                        <c:if test="${not empty row.price}">
+                                                            <p class="price">${row.price}</p>
+                                                        </c:if>
                                                     </div>
                                                     <h3>${row.title}</h3>
                                                     <dl>
@@ -203,15 +197,11 @@
                                                         </c:if>
                                                     </dl>
                                                     <p>
-                                                        <c:set var="theme" value="${common:getTheme(fn:toLowerCase(row.themes))}"/>
                                                         <a href="${row.link}"
                                                            target="_blank"
                                                            data-gtag-action="2023 여행가는 달_trend관"
                                                            data-gtag-category="trend_${theme.ga_tag}_product_popup"
-                                                           data-gtag-label="${common:getTagText(row.title)}"
-                                                           data-ga-category="2023 여행가는 달_trend관"
-                                                           data-ga-action="${theme.ga_tag_title}_여행상품_팝업"
-                                                           data-ga-label="${common:getTagText(row.title)}">
+                                                           data-gtag-label="${common:getTagText(row.title)}">
                                                             <span>자세히 보기</span>
                                                         </a>
                                                     </p>
@@ -238,10 +228,7 @@
                                                            data-bs-target="#modal-trend-content-${row.seq}"
                                                            data-gtag-action="2023 여행가는 달_trend관"
                                                            data-gtag-category="trend_${theme.ga_tag}_contents_list"
-                                                           data-gtag-label="${common:getTagText(row.title)}"
-                                                           data-ga-category="2023 여행가는 달_trend관"
-                                                           data-ga-action="${theme.ga_tag_title}_여행콘텐츠_리스트"
-                                                           data-ga-label="${common:getTagText(row.title)}">
+                                                           data-gtag-label="${common:getTagText(row.title)}">
                                                             <span style="background-image: url('${row.image}')"></span>
                                                             <p>${row.title}</p>
                                                         </a>

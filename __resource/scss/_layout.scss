@@ -903,6 +903,8 @@ body {
 
     article {
         > div {
+            position: relative;
+
             &:nth-of-type(1) {
                 border-radius: 32px;
                 background: {
@@ -959,6 +961,19 @@ body {
                     width: auto;
                     font-size: 15px;
                 }
+            }
+        }
+
+        div p.price {
+            position: absolute;
+            top: 25px;
+            right: 24px;
+            color: #ff5050;
+
+            @include media-queries($to: xl) {
+                top: 20px;
+                right: 0;
+                font-size: 14px;
             }
         }
 
