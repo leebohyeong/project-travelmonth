@@ -401,42 +401,18 @@
                 <header class="main__header"><h2>여행가는 달 참여기관</h2></header>
                 <div>
                     <div>
-                        <a href="#" target="_blank"><img
-                                src="${pageContext.request.contextPath}/assets/images/main/img_organization_1.png"
-                                alt="국립공원공단"></a>
-                        <a href="#" target="_blank"><img
-                                src="${pageContext.request.contextPath}/assets/images/main/img_organization_2.png"
-                                alt="코레일관광개발"></a>
-                        <a href="#" target="_blank"><img
-                                src="${pageContext.request.contextPath}/assets/images/main/img_organization_3.png"
-                                alt="한국어촌어항공단"></a>
-                        <a href="#" target="_blank"><img
-                                src="${pageContext.request.contextPath}/assets/images/main/img_organization_4.png"
-                                alt="남해관광문화재단"></a>
-                        <a href="#" target="_blank"><img
-                                src="${pageContext.request.contextPath}/assets/images/main/img_organization_5.png"
-                                alt="KORAIL"></a>
-                        <a href="#" target="_blank"><img
-                                src="${pageContext.request.contextPath}/assets/images/main/img_organization_6.png"
-                                alt="한국임업진흥원"></a>
-                        <a href="#" target="_blank"><img
-                                src="${pageContext.request.contextPath}/assets/images/main/img_organization_1.png"
-                                alt="국립공원공단"></a>
-                        <a href="#" target="_blank"><img
-                                src="${pageContext.request.contextPath}/assets/images/main/img_organization_2.png"
-                                alt="코레일관광개발"></a>
-                        <a href="#" target="_blank"><img
-                                src="${pageContext.request.contextPath}/assets/images/main/img_organization_3.png"
-                                alt="한국어촌어항공단"></a>
-                        <a href="#" target="_blank"><img
-                                src="${pageContext.request.contextPath}/assets/images/main/img_organization_4.png"
-                                alt="남해관광문화재단"></a>
-                        <a href="#" target="_blank"><img
-                                src="${pageContext.request.contextPath}/assets/images/main/img_organization_5.png"
-                                alt="KORAIL"></a>
-                        <a href="#" target="_blank"><img
-                                src="${pageContext.request.contextPath}/assets/images/main/img_organization_6.png"
-                                alt="한국임업진흥원"></a>
+                        <img src="${pageContext.request.contextPath}/assets/images/main/img_organization_1.png" alt="국립공원공단">
+                        <img src="${pageContext.request.contextPath}/assets/images/main/img_organization_2.png" alt="코레일관광개발">
+                        <img src="${pageContext.request.contextPath}/assets/images/main/img_organization_3.png" alt="한국어촌어항공단">
+                        <img src="${pageContext.request.contextPath}/assets/images/main/img_organization_4.png" alt="남해관광문화재단">
+                        <img src="${pageContext.request.contextPath}/assets/images/main/img_organization_5.png" alt="KORAIL">
+                        <img src="${pageContext.request.contextPath}/assets/images/main/img_organization_6.png" alt="한국임업진흥원">
+                        <img src="${pageContext.request.contextPath}/assets/images/main/img_organization_1.png" alt="국립공원공단">
+                        <img src="${pageContext.request.contextPath}/assets/images/main/img_organization_2.png" alt="코레일관광개발">
+                        <img src="${pageContext.request.contextPath}/assets/images/main/img_organization_3.png" alt="한국어촌어항공단">
+                        <img src="${pageContext.request.contextPath}/assets/images/main/img_organization_4.png" alt="남해관광문화재단">
+                        <img src="${pageContext.request.contextPath}/assets/images/main/img_organization_5.png" alt="KORAIL">
+                        <img src="${pageContext.request.contextPath}/assets/images/main/img_organization_6.png" alt="한국임업진흥원">
                     </div>
                 </div>
             </div>

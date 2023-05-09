@@ -56,10 +56,10 @@
 
     &--swiper {
         max-width: calc(1200px * 3);
-        margin: 100px auto;
+        margin: 100px auto 0 auto;
 
         @include media-queries($to: xl) {
-            margin: 40px auto;
+            margin: 40px auto 0 auto;
         }
 
         .swiper {
@@ -191,15 +191,15 @@
         .category-tab {
             display: flex;
             width: 1200px;
-            margin: 0 auto 70px;
+            margin: 100px auto 70px;
 
             @include media-queries($to: xl) {
                 width: 100%;
-                margin: 0 auto 40px;
+                margin: 40px auto;
             }
 
             @include media-queries($to: md) {
-                margin: 0 auto 20px;
+                margin: 20px auto 20px;
             }
 
             li {
