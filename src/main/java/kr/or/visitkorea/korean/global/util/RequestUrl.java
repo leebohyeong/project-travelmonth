@@ -17,6 +17,36 @@ import java.util.Map;
 
 public class RequestUrl {
 
+	public static String readHtml(String url)
+	{
+		try
+		{
+			HttpURLConnection httpURLConnection = connection(url);
+
+			if (HttpURLConnection.HTTP_OK != httpURLConnection.getResponseCode())
+			{
+				throw new RuntimeException("API 응답을 읽는 데 실패했습니다.");
+			}
+
+			StringBuilder responseBody = new StringBuilder();
+			InputStreamReader streamReader = new InputStreamReader(httpURLConnection.getInputStream());
+			BufferedReader lineReader = new BufferedReader(streamReader);
+
+			String line;
+			while ((line = lineReader.readLine()) != null)
+			{
+				responseBody.append(line);
+			}
+
+			return responseBody.toString();
+		}
+		catch (Exception exception)
+		{
+			exception.printStackTrace();
+			return null;
+		}
+	}
+
 	public static JSONObject get(String url)
 	{
 		return Send(url, "GET", null, null);
@@ -97,6 +127,7 @@ public class RequestUrl {
 	 */
 	private static JSONObject readBody(InputStream body)
 	{
+
 		InputStreamReader streamReader = new InputStreamReader(body);
 
 		try (BufferedReader lineReader = new BufferedReader(streamReader))

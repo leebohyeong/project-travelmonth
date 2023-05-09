@@ -1,5 +1,6 @@
 package kr.or.visitkorea.korean.benefits.web;
 
+import kr.or.visitkorea.korean.benefits.service.BenefitsService;
 import kr.or.visitkorea.korean.benefits.web.dto.PlayRequest;
 import kr.or.visitkorea.korean.global.common.service.CommonService;
 import kr.or.visitkorea.korean.global.common.web.CommonControllerWrapper;
@@ -21,6 +22,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 public class BenefitsController<T> extends CommonControllerWrapper
 {
 
+	private final BenefitsService BENEFITS_SERVICE;
 	private final ProgramService PROGRAM_SERVICE;
 	private final CommonService COMMON_SERVICE;
 
@@ -55,6 +57,14 @@ public class BenefitsController<T> extends CommonControllerWrapper
 	@RequestMapping(value = "/traffic.do", method = RequestMethod.GET)
 	public String traffic(Model model)
 	{
+		try
+		{
+			model.addAttribute("content", BENEFITS_SERVICE.getTraffic());
+		}
+		catch (Exception exception)
+		{
+			log.error("Benefits Traffic Page Exception : {}", exception.getMessage(), exception);
+		}
 		return "benefits/traffic";
 	}
 
