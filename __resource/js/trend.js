@@ -1,8 +1,10 @@
 import {findOne, find, on, debounce} from './helper';
 import Swiper, {FreeMode, Navigation} from 'swiper';
-import {ListThumbnail} from './common';
+import {BenefitsMenu, ListThumbnail} from './common';
 
 const trendList = () => {
+    new BenefitsMenu();
+
     (() => {
         const lists = find('.list-thumbnail');
 

@@ -8,6 +8,7 @@ import {benefits, benefitsLocal, benefitsPlay} from './benefits';
 import {trendList} from './trend';
 import {travelmonthIntro} from './intro';
 import {eventList} from './event';
+import {specialList} from './special';
 
 
 const app = new App();
@@ -18,6 +19,7 @@ app.add({trendList});
 app.add({main});
 app.add({travelmonthIntro});
 app.add({eventList});
+app.add({specialList});
 
 app.auto('globalNav', 'googleTag');
 

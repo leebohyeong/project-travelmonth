@@ -1,17 +1,8 @@
 import {findOne, find, on} from './helper';
-import {ListThumbnail} from './common';
+import {BenefitsMenu, ListThumbnail} from './common';
 
 const benefits = () => {
-    const menu = findOne('.benefits__menu nav + div');
-
-    if (!menu) return;
-
-    const select = findOne('select', menu);
-    const options = find('option', select);
-
-    on(select, 'change', () => {
-        location.href = options[select.selectedIndex].dataset.url;
-    });
+    new BenefitsMenu();
 };
 
 const benefitsLocal = () => {

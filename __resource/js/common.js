@@ -47,6 +47,27 @@ const ListThumbnail = class {
     }
 };
 
+const BenefitsMenu = class {
+    #menu = findOne('.benefits__menu nav + div');
+    #select;
+    #options;
+
+    constructor() {
+        if (!this.#menu) return;
+
+        this.#select = findOne('select', this.#menu);
+        this.#options = find('option', this.#select);
+
+        this.#initEvents();
+    }
+
+    #initEvents() {
+        on(this.#select, 'change', () => {
+            location.href = this.#options[this.#select.selectedIndex].dataset.url;
+        });
+    }
+};
+
 const googleTag = () => {
     const triggers = find('[data-gtag-action]');
     const fireEvent = (trigger) => {
@@ -68,4 +89,5 @@ export {
     globalNav,
     googleTag,
     ListThumbnail,
+    BenefitsMenu,
 }
