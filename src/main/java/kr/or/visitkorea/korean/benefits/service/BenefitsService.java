@@ -7,12 +7,12 @@ public interface BenefitsService
 	 * GET TRAFFIC CONTENT HTML
 	 * @return
 	 */
-	String getTrafficContentHtml();
+	Object getTrafficContentHtml();
 
 	/**
 	 * GET STAY CONTENT HTML
 	 * @return
 	 */
-	String getStayContentHtml();
+	Object getStayContentHtml();
 
 }
