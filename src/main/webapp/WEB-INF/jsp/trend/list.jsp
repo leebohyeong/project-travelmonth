@@ -104,7 +104,7 @@
                                                         <c:set var="hidden_class" value="class='list-thumbnail__item--hide'"/>
                                                     </c:if>
                                                     <li ${hidden_class}>
-                                                        <c:set var="theme" value="${common:getTheme(fn:toLowerCase('A'))}"/>
+                                                        <c:set var="theme" value="${common:getTheme(fn:toLowerCase(row.themes))}"/>
                                                         <a href="#modal-goods-${row.seq}"
                                                            data-bs-toggle="modal"
                                                            data-bs-target="#modal-goods-${row.seq}"
@@ -185,7 +185,7 @@
                                                         </c:if>
                                                         <c:if test="${not empty row.content_detail}">
                                                             <div>
-                                                                <dt>주요방문처</dt>
+                                                                <dt>주요방문지</dt>
                                                                 <dd>${row.content_detail}</dd>
                                                             </div>
                                                         </c:if>
@@ -197,7 +197,11 @@
                                                         </c:if>
                                                     </dl>
                                                     <p>
-                                                        <a href="${row.link}"
+                                                        <c:set var="href" value="${row.pc_link}"/>
+                                                        <c:if test="${common:isMobile()}">
+                                                            <c:set var="href" value="${row.mo_link}"/>
+                                                        </c:if>
+                                                        <a href="${href}"
                                                            target="_blank"
                                                            data-gtag-action="2023 여행가는 달_trend관"
                                                            data-gtag-category="trend_${theme.ga_tag}_product_popup"

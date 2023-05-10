@@ -362,6 +362,9 @@
                                                                 <c:when test="${fn:contains(row.travel_type, 'D')}">당일</c:when>
                                                             </c:choose>
                                                         </p>
+                                                        <c:if test="${not empty row.price}">
+                                                            <p class="price">${row.price}</p>
+                                                        </c:if>
                                                     </div>
                                                     <h3>${row.title}</h3>
                                                     <dl>

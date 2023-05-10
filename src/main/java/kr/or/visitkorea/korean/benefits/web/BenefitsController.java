@@ -59,7 +59,7 @@ public class BenefitsController<T> extends CommonControllerWrapper
 	{
 		try
 		{
-			model.addAttribute("content", BENEFITS_SERVICE.getTraffic());
+			model.addAttribute("content", BENEFITS_SERVICE.getTrafficContentHtml());
 		}
 		catch (Exception exception)
 		{
@@ -76,6 +76,14 @@ public class BenefitsController<T> extends CommonControllerWrapper
 	@RequestMapping(value = "/stay.do", method = RequestMethod.GET)
 	public String stay(Model model)
 	{
+		try
+		{
+			model.addAttribute("content", BENEFITS_SERVICE.getStayContentHtml());
+		}
+		catch (Exception exception)
+		{
+			log.error("Benefits Stay Page Exception : {}", exception.getMessage(), exception);
+		}
 		return "benefits/stay";
 	}
 

@@ -3,6 +3,16 @@ package kr.or.visitkorea.korean.benefits.service;
 public interface BenefitsService
 {
 
-	String getTraffic();
+	/**
+	 * GET TRAFFIC CONTENT HTML
+	 * @return
+	 */
+	String getTrafficContentHtml();
+
+	/**
+	 * GET STAY CONTENT HTML
+	 * @return
+	 */
+	String getStayContentHtml();
 
 }

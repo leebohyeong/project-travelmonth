@@ -9,13 +9,34 @@ import org.springframework.stereotype.Service;
 public class BenefitsServiceImpl extends CommonServiceImplWrapper implements BenefitsService {
 
 	/**
+	 * GET TRAFFIC CONTENT HTML
 	 * @return
 	 */
 	@Override
-	public String getTraffic() {
+	public String getTrafficContentHtml() {
 		try
 		{
 			String content = RequestUrl.readHtml(TRAVEL_MONTH_SITE_URL + "/html/traffic.html");
+			if (content != null) {
+				return content;
+			}
+		}
+		catch (Exception exception)
+		{
+			exception.printStackTrace();
+		}
+		return null;
+	}
+
+	/**
+	 * GET STAY CONTENT HTML
+	 * @return
+	 */
+	@Override
+	public String getStayContentHtml() {
+		try
+		{
+			String content = RequestUrl.readHtml(TRAVEL_MONTH_SITE_URL + "/html/stay.html");
 			if (content != null) {
 				return content;
 			}

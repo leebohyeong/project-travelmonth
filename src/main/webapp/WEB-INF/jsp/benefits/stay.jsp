@@ -16,7 +16,8 @@
                         <%@ include file="../include/include-benefits-menu.jspf" %>
                     </div>
                 </div>
-                <div class="benefits__content">
+                ${content}
+                <%--<div class="benefits__content">
                     <article class="benefits-program benefits-program--stay">
                         <header>
                             <div>
@@ -106,7 +107,7 @@
                             </div>
                         </section>
                     </article>
-                </div>
+                </div>--%>
             </div>
         </div>
     </div>
