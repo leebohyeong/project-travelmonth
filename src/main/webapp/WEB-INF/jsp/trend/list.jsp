@@ -266,7 +266,7 @@
                                                         </c:forEach>
                                                     </h2>
                                                     <c:set var="jsonObject" value="${common:toJSONObject(row.content)}" />
-                                                    <h3 class="modal-trend-contents__title" style="background-image: url('${jsonObject.thumnail}')">${row.title}</h3>
+                                                    <h3 class="modal-trend-contents__title" style="background-image: url('https://cdn.visitkorea.or.kr/img/call?cmd=VIEW&id=${jsonObject.thumbnail}&mode=progress')">${jsonObject.title}</h3>
                                                     <c:if test="${fn:length(jsonObject.contents) > 1}">
                                                         <ul class="modal-trend-contents__tab">
                                                             <c:forEach var="sub_row" items="${jsonObject.contents}">
@@ -284,7 +284,7 @@
                                                                             <p>${sub_sub_row.text}</p>
                                                                         </c:when>
                                                                         <c:when test="${sub_sub_row.type eq 'image'}">
-                                                                            <p><img src="${sub_sub_row.url}" alt="${sub_sub_row.text}"></p>
+                                                                            <p><img src="https://cdn.visitkorea.or.kr/img/call?cmd=VIEW&id=${sub_sub_row.url}&mode=progress" alt="${sub_sub_row.text}"></p>
                                                                         </c:when>
                                                                     </c:choose>
                                                                 </c:forEach>
@@ -301,6 +301,9 @@
                                                                     </div>
                                                                 </c:forEach>
                                                             </dl>
+                                                            <p class="modal-trend-contents__panel-detail">
+                                                                <a href="" target="_blank">자세히 보기</a>
+                                                            </p>
                                                         </div>
                                                     </c:forEach>
                                                 </article>
