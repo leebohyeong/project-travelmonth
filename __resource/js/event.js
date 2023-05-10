@@ -7,7 +7,7 @@ const eventList = () => {
     (() => {
         const list = findOne('.event-list');
         const listCarousel = new Swiper(findOne('.swiper', list),{
-            loop: true,
+            // loop: true,
             slidesPerView: "auto",
             spaceBetween: 10,
             centeredSlides: true,
