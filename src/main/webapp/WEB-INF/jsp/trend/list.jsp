@@ -283,7 +283,6 @@
                                                                         </c:when>
                                                                         <c:when test="${sub_sub_row.type eq 'image'}">
                                                                             <p><img src="${sub_sub_row.url}" alt="${sub_sub_row.text}"></p>
-                                                                            <p>${sub_sub_row.text}</p>
                                                                         </c:when>
                                                                     </c:choose>
                                                                 </c:forEach>
@@ -302,6 +301,8 @@
                                                             </dl>
                                                         </div>
                                                     </c:forEach>
+                                                </article>
+                                                <button class="modal-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button>
                                             </div>
                                         </div>
                                     </div>
