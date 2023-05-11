@@ -587,6 +587,7 @@
             display: flex;
             align-items: center;
             color: #37bf8a;
+            white-space: nowrap;
 
             &::after {
                 padding: 0 4px;
