@@ -243,7 +243,7 @@
                         </c:if>
                         <div>
                             <div>
-                                <p>주간 <br>여행정보</p>
+                                <p>지역별 <br>여행정보</p>
                                 <a href="${pageContext.request.contextPath}/benefits/local/gangwon.do"
                                    data-gtag-action="2023 여행가는 달_메인"
                                    data-gtag-category="main_local_more"

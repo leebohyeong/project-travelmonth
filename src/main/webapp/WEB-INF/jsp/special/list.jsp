@@ -45,7 +45,7 @@
 <%--                                <span class="icon-man"></span><span class="icon-plane"></span>--%>
                                 <div>
                                     <dt>참여사(상품)</dt>
-                                    <dd>총 56개 여행사 101개<br>여행상품</dd>
+                                    <dd>50여개 여행사가 제공하는<br>여행 패키지 상품</dd>
                                 </div>
                                 <div>
                                     <dt>구매기간</dt>
