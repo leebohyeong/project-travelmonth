@@ -236,15 +236,31 @@
                                                                     <c:set var="data_gtag_category" value="play_event_popup"/>
                                                                 </c:when>
                                                             </c:choose>
-                                                            <a href="${row.link}" target="_blank"
-                                                               data-gtag-action="2023 여행가는 달_놀거리혜택"
-                                                               data-gtag-category="${data_gtag_category}"
-                                                               data-gtag-label="${common:getTagText(row.title)}"
-                                                               data-ga-category="2023 여행가는 달_놀거리혜택"
-                                                               data-ga-action="${data_ga_action}"
-                                                               data-ga-label="${common:getTagText(row.title)}">
-                                                                <span>자세히 보기</span>
-                                                            </a>
+                                                            <c:choose>
+                                                                <c:when test="${not empty row.link}">
+                                                                    <a href="${row.link}" target="_blank"
+                                                                       data-gtag-action="2023 여행가는 달_놀거리혜택"
+                                                                       data-gtag-category="${data_gtag_category}"
+                                                                       data-gtag-label="${common:getTagText(row.title)}"
+                                                                       data-ga-category="2023 여행가는 달_놀거리혜택"
+                                                                       data-ga-action="${data_ga_action}"
+                                                                       data-ga-label="${common:getTagText(row.title)}">
+                                                                        <span>자세히 보기</span>
+                                                                    </a>
+                                                                </c:when>
+                                                                <c:otherwise>
+                                                                    <a href="#"
+                                                                       data-gtag-action="2023 여행가는 달_놀거리혜택"
+                                                                       data-gtag-category="${data_gtag_category}"
+                                                                       data-gtag-label="${common:getTagText(row.title)}"
+                                                                       data-ga-category="2023 여행가는 달_놀거리혜택"
+                                                                       data-ga-action="${data_ga_action}"
+                                                                       data-ga-label="${common:getTagText(row.title)}"
+                                                                       onclick="alert('추후 오픈 예정'); return false;">
+                                                                        <span>자세히 보기</span>
+                                                                    </a>
+                                                                </c:otherwise>
+                                                            </c:choose>
                                                         </p>
                                                     </article>
                                                     <button class="modal-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button>

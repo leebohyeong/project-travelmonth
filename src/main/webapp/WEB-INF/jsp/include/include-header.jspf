@@ -38,12 +38,7 @@
         <nav>
             <ul data-id="main">
                 <li>
-                    <a href="${pageContext.request.contextPath}/intro.do"
-                       data-gtag-action="2023 여행가는 달_GNB"
-                       data-gtag-category="gnb_travelmonth"
-                       data-gtag-label="여행가는 달이란"
-                       data-ga-category="2023 여행가는 달_GNB"
-                       data-ga-action="여행가는 달이란">여행가는 달이란?</a>
+                    <a>여행가는 달이란?</a>
                     <div>
                         <ul>
                             <li>
@@ -66,12 +61,7 @@
                     </div>
                 </li>
                 <li>
-                    <a href="${pageContext.request.contextPath}/benefits/local/gangwon.do"
-                       data-gtag-action="2023 여행가는 달_GNB"
-                       data-gtag-category="gnb_local"
-                       data-gtag-label="여행혜택"
-                       data-ga-category="2023 여행가는 달_GNB"
-                       data-ga-action="여행혜택">여행혜택</a>
+                    <a>여행혜택</a>
                     <div>
                         <ul>
                             <li><a href="${pageContext.request.contextPath}/benefits/traffic.do"

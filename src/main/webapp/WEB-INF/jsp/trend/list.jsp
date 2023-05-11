@@ -90,133 +90,149 @@
                                 </div>
                             </aside>
                         </c:if>
-                        <section class="list-thumbnail list-thumbnail--goods">
-                            <h3>${empty search.search_trend_gb ? '해보고 싶은' : page_main_title} 여행 떠나보기</h3>
+                        <c:if test="${!fn:contains(path, '/trend/trend-e.do')}">
+                            <section class="list-thumbnail list-thumbnail--goods">
+                                <h3>${empty search.search_trend_gb ? '해보고 싶은' : page_main_title} 여행 떠나보기</h3>
+                                <c:if test="${not empty goods}">
+                                    <c:if test="${goods.result}">
+                                        <c:set var="list" value="${goods.data.list}"/>
+                                        <c:choose>
+                                            <c:when test="${not empty list}">
+                                                <ul>
+                                                    <c:forEach var="row" items="${list}" varStatus="loop">
+                                                        <c:set var="hidden_class" value=""/>
+                                                        <c:if test="${loop.count > 6}">
+                                                            <c:set var="hidden_class" value="class='list-thumbnail__item--hide'"/>
+                                                        </c:if>
+                                                        <li ${hidden_class}>
+                                                            <c:set var="theme" value="${common:getTheme(fn:toLowerCase(row.themes))}"/>
+                                                            <a href="#modal-goods-${row.seq}"
+                                                               data-bs-toggle="modal"
+                                                               data-bs-target="#modal-goods-${row.seq}"
+                                                               data-gtag-action="2023 여행가는 달_trend관"
+                                                               data-gtag-category="trend_${theme.ga_tag}_product_list"
+                                                               data-gtag-label="${common:getTagText(row.title)}">
+                                                                <span style="background-image: url('${row.image}')"></span>
+                                                                <p>
+                                                                    <fmt:parseDate var="strFromDate" pattern="yyyy-MM-dd" value="${row.from_date}"/>
+                                                                    <fmt:formatDate var="fromDate" pattern="MM/dd" value="${strFromDate}"/>
+                                                                    <fmt:parseDate var="strToDate" pattern="yyyy-MM-dd" value="${row.to_date}"/>
+                                                                    <fmt:formatDate var="ToDate" pattern="MM/dd" value="${strToDate}"/>
+                                                                    <c:if test="${not empty fromDate && not empty ToDate}">
+                                                                        예약신청기간 : ${fromDate}~${ToDate}
+                                                                    </c:if>
+                                                                </p>
+                                                                <p>${row.title}</p>
+                                                                <div>
+                                                                    <c:if test="${not empty row.price}">
+                                                                        <p>${row.price}</p>
+                                                                    </c:if>
+                                                                    <p>
+                                                                        <c:choose>
+                                                                            <c:when test="${fn:contains(row.travel_type, 'L') && fn:contains(row.travel_type, 'D')}">숙박/당일</c:when>
+                                                                            <c:when test="${fn:contains(row.travel_type, 'L')}">숙박</c:when>
+                                                                            <c:when test="${fn:contains(row.travel_type, 'D')}">당일</c:when>
+                                                                        </c:choose>
+                                                                    </p>
+                                                                </div>
+                                                            </a>
+                                                        </li>
+                                                    </c:forEach>
+                                                </ul>
+                                            </c:when>
+                                            <c:otherwise><div><p>등록된 내용이 없습니다.</p></div></c:otherwise>
+                                        </c:choose>
+                                    </c:if>
+                                </c:if>
+                                <c:if test="${not empty goods}">
+                                    <c:if test="${goods.result}">
+                                        <c:if test="${fn:length(goods.data.list) > 6}"><p><button type="button">MORE</button></p></c:if>
+                                    </c:if>
+                                </c:if>
+                            </section>
                             <c:if test="${not empty goods}">
                                 <c:if test="${goods.result}">
                                     <c:set var="list" value="${goods.data.list}"/>
-                                    <c:choose>
-                                        <c:when test="${not empty list}">
-                                            <ul>
-                                                <c:forEach var="row" items="${list}" varStatus="loop">
-                                                    <c:set var="hidden_class" value=""/>
-                                                    <c:if test="${loop.count > 6}">
-                                                        <c:set var="hidden_class" value="class='list-thumbnail__item--hide'"/>
-                                                    </c:if>
-                                                    <li ${hidden_class}>
-                                                        <c:set var="theme" value="${common:getTheme(fn:toLowerCase(row.themes))}"/>
-                                                        <a href="#modal-goods-${row.seq}"
-                                                           data-bs-toggle="modal"
-                                                           data-bs-target="#modal-goods-${row.seq}"
-                                                           data-gtag-action="2023 여행가는 달_trend관"
-                                                           data-gtag-category="trend_${theme.ga_tag}_product_list"
-                                                           data-gtag-label="${common:getTagText(row.title)}">
-                                                            <span style="background-image: url('${row.image}')"></span>
+                                    <c:forEach var="row" items="${list}" varStatus="loop">
+                                        <div class="modal fade modal-goods" id="modal-goods-${row.seq}" tabindex="-1" data-bs-backdrop="static" aria-hidden="true">
+                                            <div class="modal-dialog">
+                                                <div class="modal-content">
+                                                    <article>
+                                                        <div style="background-image: url('${row.image}')"></div>
+                                                        <div>
+                                                            <p>여행상품</p>
                                                             <p>
-                                                                <fmt:parseDate var="strFromDate" pattern="yyyy-MM-dd" value="${row.from_date}"/>
-                                                                <fmt:formatDate var="fromDate" pattern="MM/dd" value="${strFromDate}"/>
-                                                                <fmt:parseDate var="strToDate" pattern="yyyy-MM-dd" value="${row.to_date}"/>
-                                                                <fmt:formatDate var="ToDate" pattern="MM/dd" value="${strToDate}"/>
-                                                                <c:if test="${not empty fromDate && not empty ToDate}">
-                                                                    예약신청기간 : ${fromDate}~${ToDate}
-                                                                </c:if>
+                                                                <c:choose>
+                                                                    <c:when test="${fn:contains(row.travel_type, 'L') && fn:contains(row.travel_type, 'D')}">숙박 당일</c:when>
+                                                                    <c:when test="${fn:contains(row.travel_type, 'L')}">숙박</c:when>
+                                                                    <c:when test="${fn:contains(row.travel_type, 'D')}">당일</c:when>
+                                                                </c:choose>
                                                             </p>
-                                                            <p>${row.title}</p>
-                                                            <div>
-                                                                <c:if test="${not empty row.price}">
-                                                                    <p>${row.price}</p>
-                                                                </c:if>
-                                                                <p>
-                                                                    <c:choose>
-                                                                        <c:when test="${fn:contains(row.travel_type, 'L') && fn:contains(row.travel_type, 'D')}">숙박/당일</c:when>
-                                                                        <c:when test="${fn:contains(row.travel_type, 'L')}">숙박</c:when>
-                                                                        <c:when test="${fn:contains(row.travel_type, 'D')}">당일</c:when>
-                                                                    </c:choose>
-                                                                </p>
-                                                            </div>
-                                                        </a>
-                                                    </li>
-                                                </c:forEach>
-                                            </ul>
-                                        </c:when>
-                                        <c:otherwise><div><p>등록된 내용이 없습니다.</p></div></c:otherwise>
-                                    </c:choose>
-                                </c:if>
-                            </c:if>
-                            <c:if test="${not empty goods}">
-                                <c:if test="${goods.result}">
-                                    <c:if test="${fn:length(goods.data.list) > 6}"><p><button type="button">MORE</button></p></c:if>
-                                </c:if>
-                            </c:if>
-                        </section>
-                        <c:if test="${not empty goods}">
-                            <c:if test="${goods.result}">
-                                <c:set var="list" value="${goods.data.list}"/>
-                                <c:forEach var="row" items="${list}" varStatus="loop">
-                                    <div class="modal fade modal-goods" id="modal-goods-${row.seq}" tabindex="-1" data-bs-backdrop="static" aria-hidden="true">
-                                        <div class="modal-dialog">
-                                            <div class="modal-content">
-                                                <article>
-                                                    <div style="background-image: url('${row.image}')"></div>
-                                                    <div>
-                                                        <p>여행상품</p>
+                                                            <c:if test="${not empty row.price}">
+                                                                <p class="price">${row.price}</p>
+                                                            </c:if>
+                                                        </div>
+                                                        <h3>${row.title}</h3>
+                                                        <dl>
+                                                            <c:if test="${not empty row.from_date && not empty row.to_date}">
+                                                                <div>
+                                                                    <dt>예약접수기간</dt>
+                                                                    <dd>${row.from_date} ~ ${row.to_date}</dd>
+                                                                </div>
+                                                            </c:if>
+                                                            <c:if test="${not empty row.content}">
+                                                                <div>
+                                                                    <dt>안내사항</dt>
+                                                                    <dd>${row.content}</dd>
+                                                                </div>
+                                                            </c:if>
+                                                            <c:if test="${not empty row.content_detail}">
+                                                                <div>
+                                                                    <dt>주요방문지</dt>
+                                                                    <dd>${row.content_detail}</dd>
+                                                                </div>
+                                                            </c:if>
+                                                            <c:if test="${not empty row.contact_information}">
+                                                                <div>
+                                                                    <dt>문의처</dt>
+                                                                    <dd>${row.contact_information}</dd>
+                                                                </div>
+                                                            </c:if>
+                                                        </dl>
                                                         <p>
+                                                            <c:set var="href" value="${row.pc_link}"/>
+                                                            <c:if test="${common:isMobile()}">
+                                                                <c:set var="href" value="${row.mo_link}"/>
+                                                            </c:if>
                                                             <c:choose>
-                                                                <c:when test="${fn:contains(row.travel_type, 'L') && fn:contains(row.travel_type, 'D')}">숙박 당일</c:when>
-                                                                <c:when test="${fn:contains(row.travel_type, 'L')}">숙박</c:when>
-                                                                <c:when test="${fn:contains(row.travel_type, 'D')}">당일</c:when>
+                                                                <c:when test="${not empty href}">
+                                                                    <a href="${href}"
+                                                                       target="_blank"
+                                                                       data-gtag-action="2023 여행가는 달_trend관"
+                                                                       data-gtag-category="trend_${theme.ga_tag}_product_popup"
+                                                                       data-gtag-label="${common:getTagText(row.title)}">
+                                                                        <span>자세히 보기</span>
+                                                                    </a>
+                                                                </c:when>
+                                                                <c:otherwise>
+                                                                    <a href="${href}"
+                                                                       target="_blank"
+                                                                       data-gtag-action="2023 여행가는 달_trend관"
+                                                                       data-gtag-category="trend_${theme.ga_tag}_product_popup"
+                                                                       data-gtag-label="${common:getTagText(row.title)}"
+                                                                       onclick="alert('추후 오픈 예정'); return false;">
+                                                                        <span>자세히 보기</span>
+                                                                    </a>
+                                                                </c:otherwise>
                                                             </c:choose>
                                                         </p>
-                                                        <c:if test="${not empty row.price}">
-                                                            <p class="price">${row.price}</p>
-                                                        </c:if>
-                                                    </div>
-                                                    <h3>${row.title}</h3>
-                                                    <dl>
-                                                        <c:if test="${not empty row.from_date && not empty row.to_date}">
-                                                            <div>
-                                                                <dt>예약접수기간</dt>
-                                                                <dd>${row.from_date} ~ ${row.to_date}</dd>
-                                                            </div>
-                                                        </c:if>
-                                                        <c:if test="${not empty row.content}">
-                                                            <div>
-                                                                <dt>안내사항</dt>
-                                                                <dd>${row.content}</dd>
-                                                            </div>
-                                                        </c:if>
-                                                        <c:if test="${not empty row.content_detail}">
-                                                            <div>
-                                                                <dt>주요방문지</dt>
-                                                                <dd>${row.content_detail}</dd>
-                                                            </div>
-                                                        </c:if>
-                                                        <c:if test="${not empty row.contact_information}">
-                                                            <div>
-                                                                <dt>문의처</dt>
-                                                                <dd>${row.contact_information}</dd>
-                                                            </div>
-                                                        </c:if>
-                                                    </dl>
-                                                    <p>
-                                                        <c:set var="href" value="${row.pc_link}"/>
-                                                        <c:if test="${common:isMobile()}">
-                                                            <c:set var="href" value="${row.mo_link}"/>
-                                                        </c:if>
-                                                        <a href="${href}"
-                                                           target="_blank"
-                                                           data-gtag-action="2023 여행가는 달_trend관"
-                                                           data-gtag-category="trend_${theme.ga_tag}_product_popup"
-                                                           data-gtag-label="${common:getTagText(row.title)}">
-                                                            <span>자세히 보기</span>
-                                                        </a>
-                                                    </p>
-                                                </article>
-                                                <button class="modal-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                    </article>
+                                                    <button class="modal-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                </div>
                                             </div>
                                         </div>
-                                    </div>
-                                </c:forEach>
+                                    </c:forEach>
+                                </c:if>
                             </c:if>
                         </c:if>
                         <section class="list-thumbnail list-thumbnail--contents">
@@ -235,14 +251,28 @@
                                                     <li ${hidden_class}>
                                                         <c:choose>
                                                             <c:when test="${empty row.content}">
-                                                                <a href="${row.pc_link}"
-                                                                   target="_blank"
-                                                                   data-gtag-action="2023 여행가는 달_trend관"
-                                                                   data-gtag-category="trend_${theme.ga_tag}_contents_list"
-                                                                   data-gtag-label="${common:getTagText(row.title)}">
-                                                                    <span style="background-image: url('${row.image}')"></span>
-                                                                    <p>${row.title}</p>
-                                                                </a>
+                                                                <c:choose>
+                                                                    <c:when test="${not empty row.pc_link}">
+                                                                        <a href="${row.pc_link}"
+                                                                           target="_blank"
+                                                                           data-gtag-action="2023 여행가는 달_trend관"
+                                                                           data-gtag-category="trend_${theme.ga_tag}_contents_list"
+                                                                           data-gtag-label="${common:getTagText(row.title)}">
+                                                                            <span style="background-image: url('${row.image}')"></span>
+                                                                            <p>${row.title}</p>
+                                                                        </a>
+                                                                    </c:when>
+                                                                    <c:otherwise>
+                                                                        <a href="#"
+                                                                           data-gtag-action="2023 여행가는 달_trend관"
+                                                                           data-gtag-category="trend_${theme.ga_tag}_contents_list"
+                                                                           data-gtag-label="${common:getTagText(row.title)}"
+                                                                           onclick="alert('추후 오픈 예정'); return false;">
+                                                                            <span style="background-image: url('${row.image}')"></span>
+                                                                            <p>${row.title}</p>
+                                                                        </a>
+                                                                    </c:otherwise>
+                                                                </c:choose>
                                                             </c:when>
                                                             <c:otherwise>
                                                                 <a href="#modal-trend-content-${row.seq}"

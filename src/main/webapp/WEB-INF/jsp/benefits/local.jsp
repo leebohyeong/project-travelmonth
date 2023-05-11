@@ -255,16 +255,32 @@
                                                         </c:if>
                                                     </dl>
                                                     <p>
-                                                        <a href="${row.link}"
-                                                           target="_blank"
-                                                           data-gtag-action="2023 여행가는달_여행혜택 지역별"
-                                                           data-gtag-category="local_${fn:replace(fn:toLowerCase(local.data.name_en), ',', '_')}_benefit_popup"
-                                                           data-gtag-label="${common:getTagText(row.title)}"
-                                                           data-ga-category="2023 여행가는 달_여행혜택 지역별"
-                                                           data-ga-action="${fn:replace(local.data.name_kr, ',', '')}_여행혜택_팝업"
-                                                           data-ga-label="${common:getTagText(row.title)}">
-                                                            <span>자세히 보기</span>
-                                                        </a>
+                                                        <c:choose>
+                                                            <c:when test="${not empty row.link}">
+                                                                <a href="${row.link}"
+                                                                   target="_blank"
+                                                                   data-gtag-action="2023 여행가는달_여행혜택 지역별"
+                                                                   data-gtag-category="local_${fn:replace(fn:toLowerCase(local.data.name_en), ',', '_')}_benefit_popup"
+                                                                   data-gtag-label="${common:getTagText(row.title)}"
+                                                                   data-ga-category="2023 여행가는 달_여행혜택 지역별"
+                                                                   data-ga-action="${fn:replace(local.data.name_kr, ',', '')}_여행혜택_팝업"
+                                                                   data-ga-label="${common:getTagText(row.title)}">
+                                                                    <span>자세히 보기</span>
+                                                                </a>
+                                                            </c:when>
+                                                            <c:otherwise>
+                                                                <a href="#"
+                                                                   data-gtag-action="2023 여행가는달_여행혜택 지역별"
+                                                                   data-gtag-category="local_${fn:replace(fn:toLowerCase(local.data.name_en), ',', '_')}_benefit_popup"
+                                                                   data-gtag-label="${common:getTagText(row.title)}"
+                                                                   data-ga-category="2023 여행가는 달_여행혜택 지역별"
+                                                                   data-ga-action="${fn:replace(local.data.name_kr, ',', '')}_여행혜택_팝업"
+                                                                   data-ga-label="${common:getTagText(row.title)}"
+                                                                   onclick="alert('추후 오픈 예정'); return false;">
+                                                                    <span>자세히 보기</span>
+                                                                </a>
+                                                            </c:otherwise>
+                                                        </c:choose>
                                                     </p>
                                                 </article>
                                                 <button class="modal-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button>
@@ -396,16 +412,32 @@
                                                         </c:if>
                                                     </dl>
                                                     <p>
-                                                        <a href="${row.link}"
-                                                           target="_blank"
-                                                           data-gtag-action="2023 여행가는달_여행혜택 지역별"
-                                                           data-gtag-category="local_${fn:replace(fn:toLowerCase(local.data.name_en), ',', '_')}_product_popup"
-                                                           data-gtag-label="${common:getTagText(row.title)}"
-                                                           data-ga-category="2023 여행가는 달_여행혜택 지역별"
-                                                           data-ga-action="${fn:replace(local.data.name_kr, ',', '')}_여행상품_팝업"
-                                                           data-ga-label="${common:getTagText(row.title)}">
-                                                            <span>자세히 보기</span>
-                                                        </a>
+                                                        <c:choose>
+                                                            <c:when test="${not empty row.link}">
+                                                                <a href="${row.link}"
+                                                                   target="_blank"
+                                                                   data-gtag-action="2023 여행가는달_여행혜택 지역별"
+                                                                   data-gtag-category="local_${fn:replace(fn:toLowerCase(local.data.name_en), ',', '_')}_product_popup"
+                                                                   data-gtag-label="${common:getTagText(row.title)}"
+                                                                   data-ga-category="2023 여행가는 달_여행혜택 지역별"
+                                                                   data-ga-action="${fn:replace(local.data.name_kr, ',', '')}_여행상품_팝업"
+                                                                   data-ga-label="${common:getTagText(row.title)}">
+                                                                    <span>자세히 보기</span>
+                                                                </a>
+                                                            </c:when>
+                                                            <c:otherwise>
+                                                                <a href=""
+                                                                   data-gtag-action="2023 여행가는달_여행혜택 지역별"
+                                                                   data-gtag-category="local_${fn:replace(fn:toLowerCase(local.data.name_en), ',', '_')}_product_popup"
+                                                                   data-gtag-label="${common:getTagText(row.title)}"
+                                                                   data-ga-category="2023 여행가는 달_여행혜택 지역별"
+                                                                   data-ga-action="${fn:replace(local.data.name_kr, ',', '')}_여행상품_팝업"
+                                                                   data-ga-label="${common:getTagText(row.title)}"
+                                                                   onclick="alert('추후 오픈 예정'); return false;">
+                                                                    <span>자세히 보기</span>
+                                                                </a>
+                                                            </c:otherwise>
+                                                        </c:choose>
                                                     </p>
                                                 </article>
                                                 <button class="modal-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button>
