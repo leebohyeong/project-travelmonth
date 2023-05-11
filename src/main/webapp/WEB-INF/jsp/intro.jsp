@@ -11,10 +11,10 @@
         <article class="travelmonth-intro">
             <header>
                 <div><h2>여행가는 달이란?</h2>
-                    <p>국내여행을 통한 건강한 일상회복 도모 및 지역경제 활성화를 위해 문화체육관광부,<br>
-                        한국관광공사와 전국의 지자체, 관광업계가 함께 추진하는 캠페인으로,<br>
-                        다양한 할인혜택과 여행 프로그램 및 이벤트가 제공됩니다.
-                    </p></div>
+                    <p>국내여행 활성화를 통해 지역경제 활성화에 기여코자 문화체육관광부, 한국관광공사가<br>
+                    전국의 지자체, 관광업계와 함께 추진하는 캠페인으로,<br>
+                    다양한 여행 프로그램과 이벤트 및 할인혜택이 제공됩니다.</p>
+                </div>
             </header>
             <section class="travelmonth-intro--video">
                 <div class="travelmonth-intro--video__tab">

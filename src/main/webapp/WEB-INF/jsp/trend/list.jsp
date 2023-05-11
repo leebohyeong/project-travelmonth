@@ -301,9 +301,12 @@
                                                                     </div>
                                                                 </c:forEach>
                                                             </dl>
-                                                            <p class="modal-trend-contents__panel-detail">
-                                                                <a href="" target="_blank">자세히 보기</a>
-                                                            </p>
+                                                            <c:set var="detail" value="${sub_row.detail}"/>
+                                                            <c:if test="${not empty detail.url}">
+                                                                <p class="modal-trend-contents__panel-detail">
+                                                                    <a href="${detail.url}" target="_blank">자세히 보기</a>
+                                                                </p>
+                                                            </c:if>
                                                         </div>
                                                     </c:forEach>
                                                 </article>

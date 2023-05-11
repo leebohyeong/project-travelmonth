@@ -23,7 +23,7 @@
                                 <h2>
                                     <strong>
                                         <span>여행상품</span><br>
-                                        특별 기획
+                                        특별 기획전
                                     </strong>
                                 </h2>
                                 <p>

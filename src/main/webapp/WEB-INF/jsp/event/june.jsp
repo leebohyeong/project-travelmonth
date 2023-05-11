@@ -48,11 +48,7 @@
                             세계적인 축제 마임축제와 함께 하는 여행</p>
                         <p>고춘천마임축제</p>
                         <p>주요 일정 안내</p>
-                        <button type="button"
-                                data-gtag-action="2023 여행가는 달_같이가 준 이벤트"
-                                data-gtag-category="june_time_table_1"
-                                data-ga-category="2023 여행가는 달_같이가 준 이벤트"
-                                data-ga-action="타임테이블1 확인하기">타임테이블 확인하기</button>
+                        <button type="button">타임테이블 확인하기</button>
                         <p>서울 출발 → 삼악산케이블카 탑승 → 중식 → <br>
                             티타임 → 의암호 스카이워크 → 마임공연 관람 → <br>
                             서울 도착 → 해산</p>
@@ -66,6 +62,24 @@
                         </p>
                     </h2>
                 </div>
+                <button type="button"
+                        data-bs-toggle="modal"
+                        data-bs-target="#juneModal1"
+                        data-gtag-action="2023 여행가는 달_같이가 준 이벤트"
+                        data-gtag-category="june_time_table_1"
+                        data-ga-category="2023 여행가는 달_같이가 준 이벤트"
+                        data-ga-action="타임테이블1 확인하기">
+                    <span class="screen_out">타임테이블 확인하기</span>
+                </button>
+                <button type="button"
+                        data-bs-toggle="modal"
+                        data-bs-target="#juneModal2"
+                        data-gtag-action="2023 여행가는 달_같이가 준 이벤트"
+                        data-gtag-category="june_time_table_2"
+                        data-ga-category="2023 여행가는 달_같이가 준 이벤트"
+                        data-ga-action="타임테이블2 확인하기">
+                    <span class="screen_out">타임테이블 확인하기</span>
+                </button>
             </section>
             <section>
                 <div class="screen_out"><h2>참여방법</h2>

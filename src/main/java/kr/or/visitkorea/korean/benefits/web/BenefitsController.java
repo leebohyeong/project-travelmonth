@@ -59,7 +59,7 @@ public class BenefitsController<T> extends CommonControllerWrapper
 	{
 		try
 		{
-			model.addAttribute("content", BENEFITS_SERVICE.getTrafficContentHtml());
+			model.addAttribute("traffic", BENEFITS_SERVICE.getTrafficContentHtml());
 		}
 		catch (Exception exception)
 		{
@@ -78,7 +78,7 @@ public class BenefitsController<T> extends CommonControllerWrapper
 	{
 		try
 		{
-			model.addAttribute("content", BENEFITS_SERVICE.getStayContentHtml());
+			model.addAttribute("stay", BENEFITS_SERVICE.getStayContentHtml());
 		}
 		catch (Exception exception)
 		{
