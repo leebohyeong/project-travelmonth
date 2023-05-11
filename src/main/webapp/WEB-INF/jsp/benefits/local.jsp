@@ -304,7 +304,9 @@
                                                                 <fmt:formatDate var="fromDate" pattern="MM/dd" value="${strFromDate}"/>
                                                                 <fmt:parseDate var="strToDate" pattern="yyyy-MM-dd" value="${row.to_date}"/>
                                                                 <fmt:formatDate var="ToDate" pattern="MM/dd" value="${strToDate}"/>
-                                                                예약신청기간 : ${fromDate}~${ToDate}
+                                                                <c:if test="${not empty fromDate && not empty ToDate}">
+                                                                    예약신청기간 : ${fromDate}~${ToDate}
+                                                                </c:if>
                                                             </p>
                                                             <p>${row.title}</p>
                                                             <div>

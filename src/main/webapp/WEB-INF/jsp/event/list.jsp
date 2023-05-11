@@ -66,7 +66,11 @@
                                             <c:when test="${not empty list}">
                                                 <ul>
                                                     <c:forEach var="row" items="${list}" varStatus="loop">
-                                                        <li>
+                                                        <c:set var="hidden_class" value=""/>
+                                                        <c:if test="${loop.count > 6}">
+                                                            <c:set var="hidden_class" value="class='list-thumbnail__item--hide'"/>
+                                                        </c:if>
+                                                        <li ${hidden_class}>
                                                             <a href="${row.link}"
                                                                target="${row.link_target}"
                                                                data-gtag-action="2023 여행가는 달_여행상품 특별 기획전"
@@ -98,7 +102,11 @@
                                             <c:when test="${not empty list}">
                                                 <ul>
                                                     <c:forEach var="row" items="${list}" varStatus="loop">
-                                                        <li>
+                                                        <c:set var="hidden_class" value=""/>
+                                                        <c:if test="${loop.count > 6}">
+                                                            <c:set var="hidden_class" value="class='list-thumbnail__item--hide'"/>
+                                                        </c:if>
+                                                        <li ${hidden_class}>
                                                             <a href="${row.link}"
                                                                target="${row.link_target}"
                                                                data-gtag-action="2023 여행가는 달_여행상품 특별 기획전"

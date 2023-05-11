@@ -40,7 +40,7 @@ public class BenefitsController<T> extends CommonControllerWrapper
 			JSONObject jsonObject = (JSONObject) COMMON_SERVICE.getLocalByNameEn(local);
 			model.addAttribute("local", jsonObject);
 			model.addAttribute("enjoy", PROGRAM_SERVICE.getEnjoyList(jsonObject));
-			model.addAttribute("travel", PROGRAM_SERVICE.getTravelList(jsonObject));
+			model.addAttribute("travel", PROGRAM_SERVICE.getTravelList(new JSONObject(jsonObject){{ put("search_travel_gb", "P"); }}));
 		}
 		catch (Exception exception)
 		{
