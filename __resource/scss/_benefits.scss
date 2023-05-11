@@ -597,7 +597,8 @@
                         }
                     }
 
-                    h4 {
+                    h4, h3 strong {
+                        display: block;
                         font-weight: 500;
                         font-size: 14px;
                         font-family: "GmarketSans", sans-serif;
@@ -657,9 +658,63 @@
                             }
                         }
                     }
+
+                    dl {
+
+                            padding: 24px 0 30px 0;
+
+
+                        > div {
+                            display: flex;
+                            justify-content: flex-start;
+                            color: #303030;
+                            font-weight: $font-weight-light;
+                            font-size: 12px;
+                            line-height: math.div(20, 16);
+                            letter-spacing: -0.03em;
+
+                            &:nth-of-type(n+2) {
+                                margin-top: 2px;
+                            }
+
+                            @include media-queries($from: lg) {
+                                font-size: 16px;
+
+                                &:nth-of-type(n+2) {
+                                    margin-top: 10px;
+                                }
+                            }
+                        }
+
+                        dt {
+                            padding-left: 8px;
+                            white-space: nowrap;
+
+                            &::before {
+                                float: left;
+                                margin-left: -8px;
+                                content: "\b7";
+                            }
+
+                            &::after {
+                                padding: 0 4px;
+                                content: ":";
+                            }
+                        }
+
+                        a {
+                            color: var(--benefits-program-ticket-color-2);
+                            font-weight: $font-weight-bold;
+                            text-decoration: underline;
+                        }
+                    }
                 }
 
                 &:nth-child(2) {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    justify-content: center;
                     position: relative;
                     background: var(--benefits-program-ticket-color-1);
 
@@ -696,7 +751,7 @@
                     }
 
                     @include media-queries($from: lg) {
-                        padding: 70px math.ceil(percentage(math.div(50, 330))) 52px;
+                        padding: 70px math.ceil(percentage(math.div(30, 330))) 52px;
                         border-radius: 0 28px 28px 0;
                         border-left: 1px dashed #fff;
 
@@ -721,6 +776,15 @@
                     h4 {
                         position: absolute;
 
+
+                        @include media-queries($from: xl) {
+                            img {
+                                &:nth-of-type(n+2) {
+                                    margin-left: 10px;
+                                }
+                            }
+                        }
+
                         @include media-queries($to: lg) {
                             top: 14px;
                             left: 20px;
@@ -728,6 +792,7 @@
                             img {
                                 transform-origin: left top;
                                 scale: math.div(2, 3);
+
                             }
                         }
 
@@ -851,7 +916,7 @@
                         }
                     }
 
-                    div + p {
+                    p {
                         margin-top: 12px;
                         text-align: center;
 
@@ -883,6 +948,57 @@
 
                         @include media-queries($from: lg) {
                             margin-top: 40px;
+                        }
+                    }
+
+                    ul {
+                        margin-top: 23px;
+
+                        @include media-queries($to: lg) {
+                            max-width: 240px;
+                            margin: 15px auto 24px;
+                        }
+
+                        li {
+                            position: relative;
+                            padding-left: 8px;
+                            color: #fff;
+                            font-weight: $font-weight-light;
+                            font-size: 10px;
+
+                            @include media-queries($from: lg) {
+                                font-size: 16px;
+                            }
+
+                            &:nth-of-type(n+2) {
+                                margin-top: 4px;
+
+                                @include media-queries($from: lg) {
+                                    margin-top: 10px;
+                                }
+                            }
+                            
+                            &::before {
+                                position: absolute;
+                                top: 4px;
+                                left: 0;
+                                width: 4px;
+                                height: 4px;
+                                background-color: #fff;
+                                border-radius: 50%;
+                                content:'';
+
+                                @include media-queries($from: lg) {
+                                    top: 5px;
+                                    font-size: 16px;
+                                }
+                            }
+                        }
+                    }
+
+                    ul + div {
+                        @include media-queries($from: lg) {
+                            margin-top: 70px;
                         }
                     }
                 }
@@ -1004,14 +1120,135 @@
             background-image: url("/travelmonth/assets/images/benefits/traffic/icon_#{$theme}.png");
         }
     }
+
+    @each $theme in 'car' {
+        [data-theme="#{$theme}"] > div:nth-child(2) {
+            padding: 45px 16% 30px;
+
+            @include media-queries($from: lg) {
+                padding: 90px 10% 52px;
+            }
+        }
+    }
 }
 
 .benefits-program--stay {
     --benefits-program-ticket-color-1: #f6a14d;
     --benefits-program-ticket-color-2: #cf7720;
+    --benefits-program-ticket-color-3: #4681b9;
 
     > header {
         background-image: url(/travelmonth/assets/images/benefits/stay/bg_header.jpg);
+    }
+
+    @each $theme in 'stay', 'promotion', 'camping', 'vacation' {
+        [data-theme="#{$theme}"] > div:nth-child(1) h3::before {
+            background-image: url("/travelmonth/assets/images/benefits/stay/icon_#{$theme}.png");
+        }
+    }
+
+    @each $theme in 'hotels' {
+        [data-theme="#{$theme}"] > div:nth-child(2) {
+            background-color: #ffe96e;
+
+            @include media-queries($to: lg) {
+                padding-bottom: 24px;
+            }
+
+            dl {
+                width: 230px;
+                background-color: #ffd300;
+
+                &::before,
+                &::after {
+                    background-color: #ffe96e;
+                }
+            }
+
+            h4 {
+                position: relative;
+                top: inherit;
+                right: inherit;
+                text-align: center;
+            }
+        }
+
+        [data-theme="#{$theme}"] > div:nth-child(2) {
+            dt {
+                color: #000;
+
+                @include media-queries($to: lg) {
+                    font-size: 12px;
+                }
+            }
+            
+            dd {
+                color: #cf7720;
+                font-size: 40px;
+
+                @include media-queries($to: lg) {
+                    font-size: 30px;
+                }
+            }
+            
+            @include media-queries($to: lg) {
+                grid-row-start: 2 !important;
+            }
+        }
+
+        [data-theme="#{$theme}"] > div:nth-child(3) {
+            background-color: #fff;
+            
+            @include media-queries($to: lg) {
+                flex-direction: column;
+                grid-row-start: 3 !important;
+                padding: 18px 7px 30px 0;
+            }
+
+            @include media-queries($from: lg) {
+                padding: 10px 30px 0;
+                grid-column: 1 / 4;
+            }
+
+            & > p {
+                color: #303030;
+                font-weight: $font-weight-light;
+                font-size: 12px;
+                line-height: math.div(20, 16);
+                letter-spacing: -0.03em;
+
+                &:nth-of-type(n+2) {
+                    padding-top: 2px;
+                }
+
+                &::before {
+                    float: left;
+                    margin-left: -8px;
+                    content: "\b7";
+                }
+
+                @include media-queries($to: lg) {
+                    br {
+                        display: none;
+                    }
+                }
+
+                @include media-queries($from: lg) {
+                    font-size: 16px;
+
+                    &:nth-of-type(n+2) {
+                        padding-top: 8px;
+                    }
+                }
+            }
+
+            a {
+                color: var(--benefits-program-ticket-color-3);
+                font-weight: $font-weight-bold;
+                text-decoration: underline;
+            }
+        }
+
     }
 }
 
