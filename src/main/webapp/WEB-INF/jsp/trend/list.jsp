@@ -229,15 +229,31 @@
                                             <ul>
                                                 <c:forEach var="row" items="${list}" varStatus="loop">
                                                     <li>
-                                                        <a href="#modal-trend-content-${row.seq}"
-                                                           data-bs-toggle="modal"
-                                                           data-bs-target="#modal-trend-content-${row.seq}"
-                                                           data-gtag-action="2023 여행가는 달_trend관"
-                                                           data-gtag-category="trend_${theme.ga_tag}_contents_list"
-                                                           data-gtag-label="${common:getTagText(row.title)}">
-                                                            <span style="background-image: url('${row.image}')"></span>
-                                                            <p>${row.title}</p>
-                                                        </a>
+                                                        <c:choose>
+                                                            <c:when test="${empty row.content}">
+                                                                <a href="${row.pc_link}"
+                                                                   target="_blank"
+                                                                   data-bs-toggle="modal"
+                                                                   data-bs-target="#modal-trend-content-${row.seq}"
+                                                                   data-gtag-action="2023 여행가는 달_trend관"
+                                                                   data-gtag-category="trend_${theme.ga_tag}_contents_list"
+                                                                   data-gtag-label="${common:getTagText(row.title)}">
+                                                                    <span style="background-image: url('${row.image}')"></span>
+                                                                    <p>${row.title}</p>
+                                                                </a>
+                                                            </c:when>
+                                                            <c:otherwise>
+                                                                <a href="#modal-trend-content-${row.seq}"
+                                                                   data-bs-toggle="modal"
+                                                                   data-bs-target="#modal-trend-content-${row.seq}"
+                                                                   data-gtag-action="2023 여행가는 달_trend관"
+                                                                   data-gtag-category="trend_${theme.ga_tag}_contents_list"
+                                                                   data-gtag-label="${common:getTagText(row.title)}">
+                                                                    <span style="background-image: url('${row.image}')"></span>
+                                                                    <p>${row.title}</p>
+                                                                </a>
+                                                            </c:otherwise>
+                                                        </c:choose>
                                                     </li>
                                                 </c:forEach>
                                             </ul>
@@ -267,6 +283,11 @@
                                                     </h2>
                                                     <c:set var="jsonObject" value="${common:toJSONObject(row.content)}" />
                                                     <h3 class="modal-trend-contents__title" style="background-image: url('https://cdn.visitkorea.or.kr/img/call?cmd=VIEW&id=${jsonObject.thumbnail}&mode=progress')">${jsonObject.title}</h3>
+                                                    <c:if test="${not empty jsonObject.summary}">
+                                                        <p class="modal-trend-contents__summary">
+                                                            ${jsonObject.summary}
+                                                        </p>
+                                                    </c:if>
                                                     <c:if test="${fn:length(jsonObject.contents) > 1}">
                                                         <ul class="modal-trend-contents__tab">
                                                             <c:forEach var="sub_row" items="${jsonObject.contents}">
