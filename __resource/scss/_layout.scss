@@ -482,7 +482,8 @@ body {
 
     ul {
         display: grid;
-        grid-template-columns: repeat(var(--benefits-list-column-size), 1fr);
+        //grid-template-columns: repeat(var(--benefits-list-column-size), 1fr);
+        grid-template-columns: repeat(auto-fill, #{calc(100% / var(--benefits-list-column-size) - var(--benefits-list-column-gap) / var(--benefits-list-column-size))});
         grid-column-gap: var(--benefits-list-column-gap);
         grid-row-gap: var(--benefits-list-row-gap);
     }
@@ -585,10 +586,13 @@ body {
                 }
 
                 &:nth-of-type(2) {
+                    overflow: hidden;
                     color: #000;
                     font-weight: $font-weight-regular;
                     font-size: 12px;
                     letter-spacing: -0.03em;
+                    text-overflow: ellipsis;
+                    white-space: nowrap;
 
                     @include media-queries($from: xl) {
                         font-size: 18px;
