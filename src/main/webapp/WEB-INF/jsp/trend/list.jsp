@@ -228,16 +228,34 @@
                                         <c:when test="${not empty list}">
                                             <ul>
                                                 <c:forEach var="row" items="${list}" varStatus="loop">
-                                                    <li>
-                                                        <a href="#modal-trend-content-${row.seq}"
-                                                           data-bs-toggle="modal"
-                                                           data-bs-target="#modal-trend-content-${row.seq}"
-                                                           data-gtag-action="2023 여행가는 달_trend관"
-                                                           data-gtag-category="trend_${theme.ga_tag}_contents_list"
-                                                           data-gtag-label="${common:getTagText(row.title)}">
-                                                            <span style="background-image: url('${row.image}')"></span>
-                                                            <p>${row.title}</p>
-                                                        </a>
+                                                    <c:set var="hidden_class" value=""/>
+                                                    <c:if test="${loop.count > 6}">
+                                                        <c:set var="hidden_class" value="class='list-thumbnail__item--hide'"/>
+                                                    </c:if>
+                                                    <li ${hidden_class}>
+                                                        <c:choose>
+                                                            <c:when test="${empty row.content}">
+                                                                <a href="${row.pc_link}"
+                                                                   target="_blank"
+                                                                   data-gtag-action="2023 여행가는 달_trend관"
+                                                                   data-gtag-category="trend_${theme.ga_tag}_contents_list"
+                                                                   data-gtag-label="${common:getTagText(row.title)}">
+                                                                    <span style="background-image: url('${row.image}')"></span>
+                                                                    <p>${row.title}</p>
+                                                                </a>
+                                                            </c:when>
+                                                            <c:otherwise>
+                                                                <a href="#modal-trend-content-${row.seq}"
+                                                                   data-bs-toggle="modal"
+                                                                   data-bs-target="#modal-trend-content-${row.seq}"
+                                                                   data-gtag-action="2023 여행가는 달_trend관"
+                                                                   data-gtag-category="trend_${theme.ga_tag}_contents_list"
+                                                                   data-gtag-label="${common:getTagText(row.title)}">
+                                                                    <span style="background-image: url('${row.image}')"></span>
+                                                                    <p>${row.title}</p>
+                                                                </a>
+                                                            </c:otherwise>
+                                                        </c:choose>
                                                     </li>
                                                 </c:forEach>
                                             </ul>
@@ -256,64 +274,71 @@
                             <c:if test="${contents.result}">
                                 <c:set var="list" value="${contents.data.list}"/>
                                 <c:forEach var="row" items="${list}" varStatus="loop">
-                                    <div class="modal fade modal-trend-contents" id="modal-trend-content-${row.seq}" data-theme="${fn:toLowerCase(row.travel_gb)}" tabindex="-1" data-bs-backdrop="static" aria-hidden="true">
-                                        <div class="modal-dialog">
-                                            <div class="modal-content">
-                                                <article>
-                                                    <h2 class="modal-trend-contents__theme">
-                                                        <c:forEach var="themes" items="${common:getThemes()}" varStatus="loop">
-                                                            <c:if test="${themes.theme eq fn:toLowerCase(row.travel_gb)}">${themes.main_title}</c:if>
-                                                        </c:forEach>
-                                                    </h2>
-                                                    <c:set var="jsonObject" value="${common:toJSONObject(row.content)}" />
-                                                    <h3 class="modal-trend-contents__title" style="background-image: url('https://cdn.visitkorea.or.kr/img/call?cmd=VIEW&id=${jsonObject.thumbnail}&mode=progress')">${jsonObject.title}</h3>
-                                                    <c:if test="${fn:length(jsonObject.contents) > 1}">
-                                                        <ul class="modal-trend-contents__tab">
-                                                            <c:forEach var="sub_row" items="${jsonObject.contents}">
-                                                                <li><a class="modal-trend-contents__tab-item" href="#">${sub_row.tab}</a></li>
+                                    <c:if test="${not empty row.content}">
+                                        <div class="modal fade modal-trend-contents" id="modal-trend-content-${row.seq}" data-theme="${fn:toLowerCase(row.themes)}" tabindex="-1" data-bs-backdrop="static" aria-hidden="true">
+                                            <div class="modal-dialog">
+                                                <div class="modal-content">
+                                                    <article>
+                                                        <h2 class="modal-trend-contents__theme">
+                                                            <c:forEach var="themes" items="${common:getThemes()}" varStatus="loop">
+                                                                <c:if test="${themes.theme eq fn:toLowerCase(row.themes)}">${themes.main_title}</c:if>
                                                             </c:forEach>
-                                                        </ul>
-                                                    </c:if>
-                                                    <c:forEach var="sub_row" items="${jsonObject.contents}">
-                                                        <div class="modal-trend-contents__panel <c:if test="${fn:length(jsonObject.contents) eq 1}">modal-trend-contents__panel--active</c:if>">
-                                                            <h4 class="modal-trend-contents__panel-title">${sub_row.title}</h4>
-                                                            <div class="modal-trend-contents__panel-contents">
-                                                                <c:forEach var="sub_sub_row" items="${sub_row.contents}">
-                                                                    <c:choose>
-                                                                        <c:when test="${sub_sub_row.type eq 'text'}">
-                                                                            <p>${sub_sub_row.text}</p>
-                                                                        </c:when>
-                                                                        <c:when test="${sub_sub_row.type eq 'image'}">
-                                                                            <p><img src="https://cdn.visitkorea.or.kr/img/call?cmd=VIEW&id=${sub_sub_row.url}&mode=progress" alt="${sub_sub_row.text}"></p>
-                                                                        </c:when>
-                                                                    </c:choose>
+                                                        </h2>
+                                                        <c:set var="jsonObject" value="${common:toJSONObject(row.content)}" />
+                                                        <h3 class="modal-trend-contents__title" style="background-image: url('https://cdn.visitkorea.or.kr/img/call?cmd=VIEW&id=${jsonObject.thumbnail}&mode=progress')">${jsonObject.title}</h3>
+                                                        <c:if test="${not empty jsonObject.summary}">
+                                                            <p class="modal-trend-contents__summary">
+                                                                    ${jsonObject.summary}
+                                                            </p>
+                                                        </c:if>
+                                                        <c:if test="${fn:length(jsonObject.contents) > 1}">
+                                                            <ul class="modal-trend-contents__tab">
+                                                                <c:forEach var="sub_row" items="${jsonObject.contents}">
+                                                                    <li><a class="modal-trend-contents__tab-item" href="#">${sub_row.tab}</a></li>
                                                                 </c:forEach>
+                                                            </ul>
+                                                        </c:if>
+                                                        <c:forEach var="sub_row" items="${jsonObject.contents}">
+                                                            <div class="modal-trend-contents__panel <c:if test="${fn:length(jsonObject.contents) eq 1}">modal-trend-contents__panel--active</c:if>">
+                                                                <h4 class="modal-trend-contents__panel-title">${sub_row.title}</h4>
+                                                                <div class="modal-trend-contents__panel-contents">
+                                                                    <c:forEach var="sub_sub_row" items="${sub_row.contents}">
+                                                                        <c:choose>
+                                                                            <c:when test="${sub_sub_row.type eq 'text'}">
+                                                                                <p>${sub_sub_row.text}</p>
+                                                                            </c:when>
+                                                                            <c:when test="${sub_sub_row.type eq 'image'}">
+                                                                                <p><img src="https://cdn.visitkorea.or.kr/img/call?cmd=VIEW&id=${sub_sub_row.url}&mode=progress" alt="${sub_sub_row.text}"></p>
+                                                                            </c:when>
+                                                                        </c:choose>
+                                                                    </c:forEach>
+                                                                </div>
+                                                                <dl class="modal-trend-contents__panel-info">
+                                                                    <c:forEach var="info" items="${sub_row.info}">
+                                                                        <div>
+                                                                            <dt>${info.title}</dt>
+                                                                            <dd>
+                                                                                <c:forEach var="content" items="${info.contents}">
+                                                                                    <div>${content}</div>
+                                                                                </c:forEach>
+                                                                            </dd>
+                                                                        </div>
+                                                                    </c:forEach>
+                                                                </dl>
+                                                                <c:set var="detail" value="${sub_row.detail}"/>
+                                                                <c:if test="${not empty detail.url}">
+                                                                    <p class="modal-trend-contents__panel-detail">
+                                                                        <a href="${detail.url}" target="_blank">자세히 보기</a>
+                                                                    </p>
+                                                                </c:if>
                                                             </div>
-                                                            <dl class="modal-trend-contents__panel-info">
-                                                                <c:forEach var="info" items="${sub_row.info}">
-                                                                    <div>
-                                                                        <dt>${info.title}</dt>
-                                                                        <dd>
-                                                                            <c:forEach var="content" items="${info.contents}">
-                                                                                <div>${content}</div>
-                                                                            </c:forEach>
-                                                                        </dd>
-                                                                    </div>
-                                                                </c:forEach>
-                                                            </dl>
-                                                            <c:set var="detail" value="${sub_row.detail}"/>
-                                                            <c:if test="${not empty detail.url}">
-                                                                <p class="modal-trend-contents__panel-detail">
-                                                                    <a href="${detail.url}" target="_blank">자세히 보기</a>
-                                                                </p>
-                                                            </c:if>
-                                                        </div>
-                                                    </c:forEach>
-                                                </article>
-                                                <button class="modal-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                        </c:forEach>
+                                                    </article>
+                                                    <button class="modal-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                </div>
                                             </div>
                                         </div>
-                                    </div>
+                                    </c:if>
                                 </c:forEach>
                             </c:if>
                         </c:if>

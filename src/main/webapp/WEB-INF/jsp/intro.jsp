@@ -48,8 +48,10 @@
             </section>
             <section class="travelmonth-intro--poster">
                 <div><h3><span>여행가는 달 <strong>포스터</strong></span></h3>
-                    <p><span style="background-image: url('/travelmonth/assets/images/intro/poster_1.png')"></span><span
-                            style="background-image: url('/travelmonth/assets/images/intro/poster_2.png')"></span></p>
+                    <p>
+                        <span style="background-image: url('/travelmonth/assets/images/intro/poster_1.jpg')"></span>
+                        <span style="background-image: url('/travelmonth/assets/images/intro/poster_2.jpg')"></span>
+                    </p>
                     <div class="travelmonth-intro--poster-notice"><h4>유의사항</h4>
                         <ul>
                             <li>1. <span>포스터의 저작권은 한국관광공사와 제작대행사에 있습니다.</span></li>
