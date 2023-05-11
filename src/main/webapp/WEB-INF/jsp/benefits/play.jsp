@@ -124,7 +124,14 @@
                                                                 <c:when test="${row.enjoy_gb eq 'D'}">
                                                                     <c:if test="${not empty row.from_date && not empty row.to_date}">
                                                                         <div>
-                                                                            <dt>예약접수기간</dt>
+                                                                            <dt>
+                                                                                <span>예</span>
+                                                                                <span>약</span>
+                                                                                <span>접</span>
+                                                                                <span>수</span>
+                                                                                <span>기</span>
+                                                                                <span>간</span>
+                                                                            </dt>
                                                                             <dd>
                                                                                 <div>${row.from_date} ~ ${row.to_date}</div>
                                                                             </dd>
@@ -132,25 +139,45 @@
                                                                     </c:if>
                                                                     <c:if test="${not empty row.discount_start_date && not empty row.discount_end_date}">
                                                                         <div>
-                                                                            <dt>할인적용기간</dt>
+                                                                            <dt>
+                                                                                <span>할</span>
+                                                                                <span>인</span>
+                                                                                <span>적</span>
+                                                                                <span>용</span>
+                                                                                <span>기</span>
+                                                                                <span>간</span>
+                                                                            </dt>
                                                                             <dd>${row.discount_start_date} ~ ${row.discount_end_date}</dd>
                                                                         </div>
                                                                     </c:if>
                                                                     <c:if test="${not empty row.content}">
                                                                         <div>
-                                                                            <dt>혜택상세</dt>
+                                                                            <dt>
+                                                                                <span>혜</span>
+                                                                                <span>택</span>
+                                                                                <span>상</span>
+                                                                                <span>세</span>
+                                                                            </dt>
                                                                             <dd>${row.content}</dd>
                                                                         </div>
                                                                     </c:if>
                                                                     <c:if test="${not empty row.content_detail}">
                                                                         <div>
-                                                                            <dt>혜택제공조건</dt>
+                                                                            <dt>
+                                                                                <span>할</span>
+                                                                                <span>인</span>
+                                                                                <span>조</span>
+                                                                                <span>건</span>
+                                                                            </dt>
                                                                             <dd>${row.content_detail}</dd>
                                                                         </div>
                                                                     </c:if>
                                                                     <c:if test="${not empty row.notes}">
                                                                         <div>
-                                                                            <dt>참고사항</dt>
+                                                                            <dt>
+                                                                               <span>장</span>
+                                                                               <span>소</span>
+                                                                            </dt>
                                                                             <dd>${row.notes}</dd>
                                                                         </div>
                                                                     </c:if>
@@ -158,7 +185,10 @@
                                                                 <c:when test="${row.enjoy_gb eq 'T'}">
                                                                     <c:if test="${not empty row.from_date && not empty row.to_date}">
                                                                         <div>
-                                                                            <dt>진행기간</dt>
+                                                                            <dt>
+                                                                                <span>기</span>
+                                                                                <span>간</span>
+                                                                            </dt>
                                                                             <dd>
                                                                                 <div>${row.from_date} ~ ${row.to_date}</div>
                                                                             </dd>
@@ -166,7 +196,10 @@
                                                                     </c:if>
                                                                     <c:if test="${not empty row.content}">
                                                                         <div>
-                                                                            <dt>장소</dt>
+                                                                            <dt>
+                                                                                <span>장</span>
+                                                                                <span>소</span>
+                                                                            </dt>
                                                                             <dd>
                                                                                 <div>${row.content}</div>
                                                                             </dd>
@@ -174,7 +207,12 @@
                                                                     </c:if>
                                                                     <c:if test="${not empty row.content_detail}">
                                                                         <div>
-                                                                            <dt>간략소개</dt>
+                                                                            <dt>
+                                                                                <span>주</span>
+                                                                                <span>요</span>
+                                                                                <span>내</span>
+                                                                                <span>용</span>
+                                                                            </dt>
                                                                             <dd>
                                                                                 <div>${row.content_detail}</div>
                                                                             </dd>
@@ -184,7 +222,10 @@
                                                                 <c:when test="${row.enjoy_gb eq 'E'}">
                                                                     <c:if test="${not empty row.from_date && not empty row.to_date}">
                                                                         <div>
-                                                                            <dt>진행기간</dt>
+                                                                            <dt>
+                                                                                <span>기</span>
+                                                                                <span>간</span>
+                                                                            </dt>
                                                                             <dd>
                                                                                 <div>${row.from_date} ~ ${row.to_date}</div>
                                                                             </dd>
@@ -192,7 +233,12 @@
                                                                     </c:if>
                                                                     <c:if test="${not empty row.content}">
                                                                         <div>
-                                                                            <dt>소개내용</dt>
+                                                                            <dt>
+                                                                                <span>주</span>
+                                                                                <span>요</span>
+                                                                                <span>내</span>
+                                                                                <span>용</span>
+                                                                            </dt>
                                                                             <dd>
                                                                                 <div>${row.content}</div>
                                                                             </dd>
@@ -200,7 +246,12 @@
                                                                     </c:if>
                                                                     <c:if test="${not empty row.content_detail}">
                                                                         <div>
-                                                                            <dt>당첨인원</dt>
+                                                                            <dt>
+                                                                                <span>당</span>
+                                                                                <span>첨</span>
+                                                                                <span>인</span>
+                                                                                <span>원</span>
+                                                                            </dt>
                                                                             <dd>
                                                                                 <div>${row.content_detail}</div>
                                                                             </dd>
@@ -208,7 +259,12 @@
                                                                     </c:if>
                                                                     <c:if test="${not empty row.notes}">
                                                                         <div>
-                                                                            <dt>참여방법</dt>
+                                                                            <dt>
+                                                                                <span>참</span>
+                                                                                <span>여</span>
+                                                                                <span>방</span>
+                                                                                <span>법</span>
+                                                                            </dt>
                                                                             <dd>
                                                                                 <div>${row.notes}</div>
                                                                             </dd>
@@ -218,7 +274,11 @@
                                                             </c:choose>
                                                             <c:if test="${not empty row.contact_information}">
                                                                 <div>
-                                                                    <dt>문의처</dt>
+                                                                    <dt>
+                                                                        <span>문</span>
+                                                                        <span>의</span>
+                                                                        <span>처</span>
+                                                                    </dt>
                                                                     <dd>${row.contact_information}</dd>
                                                                 </div>
                                                             </c:if>

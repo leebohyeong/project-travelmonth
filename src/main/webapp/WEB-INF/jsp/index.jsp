@@ -401,18 +401,89 @@
                 <header class="main__header"><h2>여행가는 달 참여기관</h2></header>
                 <div>
                     <div>
-                        <img src="${pageContext.request.contextPath}/assets/images/main/img_organization_1.png" alt="국립공원공단">
-                        <img src="${pageContext.request.contextPath}/assets/images/main/img_organization_2.png" alt="코레일관광개발">
-                        <img src="${pageContext.request.contextPath}/assets/images/main/img_organization_3.png" alt="한국어촌어항공단">
-                        <img src="${pageContext.request.contextPath}/assets/images/main/img_organization_4.png" alt="남해관광문화재단">
-                        <img src="${pageContext.request.contextPath}/assets/images/main/img_organization_5.png" alt="KORAIL">
-                        <img src="${pageContext.request.contextPath}/assets/images/main/img_organization_6.png" alt="한국임업진흥원">
-                        <img src="${pageContext.request.contextPath}/assets/images/main/img_organization_1.png" alt="국립공원공단">
-                        <img src="${pageContext.request.contextPath}/assets/images/main/img_organization_2.png" alt="코레일관광개발">
-                        <img src="${pageContext.request.contextPath}/assets/images/main/img_organization_3.png" alt="한국어촌어항공단">
-                        <img src="${pageContext.request.contextPath}/assets/images/main/img_organization_4.png" alt="남해관광문화재단">
-                        <img src="${pageContext.request.contextPath}/assets/images/main/img_organization_5.png" alt="KORAIL">
-                        <img src="${pageContext.request.contextPath}/assets/images/main/img_organization_6.png" alt="한국임업진흥원">
+                        <img src="/travelmonth/assets/images/intro/img_organization_2_1.jpg" alt="한국관광공사">
+                        <img src="/travelmonth/assets/images/intro/img_organization_3_1.jpg" alt="국가보훈처">
+                        <img src="/travelmonth/assets/images/intro/img_organization_3_2.jpg" alt="해양수산부">
+                        <img src="/travelmonth/assets/images/intro/img_organization_3_3.jpg" alt="문화재청">
+                        <img src="/travelmonth/assets/images/intro/img_organization_4_1.jpg" alt="거창군">
+                        <img src="/travelmonth/assets/images/intro/img_organization_4_2.jpg" alt="경상남도">
+                        <img src="/travelmonth/assets/images/intro/img_organization_4_3.jpg" alt="경상북도">
+                        <img src="/travelmonth/assets/images/intro/img_organization_4_4.jpg" alt="">
+                        <img src="/travelmonth/assets/images/intro/img_organization_4_5.jpg" alt="김제시">
+                        <img src="/travelmonth/assets/images/intro/img_organization_4_6.jpg" alt="여주시">
+                        <img src="/travelmonth/assets/images/intro/img_organization_4_7.jpg" alt="인천광역시">
+                        <img src="/travelmonth/assets/images/intro/img_organization_4_8.jpg" alt="전라남도">
+                        <img src="/travelmonth/assets/images/intro/img_organization_4_9.jpg" alt="충청남도">
+                        <img src="/travelmonth/assets/images/intro/img_organization_4_10.jpg" alt="충청북도">
+                        <img src="/travelmonth/assets/images/intro/img_organization_4_11.jpg" alt="변화의 중심 기회의 경기">
+                        <img src="/travelmonth/assets/images/intro/img_organization_4_12.jpg" alt="흥미진진 공주">
+                        <img src="/travelmonth/assets/images/intro/img_organization_4_13.jpg" alt="남원시">
+                        <img src="/travelmonth/assets/images/intro/img_organization_4_14.jpg" alt="대구광역시">
+                        <img src="/travelmonth/assets/images/intro/img_organization_4_15.jpg" alt="대전광역시">
+                        <img src="/travelmonth/assets/images/intro/img_organization_4_16.jpg" alt="부산광역시">
+                        <img src="/travelmonth/assets/images/intro/img_organization_4_17.jpg" alt="부안군">
+                        <img src="/travelmonth/assets/images/intro/img_organization_4_18.jpg" alt="사천">
+                        <img src="/travelmonth/assets/images/intro/img_organization_4_19.jpg" alt="임실군">
+                        <img src="/travelmonth/assets/images/intro/img_organization_4_20.jpg" alt="전라남도">
+                        <img src="/travelmonth/assets/images/intro/img_organization_4_21.jpg" alt="자유치유도시 제천">
+                        <img src="/travelmonth/assets/images/intro/img_organization_4_22.jpg" alt="창녕군">
+                        <img src="/travelmonth/assets/images/intro/img_organization_4_23.jpg" alt="충주시">
+                        <img src="/travelmonth/assets/images/intro/img_organization_4_24.jpg" alt="하동군">
+                        <img src="/travelmonth/assets/images/intro/img_organization_4_25.jpg" alt="홍성군">
+                        <img src="/travelmonth/assets/images/intro/img_organization_5_1.jpg" alt="SR">
+                        <img src="/travelmonth/assets/images/intro/img_organization_5_2.jpg" alt="강원도관광재단">
+                        <img src="/travelmonth/assets/images/intro/img_organization_5_3.jpg" alt="경남관광재단">
+                        <img src="/travelmonth/assets/images/intro/img_organization_5_4.jpg" alt="국립아시아문화전당">
+                        <img src="/travelmonth/assets/images/intro/img_organization_5_5.jpg" alt="대구문화예술진흥원">
+                        <img src="/travelmonth/assets/images/intro/img_organization_5_6.jpg" alt="대전광역시관광협회">
+                        <img src="/travelmonth/assets/images/intro/img_organization_5_7.jpg" alt="부산관광공사">
+                        <img src="/travelmonth/assets/images/intro/img_organization_5_8.jpg" alt="전라남도 관광재단">
+                        <img src="/travelmonth/assets/images/intro/img_organization_5_9.jpg" alt="전북문화관광재단">
+                        <img src="/travelmonth/assets/images/intro/img_organization_5_10.jpg" alt="태권도진흥재단">
+                        <img src="/travelmonth/assets/images/intro/img_organization_5_11.jpg" alt="HIGH1">
+                        <img src="/travelmonth/assets/images/intro/img_organization_5_12.jpg" alt="한국산업기술평가관리원">
+                        <img src="/travelmonth/assets/images/intro/img_organization_5_13.jpg" alt="경기관광공사">
+                        <img src="/travelmonth/assets/images/intro/img_organization_5_14.jpg" alt="경상북도문화관광공사">
+                        <img src="/travelmonth/assets/images/intro/img_organization_5_15.jpg" alt="국립공원">
+                        <img src="/travelmonth/assets/images/intro/img_organization_5_16.jpg" alt="국립대구박물관">
+                        <img src="/travelmonth/assets/images/intro/img_organization_5_17.jpg" alt="국립해양과학관">
+                        <img src="/travelmonth/assets/images/intro/img_organization_5_18.jpg" alt="대한민국술테마박물관">
+                        <img src="/travelmonth/assets/images/intro/img_organization_5_19.jpg" alt="독립기념과">
+                        <img src="/travelmonth/assets/images/intro/img_organization_5_20.jpg" alt="유엔평화기념관">
+                        <img src="/travelmonth/assets/images/intro/img_organization_5_21.jpg" alt="인천관광공사">
+                        <img src="/travelmonth/assets/images/intro/img_organization_5_22.jpg" alt="제주관광공사">
+                        <img src="/travelmonth/assets/images/intro/img_organization_5_23.jpg" alt="제주특별자치도관광협회">
+                        <img src="/travelmonth/assets/images/intro/img_organization_5_24.jpg" alt="JAM">
+                        <img src="/travelmonth/assets/images/intro/img_organization_5_25.jpg" alt="청풍호반케이블카">
+                        <img src="/travelmonth/assets/images/intro/img_organization_5_26.jpg" alt="KENSINGTON">
+                        <img src="/travelmonth/assets/images/intro/img_organization_5_27.jpg" alt="코레일관광개발">
+                        <img src="/travelmonth/assets/images/intro/img_organization_5_28.jpg" alt="한국공항공사">
+                        <img src="/travelmonth/assets/images/intro/img_organization_5_29.jpg" alt="한국농어촌공사">
+                        <img src="/travelmonth/assets/images/intro/img_organization_5_30.jpg" alt="한국등산트레킹지원센터">
+                        <img src="/travelmonth/assets/images/intro/img_organization_5_31.jpg" alt="한국문화예술위원회">
+                        <img src="/travelmonth/assets/images/intro/img_organization_5_32.jpg" alt="한국불교문화사업단">
+                        <img src="/travelmonth/assets/images/intro/img_organization_5_33.jpg" alt="한국어촌어항공단">
+                        <img src="/travelmonth/assets/images/intro/img_organization_5_34.jpg" alt="한국임업진흥원">
+                        <img src="/travelmonth/assets/images/intro/img_organization_5_35.jpg" alt="한국철도">
+                        <img src="/travelmonth/assets/images/intro/img_organization_5_36.jpg" alt="한국농총경제연구원">
+                        <img src="/travelmonth/assets/images/intro/img_organization_5_37.jpg" alt="한국항로표지기술원">
+                        <img src="/travelmonth/assets/images/intro/img_organization_6_1.jpg" alt="프라이빗 이동 서비스, 무브">
+                        <img src="/travelmonth/assets/images/intro/img_organization_6_2.jpg" alt="문화상상연구소">
+                        <img src="/travelmonth/assets/images/intro/img_organization_6_3.jpg" alt="SOCAR">
+                        <img src="/travelmonth/assets/images/intro/img_organization_6_4.jpg" alt="DRIV">
+                        <img src="/travelmonth/assets/images/intro/img_organization_6_5.jpg" alt="EMART24">
+                        <img src="/travelmonth/assets/images/intro/img_organization_6_6.jpg" alt="카모아">
+                        <img src="/travelmonth/assets/images/intro/img_organization_6_7.jpg" alt="DMZ FLOWER TEA">
+                        <img src="/travelmonth/assets/images/intro/img_organization_6_8.jpg" alt="미스터멘션">
+                        <img src="/travelmonth/assets/images/intro/img_organization_6_9.jpg" alt="VIDEO MONSTER">
+                        <img src="/travelmonth/assets/images/intro/img_organization_6_10.jpg" alt="여행공방">
+                        <img src="/travelmonth/assets/images/intro/img_organization_6_11.jpg" alt="임자만났네">
+                        <img src="/travelmonth/assets/images/intro/img_organization_6_12.jpg" alt="JINAIR">
+                        <img src="/travelmonth/assets/images/intro/img_organization_6_13.jpg" alt="Kakako mobility">
+                        <img src="/travelmonth/assets/images/intro/img_organization_6_14.jpg" alt="TLBAL">
+                        <img src="/travelmonth/assets/images/intro/img_organization_6_15.jpg" alt="파주 임진각평화곤둘라">
+                        <img src="/travelmonth/assets/images/intro/img_organization_6_16.jpg" alt="하이웨어">
+                        <img src="/travelmonth/assets/images/intro/img_organization_6_17.jpg" alt="호텔스컴바인">
                     </div>
                 </div>
             </div>

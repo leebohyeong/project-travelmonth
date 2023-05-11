@@ -1016,8 +1016,10 @@ body {
             > div {
 
                 @include media-queries($from: xl) {
-                    display: flex;
-                    align-items: flex-start;
+                    //display: flex;
+                    //align-items: flex-start;
+                    display: grid;
+                    grid-template-columns: 106px 1fr;
                 }
 
                 &:not(:first-child) {
@@ -1028,12 +1030,19 @@ body {
             dt {
                 display: flex;
                 align-items: center;
+                justify-content: space-between;
+                color: var(--modal-point-color);
+                font-weight: $font-weight-bold;
+
+                @include media-queries($from: lg) {
+                    justify-content: space-between;
+                }
 
                 &::before {
                     width: 4px;
                     height: 4px;
                     margin-right: 6px;
-                    background: #cecece;
+                    background: var(--modal-point-color);
                     content: "";
                 }
 
@@ -1044,8 +1053,19 @@ body {
             }
 
             dd {
-                flex-grow: 1;
+                position: relative;
                 word-break: break-all;
+                //flex-grow: 1;
+                padding-left: 12px;
+
+                //&::before {
+                //    position: absolute;
+                //    top: 50%;
+                //    left: 0;
+                //    transform: translateY(-50%);
+                //    padding: 0 4px;
+                //    content: ":";
+                //}
             }
         }
 

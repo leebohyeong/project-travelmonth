@@ -176,25 +176,47 @@
                                                         <dl>
                                                             <c:if test="${not empty row.from_date && not empty row.to_date}">
                                                                 <div>
-                                                                    <dt>예약접수기간</dt>
+                                                                    <dt>
+                                                                        <span>예</span>
+                                                                        <span>약</span>
+                                                                        <span>접</span>
+                                                                        <span>수</span>
+                                                                        <span>기</span>
+                                                                        <span>간</span>
+                                                                    </dt>
                                                                     <dd>${row.from_date} ~ ${row.to_date}</dd>
                                                                 </div>
                                                             </c:if>
                                                             <c:if test="${not empty row.content}">
                                                                 <div>
-                                                                    <dt>안내사항</dt>
+                                                                    <dt>
+                                                                        <span>안</span>
+                                                                        <span>내</span>
+                                                                        <span>사</span>
+                                                                        <span>항</span>
+                                                                    </dt>
                                                                     <dd>${row.content}</dd>
                                                                 </div>
                                                             </c:if>
                                                             <c:if test="${not empty row.content_detail}">
                                                                 <div>
-                                                                    <dt>주요방문지</dt>
+                                                                    <dt>
+                                                                        <span>주</span>
+                                                                        <span>요</span>
+                                                                        <span>방</span>
+                                                                        <span>문</span>
+                                                                        <span>지</span>
+                                                                    </dt>
                                                                     <dd>${row.content_detail}</dd>
                                                                 </div>
                                                             </c:if>
                                                             <c:if test="${not empty row.contact_information}">
                                                                 <div>
-                                                                    <dt>문의처</dt>
+                                                                    <dt>
+                                                                        <span>문</span>
+                                                                        <span>의</span>
+                                                                        <span>처</span>
+                                                                    </dt>
                                                                     <dd>${row.contact_information}</dd>
                                                                 </div>
                                                             </c:if>
