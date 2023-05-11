@@ -604,30 +604,30 @@
     }
 
     &__panel-detail {
-        padding: 16px var(--modal-trend-contents-padding-horizon) 0;
+        padding-top: 16px;
 
         @include media-queries($from: xl) {
-            padding: 26px var(--modal-trend-contents-padding-horizon) 0;
+            padding-top: 26px;
         }
 
         a {
             display: flex;
             justify-content: center;
             align-items: center;
-            width: 220px;
-            height: 56px;
+            width: 180px;
+            height: 45px;
             border-radius: 28px;
             border: 0;
             background: #37bf8a;
             color: #fff;
-            font-size: 20px;
+            font-size: 18px;
             letter-spacing: -0.025em;
             appearance: none;
 
-            @include media-queries($to: xl) {
-                width: 180px;
-                height: 45px;
-                font-size: 18px;
+            @include media-queries($from: xl) {
+                width: 220px;
+                height: 56px;
+                font-size: 20px;
             }
         }
     }
