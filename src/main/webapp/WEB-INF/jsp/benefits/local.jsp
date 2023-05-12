@@ -364,6 +364,7 @@
                                         <c:when test="${not empty list}">
                                             <ul>
                                                 <c:forEach var="row" items="${list}" varStatus="loop">
+                                                    <c:set var="theme" value="${common:getTheme(fn:toLowerCase(row.themes))}"/>
                                                     <c:set var="hidden_class" value=""/>
                                                     <c:if test="${loop.count > 6}">
                                                         <c:set var="hidden_class" value="class='list-thumbnail__item--hide'"/>
@@ -381,8 +382,9 @@
                                                            data-ga-label="${common:getTagText(row.title)}">
                                                             <span style="background-image: url('${row.image}')"></span>
                                                             <div class="list-thumbnail--goods--theme">
-                                                                <p>test</p>
-                                                                <p>test2</p>
+                                                                <c:forEach var="sub_row" items="${fn:split(theme.main_title, '_')}">
+                                                                    <p>${sub_row}</p>
+                                                                </c:forEach>
                                                             </div>
                                                             <p>
                                                                 <fmt:parseDate var="strFromDate" pattern="yyyy-MM-dd" value="${row.from_date}"/>
@@ -429,14 +431,16 @@
                             <c:if test="${travel.result}">
                                 <c:set var="list" value="${travel.data.list}"/>
                                 <c:forEach var="row" items="${list}" varStatus="loop">
+                                    <c:set var="theme" value="${common:getTheme(fn:toLowerCase(row.themes))}"/>
                                     <div class="modal fade modal-goods" id="modal-goods-${row.seq}" tabindex="-1" data-bs-backdrop="static" aria-hidden="true">
                                         <div class="modal-dialog">
                                             <div class="modal-content">
                                                 <article>
                                                     <div style="background-image: url('${row.image}')"></div>
                                                     <div class="modal-goods--theme">
-                                                        <p>test</p>
-                                                        <p>test2</p>
+                                                        <c:forEach var="sub_row" items="${fn:split(theme.main_title, '_')}">
+                                                            <p>${sub_row}</p>
+                                                        </c:forEach>
                                                     </div>
                                                     <div class="modal-goods--category">
                                                         <p>

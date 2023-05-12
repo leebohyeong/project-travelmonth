@@ -140,6 +140,7 @@ public class Common
 					.orElse(null);
 			if (jsonObject != null) {
 				result.put("ga_tag", result.get("ga_tag") != null ? result.get("ga_tag") + "_" + jsonObject.get("ga_tag") : jsonObject.get("ga_tag"));
+				result.put("main_title", result.get("main_title") != null ? result.get("main_title") + "_" + jsonObject.get("main_title") : jsonObject.get("main_title"));
 				result.put("ga_tag_title", result.get("ga_tag_title") != null ? result.get("ga_tag_title") + "_" + jsonObject.get("ga_tag_title") : jsonObject.get("ga_tag_title"));
 			}
 		}
