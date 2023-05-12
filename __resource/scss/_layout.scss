@@ -1154,13 +1154,25 @@ body {
                 color: var(--modal-point-color);
                 font-weight: $font-weight-bold;
 
-                @include media-queries($from: lg) {
+                @include media-queries($from: xl) {
                     display: flex;
                     align-items: center;
                     justify-content: space-between;
                     flex-basis: 106px;
                     flex-shrink: 1;
                 }
+
+                @include media-queries($to: xl) {
+                    &::after {
+                        position: absolute;
+                        top: -1px;
+                        color: var(--modal-point-color);
+                        font-weight: $font-weight-bold;
+                        padding: 0 4px;
+                        content: ":";
+                    }
+                }
+
             }
 
             dd {
@@ -1169,17 +1181,17 @@ body {
                 word-break: break-all;
                 //flex-grow: 1;
 
-                @include media-queries($from: lg) {
+                @include media-queries($from: xl) {
                     display: flex;
-                }
 
-                &::before {
-                    display: inline-block;
-                    vertical-align: middle;
-                    color: var(--modal-point-color);
-                    font-weight: $font-weight-bold;
-                    padding: 0 4px;
-                    content: ":";
+                    &::before {
+                        display: inline-block;
+                        vertical-align: middle;
+                        color: var(--modal-point-color);
+                        font-weight: $font-weight-bold;
+                        padding: 0 4px;
+                        content: ":";
+                    }
                 }
             }
         }
