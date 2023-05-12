@@ -561,6 +561,10 @@ body {
     }
 
     &--benefits {
+        a span + div {
+            display: flex;
+        }
+
         a div {
             p {
                 line-height: 18px;
