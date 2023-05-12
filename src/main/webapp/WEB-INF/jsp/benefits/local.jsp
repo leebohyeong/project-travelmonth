@@ -187,10 +187,8 @@
                                                                 <c:if test="${not empty row.content_detail}">
                                                                     <div>
                                                                         <dt>
-                                                                            <span>혜</span>
-                                                                            <span>택</span>
-                                                                            <span>제</span>
-                                                                            <span>공</span>
+                                                                            <span>할</span>
+                                                                            <span>인</span>
                                                                             <span>조</span>
                                                                             <span>건</span>
                                                                         </dt>
@@ -200,10 +198,8 @@
                                                                 <c:if test="${not empty row.notes}">
                                                                     <div>
                                                                         <dt>
-                                                                            <span>참</span>
-                                                                            <span>고</span>
-                                                                            <span>사</span>
-                                                                            <span>항</span>
+                                                                            <span>장</span>
+                                                                            <span>소</span>
                                                                         </dt>
                                                                         <dd>${row.notes}</dd>
                                                                     </div>
@@ -213,8 +209,6 @@
                                                                 <c:if test="${not empty row.from_date && not empty row.to_date}">
                                                                     <div>
                                                                         <dt>
-                                                                            <span>진</span>
-                                                                            <span>행</span>
                                                                             <span>기</span>
                                                                             <span>간</span>
                                                                         </dt>
@@ -237,10 +231,10 @@
                                                                 <c:if test="${not empty row.content_detail}">
                                                                     <div>
                                                                         <dt>
-                                                                            <span>간</span>
-                                                                            <span>략</span>
-                                                                            <span>소</span>
-                                                                            <span>개</span>
+                                                                            <span>주</span>
+                                                                            <span>요</span>
+                                                                            <span>내</span>
+                                                                            <span>용</span>
                                                                         </dt>
                                                                         <dd>
                                                                             <div>${row.content_detail}</div>
@@ -265,8 +259,6 @@
                                                                 <c:if test="${not empty row.from_date && not empty row.to_date}">
                                                                     <div>
                                                                         <dt>
-                                                                            <span>진</span>
-                                                                            <span>행</span>
                                                                             <span>기</span>
                                                                             <span>간</span>
                                                                         </dt>
@@ -278,8 +270,8 @@
                                                                 <c:if test="${not empty row.content}">
                                                                     <div>
                                                                         <dt>
-                                                                            <span>소</span>
-                                                                            <span>개</span>
+                                                                            <span>주</span>
+                                                                            <span>요</span>
                                                                             <span>내</span>
                                                                             <span>용</span>
                                                                         </dt>
