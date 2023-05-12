@@ -218,7 +218,12 @@
             <div>
                 <h2>여행상품 특별 기획전</h2>
                 <p>여행가는 달 기간동안 여행업계가 선보이는 <strong>각종 혜택들을 만나보세요.</strong></p>
-                <a href="${pageContext.request.contextPath}/special/list.do">기획전 바로가기</a>
+                <a href="${pageContext.request.contextPath}/special/list.do"
+                   data-gtag-action="2023 여행가는 달_메인"
+                   data-gtag-category="main_banner_special"
+                   data-gtag-label="여행상품 특별 기획전"
+                   data-ga-category="2023 여행가는 달_메인"
+                   data-ga-action="배너_여행상품 특별 기획전">기획전 바로가기</a>
             </div>
         </aside>
         <section class="main__june">
@@ -360,7 +365,7 @@
                        data-gtag-category="main_event_more"
                        data-gtag-label="이벤트 바로가기"
                        data-ga-category="2023 여행가는 달_메인"
-                       data-ga-action="준이 추천해준 여행정보_${fn:toUpperCase(row.june_gb)}영역"
+                       data-ga-action="이벤트 바로가기"
                        data-ga-label="${common:getTagText(row.title)}">이벤트 바로가기</a>
                 </header>
                 <div class="event-carousel">
