@@ -113,6 +113,10 @@
                                                                data-gtag-category="trend_${theme.ga_tag}_product_list"
                                                                data-gtag-label="${common:getTagText(row.title)}">
                                                                 <span style="background-image: url('${row.image}')"></span>
+                                                                <div>
+                                                                    <p>농어촌/섬관광</p>
+                                                                    <p>반려동물동반여행</p>
+                                                                </div>
                                                                 <p>
                                                                     <fmt:parseDate var="strFromDate" pattern="yyyy-MM-dd" value="${row.from_date}"/>
                                                                     <fmt:formatDate var="fromDate" pattern="MM/dd" value="${strFromDate}"/>
@@ -159,6 +163,10 @@
                                                 <div class="modal-content">
                                                     <article>
                                                         <div style="background-image: url('${row.image}')"></div>
+                                                        <div>
+                                                            <p>농어촌/섬관광</p>
+                                                            <p>반려동물동반여행</p>
+                                                        </div>
                                                         <div>
                                                             <p>여행상품</p>
                                                             <p>
@@ -281,6 +289,10 @@
                                                                            data-gtag-category="trend_${theme.ga_tag}_contents_list"
                                                                            data-gtag-label="${common:getTagText(row.title)}">
                                                                             <span style="background-image: url('${row.image}')"></span>
+                                                                            <div>
+                                                                                <p>농어촌/섬관광</p>
+                                                                                <p>반려동물동반여행</p>
+                                                                            </div>
                                                                             <p>${row.title}</p>
                                                                         </a>
                                                                     </c:when>
@@ -291,6 +303,10 @@
                                                                            data-gtag-label="${common:getTagText(row.title)}"
                                                                            onclick="alert('추후 오픈 예정'); return false;">
                                                                             <span style="background-image: url('${row.image}')"></span>
+                                                                            <div>
+                                                                                <p>농어촌/섬관광</p>
+                                                                                <p>반려동물동반여행</p>
+                                                                            </div>
                                                                             <p>${row.title}</p>
                                                                         </a>
                                                                     </c:otherwise>
@@ -304,6 +320,10 @@
                                                                    data-gtag-category="trend_${theme.ga_tag}_contents_list"
                                                                    data-gtag-label="${common:getTagText(row.title)}">
                                                                     <span style="background-image: url('${row.image}')"></span>
+                                                                    <div>
+                                                                        <p>농어촌/섬관광</p>
+                                                                        <p>반려동물동반여행</p>
+                                                                    </div>
                                                                     <p>${row.title}</p>
                                                                 </a>
                                                             </c:otherwise>
