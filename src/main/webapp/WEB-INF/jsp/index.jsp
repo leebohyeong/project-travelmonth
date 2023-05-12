@@ -541,7 +541,7 @@
                    data-ga-action="여행가는 달 자세히보기">여행가는 달 자세히보기</a>
             </header>
             <div>
-                <iframe src="https://www.youtube.com/embed/vwjE85JBIH4"><span>여행으로[웃음을]재생하기</span></iframe>
+                <iframe src="https://www.youtube.com/embed/HWKzDx-aAgE"><span>여행으로[웃음을]재생하기</span></iframe>
             </div>
         </section>
         <section class="main__instagram">
