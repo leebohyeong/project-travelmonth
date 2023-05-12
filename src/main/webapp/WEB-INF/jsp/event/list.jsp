@@ -86,6 +86,11 @@
                                                         </li>
                                                     </c:forEach>
                                                 </ul>
+                                                <c:if test="${not empty progress}">
+                                                    <c:if test="${progress.result}">
+                                                        <c:if test="${fn:length(progress.data.list) > 6}"><p><button type="button">MORE</button></p></c:if>
+                                                    </c:if>
+                                                </c:if>
                                             </c:when>
                                             <c:otherwise><div><p>등록된 내용이 없습니다.</p></div></c:otherwise>
                                         </c:choose>
@@ -122,6 +127,11 @@
                                                         </li>
                                                     </c:forEach>
                                                 </ul>
+                                                <c:if test="${not empty ended}">
+                                                    <c:if test="${ended.result}">
+                                                        <c:if test="${fn:length(ended.data.list) > 6}"><p><button type="button">MORE</button></p></c:if>
+                                                    </c:if>
+                                                </c:if>
                                             </c:when>
                                             <c:otherwise><div><p>종료된 이벤트가 없습니다.</p></div></c:otherwise>
                                         </c:choose>

@@ -1,7 +1,14 @@
 import {findOne, find, on} from './helper';
 import Swiper, {Autoplay, Pagination, Navigation, Scrollbar, FreeMode} from "swiper";
+import {BenefitsMenu, ListThumbnail} from './common';
 
 const eventList = () => {
+
+    (() => {
+        const lists = find('.list-thumbnail');
+
+        lists.forEach(list => new ListThumbnail(list));
+    })();
 
     // swiper
     (() => {
