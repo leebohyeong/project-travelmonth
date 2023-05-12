@@ -24,19 +24,56 @@
                                 <div class="swiper-wrapper">
                                     <c:forEach var="row" items="${list}" varStatus="loop">
                                         <div class="swiper-slide">
-                                            <a href="${row.link}"
-                                               target="${row.link_target}"
-                                               data-gtag-action="2023 여행가는 달_여행상품 특별 기획전"
-                                               data-gtag-category="event_banner_top"
-                                               data-gtag-label="${common:getTagText(row.title)}"
-                                               data-ga-category="2023 여행가는 달_이벤트"
-                                               data-ga-action="이벤트_상단탑배너"
-                                               data-ga-label="${common:getTagText(row.title)}">
-                                                <picture>
-                                                    <source srcset="${row.banner}" media="(min-width: 768px)">
-                                                    <img src="${row.banner}" alt="${row.banner_alt}">
-                                                </picture>
-                                            </a>
+                                            <c:choose>
+                                                <c:when test="${row.registration_gb eq 'O'}">
+                                                    <c:choose>
+                                                        <c:when test="${not empty row.link}">
+                                                            <a href="${row.link}"
+                                                               target="${row.link_target}"
+                                                               data-gtag-action="2023 여행가는 달_여행상품 특별 기획전"
+                                                               data-gtag-category="event_banner_top"
+                                                               data-gtag-label="${common:getTagText(row.title)}"
+                                                               data-ga-category="2023 여행가는 달_이벤트"
+                                                               data-ga-action="이벤트_상단탑배너"
+                                                               data-ga-label="${common:getTagText(row.title)}">
+                                                                <picture>
+                                                                    <source srcset="${row.banner}" media="(min-width: 768px)">
+                                                                    <img src="${row.banner}" alt="${row.banner_alt}">
+                                                                </picture>
+                                                            </a>
+                                                        </c:when>
+                                                        <c:otherwise>
+                                                            <a href="#"
+                                                               data-gtag-action="2023 여행가는 달_여행상품 특별 기획전"
+                                                               data-gtag-category="event_banner_top"
+                                                               data-gtag-label="${common:getTagText(row.title)}"
+                                                               data-ga-category="2023 여행가는 달_이벤트"
+                                                               data-ga-action="이벤트_상단탑배너"
+                                                               data-ga-label="${common:getTagText(row.title)}"
+                                                               onclick="alert('추후 오픈 예정'); return false;">
+                                                                <picture>
+                                                                    <source srcset="${row.banner}" media="(min-width: 768px)">
+                                                                    <img src="${row.banner}" alt="${row.banner_alt}">
+                                                                </picture>
+                                                            </a>
+                                                        </c:otherwise>
+                                                    </c:choose>
+                                                </c:when>
+                                                <c:otherwise>
+                                                    <a
+                                                       data-gtag-action="2023 여행가는 달_여행상품 특별 기획전"
+                                                       data-gtag-category="event_banner_top"
+                                                       data-gtag-label="${common:getTagText(row.title)}"
+                                                       data-ga-category="2023 여행가는 달_이벤트"
+                                                       data-ga-action="이벤트_상단탑배너"
+                                                       data-ga-label="${common:getTagText(row.title)}">
+                                                        <picture>
+                                                            <source srcset="${row.banner}" media="(min-width: 768px)">
+                                                            <img src="${row.banner}" alt="${row.banner_alt}">
+                                                        </picture>
+                                                    </a>
+                                                </c:otherwise>
+                                            </c:choose>
                                         </div>
                                     </c:forEach>
                                 </div>
@@ -70,20 +107,57 @@
                                                         <c:if test="${loop.count > 6}">
                                                             <c:set var="hidden_class" value="class='list-thumbnail__item--hide'"/>
                                                         </c:if>
-                                                        <li ${hidden_class}>
-                                                            <a href="${row.link}"
-                                                               target="${row.link_target}"
-                                                               data-gtag-action="2023 여행가는 달_여행상품 특별 기획전"
-                                                               data-gtag-category="event_banner_list"
-                                                               data-gtag-label="${common:getTagText(row.title)}"
-                                                               data-ga-category="2023 여행가는 달_이벤트"
-                                                               data-ga-action="이벤트_리스트"
-                                                               data-ga-label="${common:getTagText(row.title)}">
-                                                                <span style="background-image: url('${row.thumbnail}')"></span>
-                                                                <p>${row.title}</p>
-                                                                <p>${row.from_date} ~ ${row.to_date}</p>
-                                                            </a>
-                                                        </li>
+                                                        <c:choose>
+                                                            <c:when test="${row.registration_gb eq 'O'}">
+                                                                <c:choose>
+                                                                    <c:when test="${not empty row.link}">
+                                                                        <li ${hidden_class}>
+                                                                            <a href="${row.link}"
+                                                                               target="${row.link_target}"
+                                                                               data-gtag-action="2023 여행가는 달_여행상품 특별 기획전"
+                                                                               data-gtag-category="event_banner_list"
+                                                                               data-gtag-label="${common:getTagText(row.title)}"
+                                                                               data-ga-category="2023 여행가는 달_이벤트"
+                                                                               data-ga-action="이벤트_리스트"
+                                                                               data-ga-label="${common:getTagText(row.title)}">
+                                                                                <span style="background-image: url('${row.thumbnail}')"></span>
+                                                                                <p>${row.title}</p>
+                                                                                <p>${row.from_date} ~ ${row.to_date}</p>
+                                                                            </a>
+                                                                        </li>
+                                                                    </c:when>
+                                                                    <c:otherwise>
+                                                                        <li ${hidden_class}>
+                                                                            <a href="#"
+                                                                               data-gtag-action="2023 여행가는 달_여행상품 특별 기획전"
+                                                                               data-gtag-category="event_banner_list"
+                                                                               data-gtag-label="${common:getTagText(row.title)}"
+                                                                               data-ga-category="2023 여행가는 달_이벤트"
+                                                                               data-ga-action="이벤트_리스트"
+                                                                               data-ga-label="${common:getTagText(row.title)}"
+                                                                               onclick="alert('추후 오픈 예정'); return false;">
+                                                                                <span style="background-image: url('${row.thumbnail}')"></span>
+                                                                                <p>${row.title}</p>
+                                                                                <p>${row.from_date} ~ ${row.to_date}</p>
+                                                                            </a>
+                                                                        </li>
+                                                                    </c:otherwise>
+                                                                </c:choose>
+                                                            </c:when>
+                                                            <c:otherwise>
+                                                                <a
+                                                                   data-gtag-action="2023 여행가는 달_여행상품 특별 기획전"
+                                                                   data-gtag-category="event_banner_list"
+                                                                   data-gtag-label="${common:getTagText(row.title)}"
+                                                                   data-ga-category="2023 여행가는 달_이벤트"
+                                                                   data-ga-action="이벤트_리스트"
+                                                                   data-ga-label="${common:getTagText(row.title)}">
+                                                                    <span style="background-image: url('${row.thumbnail}')"></span>
+                                                                    <p>${row.title}</p>
+                                                                    <p>${row.from_date} ~ ${row.to_date}</p>
+                                                                </a>
+                                                            </c:otherwise>
+                                                        </c:choose>
                                                     </c:forEach>
                                                 </ul>
                                                 <c:if test="${not empty progress}">
@@ -111,20 +185,56 @@
                                                         <c:if test="${loop.count > 6}">
                                                             <c:set var="hidden_class" value="class='list-thumbnail__item--hide'"/>
                                                         </c:if>
-                                                        <li ${hidden_class}>
-                                                            <a href="${row.link}"
-                                                               target="${row.link_target}"
-                                                               data-gtag-action="2023 여행가는 달_여행상품 특별 기획전"
-                                                               data-gtag-category="event_banner_list"
-                                                               data-gtag-label="${common:getTagText(row.title)}"
-                                                               data-ga-category="2023 여행가는 달_이벤트"
-                                                               data-ga-action="이벤트_리스트"
-                                                               data-ga-label="${common:getTagText(row.title)}">
-                                                                <span style="background-image: url('${row.thumbnail}')"></span>
-                                                                <p>${row.title}</p>
-                                                                <p>${row.from_date} ~ ${row.to_date}</p>
-                                                            </a>
-                                                        </li>
+                                                        <c:choose>
+                                                            <c:when test="${row.registration_gb eq 'O'}">
+                                                                <c:choose>
+                                                                    <c:when test="${not empty row.link}">
+                                                                        <li ${hidden_class}>
+                                                                            <a href="${row.link}"
+                                                                               target="${row.link_target}"
+                                                                               data-gtag-action="2023 여행가는 달_여행상품 특별 기획전"
+                                                                               data-gtag-category="event_banner_list"
+                                                                               data-gtag-label="${common:getTagText(row.title)}"
+                                                                               data-ga-category="2023 여행가는 달_이벤트"
+                                                                               data-ga-action="이벤트_리스트"
+                                                                               data-ga-label="${common:getTagText(row.title)}">
+                                                                                <span style="background-image: url('${row.thumbnail}')"></span>
+                                                                                <p>${row.title}</p>
+                                                                                <p>${row.from_date} ~ ${row.to_date}</p>
+                                                                            </a>
+                                                                        </li>
+                                                                    </c:when>
+                                                                    <c:otherwise>
+                                                                        <li ${hidden_class}>
+                                                                            <a href="#"
+                                                                               data-gtag-action="2023 여행가는 달_여행상품 특별 기획전"
+                                                                               data-gtag-category="event_banner_list"
+                                                                               data-gtag-label="${common:getTagText(row.title)}"
+                                                                               data-ga-category="2023 여행가는 달_이벤트"
+                                                                               data-ga-action="이벤트_리스트"
+                                                                               data-ga-label="${common:getTagText(row.title)}"
+                                                                               onclick="alert('추후 오픈 예정'); return false;">
+                                                                                <span style="background-image: url('${row.thumbnail}')"></span>
+                                                                                <p>${row.title}</p>
+                                                                                <p>${row.from_date} ~ ${row.to_date}</p>
+                                                                            </a>
+                                                                        </li>
+                                                                    </c:otherwise>
+                                                                </c:choose>
+                                                            </c:when>
+                                                            <c:otherwise>
+                                                                <a data-gtag-action="2023 여행가는 달_여행상품 특별 기획전"
+                                                                      data-gtag-category="event_banner_list"
+                                                                      data-gtag-label="${common:getTagText(row.title)}"
+                                                                      data-ga-category="2023 여행가는 달_이벤트"
+                                                                      data-ga-action="이벤트_리스트"
+                                                                      data-ga-label="${common:getTagText(row.title)}">
+                                                                    <span style="background-image: url('${row.thumbnail}')"></span>
+                                                                    <p>${row.title}</p>
+                                                                    <p>${row.from_date} ~ ${row.to_date}</p>
+                                                                </a>
+                                                            </c:otherwise>
+                                                        </c:choose>
                                                     </c:forEach>
                                                 </ul>
                                                 <c:if test="${not empty ended}">
