@@ -70,7 +70,7 @@
                                                            data-ga-action="${data_ga_action}"
                                                            data-ga-label="${common:getTagText(row.title)}">
                                                             <span style="background-image: url('${row.image}')"></span>
-                                                            <div>
+                                                            <div class="list-thumbnail--benefits--category">
                                                                 <p>
                                                                     <c:choose>
                                                                         <c:when test="${row.enjoy_gb eq 'D'}">할인혜택</c:when>
@@ -108,7 +108,7 @@
                                                 <div class="modal-content">
                                                     <article>
                                                         <div style="background-image: url('${row.image}')"></div>
-                                                        <div>
+                                                        <div class="modal-benefits--category">
                                                             <p>
                                                                 <c:choose>
                                                                     <c:when test="${row.enjoy_gb eq 'D'}">할인혜택</c:when>

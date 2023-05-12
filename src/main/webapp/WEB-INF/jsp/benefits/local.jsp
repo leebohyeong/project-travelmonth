@@ -128,7 +128,7 @@
                                             <div class="modal-content">
                                                 <article>
                                                     <div style="background-image: url('${row.image}')"></div>
-                                                    <div>
+                                                    <div class="modal-benefits--category">
                                                         <p>
                                                             <c:choose>
                                                                 <c:when test="${row.enjoy_gb eq 'D'}">할인혜택</c:when>
@@ -380,6 +380,10 @@
                                                            data-ga-action="${fn:replace(local.data.name_kr, ',', '')}_여행상품_리스트"
                                                            data-ga-label="${common:getTagText(row.title)}">
                                                             <span style="background-image: url('${row.image}')"></span>
+                                                            <div class="list-thumbnail--goods--theme">
+                                                                <p>test</p>
+                                                                <p>test2</p>
+                                                            </div>
                                                             <p>
                                                                 <fmt:parseDate var="strFromDate" pattern="yyyy-MM-dd" value="${row.from_date}"/>
                                                                 <fmt:formatDate var="fromDate" pattern="MM/dd" value="${strFromDate}"/>
@@ -430,7 +434,11 @@
                                             <div class="modal-content">
                                                 <article>
                                                     <div style="background-image: url('${row.image}')"></div>
-                                                    <div>
+                                                    <div class="modal-goods--theme">
+                                                        <p>test</p>
+                                                        <p>test2</p>
+                                                    </div>
+                                                    <div class="modal-goods--category">
                                                         <p>
                                                             <c:choose>
                                                                 <c:when test="${row.travel_gb eq 'C'}">여행콘텐츠</c:when>
