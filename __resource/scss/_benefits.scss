@@ -731,6 +731,7 @@
                         grid-row-start: 3;
                         padding: 30px math.ceil(percentage(math.div(50, 330))) 0;
                         border-top: 1px dashed #fff;
+                        border-radius: 0 0 14px 14px;
 
                         &::before,
                         &::after {
@@ -836,20 +837,20 @@
 
                     dl {
                         position: relative;
+                        width: 230px;
                         background: var(--benefits-program-ticket-color-2);
                         color: #fff;
                         font-family: "GmarketSans", sans-serif;
                         text-align: center;
 
                         @include media-queries($to: lg) {
-                            max-width: 240px;
-                            margin: 8px auto 0;
+                            margin: 8px auto;
                             padding: 12px 10px 8px;
                             border-radius: 8px;
                         }
 
                         @include media-queries($from: lg) {
-                            margin-top: 12px;
+                            margin: 12px auto;
                             padding: 20px 10px 12px;
                             border-radius: 10px;
                         }
@@ -1123,10 +1124,16 @@
 
     @each $theme in 'car' {
         [data-theme="#{$theme}"] > div:nth-child(2) {
-            padding: 45px 16% 30px;
+            padding: 90px 10% 52px;
 
-            @include media-queries($from: lg) {
-                padding: 90px 10% 52px;
+            @include media-queries($to: lg) {
+                padding: 45px 16% 30px;
+            }
+        }
+
+        [data-theme="#{$theme}"] > div:nth-child(4) {
+            @include media-queries($to: lg) {
+                border-radius: 0 0 14px 14px;
             }
         }
     }
@@ -1144,6 +1151,14 @@
     @each $theme in 'stay', 'promotion', 'camping', 'vacation' {
         [data-theme="#{$theme}"] > div:nth-child(1) h3::before {
             background-image: url("/travelmonth/assets/images/benefits/stay/icon_#{$theme}.png");
+        }
+    }
+
+    @each $theme in 'stay' {
+        [data-theme="#{$theme}"] > div:nth-child(2) {
+            @include media-queries($to: lg) {
+                border-radius: 0 0 14px 14px;
+            }
         }
     }
 
@@ -1193,6 +1208,7 @@
             
             @include media-queries($to: lg) {
                 grid-row-start: 2 !important;
+                border-radius: 0 0 14px 14px;
             }
         }
 
