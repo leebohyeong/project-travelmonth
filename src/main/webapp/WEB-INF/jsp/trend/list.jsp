@@ -117,10 +117,10 @@
                                                                data-bs-target="#modal-goods-${row.seq}"
                                                                data-gtag-action="2023 여행가는 달_trend관"
                                                                data-gtag-category="trend_${theme.ga_tag}_product_list"
-                                                               data-gtag-label="${common:getTagText(row.title)}"
+                                                               data-gtag-label="${fn:trim(common:getTagText(row.title))}"
                                                                data-ga-category="2023 여행가는 달_여행트렌드관"
                                                                data-ga-action="${theme.ga_tag_title}_여행상품_리스트"
-                                                               data-ga-label="${common:getTagText(row.title)}">
+                                                               data-ga-label="${fn:trim(common:getTagText(row.title))}">
                                                                 <span style="background-image: url('${row.image}')"></span>
                                                                 <div class="list-thumbnail--goods--theme">
                                                                     <c:forEach var="sub_row" items="${fn:split(theme.main_title, '_')}">
@@ -252,10 +252,10 @@
                                                                        target="_blank"
                                                                        data-gtag-action="2023 여행가는 달_trend관"
                                                                        data-gtag-category="trend_${theme.ga_tag}_product_popup"
-                                                                       data-gtag-label="${common:getTagText(row.title)}"
+                                                                       data-gtag-label="${fn:trim(common:getTagText(row.title))}"
                                                                        data-ga-category="2023 여행가는 달_여행트렌드관"
                                                                        data-ga-action="${theme.ga_tag_title}_여행상품_팝업"
-                                                                       data-ga-label="${common:getTagText(row.title)}">
+                                                                       data-ga-label="${fn:trim(common:getTagText(row.title))}">
                                                                         <span>자세히 보기</span>
                                                                     </a>
                                                                 </c:when>
@@ -264,10 +264,10 @@
                                                                        target="_blank"
                                                                        data-gtag-action="2023 여행가는 달_trend관"
                                                                        data-gtag-category="trend_${theme.ga_tag}_product_popup"
-                                                                       data-gtag-label="${common:getTagText(row.title)}"
+                                                                       data-gtag-label="${fn:trim(common:getTagText(row.title))}"
                                                                        data-ga-category="2023 여행가는 달_여행트렌드관"
                                                                        data-ga-action="${theme.ga_tag_title}_여행상품_팝업"
-                                                                       data-ga-label="${common:getTagText(row.title)}"
+                                                                       data-ga-label="${fn:trim(common:getTagText(row.title))}"
                                                                        onclick="alert('추후 오픈 예정'); return false;">
                                                                         <span>자세히 보기</span>
                                                                     </a>
@@ -306,10 +306,10 @@
                                                                            target="_blank"
                                                                            data-gtag-action="2023 여행가는 달_trend관"
                                                                            data-gtag-category="trend_${theme.ga_tag}_contents_list"
-                                                                           data-gtag-label="${common:getTagText(row.title)}"
+                                                                           data-gtag-label="${fn:trim(common:getTagText(row.title))}"
                                                                            data-ga-category="2023 여행가는 달_여행트렌드관"
-                                                                           data-ga-action="${theme.ga_tag_title}_여행콘텐츠_리스트"
-                                                                           data-ga-label="${common:getTagText(row.title)}">
+                                                                           data-ga-action="${fn:trim(theme.ga_tag_title)}_여행콘텐츠_리스트"
+                                                                           data-ga-label="${fn:trim(common:getTagText(row.title))}">
                                                                             <span style="background-image: url('${row.image}')"></span>
                                                                             <div class="list-thumbnail--contents--theme">
                                                                                 <c:forEach var="sub_row" items="${fn:split(theme.main_title, '_')}">
@@ -323,10 +323,10 @@
                                                                         <a href="#"
                                                                            data-gtag-action="2023 여행가는 달_trend관"
                                                                            data-gtag-category="trend_${theme.ga_tag}_contents_list"
-                                                                           data-gtag-label="${common:getTagText(row.title)}"
+                                                                           data-gtag-label="${fn:trim(common:getTagText(row.title))}"
                                                                            data-ga-category="2023 여행가는 달_여행트렌드관"
-                                                                           data-ga-action="${theme.ga_tag_title}_여행콘텐츠_리스트"
-                                                                           data-ga-label="${common:getTagText(row.title)}"
+                                                                           data-ga-action="${fn:trim(theme.ga_tag_title)}_여행콘텐츠_리스트"
+                                                                           data-ga-label="${fn:trim(common:getTagText(row.title))}"
                                                                            onclick="alert('추후 오픈 예정'); return false;">
                                                                             <span style="background-image: url('${row.image}')"></span>
                                                                             <div class="list-thumbnail--contents--theme">
@@ -345,10 +345,10 @@
                                                                    data-bs-target="#modal-trend-content-${row.seq}"
                                                                    data-gtag-action="2023 여행가는 달_trend관"
                                                                    data-gtag-category="trend_${theme.ga_tag}_contents_list"
-                                                                   data-gtag-label="${common:getTagText(row.title)}"
+                                                                   data-gtag-label="${fn:trim(common:getTagText(row.title))}"
                                                                    data-ga-category="2023 여행가는 달_여행트렌드관"
-                                                                   data-ga-action="${theme.ga_tag_title}_여행콘텐츠_리스트"
-                                                                   data-ga-label="${common:getTagText(row.title)}">
+                                                                   data-ga-action="${fn:trim(theme.ga_tag_title)}_여행콘텐츠_리스트"
+                                                                   data-ga-label="${fn:trim(common:getTagText(row.title))}">
                                                                     <span style="background-image: url('${row.image}')"></span>
                                                                     <div class="list-thumbnail--contents--theme">
                                                                         <c:forEach var="sub_row" items="${fn:split(theme.main_title, '_')}">
@@ -435,10 +435,10 @@
                                                                            target="_blank"
                                                                            data-gtag-action="2023 여행가는 달_trend관"
                                                                            data-gtag-category="trend_${theme.ga_tag}_contents_popup"
-                                                                           data-gtag-label="${common:getTagText(row.title)}"
+                                                                           data-gtag-label="${fn:trim(common:getTagText(row.title))}"
                                                                            data-ga-category="2023 여행가는 달_여행트렌드관"
-                                                                           data-ga-action="${theme.ga_tag_title}_여행콘텐츠_팝업"
-                                                                           data-ga-label="${common:getTagText(row.title)}">자세히 보기</a>
+                                                                           data-ga-action="${fn:trim(theme.ga_tag_title)}_여행콘텐츠_팝업"
+                                                                           data-ga-label="${fn:trim(common:getTagText(row.title))}">자세히 보기</a>
                                                                     </p>
                                                                 </c:if>
                                                             </div>
