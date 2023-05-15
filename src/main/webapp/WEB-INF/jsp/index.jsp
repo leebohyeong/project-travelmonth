@@ -513,7 +513,6 @@
                         <img src="/travelmonth/assets/images/intro/img_organization_6_6.jpg" alt="카모아">
                         <img src="/travelmonth/assets/images/intro/img_organization_6_7.jpg" alt="DMZ FLOWER TEA">
                         <img src="/travelmonth/assets/images/intro/img_organization_6_8.jpg" alt="미스터멘션">
-                        <img src="/travelmonth/assets/images/intro/img_organization_6_9.jpg" alt="VIDEO MONSTER">
                         <img src="/travelmonth/assets/images/intro/img_organization_6_10.jpg" alt="여행공방">
                         <img src="/travelmonth/assets/images/intro/img_organization_6_11.jpg" alt="임자만났네">
                         <img src="/travelmonth/assets/images/intro/img_organization_6_12.jpg" alt="JINAIR">

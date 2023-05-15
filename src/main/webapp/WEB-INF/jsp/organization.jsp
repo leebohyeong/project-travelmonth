@@ -121,7 +121,6 @@
                     <li style="background-image: url('/travelmonth/assets/images/intro/img_organization_6_6.jpg')"><span>카모아</span></li>
                     <li style="background-image: url('/travelmonth/assets/images/intro/img_organization_6_7.jpg')"><span>DMZ FLOWER TEA</span></li>
                     <li style="background-image: url('/travelmonth/assets/images/intro/img_organization_6_8.jpg')"><span>미스터멘션</span></li>
-                    <li style="background-image: url('/travelmonth/assets/images/intro/img_organization_6_9.jpg')"><span>VIDEO MONSTER</span></li>
                     <li style="background-image: url('/travelmonth/assets/images/intro/img_organization_6_10.jpg')"><span>여행공방</span></li>
                     <li style="background-image: url('/travelmonth/assets/images/intro/img_organization_6_11.jpg')"><span>임자만났네</span></li>
                     <li style="background-image: url('/travelmonth/assets/images/intro/img_organization_6_12.jpg')"><span>JINAIR</span></li>
