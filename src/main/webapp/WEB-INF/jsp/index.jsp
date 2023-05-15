@@ -23,7 +23,7 @@
                                                 <a href="${row.link}"
                                                    target="${row.link_target}"
                                                    data-gtag-action="2023 여행가는 달_메인"
-                                                   data-gtag-category="main_showcase_${row.seq}}"
+                                                   data-gtag-category="main_showcase_${row.seq}"
                                                    data-gtag-label="메인 쇼케이스 ${row.seq}"
                                                    data-ga-category="2023 여행가는 달_메인"
                                                    data-ga-action="메인 쇼케이스 ${row.seq}">
