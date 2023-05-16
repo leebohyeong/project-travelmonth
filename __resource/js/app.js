@@ -2,7 +2,7 @@ import App from 'hwaly-app';
 import * as bootstrap from 'bootstrap';
 window.bootstrap = bootstrap;
 
-import {globalNav, googleTag, googleAnalytics} from './common';
+import {globalNav, googleTag, googleAnalytics, initOpenModal} from './common';
 import {main} from './main';
 import {benefits, benefitsLocal, benefitsPlay} from './benefits';
 import {trendList} from './trend';
@@ -13,7 +13,7 @@ import {specialList} from './special';
 
 const app = new App();
 
-app.add({globalNav, googleTag, googleAnalytics});
+app.add({globalNav, googleTag, googleAnalytics, initOpenModal});
 app.add({benefits, benefitsLocal, benefitsPlay});
 app.add({trendList});
 app.add({main});
@@ -21,6 +21,6 @@ app.add({travelmonthIntro});
 app.add({eventList});
 app.add({specialList});
 
-app.auto('globalNav', 'googleTag', 'googleAnalytics');
+app.auto('globalNav', 'googleTag', 'googleAnalytics', 'initOpenModal');
 
 app.readyAndRun();

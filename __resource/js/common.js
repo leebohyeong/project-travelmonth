@@ -101,10 +101,26 @@ const googleAnalytics = () => {
     triggers.forEach(trigger => on(trigger, 'click', () => fireEvent(trigger)));
 };
 
+const initOpenModal = () => {
+    const urlSearchParams = new URLSearchParams(location.search);
+    const paramModal = urlSearchParams.get('modal');
+
+    if (paramModal) {
+        const modalId = `#modal-${paramModal}`;
+        const modal = findOne(modalId);
+        const trigger = findOne(`[href="${modalId}"]`);
+
+        if (modal && trigger) {
+            trigger.click();
+        }
+    }
+};
+
 export {
     globalNav,
     googleTag,
     googleAnalytics,
     ListThumbnail,
     BenefitsMenu,
+    initOpenModal,
 }
