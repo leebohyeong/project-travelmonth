@@ -513,8 +513,12 @@
                                                         </dl>
                                                         <p>
                                                             <c:choose>
-                                                                <c:when test="${not empty row.link}">
-                                                                    <a href="${row.link}"
+                                                                <c:when test="${not empty row.pc_link}">
+                                                                    <c:set var="href" value="${row.pc_link}"/>
+                                                                    <c:if test="${common:isMobile()}">
+                                                                        <c:set var="href" value="${row.mo_link}"/>
+                                                                    </c:if>
+                                                                    <a href="${href}"
                                                                        target="_blank"
                                                                        data-gtag-action="2023 여행가는달_여행혜택 지역별"
                                                                        data-gtag-category="local_${fn:replace(fn:toLowerCase(local.data.name_en), ',', '_')}_product_popup"
