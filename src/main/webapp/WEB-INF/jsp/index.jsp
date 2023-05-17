@@ -522,6 +522,7 @@
                         <img src="/travelmonth/assets/images/intro/img_organization_6_15.jpg" alt="파주 임진각평화곤둘라">
                         <img src="/travelmonth/assets/images/intro/img_organization_6_16.jpg" alt="하이웨어">
                         <img src="/travelmonth/assets/images/intro/img_organization_6_17.jpg" alt="호텔스컴바인">
+                        <img src="/travelmonth/assets/images/intro/img_organization_6_18.jpg" alt="노랑풍선">
                     </div>
                 </div>
             </div>

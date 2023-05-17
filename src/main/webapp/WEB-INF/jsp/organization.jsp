@@ -129,7 +129,7 @@
                     <li style="background-image: url('/travelmonth/assets/images/intro/img_organization_6_15.jpg')"><span>파주 임진각평화곤둘라</span></li>
                     <li style="background-image: url('/travelmonth/assets/images/intro/img_organization_6_16.jpg')"><span>하이웨어</span></li>
                     <li style="background-image: url('/travelmonth/assets/images/intro/img_organization_6_17.jpg')"><span>호텔스컴바인</span></li>
-                    </li>
+                    <li style="background-image: url('/travelmonth/assets/images/intro/img_organization_6_18.jpg')"><span>노랑풍선</span></li>
                 </ul>
             </div>
         </section>
