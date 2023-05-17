@@ -1267,5 +1267,8 @@ body {
 }
 
 [data-movie-id] {
+    width: 100%;
+    height: auto;
+    border: none;
     aspect-ratio: 16 / 9;
 }
