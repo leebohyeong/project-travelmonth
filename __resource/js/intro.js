@@ -1,4 +1,5 @@
 import {find, findOne, on} from "./helper";
+import {Movie} from "./common";
 
 const travelmonthIntro = () => {
     //tab
@@ -30,6 +31,8 @@ const travelmonthIntro = () => {
             })
         );
     })();
+
+    new Movie();
 };
 
 export {

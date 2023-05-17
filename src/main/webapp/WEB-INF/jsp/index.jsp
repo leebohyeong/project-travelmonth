@@ -239,7 +239,7 @@
                                 <c:set var="list" value="${june.data.list}"/>
                                 <c:forEach var="row" items="${list}" varStatus="loop">
                                     <c:if test="${row.june_gb eq 'A'}">
-                                        <div id="player"></div>
+                                        <div data-movie-id="UgTrlxzy47k"></div>
                                         <%--<iframe src="${row.link}">
                                             <span>여행가는달 유튜브영상</span>
                                         </iframe>--%>
@@ -522,6 +522,7 @@
                         <img src="/travelmonth/assets/images/intro/img_organization_6_15.jpg" alt="파주 임진각평화곤둘라">
                         <img src="/travelmonth/assets/images/intro/img_organization_6_16.jpg" alt="하이웨어">
                         <img src="/travelmonth/assets/images/intro/img_organization_6_17.jpg" alt="호텔스컴바인">
+                        <img src="/travelmonth/assets/images/intro/img_organization_6_18.jpg" alt="노랑풍선">
                     </div>
                 </div>
             </div>
@@ -541,7 +542,7 @@
                    data-ga-action="여행가는 달 자세히보기">여행가는 달 자세히보기</a>
             </header>
             <div>
-                <iframe src="https://www.youtube.com/embed/HWKzDx-aAgE"><span>여행으로[웃음을]재생하기</span></iframe>
+                <div data-movie-id="HWKzDx-aAgE"></div>
             </div>
         </section>
         <section class="main__instagram">
@@ -583,46 +584,6 @@
         </section>
     </div>
 </div>
-<script>
-    // 2. This code loads the IFrame Player API code asynchronously.
-    var tag = document.createElement('script');
-
-    tag.src = "https://www.youtube.com/iframe_api";
-    var firstScriptTag = document.getElementsByTagName('script')[0];
-    firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
-
-    // 3. This function creates an <iframe> (and YouTube player)
-    //    after the API code downloads.
-    var player;
-    function onYouTubeIframeAPIReady() {
-        player = new YT.Player('player', {
-            videoId: 'UgTrlxzy47k',
-            events: {
-                'onReady': onPlayerReady,
-                'onStateChange': onPlayerStateChange
-            }
-        });
-    }
-
-    // 4. The API will call this function when the video player is ready.
-    function onPlayerReady(event) {
-        event.target.playVideo();
-    }
-
-    // 5. The API calls this function when the player's state changes.
-    //    The function indicates that when playing a video (state=1),
-    //    the player should play for six seconds and then stop.
-    var done = false;
-    function onPlayerStateChange(event) {
-        if (event.data == YT.PlayerState.PLAYING && !done) {
-            setTimeout(stopVideo, 6000);
-            done = true;
-        }
-    }
-    function stopVideo() {
-        player.stopVideo();
-    }
-</script>
 <%@ include file="include/include-footer.jspf" %>
 </body>
 </html>

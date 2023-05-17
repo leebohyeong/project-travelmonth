@@ -10,12 +10,12 @@
 <div id="container">
     <article class="event-june">
         <section>
-            <div class="screen_out"><h2>여행가는 JUNE <br>
+            <div class="screen-out"><h2>여행가는 JUNE <br>
                 같이 가 ~ 준!</h2>
                 <p>나랑 여행 갈래요? 같이 여행가기로 약속!</p></div>
         </section>
         <section>
-            <div class="screen_out"><h2>6월 여행셀럽 준과 떠나는 <br>
+            <div class="screen-out"><h2>6월 여행셀럽 준과 떠나는 <br>
                 특별한 여행 찬스</h2>
                 <p>지금 바로 사연과 함께 신청해 주세요!</p>
                 <p><strong>모집인원</strong> 회차별 20명</p>
@@ -23,7 +23,7 @@
                 <p><strong>당첨자 발표</strong> 개별 연락을 통해 별도 안내 예정</p></div>
         </section>
         <section>
-            <div class="screen_out"><h2>준이와 함께 떠나는 1차여행</h2>
+            <div class="screen-out"><h2>준이와 함께 떠나는 1차여행</h2>
                 <p>5/25(목) 대전 출발 → 전북 고창 도착(왕복)</p>
                 <p>#농촌관광 #고창농촌팜파티 #당일치기</p>
                 <p>농촌으로 떠나는 작은 여행</p>
@@ -70,7 +70,7 @@
                     data-gtag-category="june_time_table_1"
                     data-ga-category="2023 여행가는 달_같이가 준 이벤트"
                     data-ga-action="타임테이블1 확인하기">
-                <span class="screen_out">타임테이블 확인하기</span>
+                <span class="screen-out">타임테이블 확인하기</span>
             </button>
             <button type="button"
                     data-bs-toggle="modal"
@@ -79,11 +79,11 @@
                     data-gtag-category="june_time_table_2"
                     data-ga-category="2023 여행가는 달_같이가 준 이벤트"
                     data-ga-action="타임테이블2 확인하기">
-                <span class="screen_out">타임테이블 확인하기</span>
+                <span class="screen-out">타임테이블 확인하기</span>
             </button>
         </section>
         <section>
-            <div class="screen_out"><h2>참여방법</h2>
+            <div class="screen-out"><h2>참여방법</h2>
                 <ul>
                     <li><strong>STEP 1</strong> 아래의 [준이랑 여행가기] 버튼 클릭</li>
                     <li><strong>STEP 2</strong> <br>
@@ -107,9 +107,9 @@
                data-gtag-action="2023 여행가는 달_같이가 준 이벤트"
                data-gtag-category="june_with_go"
                data-ga-category="2023 여행가는 달_같이가 준 이벤트"
-               data-ga-action="준이랑 여행가기"><span class="screen_out">준이랑 여행가기</span></a></section>
+               data-ga-action="준이랑 여행가기"><span class="screen-out">준이랑 여행가기</span></a></section>
         <section>
-            <div class="screen_out">
+            <div class="screen-out">
                 <h2>유의사항</h2>
                 <p>이벤트는 개인정보 연락처 기준 1인 당 1회만 참여 가능합니다. (중복참여 불가)</p>
                 <p>단체여행 당첨자에게는 개별 전화 혹은 문자를 통해 단체여행 당첨 및 프로그램 관련 안내를 드립니다.</p>
@@ -134,12 +134,12 @@
              tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
-                    <div class="modal-header"><h2 class="modal-title screen_out">고창농촌팜파티</h2>
+                    <div class="modal-header"><h2 class="modal-title screen-out">고창농촌팜파티</h2>
                         <button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"><span
-                                class="screen_out">닫기</span></button>
+                                class="screen-out">닫기</span></button>
                     </div>
                     <div class="modal-body"><img src="/travelmonth/assets/images/event/june/img_event_june_modal_1.png">
-                        <div class="screen_out">
+                        <div class="screen-out">
                             <table>
                                 <thead>
                                 <tr>
@@ -213,12 +213,12 @@
              tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
-                    <div class="modal-header"><h2 class="modal-title screen_out">춘천마임축제</h2>
+                    <div class="modal-header"><h2 class="modal-title screen-out">춘천마임축제</h2>
                         <button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"><span
-                                class="screen_out">닫기</span></button>
+                                class="screen-out">닫기</span></button>
                     </div>
                     <div class="modal-body"><img src="/travelmonth/assets/images/event/june/img_event_june_modal_2.png">
-                        <div class="screen_out">
+                        <div class="screen-out">
                             <table>
                                 <thead>
                                 <tr>

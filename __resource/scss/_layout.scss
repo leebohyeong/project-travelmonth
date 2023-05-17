@@ -1254,7 +1254,7 @@ body {
     --modal-point-color: #65c543;
 }
 
-.screen_out {
+.screen-out {
     overflow: hidden;
     position: absolute;
     width: 1px;
@@ -1264,4 +1264,8 @@ body {
     white-space: nowrap;
     clip: rect(0, 0, 0, 0);
     clip-path: inset(0 0 99.9% 99.9%);
+}
+
+[data-movie-id] {
+    aspect-ratio: 16 / 9;
 }

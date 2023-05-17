@@ -116,6 +116,39 @@ const initOpenModal = () => {
     }
 };
 
+const Movie = class {
+    constructor() {
+        this.#loadApi();
+        this.players = {};
+    }
+
+    #loadApi() {
+        const tag = document.createElement('script');
+
+        tag.src = "https://www.youtube.com/iframe_api";
+        const firstScriptTag = document.getElementsByTagName('script')[0];
+        firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+        window.onYouTubeIframeAPIReady = () => this.init();
+    }
+
+    init() {
+        const movieContainers = find('[data-movie-id]');
+
+        movieContainers.reduce((players, movie) => {
+            const {movieId: videoId} = movie.dataset;
+
+            players[videoId] = new window.YT.Player(movie, {
+                width: '100%',
+                height: 'auto',
+                videoId,
+            });
+
+            return players;
+        }, this.players);
+    }
+}
+
 export {
     globalNav,
     googleTag,
@@ -123,4 +156,5 @@ export {
     ListThumbnail,
     BenefitsMenu,
     initOpenModal,
+    Movie,
 }

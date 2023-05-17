@@ -38,10 +38,10 @@
                     </ul>
                     <div class="category-tab-contents">
                         <div class="category-panel category-panel--active">
-                            <iframe src="https://www.youtube.com/embed/HWKzDx-aAgE" frameborder="0"></iframe>
+                            <div data-movie-id="HWKzDx-aAgE"></div>
                         </div>
                         <div class="category-panel">
-                            <iframe src="https://www.youtube.com/embed/VLzORkdb7CA" frameborder="0"></iframe>
+                            <div data-movie-id="VLzORkdb7CA"></div>
                         </div>
                     </div>
                 </div>

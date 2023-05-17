@@ -1,4 +1,5 @@
 import {find, findOne, getOffset, on} from "./helper";
+import {Movie} from "./common";
 
 import Swiper, {Autoplay, Pagination, Navigation, Scrollbar, FreeMode} from "swiper";
 
@@ -199,7 +200,8 @@ const main = () => {
 
     })();
 
-
+    //iframe
+    new Movie();
 };
 
 export {
