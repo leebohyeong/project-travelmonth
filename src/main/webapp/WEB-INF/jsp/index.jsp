@@ -561,8 +561,16 @@
                                 <c:set var="list" value="${instagram.data.list}"/>
                                 <c:forEach var="row" items="${list}" varStatus="loop">
                                     <div class="swiper-slide">
-                                        <a href="${row.permalink}" target="_blank"
-                                           style="background-image:url('${row.media_url}')"></a>
+                                        <c:choose>
+                                            <c:when test="${row.media_type eq 'CAROUSEL_ALBUM'}">
+                                                <a href="${row.permalink}" target="_blank"
+                                                   style="background-image:url('${row.media_url}')"></a>
+                                            </c:when>
+                                            <c:otherwise>
+                                                <a href="${row.permalink}" target="_blank"
+                                                   style="background-image:url('${row.thumbnail_url}')"></a>
+                                            </c:otherwise>
+                                        </c:choose>
                                     </div>
                                 </c:forEach>
                             </c:if>

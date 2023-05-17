@@ -3,8 +3,7 @@ package kr.or.visitkorea.korean.global.common.web;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import kr.or.visitkorea.korean.global.util.Common;
 
-public class CommonControllerWrapper
-{
+public class CommonControllerWrapper {
 
 	/**
 	 * SEARCH PARAMETER

@@ -14,8 +14,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 @Slf4j
 @Controller
 @RequiredArgsConstructor
-public class CommonController<T> extends CommonControllerWrapper
-{
+public class CommonController<T> extends CommonControllerWrapper {
 
 	private final JuneService JUNE_SERVICE;
 	private final EventService EVENT_SERVICE;
@@ -24,22 +23,18 @@ public class CommonController<T> extends CommonControllerWrapper
 
 	/**
 	 * 메인 페이지
-	 * @param 
+	 * @param
 	 * @return 메인 페이지
 	 * @throws Exception
 	 */
 	@RequestMapping(value = "/index.do", method = RequestMethod.GET)
-	public String index(Model model) throws Exception
-	{
-		try
-		{
+	public String index(Model model) throws Exception {
+		try {
 			model.addAttribute("june", JUNE_SERVICE.getList());
 			model.addAttribute("event", EVENT_SERVICE.getMainList());
 			model.addAttribute("showcase", SHOWCASE_SERVICE.getList());
 			model.addAttribute("instagram", INSTAGRAM_SERVICE.getList());
-		}
-		catch (Exception exception)
-		{
+		} catch (Exception exception) {
 			log.error("Index Page Exception : {}", exception.getMessage(), exception);
 		}
 		return "index";
@@ -50,8 +45,7 @@ public class CommonController<T> extends CommonControllerWrapper
 	 * @return
 	 */
 	@RequestMapping(value = "/intro.do", method = RequestMethod.GET)
-	public String intro()
-	{
+	public String intro() {
 		return "intro";
 	}
 
@@ -60,8 +54,7 @@ public class CommonController<T> extends CommonControllerWrapper
 	 * @return
 	 */
 	@RequestMapping(value = "/organization.do", method = RequestMethod.GET)
-	public String organization()
-	{
+	public String organization() {
 		return "organization";
 	}
 
