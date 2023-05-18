@@ -200,8 +200,22 @@ const main = () => {
 
     })();
 
-    //iframe
+    //youtube api
     new Movie();
+
+    //여행가는달 참여기관
+    (() => {
+        const root = document.documentElement;
+        const marqueeElementsDisplayed = getComputedStyle(root).getPropertyValue("--main-organization-marquee-items-displayed");
+        const marqueeContent = findOne('.marquee-content');
+
+        root.style.setProperty("--main-organization-marquee-items", marqueeContent.children.length);
+
+        for(let i=0; i<marqueeElementsDisplayed; i++) {
+            marqueeContent.appendChild(marqueeContent.children[i].cloneNode(true));
+        }
+    })();
+
 };
 
 export {

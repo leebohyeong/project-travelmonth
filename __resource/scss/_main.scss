@@ -1100,33 +1100,43 @@
             @include media-queries($from: xl) {
                 padding-top: 50px;
             }
+        }
 
-            & > div {
+        .marquee {
+            overflow: hidden;
+            width: var(--main-organization-marquee-width);
+            max-width: 1920px;
+
+            &-content {
                 display: flex;
-                width: 200%;
-                grid-column-gap: 100px;
-                align-items: center;
-                animation: marquee 45s linear infinite var(--marquee-direction) var(--marquee-play-state);
+                column-gap: 20px;
+                animation: scrolling var(--main-organization-marquee-duration) linear infinite;
 
-                --marquee-direction: normal;
-                --marquee-play-state: running;
-
-                @include media-queries($to: xl) {
-                    grid-column-gap: 20px;
-                    width: 400%;
+                @include media-queries($from: md) {
+                    column-gap: 100px;
                 }
 
-                @keyframes marquee {
-                    0% {
-                        transform: translateX(0);
-                    }
-                    100% {
-                        transform: translateX(-50%);
-                    }
+                //&:hover {
+                //    animation-play-state: paused;
+                //}
+
+                li {
+                    display: flex;
+                    flex-shrink: 0;
+                    width: var(--main-organization-marquee-item);
                 }
             }
-
         }
+
+        @keyframes scrolling {
+            0% {
+                transform: translateX(0);
+            }
+            100% {
+                transform: translateX(calc(-1 * var(--main-organization-marquee-item) * var(--main-organization-marquee-items)));
+            }
+        }
+
     }
 
     &__travel {
