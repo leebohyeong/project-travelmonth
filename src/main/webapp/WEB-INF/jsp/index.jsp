@@ -464,7 +464,7 @@
                             <li><img src="/travelmonth/assets/images/intro/img_organization_4_17.jpg" alt="부안군"></li>
                             <li><img src="/travelmonth/assets/images/intro/img_organization_4_18.jpg" alt="사천"></li>
                             <li><img src="/travelmonth/assets/images/intro/img_organization_4_19.jpg" alt="임실군"></li>
-                            <li> <img src="/travelmonth/assets/images/intro/img_organization_4_20.jpg" alt="전라남도"></li>
+                            <li> <img src="/travelmonth/assets/images/intro/img_organization_4_20.jpg" alt="전라북도"></li>
                             <li><img src="/travelmonth/assets/images/intro/img_organization_4_21.jpg" alt="자유치유도시 제천"></li>
                             <li><img src="/travelmonth/assets/images/intro/img_organization_4_22.jpg" alt="창녕군"></li>
                             <li><img src="/travelmonth/assets/images/intro/img_organization_4_23.jpg" alt="충주시"></li>
